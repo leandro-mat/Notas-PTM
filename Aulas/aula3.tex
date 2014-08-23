@@ -41,11 +41,19 @@ $\tn{Leb}^{*}([a,b])=b-a$
 \end{lema}
 
 \begin{proof}
-É claro que $\tn{Leb}^{*}([a,b])\leq b-a$, precisamos apenas provar a desigualdade oposta. Comecemos tomando uma cobertura de $[a,b]\subset \bigcup_{k\in \mathbb{N}} (c_k,d_k)$  por intervalos abertos, por compacidade podemos considerar apenas uma subcobertura finita de $[a,b]$, 
+É claro que $\tn{Leb}^{*}([a,b])\leq b-a$, 
+precisamos apenas provar a desigualdade oposta. 
+Comecemos tomando uma cobertura de 
+$[a,b]\subset \bigcup_{k\in \mathbb{N}} (c_k,d_k)$  
+por intervalos abertos, por compacidade podemos considerar 
+apenas uma subcobertura finita de $[a,b]$, 
 $$
 [a,b]\subset \bigcup_{k=1}^M(c_k,d_k)
 $$
-suponha sem perda de generalidade que esta subcobertura seja minimal, isto é, se tirarmos qualquer intervalo que compõe a subcobertura não teremos mais uma subcobertura. Para facilitar o raciocínio ordenaremos os intervalos de modo que 
+suponha sem perda de generalidade que esta subcobertura seja minimal, 
+isto é, se tirarmos qualquer intervalo que compõe a subcobertura 
+não teremos mais uma subcobertura. Para facilitar o raciocínio 
+ordenaremos os intervalos de modo que 
 $$
 c_0<c_1<\cdots<c_{M-1}
 $$
@@ -53,8 +61,15 @@ note que a minimalidade da subcobertura garante então que
 $$
 d_0<d_1<\cdots<d_{M-1}
 $$
-para fixar raciocínio  suponha que tivessemos $d_2<d_1$ então teríamos que $(c_2,d_2)\subset (c_1,d_1)$ o que contraria a minimalidade da cobertura. ({\red um desenho aqui deixa tudo óbvio}) Agora defina $e_0=a$, $e_1=\frac{c_1+d_0}{2},$ $e_2=\frac{c_2+d_1}{2}$,
-$e_{M-1}=\frac{c_{M-1}+d_{M-2}}{2}$ e $e_{M}=b.$  Agora note que  para cada $k$, tem-se $[e_k,e_{k+1}]\subsetneqq [c_k,d_k]$ assim 
+para fixar raciocínio  suponha que tivessemos $d_2<d_1$ 
+então teríamos que $(c_2,d_2)\subset (c_1,d_1)$ o 
+que contraria a minimalidade da cobertura. 
+({\red um desenho aqui deixa tudo óbvio}) 
+Agora defina 
+$e_0=a$, $e_1=\frac{c_1+d_0}{2},$ $e_2=\frac{c_2+d_1}{2}$,
+$e_{M-1}=\frac{c_{M-1}+d_{M-2}}{2}$ e $e_{M}=b.$  
+Agora note que  para cada $k$, 
+tem-se $[e_k,e_{k+1}]\subsetneqq [c_k,d_k]$ assim 
 $$
 \sum_{k=1}^M d_k-d_k>\sum_{k=1}^M e_{k+1}-e_k=b-a
 $$ 
@@ -69,13 +84,20 @@ $\tn{Leb}^{*}((a,b))=b-a$
 
 
 \begin{proof}
-Como o intervalo $(a,b)$ está contido no seu fecho $[a,b]$ portanto temos que  $\tn{Leb}^{*}((a,b))\leq b-a.$ Agora considere um intervalo $[a+\epsilon,b-\epsilon]$ contido em $(a,b)$ note que qualquer cobertura de $(a,b)$ por intervalos fechados é também uma cobertura de $[a+\epsilon,b-\epsilon]$ de modo que 
+Como o intervalo $(a,b)$ está contido no seu 
+fecho $[a,b]$ portanto temos que  $\tn{Leb}^{*}((a,b))\leq b-a.$ 
+Agora considere um intervalo $[a+\epsilon,b-\epsilon]$ 
+contido em $(a,b)$ note que qualquer cobertura de 
+$(a,b)$ por intervalos fechados é também uma cobertura 
+de $[a+\epsilon,b-\epsilon]$ de modo que 
 $$
 b-a-2\epsilon= \tn{Leb}^{*}([a_0,b_0])\leq  \tn{Leb}^{*}((a,b))\leq b-a
 $$
 como $\epsilon$ é arbitrário segue que  $\tn{Leb}^{*}((a,b))=b-a$.
 \end{proof}
-Usando a mesma técnica da demonstração acima mostramos resultados análogos se considerarmos intervalos  da forma $[a,b)$ e $(a,b]$.
+Usando a mesma técnica da demonstração acima mostramos 
+resultados análogos se considerarmos intervalos  
+da forma $[a,b)$ e $(a,b]$.
 
 
 
@@ -89,14 +111,23 @@ $$
 \end{lema}
 
 \begin{proof}
-Segue diretamente da defininção que $\tn{Leb}^{*}(A)\leq\sum_{k=1}^M(b_k-a_k).$ Suponha que vale a desigualdade estrita, isto é, $\tn{Leb}^{*}(A)<\sum_{k=1}^M(b_k-a_k)$. Seja $c=\inf A$ e $d=\sup A$
-e considere o conjunto $[a,b]\setminus A=\bigsqcup_{k=1}^{N}[c_l,d_l]$ então temos
+Segue diretamente da defininção que 
+$\tn{Leb}^{*}(A)\leq\sum_{k=1}^M(b_k-a_k)$. 
+Suponha que vale a desigualdade estrita, 
+isto é, $\tn{Leb}^{*}(A)<\sum_{k=1}^M(b_k-a_k)$. 
+Seja $c=\inf A$ e $d=\sup A$
+e considere o conjunto $[a,b]\setminus A=\bigsqcup_{k=1}^{N}[c_l,d_l]$ 
+então temos
 $$
-[a,b]=\left(~\bigsqcup_{k=1}^M(a_k,b_k)~\right)\cup \left(~\bigsqcup_{l=1}^{N}(c_l,d_l)~\right)
+[a,b]=\left(~\bigsqcup_{k=1}^M(a_k,b_k)~\right)
+\cup \left(~\bigsqcup_{l=1}^{N}(c_l,d_l)~\right)
 $$
 então 
 \begin{eqnarray*}
-\tn{Leb}^{*}([a,b])&\leq &\tn{Leb}\left(~\bigsqcup_{k=1}^M(a_k,b_k)~\right)+\tn{Leb}\left(~\bigsqcup_{l=1}^{N}(c_l,d_l)~\right)
+\tn{Leb}^{*}([a,b])
+&\leq &
+\tn{Leb}\left(~\bigsqcup_{k=1}^M(a_k,b_k)~\right)
++\tn{Leb}\left(~\bigsqcup_{l=1}^{N}(c_l,d_l)~\right)
 \\
 &
 <
@@ -115,23 +146,47 @@ contradizendo (\ref{LEB 2}).
 
 
 \begin{proposicao}
-Todo conjunto aberto $A\subset \mathbb{R}$ pode ser escrito, de modo único, como uma união enumerável de intervalos dois a dois disjuntos.
+Todo conjunto aberto $A\subset \mathbb{R}$ pode ser 
+escrito, de modo único, como uma união enumerável de 
+intervalos dois a dois disjuntos.
 \end{proposicao}
 
 
 \begin{proof}
-Seja $x\in A$  e considere os números $a_x$ e $b_x$ definidos como a seguir
+Seja $x\in A$  e considere os números $a_x$ e $b_x$ 
+definidos como a seguir
 $$
-a_x=\inf\{x;~x<a~\tn{e}~(x,a)\subset A\},~~b_x=\sup \{x;~x>a~\tn{e}~(a,x)\subset A\}
+a_x
+=
+\inf\{x;~x<a~\tn{e}~(x,a)\subset A\},~~b_x
+=
+\sup \{x;~x>a~\tn{e}~(a,x)\subset A\}
 $$
-note que  tanto $a_x$ quanto $b_x$ estão bem definidos pois como $A$ é  aberto sempre existe um intervalo $I$ satisfazendo $a\in I\subset A$. Então para cada $x\in A$ considere o intervalo $I_x=(a_x,b_x)$. Sejam $x,y\in A$, afirmamos que ou $I_x=I_y$ ou $I_x\cap I_y=\varnothing.$ De fato, suponha que $I_x\cap I_y\neq \varnothing$ então a reunião $I_x\cup I_y$ é um intervalo que contém tanto $x$ quanto $y$ de modo que temos, por definição que $  I_ x\cup I_y\subset I_y$ e $I_x\cup I_y\subset I_x$ portanto 
+note que  tanto $a_x$ quanto $b_x$ estão bem definidos 
+pois como $A$ é  aberto sempre existe um intervalo $I$ 
+satisfazendo $a\in I\subset A$. 
+Então para cada $x\in A$ considere o intervalo 
+$I_x=(a_x,b_x)$. Sejam $x,y\in A$, afirmamos que ou $I_x=I_y$ 
+ou $I_x\cap I_y=\varnothing.$ 
+De fato, suponha que $I_x\cap I_y\neq \varnothing$ 
+então a reunião $I_x\cup I_y$ é um intervalo que 
+contém tanto $x$ quanto $y$ de modo que temos, 
+por definição que $  I_ x\cup I_y\subset I_y$ 
+e $I_x\cup I_y\subset I_x$ portanto 
 $$
 I_x\subset I_x\cup I_y\subset I_y~~ I_y\subset I_x\cup I_y\subset I_x
 $$
 donde $I_x=I_y$.
 
-Para ver que a família $\{I_x\}_{x\in A}$ é contável escolha em cada intervalo $I_x$ um racional $r_x$ e considere a aplicação  $f:\{I_x,x\in A\}\to \mathbb{Q}$ definida por $f(I_x)=r_x$ e note que $f$ é injetiva, com efeito se 
-$r_y=f(I_y)=f(I_x)=r_x$ temos que $I_x\cap I_y\neq \varnothing$ donde $I_x=I_y$ e portanto $r_x=r_y$.
+
+
+Para ver que a família $\{I_x\}_{x\in A}$ é 
+contável escolha em cada intervalo $I_x$ um 
+racional $r_x$ e considere a aplicação  
+$f:\{I_x,x\in A\}\to \mathbb{Q}$ definida por 
+$f(I_x)=r_x$ e note que $f$ é injetiva, com efeito se 
+$r_y=f(I_y)=f(I_x)=r_x$ temos que 
+$I_x\cap I_y\neq \varnothing$ donde $I_x=I_y$ e portanto $r_x=r_y$.
 
 \end{proof}
 
@@ -139,23 +194,36 @@ $r_y=f(I_y)=f(I_x)=r_x$ temos que $I_x\cap I_y\neq \varnothing$ donde $I_x=I_y$ 
 
 
 \begin{lema}\label{LEB 4}
-Seja $A\subset \mathbb{R}$,  aberto e $A=\bigsqcup_{k\in \mathbb{N}}(a_k,b_k)$ então temos 
+Seja $A\subset \mathbb{R}$,  aberto e 
+$A=\bigsqcup_{k\in \mathbb{N}}(a_k,b_k)$ então temos 
 $$
 \tn{Leb}^{*}(A)=\sum_{k\in \mathbb{N}}(b_k-a_k).
 $$
 \end{lema}
 
 \begin{proof}
-Temos pela proposição  que $\tn{Leb}^{*}(A)\leq \sum_{k\in \mathbb{N}}(b_k-a_k).$ Suponha que tenhamos na verdade 
-$\tn{Leb}^{*}(A)< \sum_{k\in \mathbb{N}}(b_k-a_k)$ segue dai que existe $K\in \mathbb{N}$ tal que 
+Temos pela proposição  que 
+$\tn{Leb}^{*}(A)\leq \sum_{k\in \mathbb{N}}(b_k-a_k).$ 
+Suponha que tenhamos na verdade 
+$\tn{Leb}^{*}(A)< \sum_{k\in \mathbb{N}}(b_k-a_k)$ 
+segue dai que existe $K\in \mathbb{N}$ tal que 
 $$
 \tn{Leb}^{*}(A)< \sum_{k<K}(b_k-a_k)
 $$
- por outro lado pelo lema (\ref{LEB 3}) que $\sum_{k<K}(b_k-a_k)=\tn{Leb}^{*}(A_0)$ onde $A_0=\bigcup_{k<K}(a_k,b_k)$.
-Temos então uma contradição pois $A_0\subset A$ e $\tn{Leb}^{*}(A)<\tn{Leb}^{*}(A_0).$
+ por outro lado pelo lema (\ref{LEB 3}) 
+ que $\sum_{k<K}(b_k-a_k)=\tn{Leb}^{*}(A_0)$ 
+ onde $A_0=\bigcup_{k<K}(a_k,b_k)$.
+Temos então uma contradição pois 
+$A_0\subset A$ e $\tn{Leb}^{*}(A)<\tn{Leb}^{*}(A_0).$
 \end{proof}
 
-Note que em última análise o resultado acima vale para outras uniões enumeráveis disjuntas de intervalos não necessariamente abertos, isto é, vale para uniões disjuntas $A=\bigsqcup_{n\in\mathbb{N}} I_n$ onde cada intervalo $I_n$ pode ser qualquer um dos intervalos $[a,b),[b,a)$ ou $[a,b]$. 
+Note que em última análise o resultado acima 
+vale para outras uniões enumeráveis disjuntas 
+de intervalos não necessariamente abertos, 
+isto é, vale para uniões disjuntas 
+$A=\bigsqcup_{n\in\mathbb{N}} I_n$ onde 
+cada intervalo $I_n$ pode ser qualquer um 
+dos intervalos $[a,b),[b,a)$ ou $[a,b]$. 
 
 
 
@@ -163,12 +231,24 @@ Note que em última análise o resultado acima vale para outras uniões enumerá
 %$\mu(C)=|C|$ onde $C$ é um cubo fechado.  Então $\tn{Leb}^{*}$ é a medida exterior induzida por esta medida finitamente aditiva.
 
 \begin{proposicao}
-Seja $A\subset \mathbb{R}$ então $ \tn{Leb}^{*}(A)=\inf_{\mathcal{O}\supset A}\tn{Leb}^{*}(\mathcal{O})$ onde $\mathcal{O}$ é um aberto contendo $A$.
+Seja $A\subset \mathbb{R}$ então 
+$ 
+\tn{Leb}^{*}(A)
+=
+\inf_{\mathcal{O}\supset A}\tn{Leb}^{*}(\mathcal{O})
+$ 
+onde $\mathcal{O}$ é um aberto contendo $A$.
 \end{proposicao}
 
 
 \begin{proposicao}
-Sejam $A,B\subset \mathbb{R}$ com $\tn{dist}(A,B)>0$ então $\tn{Leb}^{*}(A\cup B)=\tn{Leb}^{*}(A)+\tn{Leb}^{*}(B)$.
+Sejam $A,B\subset \mathbb{R}$ com $\tn{dist}(A,B)>0$ 
+então 
+$
+\tn{Leb}^{*}(A\cup B)
+=
+\tn{Leb}^{*}(A)+\tn{Leb}^{*}(B)
+$.
 \end{proposicao}
 
 
@@ -176,8 +256,29 @@ Sejam $A,B\subset \mathbb{R}$ com $\tn{dist}(A,B)>0$ então $\tn{Leb}^{*}(A\cup 
 \subsubsection{Uma construç\~ao autom\'atica da medida de Lebesgue}
 
 
-Considere álgebra $\mathcal{A}$ consistindo dos intervalos e uniões de intervalos de   $\mathbb{R}.$ Seja  $\mu$ a  função de cojunto  nessa álgebra caracterizada do seguinte modo, se $[a,b]$ é um intervalo  então $\mu([a,b])=b-a$ e se $A=\cup_{i=1}^n(a_i,b_i)$ então $\mu(A)=\sum_{i=1}^n(b_i-a_i).$  Note que $\mu$ é claramente uma medida finitamente aditiva em $\mathcal{A}$, além do mais o Lema (\ref{LEB 4}) mostra que $\mu$ é $\sigma$-aditiva. 
-O teorema de extensão de Caratheodory diz que a medida $\mu$ se estende a uma medida definida na $\sigma$-álgebra  $\mathcal{M}$  caracterizada pela condição de Caratheodory. Além do mais se considerarmos a restrição da medida obtida  à $\sigma$-álgebra $\sigma(\mathcal{S})\subset \mathcal{M}$ esta restição é única. A medida que é a extensão de $\mu$ é dita a medida de Lebesgue de $\mathcal{R}^d$ e denotada por $\tn{Leb}$, a sigma álgebra $\mathcal{M}$ nesse caso particular é dita a $\sigma$-álgebra de Lebesgue e é denotada por $\mathcal{L}$.
+Considere álgebra $\mathcal{A}$ consistindo dos 
+intervalos e uniões de intervalos de   $\mathbb{R}.$ 
+Seja  $\mu$ a  função de cojunto  nessa álgebra 
+caracterizada do seguinte modo, se $[a,b]$ é um 
+intervalo  então $\mu([a,b])=b-a$ 
+e se $A=\cup_{i=1}^n(a_i,b_i)$ então 
+$\mu(A)=\sum_{i=1}^n(b_i-a_i).$  
+Note que $\mu$ é claramente uma medida 
+finitamente aditiva em $\mathcal{A}$, 
+além do mais o Lema (\ref{LEB 4}) mostra 
+que $\mu$ é $\sigma$-aditiva. 
+O teorema de extensão de Caratheodory diz que a 
+medida $\mu$ se estende a uma medida definida na 
+$\sigma$-álgebra  $\mathcal{M}$  
+caracterizada pela condição de Caratheodory. 
+Além do mais se considerarmos a restrição 
+da medida obtida  à $\sigma$-álgebra
+$\sigma(\mathcal{S})\subset \mathcal{M}$ 
+esta restição é única. A medida que é a 
+extensão de $\mu$ é dita a medida de Lebesgue 
+de $\mathcal{R}^d$ e denotada por $\tn{Leb}$, 
+a sigma álgebra $\mathcal{M}$ nesse caso particular
+é dita a $\sigma$-álgebra de Lebesgue e é denotada por $\mathcal{L}$.
 
 
 
@@ -235,17 +336,44 @@ O teorema de extensão de Caratheodory diz que a medida $\mu$ se estende a uma m
 
 
 
-A condição que define mensurabilidade no sentido de Caratheodory parece muito misteriosa, ou em um portugês mais claro 
-parece ``tirada do chapeu", o que está por trás disso são anos de pesquisa árdua. Entretanto em $\mathbb{R}^d$ é possível definir mensurabilidade de maneira bastante razoável. Diremos que $A\subset \mathbb{R}^d$ é Lebesgue  mensurável quando para cada  $\epsilon>0$ existe um aberto $\mathcal{O}\supset A$ tal que $\tn{Leb}^{*}(\mathcal{O}\setminus A)\leq \epsilon$. Esta definição parece portanto bastante razoável, um conjunto $A\subset \mathbb{R}^d$ é mensurável se sua medida exterior  pode ser bem aproximada pela medida exterior de abertos contendo $A$.
+A condição que define mensurabilidade no sentido de 
+Caratheodory parece muito misteriosa, ou em 
+um portugês mais claro 
+parece ``tirada do chapeu", o que está por 
+trás disso são anos de pesquisa árdua. 
+Entretanto em $\mathbb{R}^d$ é possível definir 
+mensurabilidade de maneira bastante razoável. 
+Diremos que $A\subset \mathbb{R}^d$ é Lebesgue  
+mensurável quando para cada  $\epsilon>0$ 
+existe um aberto $\mathcal{O}\supset A$ 
+tal que $\tn{Leb}^{*}(\mathcal{O}\setminus A)\leq \epsilon$. 
+Esta definição parece portanto bastante razoável, 
+um conjunto $A\subset \mathbb{R}^d$ é mensurável 
+se sua medida exterior  pode ser bem aproximada 
+pela medida exterior de abertos contendo $A$.
 
-A grande pergunta então é se o conceito de mensurabilidade dado acima coincide com o conceito de mensurabilidade 
-no sentido dado por Caratheodory. Bom  a resposta é sim como mostraremos.
+A grande pergunta então é se o conceito de 
+mensurabilidade dado acima coincide com o 
+conceito de mensurabilidade 
+no sentido dado por Caratheodory. 
+Bom  a resposta é sim como mostraremos.
 
 
 
-Seja $A\subset \mathbb{R}^d$ e suponha que $A$ seja Lebesgue mensurável. Note que todo aberto  é Caratheodory mensurável. Dado $\epsilon>0$ seja $\mathcal{O}$ um conjunto aberto contendo $A$ tal que $\tn{Leb}^{*}(\mathcal{O}\setminus A)\leq \epsilon$  então dado $E\subset \mathbb{R}^d$ arbitrário temos 
+Seja $A\subset \mathbb{R}^d$ e suponha que $A$ 
+seja Lebesgue mensurável. 
+Note que todo aberto 
+é Caratheodory mensurável. 
+Dado $\epsilon>0$ seja $\mathcal{O}$ um 
+conjunto aberto contendo $A$ 
+tal que 
+$\tn{Leb}^{*}(\mathcal{O}\setminus A)\leq \epsilon$  
+então dado $E\subset \mathbb{R}^d$ 
+arbitrário temos 
 \begin{eqnarray*}
-\tn{Leb}^{*}(E\cap A)+\tn{Leb}^{*}(E\cap A^c)&\leq& \tn{Leb}^{*}(E\cap \mathcal{O})+\tn{Leb}^{*}(E\cap A^c)
+\tn{Leb}^{*}(E\cap A)+\tn{Leb}^{*}(E\cap A^c)
+&\leq& 
+\tn{Leb}^{*}(E\cap \mathcal{O})+\tn{Leb}^{*}(E\cap A^c)
 \\
 &
 \leq 
@@ -263,19 +391,37 @@ Seja $A\subset \mathbb{R}^d$ e suponha que $A$ seja Lebesgue mensurável. Note q
  &
 \tn{Leb}^{*}(E)+\epsilon
 \end{eqnarray*}
-onde usamos acima que $A\cap E\subset \mathcal{O}\cap E,$ $A^c=(A^c\setminus \mathcal{O}^c)\cup \mathcal{O}^c$ e que 
-$A^c\setminus \mathcal{O}^c=\mathcal{O}\setminus A$ como $\epsilon>0$ é arbitrário concluimos que
+onde usamos acima que 
+$
+A\cap E\subset \mathcal{O}\cap E,$ $A^c
+=
+(A^c\setminus \mathcal{O}^c)\cup \mathcal{O}^c
+$ 
+e que 
+$
+A^c\setminus \mathcal{O}^c=\mathcal{O}\setminus A$ como 
+$\epsilon>0$ é arbitrário concluímos que
 $$
 \tn{Leb}^{*}(E)\geq \tn{Leb}^{*}(E\cap A)+\tn{Leb}^{*}(E\cap A^c)
 $$
 donde $A$ é Caratheodory mensurável.
 
 
-A recíproca é um tanto mais simples. De fato seja $A\subset \mathbb{R}^d$ Caratheodory mensurável tal que $\tn{Leb}^{*}(A)<\infty$ dado $\epsilon>0$  existe uma família $\{C_i\}_{i=1}^{\infty}$ de cubos fechados tais que 
-$A\subset \bigcup_{i=1}^{\infty}C_i$ e $\sum_{i=1}^{\infty}|C_i|\leq \tn{Leb}^{*}(A)+\epsilon$. Agora para cada $i$ consideremos um cubo $\tilde{C}_i$ aberto tal que $|\tilde{C}_i|<|C_i|+\epsilon/2^{i}.$
-Como cada $\tilde{C}_i$ é Caratheodory mensurável sua união enumerável também o é de modo que podemos escrever 
+A recíproca é um tanto mais simples. De fato seja 
+$A\subset \mathbb{R}^d$ Caratheodory mensurável 
+tal que $\tn{Leb}^{*}(A)<\infty$ dado $\epsilon>0$  
+existe uma família $\{C_i\}_{i=1}^{\infty}$ de 
+cubos fechados tais que 
+$A\subset \bigcup_{i=1}^{\infty}C_i$ e 
+$\sum_{i=1}^{\infty}|C_i|\leq \tn{Leb}^{*}(A)+\epsilon$.
+Agora para cada $i$ consideremos um cubo $\tilde{C}_i$ aberto 
+tal que $|\tilde{C}_i|<|C_i|+\epsilon/2^{i}.$
+Como cada $\tilde{C}_i$ é Caratheodory mensurável sua 
+união enumerável também o é de modo que podemos escrever 
 \begin{eqnarray*}
-\tn{Leb}^{*}(\bigcup_{i=1}^{\infty} \tilde{C}_i\setminus A)&=&\tn{Leb}^{*}(\bigcup_{i=1}^{\infty} \tilde{C}_i)-\tn{Leb}^{*}(A)
+\tn{Leb}^{*}(\bigcup_{i=1}^{\infty} \tilde{C}_i\setminus A)
+&=&
+\tn{Leb}^{*}(\bigcup_{i=1}^{\infty} \tilde{C}_i)-\tn{Leb}^{*}(A)
 \\
 &
 =
@@ -292,17 +438,32 @@ Como cada $\tilde{C}_i$ é Caratheodory mensurável sua união enumerável tamb�
 &
 2\epsilon
 \end{eqnarray*}
- então tomando  $\mathcal{O}=\bigcup_{i=1}^{\infty}C_i$ temos que $\tn{Leb}^{*}(\mathcal{O}\setminus A)\leq \epsilon$.
+então tomando  $\mathcal{O}=\bigcup_{i=1}^{\infty}C_i$ 
+temos que $\tn{Leb}^{*}(\mathcal{O}\setminus A)\leq \epsilon$.
  
-Fazendo um apanhado da pequena discussão acima, concluímos que a noção de conjunto mensurável no sentido de Caratheodory quando partimos da semi-álgebra dos retângulos em $\mathbb{R}^d$ e a noção de mensurabilidade no sentido de Lebesgue são as mesmas, em particular provamos que os mensuráveis no sentido de Lebesgue também formam uma sigma álgebra.
+Fazendo um apanhado da pequena discussão acima, 
+concluímos que a noção de conjunto mensurável no 
+sentido de Caratheodory quando partimos da semi-álgebra 
+dos retângulos em $\mathbb{R}^d$ e a noção de mensurabilidade
+no sentido de Lebesgue são as mesmas, 
+em particular provamos que os mensuráveis no 
+sentido de Lebesgue também formam uma sigma álgebra.
 
 
 
 
 \subsubsection{Uma construção artesanal da medida de Lebesgue}
 
-A seguir refaremos em $\mathbb{R}^d$ todo o processo de extensão da medida finitamente aditiva feita na secção anterior para a única diferença e que usaremos apenas o conceito de mensurabilidade no sentido de Lebesgue.
-É claro que do ponto de vista rigoroso toda a construção que virá é desnecessária tendo em vista o que já foi discutido acima, por outro lado do ponto de vista didático esta discussão será  muito útil.
+A seguir refaremos em $\mathbb{R}^d$ todo o processo 
+de extensão da medida finitamente aditiva feita na 
+secção anterior para a única diferença e que 
+usaremos apenas o conceito de mensurabilidade 
+no sentido de Lebesgue.
+É claro que do ponto de vista 
+rigoroso toda a construção que virá é 
+desnecessária tendo em vista o que já foi discutido acima, 
+por outro lado do ponto de vista didático esta 
+discussão será  muito útil.
 
 
 
@@ -313,12 +474,16 @@ A seguir refaremos em $\mathbb{R}^d$ todo o processo de extensão da medida fini
 
 
 \begin{definicao}
-Um subconjunto $A\subset \mathbb{R}^d$ é dito Lebesgue mensurável, ou simplesmente mensurável,  se para cada $\epsilon>0$ existe um conjunto aberto $\mathcal{O}\subset A$ tal que $\tn{Leb}^{*}(\mathcal{O}\setminus A)\leq \epsilon$.
+Um subconjunto $A\subset \mathbb{R}^d$ é dito 
+Lebesgue mensurável, ou simplesmente mensurável,  
+se para cada $\epsilon>0$ existe um 
+conjunto aberto $\mathcal{O}\subset A$ 
+tal que $\tn{Leb}^{*}(\mathcal{O}\setminus A)\leq \epsilon$.
 \end{definicao}
 
 
 \begin{proposicao}
-Todo conjunto aberto $A\subset \mathbb{R}^d$ é  mensurável.
+Todo conjunto aberto $A\subset \mathbb{R}^d$ é mensurável.
 \end{proposicao}
 
 
@@ -327,11 +492,16 @@ Todo conjunto aberto $A\subset \mathbb{R}^d$ é  mensurável.
 
 
 \begin{proposicao}
-Se $\tn{Leb}^{*}(A)=0$ então $A$ é  mensurável, em particular todo subconjunto de $A$ é mensurável.
+Se $\tn{Leb}^{*}(A)=0$ então $A$ é  mensurável, em particular 
+todo subconjunto de $A$ é mensurável.
 \end{proposicao}
 \begin{proof}
-Temos pela proposição (??) que dado $\epsilon>0$ existe um aberto $\mathcal{O}\supset A$ tal que 
-$\tn{Leb}^{*}(\mathcal{O})\leq \epsilon$, como $\mathcal{O}\setminus E\subset \mathcal{O}$ temos por monotonicidade da medida exterior que $\tn{Leb}^{*}(\mathcal{O}\setminus E)\leq \epsilon$. 
+Temos pela proposição (??) que dado $\epsilon>0$ existe 
+um aberto $\mathcal{O}\supset A$ tal que 
+$\tn{Leb}^{*}(\mathcal{O})\leq \epsilon$, 
+como $\mathcal{O}\setminus E\subset \mathcal{O}$ 
+temos por monotonicidade da medida exterior 
+que $\tn{Leb}^{*}(\mathcal{O}\setminus E)\leq \epsilon$. 
 \end{proof}
 
 
@@ -343,14 +513,24 @@ Toda  união enumerável de conjuntos mensuráveis é mensurável.
 \end{proposicao}
 
 \begin{proof}
-Seja $A=\bigcup_{j=1}^{\infty} A_j$ onde cada $A_j$ é mensurável. Dado $\epsilon>$ temos para cada $j$ que existe um aberto $\mathcal{O}_j\supset A_j$ e tal que $\tn{Leb}^{*}(\mathcal{O}_j\setminus A_j)\leq \epsilon/2^j. $ Temos então que  a união $\mathcal{O}=\bigcup_{j=1}^{\infty}\mathcal{O}_j$ é um conjunto aberto,   $A\subset \mathcal{O}$ e
+Seja $A=\bigcup_{j=1}^{\infty} A_j$ onde cada $A_j$ é mensurável. 
+Dado $\epsilon>$ temos para cada $j$ que existe um 
+aberto $\mathcal{O}_j\supset A_j$ e 
+tal que $\tn{Leb}^{*}(\mathcal{O}_j\setminus A_j)\leq \epsilon/2^j$. 
+Temos então que  a união 
+$\mathcal{O}=\bigcup_{j=1}^{\infty}\mathcal{O}_j$ 
+é um conjunto aberto,   $A\subset \mathcal{O}$ e
 que 
 $$
 \mathcal{O}\setminus A=\bigcup_{j=1}^{\infty} \mathcal{O}_j\setminus A_j
 $$
 por monotonicidade e subaditividade que 
 $$
-\tn{Leb}^{*}(\mathcal{O}\setminus A)\leq \sum_{n=1}^\infty \tn{Leb}^{*}(\mathcal{O}_j\setminus A_j)\leq \sum_{n=1}^\infty \epsilon/2^j=\epsilon.
+\tn{Leb}^{*}(\mathcal{O}\setminus A)
+\leq 
+\sum_{n=1}^\infty \tn{Leb}^{*}(\mathcal{O}_j\setminus A_j)
+\leq 
+\sum_{n=1}^\infty \epsilon/2^j=\epsilon.
 $$
 
 \end{proof}
