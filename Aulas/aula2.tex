@@ -1,0 +1,703 @@
+\chapter[Aula 2]{Espaços de Medida e o Teorema da Extensão de Caratheodóry}
+\chaptermark{}
+\section{Espaço de Medidas}
+
+
+Seja $\Omega$ um conjunto não vazio.
+Uma coleção $\mathcal{A}$ de subconjuntos de $\Omega$ é chamada de
+\index{Álgebra! de conjuntos} {\it álgebra} se satisfaz as seguintes condições:
+\begin{itemize}
+	\item[1)] $\emptyset\in\mathcal{A}$ e $\Omega\in\mathcal{A}$;
+	\item[2)] $A\in \mathcal{A} \Rightarrow A^c\in\mathcal{A}$;
+	\item[3)] $A,B\in \mathcal{A} \Rightarrow A\cup B\in\mathcal{A}$.
+\end{itemize}
+Note que 1) e 2) implicam que $\mathcal{A}$ é fechada para uniões 
+e interseções finitas. Se substituímos 3) por:
+\begin{itemize}
+	\item[3')] $A_n\in\mathcal{A}\ \, (n=1,2,\ldots) 
+				\Rightarrow 
+				\displaystyle\bigcup_{n=1}^{\infty} A_n \in \mathcal{A}$.
+\end{itemize}
+dizemos que $\mathcal{A}$ é uma $\sigma$-{\it álgebra} \index{$\sigma$-álgebra} . Observe que a condição 3') 
+implica na condição 3) e também que uma $\sigma$-álgebra é fechada para
+interseções enumeráveis.
+
+\begin{definicao}[Medida]
+Uma função $\mu:\mathcal{A}\to [0,\infty]$ é chamada de uma {\it medida sobre uma álgebra} 
+$\mathcal{A}$ se 
+\begin{itemize}
+	\item[1)] $\mu(\emptyset)=0$;
+	\item[2)] para toda sequência de conjuntos $A_n \ \ (n=1,2,\ldots)$ dois a dois disjunta
+				tal que se $\cup_{n=1}^{\infty}A_n \in \mathcal{A}$, então temos
+			 $\mu(\cup_{n=1}^{\infty} A_n ) =\sum_{i=1}^{\infty}\mu(A_n)$.
+\end{itemize}
+\end{definicao}
+A segunda propriedade é conhecida como $\sigma$-aditividade e ela implica 
+em aditividade finita (tomando $A_n=\emptyset$ para $n\geq m$, para algum $m\in\mathbb{N}$).
+
+
+\begin{exercicio}
+ Mostre que se $\Omega=\mathbb{N}$ e $\mathcal{A}= \mathcal{P}(\Omega) $ é a $\sigma$-álgebra das partes de 
+ $\Omega$, então a função $\mu:\mathcal{A}\to [0,+\infty]$ cuja a imagem de um subconjunto 
+ $E\subset\Omega$ é dada por 
+ \[
+     \mu(E)=\sharp E
+ \]
+ é uma medida em $\mathcal{A}$. Esta medida é chamada de medida da contagem em $\mathbb{N}$.
+\end{exercicio}
+
+\begin{exercicio}
+	Seja $\Omega$ um conjunto enumerável não vazio, $\mathcal{A}=\mathcal{P}(\Omega)$ e
+	 $f:\Omega\to [0,\infty]$ 
+	uma função arbitrária. Mostre que a fórmula 
+	\[
+	    \mu(E)=\sum_{x\in E} f(x),
+	\]
+	determina uma medida em $\mathcal{A}$.
+\end{exercicio}
+
+
+\begin{definicao}[Medida de Probabilidade]
+Seja $\mathcal{F}$ uma $\sigma$-álgebra de conjuntos de um espaço $\Omega$ e 
+$P:\mathcal{F}\to [0,\infty]$ uma medida tal que $P(\Omega)=1$.
+Neste caso dizemos que $P$ é uma medida de probabilidade. 
+Normalmente o espaço $\Omega$
+é chamado de espaço amostral, um elemento $E\in\mathcal{F}$ é chamado
+de evento e $P(E)$ é a probabilidade de ocorrer $E$.
+\end{definicao}
+
+
+Sejam $\mathcal{A}$ uma álgebra e $\mu:\mathcal{A}\to [0,\infty]$ uma medida.
+Se $A_n\in\mathcal{A}$ ($n=1,2,\ldots$) e
+$\cup_{n=1}^{\infty} A_n\in\mathcal{A}$ 
+então para todo $A\subset \cup_{n=1}^{\infty} A_n$ tal que $A\in\mathcal{A}$, temos 
+$$
+\mu(A) \leq \sum_{i=1}^{\infty} \mu(A_n).
+$$
+Para verificar que este fato é verdadeiro, definimos $B_1=A_1$
+e $B_n = A_1^c\cap \ldots \cap A_{n-1}^c\cap A_n$ para todo $n\in\mathbb{N}$.
+então $B_n$ forma uma sequência de conjuntos dois a dois disjuntos e além do
+mais $\cup_{n=1}^{\infty} A_n=\cup_{n=1}^{\infty} B_n$, logo 
+$$
+\mu(A) 	= \mu(A\cap [\cup_{n=1}^{\infty} B_n])
+		= \sum_{n=1}^{\infty} \mu(A\cap B_n)
+		\leq \sum_{n=1}^{\infty} \mu(A_n),
+$$
+na última desigualdade usamos que $B_n\subset A_n$ para todo $n\in\mathbb{N}$
+e monotonicidade de $\mu$. 
+
+
+\begin{proposicao}[Continuidade da Medida]
+Seja $\mathcal{F}$ uma $\sigma$-álgebra de conjuntos de um espaço $\Omega$ e 
+$\mu:\mathcal{F}\to [0,\infty]$ uma medida. 
+\begin{itemize}
+\item Para qualquer sequência crescente $A_n$
+($n=1,2,\ldots$) em $\mathcal{F}$, isto é,  
+$A_1\subset A_2\subset\ldots$ temos que 
+$$
+\mu\left( \bigcup_{i=1}^{\infty} A_n \right) = \lim_{n\to\infty} \mu(A_n).
+$$ 
+\item Se $A_n$ é uma sequência decrescente, isto é, 
+$A_1\supset A_2\supset\ldots$ e $\mu(A_1)<\infty$, então 
+$$
+\mu\left( \bigcap_{i=1}^{\infty} A_n \right) = \lim_{n\to\infty} \mu(A_n).
+$$ 
+\end{itemize}
+\end{proposicao}
+\begin{proof}
+A prova desta proposição é deixada como exercício para o leitor.
+\end{proof}
+
+
+\medskip
+Seja $\mu$ uma medida em uma $\sigma$-álgebra $\mathcal{F}$.
+A $\sigma$-álgebra $\mathcal{F}$ é dita $\mu$-{\bf completa} 
+\index{$\sigma$-álgebra!$\mu$-completa}
+se para todo $N\in \mathcal{F}$ e para todo $A\subset N$, 
+com $\mu(N)=0$ temos $A\in \mathcal{F}$.
+Em outras palavras, $\mathcal{F}$ é $\mu$-completa 
+se os subconjuntos dos conjuntos de medida $\mu$ zero
+pertecem a $\sigma$-álgebra $\mathcal{F}$.
+Neste caso dizemos também que $\mu$ é completa.
+Dada qualquer medida $\mu$ definida sobre uma 
+$\sigma$-álgebra $\mathcal{F}$ é fácil verificar que 
+a coleção 
+$$
+\overline{\mathcal{F}}
+=
+\{ 	
+	C=A\cup B: A\in\mathcal{F}, B\subset N\ \text{para algum}\ N\in\mathcal{F}\ \text{com}\ \mu(N)=0	
+\}
+$$
+é uma $\sigma$-álgebra $\overline{\mu}$ completa, onde $\overline{\mu}(A\cup B):=\mu(A)$.
+Observe $\overline{\mu}$ está bem definida e 
+que $\overline{\mu}$ é uma medida definida em $\overline{\mathcal{F}}$ que estende $\mu$.
+Esta extensão de $\mu$ é chamada de \index{Completamento! de uma medida} 
+{\it completamento}
+de $\mu$.
+
+
+
+
+
+Passamos agora para o estudo de um dos teoremas básicos mais importantes 
+na Teoria da Medida. 
+Uma das conclusões mais importantes deste teorema, conhecido na literatura como 
+Teorema de Extensão de Carathéodory, 
+é que qualquer medida $\mu$ definida sobre uma álgebra
+$\mathcal{A}$ sempre pode ser estendida 
+a uma medida $\overline{\mu}$, 
+definida sobre a
+$\sigma$-álgebra gerada por $\mathcal{A}$, que 
+é simplesmente a ``interseção'' de todas as $\sigma$-álgebras 
+contendo $\mathcal{A}$, veja os dois exercícios abaixo.
+
+\begin{exercicio}
+	Sejam $I$ um conjunto arbitrário de índices e 
+	$\mathcal{F}_i$, para cada $i\in I$,
+	uma $\sigma$-álgebra de conjuntos de $\Omega$.
+	Defina 
+	$$
+	\bigcap_{i\in I}\mathcal{F}_i := 
+	\{F\subset \Omega: F\in\mathcal{F}_i, \ \forall i\in I\}.
+	$$
+	Mostre que $\cap_{i\in I}\mathcal{F}_i$ é uma $\sigma$-álgebra.
+\end{exercicio}
+
+
+\begin{exercicio}\label{exercicio-sigma-alg-gerada}
+	Seja $\mathcal{A}$ uma coleção arbitrária de subconjuntos de $\Omega$.
+	Mostre que 
+	$$
+	\bigcap_{\substack{ \mathcal{F}\supset \mathcal{A}\\[0.1cm] \mathcal{F}\ \text{é}\ 
+	\sigma\text{-álgebra}}}
+	 \!\!\!\!\!\!\!\!\! \mathcal{F}
+	$$
+	é uma $\sigma$-álgebra. Esta $\sigma$-álgebra é conhecida como a 
+	$\sigma$-álgebra
+	gerada pela coleção $\mathcal{A}$. Em um certo sentido, esta é a ``menor'' 
+	$\sigma$-álgebra contendo a coleção $\mathcal{A}$.
+\end{exercicio}
+
+
+
+\section{O Teorema de Dynkin}
+
+\begin{definicao} 
+    Dada uma coleção $\mathcal{C} $ de subconjuntos de $\Omega$, a menor
+    $\sigma$-álgebra que contém todos os eventos de $\mathcal{C}$ é chamada
+    de \textbf{$\sigma$-álgebra gerada por $\mathcal{C}$} e será
+    denotada por $\sigma(\mathcal{C})$.
+\end{definicao} 
+A existência desta $\sigma$-álgebra é garantida pela afirmação 
+contida no Exercício \ref{exercicio-sigma-alg-gerada}.
+	    
+	    
+	    
+	    
+	    
+    \begin{exercicio}\label{exer-sigma-gerada-contida-todas}
+        Seja $\mathcal{C}$ uma coleção de subconjuntos de $\Omega$ e $\mathcal{F}$
+        uma $\sigma$-álgebra de $\Omega$ tal que $\mathcal{C} \subset \mathcal{F}$.
+        Mostre que  $\sigma(\mathcal{C}) \subset \mathcal{F}$.
+    \end{exercicio}
+
+    
+    Observamos que o exercício acima não vale para a união de $\sigma$-álgebras. 
+    Dada uma coleção de $\sigma$-álgebras, digamos $\mathcal{F}_{i}, i \in I$,
+    consideramos a $\sigma$-álgebra mais grossa contendo todas as $\sigma$-álgebras 
+    $\mathcal{F}_{i}$, isto é, 
+    $\vee_{\lambda \in \Lambda} \mathcal{F}_{\lambda} = 
+    \sigma (\cup_{\lambda \in \Lambda} \mathcal{F}_\lambda)$. 
+    
+    É muito comum trabalhar com $\sigma$-álgebras 
+    $\mathcal{F}= \sigma(\mathcal{C})$ em que $\mathcal{C}$ é uma 
+    coleção fechada para a interseção finita. Esta observação motiva 
+    a seguinte definição:
+    
+\begin{definicao}[$\pi$-sistema]\label{def-pi-sistema}
+   Uma coleção $\mathcal{C} $ fechada para interseções finitas é 
+    chamada de um $\pi$-sistema.
+\end{definicao} 
+ 
+\begin{exemplo}
+	A coleção de todos os intervalos abertos da reta da 
+	forma $(a,b)$ com $a<b$ é um $\pi$-sistema.
+\end{exemplo}
+ 
+    
+\begin{definicao}
+ \index{$\lambda$-sistema}
+    Um $\lambda$-sistema é uma coleção $\mathcal{L}$ de subconjuntos
+    de $\Omega$ tais que:
+    \begin{itemize}
+        \item[1)] $ \Omega \in \mathcal{L}$;
+        \item[2)] Se $ A \in \mathcal{L}$, então $ A^c \in \mathcal{L} $;
+        \item[3)] Se $ \{A_n\}$ é uma família de conjuntos de $\mathcal{L}$, dois a
+        dois disjuntos, então temos que $ \cup_{n=1}^{\infty} A_n \in \mathcal{L} $.
+     \end{itemize}
+\end{definicao}
+
+\begin{exercicio}
+    \label{pi-lamda-sigma}
+    Mostre que se $\mathcal{L}$ é um $\pi$-sistema e um $\lambda$-sistema, então
+    $\mathcal{L}$ é uma $\sigma$-álgebra.   
+\end{exercicio}
+
+\begin{teorema}[Teorema $\pi -\lambda$ de Dynkin]
+    \index{Teorema!$\pi-\lambda$}\label{pi-lambda}
+    Se $\mathcal{L}$ é um $\lambda$-sistema contendo um $\pi$-sistema 
+    $\mathcal{C}$, então $ \sigma(\mathcal{C}) \subset \mathcal{L}$.
+\end{teorema}
+
+\begin{proof}
+    Seja $ \mathcal{L}(\mathcal{C}) = \cap_{i\in I} \mathcal{L}_i $, 
+    onde $I$ indexa a coleção de todos os $\lambda$-sistemas 
+    contendo $\mathcal{C}$. 
+    Para provar o teorema, vamos demonstrar que 
+    $\mathcal{L}(\mathcal{C} )$ é um $\pi$-sistema e também 
+    um $\lambda$-sistema.
+    Assim segue do Exercício \ref{pi-lamda-sigma} que 
+    $ \mathcal{L}(\mathcal{C})$ é uma $\sigma$-álgebra.  
+    Para obter a conclusão do teorema basta usar 
+    o Exercício \ref{exer-sigma-gerada-contida-todas} 
+    que neste caso afirma que
+    $\sigma(\mathcal{C}) \subset \mathcal{L}(\mathcal{C})\subset \mathcal{L}$.
+    
+    Vamos mostrar primeiramente que $\mathcal{L}(\mathcal{C})$ é um um  
+    $\lambda$-sistema. Como $\Omega \in \mathcal{F}$, para todo o $\lambda$-sistema  
+    $\mathcal{L}_i$, segue que $\Omega \in \mathcal{L}(\mathcal{C})$. 
+    Para todo $i\in I$ temos que 
+    $\emptyset \in \mathcal{L}_i$, pois $\emptyset = \Omega^c \in \mathcal{L}_i$. 
+    Logo $\emptyset\in \mathcal{L}(\mathcal{C})$.
+    De maneira análoga para qualquer $A \in \mathcal{L}(\mathcal{C})$, temos que 
+    $A \in \mathcal{L}_i$ para todo $i\in I$, de onde segue que
+    $A^c \in \mathcal{L}(\mathcal{C})$.
+    Considere agora uma sequência dois a dois disjunta de subconjuntos de 
+    $\mathcal{L}(\mathcal{C})$, digamos $\{A_n\}$. 
+    Para cada $n\ge 1$, temos que $A_n \in\mathcal{L}_i$ para todo $i\in I$ 
+    o que implica que $\cup_{n=1}^{\infty} A_n \in \mathcal{L}_i$ para todo $i\in I$ 
+    e portanto $\cup_{n=1}^{\infty} A_n \in  \mathcal{L}(\mathcal{C})$ e temos provado
+    que $\mathcal{L}(\mathcal{C})$ é um $\lambda$-sistema. 
+    
+    Vamos mostrar agora que $ \mathcal{L}(\mathcal{C})$ é um $\pi$-sistema. 
+    Fixado
+    $A \in  \mathcal{L}(\mathcal{C})$ defina a seguinte coleção:  
+    $\mathcal{L}_A := \{ B \subset \Omega : A \cap B \in  \mathcal{L}(\mathcal{C})\}$. 
+    \\
+    \noindent{\bf Afirmação-1}. Se $ \mathcal{L}(\mathcal{C}) \subset  \mathcal{L}_A$, para todo o 
+    $A \in  \mathcal{L}(\mathcal{C})$ então $\mathcal{L}(\mathcal{C})$ é um $\pi$-sistema.
+
+	Para ver que a Afirmação-1 é verdadeira, basta notar que fixados 
+	$A,B\in\mathcal{L}(\mathcal{C})$ temos por hipótese que
+	$\mathcal{L}(\mathcal{C}) \subset  \mathcal{L}_B$ e portanto 
+	$A\in\mathcal{L}_B$. Segue agora da definição de $\mathcal{L}_B$ que
+	$A\cap B\in \mathcal{L}(\mathcal{C})$ e portanto a afirmação está provada.
+	
+    
+    
+    Vamos mostrar agora que $ \mathcal{L}(\mathcal{C}) \subset  \mathcal{L}_A$, para todo o 
+    $A \in  \mathcal{L}(\mathcal{C})$.
+    Primeiro observamos que repetindo os argumentos dados acima podemos ver facilmente que 
+    $\mathcal{L} _A$ é um $\lambda$-sistema. 
+    Em particular, se 
+    $A \in \mathcal{C}$, então $A \cap B \in \mathcal{C}$ para todo o $B \in\mathcal{C}$,
+    pois $\mathcal{C}$ é fechado para a interseção finita e assim temos que 
+    $\mathcal{C} \subset\mathcal{L}_A$ o que  
+    implica imediatamente que $\mathcal{L}(\mathcal{C}) \subset \mathcal{L}_A $ 
+    e a prova do teorema está finalmente completa.         
+\end{proof}
+
+
+\begin{corolario}[Unicidade]
+    Sejam $P_1$, $P_2$ duas medidas de probabilidade tais que $P_1(C)=P_2(C)$ para todos os
+    eventos $C$ de um $\pi$-sistema $\mathcal{C}$, então, temos que $P_1=P_2$ em
+    $\sigma(\mathcal{C})$.
+\end{corolario}
+
+\begin{proof}
+    Observe que $\mathcal{L}  = \{A \subset \Omega: P_1(A) = P_2(A)\}$  é um $\lambda$-sistema. 
+    Por hipótese $\mathcal{L}$ contém o $\pi$-sistema $\mathcal{C}$, daí
+    segue do Teorema $\pi-\lambda$ de Dynkin que $\sigma(\mathcal{C}) \subset \mathcal{L}$.
+\end{proof}
+
+\section{O Teorema da Extensão de Carathéodory}
+
+
+A família de todos os subconjuntos de um conjunto $\Omega$ será 
+denotada por $\mathcal{P}(\Omega)$. Esta família também é conhecida como 
+conjunto das partes de $\Omega$. Observamos que $\mathcal{P}(\Omega)$ é uma 
+$\sigma$-álgebra.
+Em determinadas situações, quando estamos trabalhando com uma medida $\mu$, 
+podemos nos livrar de várias dificuldades técnicas se esta medida esta definida
+em $\mathcal{P}(\Omega)$. Acontece que na maioria das situações mais 
+interessantes, isto nem sempre ocorre. Entretanto é possível definir um outro objeto 
+matemático, chamado {\it medida exterior}, que está sempre definida na 
+$\sigma$-álgebra das partes.
+Uma medida exterior tem a vantagem de estar sempre 
+definida no conjunto das partes, mas por outro lado, em geral, 
+ela não é uma função $\sigma$-aditividade. 
+Mas como veremos a abaixo as medidas exteriores são objetos muito 
+úteis na construção de medidas sobre um determinado conjunto $\Omega$.
+
+
+
+\begin{definicao}[Medida Exterior]
+\index{Medida!exterior}
+\label{definicao-medida-exterior}
+	Uma função $\mu^*:\mathcal{P}(\Omega)\to [0,\infty]$ é chamada de medida exterior 
+	sobre $\Omega$ se satisfaz:
+	\begin{itemize}
+		\item[1)] $\mu^*(\emptyset)=0$;
+		\item[2)] se $A\subset B$ então $\mu^*(A)\leq \mu^*(B)$;
+		\item[3)] $\mu^{*}(\cup_{i=1}^{\infty} A_n) \leq \sum_{i=1}^{\infty} \mu^{*}(A_n)$, para toda
+					sequência $A_n$ ($n=1,2,\ldots$).
+	\end{itemize}
+\end{definicao}
+
+
+
+
+
+
+A proposição seguinte é uma poderosa máquina de construir medidas exteriores.
+Como o leitor pode ver as hipóteses são muito fracas. Ela nos diz que
+escolhida uma coleção arbitraria $\mathcal{A}$ de subconjuntos
+de um espaço $\Omega$ 
+(note que não exigimos nenhuma estrutura nesta coleção nem de álgebra, $\sigma$-álgebra e etc.)
+e qualquer função $\mu:\mathcal{A}\to [0,\infty]$  
+tal que $\mu(\emptyset)=0$, podemos construir a partir da coleção $\mathcal{A}$ e
+da função $\mu$ uma medida exterior, que será chamada de $\mu^{*}$,
+definida em toda a $\sigma$-álgebra das partes de $\Omega$.
+O leitor deve examinar com cuidado a definição de
+$\mu^{*}$, dada abaixo, para se convencer que nem sempre $\mu^{*}$ 
+é uma extensão de $\mu$. 
+
+ 
+\begin{proposicao}\label{prop-med-ext}
+Seja $\mathcal{A}$ uma coleção arbitrária de subconjuntos de $\Omega$ satisfazendo
+apenas que $\emptyset,\Omega\in \mathcal{A}$. Seja $\mu:\mathcal{A}\to [0,\infty]$,
+uma função arbitrária, satisfazendo apenas que $\mu(\emptyset)=0$.
+Para todo $A\subset \Omega$, defina
+\begin{equation}\label{def-medida-exterior}
+\mu^{*}(A)= 
+\inf \left\{
+	\sum_{n}\mu(F_n): F_n\in \mathcal{A} \ \forall n,\ \ A\subset \cup_{n} F_n
+\right\}.
+\end{equation}
+Então $\mu^{*}$ é uma medida exterior em $\Omega$.
+\end{proposicao}
+
+
+
+\begin{proof}
+Já que $\emptyset\subset \emptyset \in \mathcal{A}$, temos que $\mu^{*}(\emptyset)=0$.
+Se $A\subset B$, então qualquer coleção enumerável $F_n$ ($n=1,2,\ldots$) que é uma 
+cobertura de $B$ (isto é, $B\subset \cup_n F_n$) é também uma cobertura de $A$.
+Logo segue da definição de ínfimo que $\mu^{*}(A)\leq \mu^{*}(B)$.
+Resta agora verificar que $\mu^{*}$ satisfaz a propriedade 3) de medida exterior.
+Seja $A_n$ ($n=1,2,\ldots$) uma coleção enumerável de subconjuntos de $\Omega$
+e $A=\cup_n A_n$. Se para algum índice $n$ temos $\mu^{*}(A_n)=\infty$,
+então segue da monotonicidade $\mu^{*}$ que $\mu^{*}(A)=\infty$, e portanto 
+3) é válida neste caso. Vamos assumir então que $\mu^{*}(A_n)<\infty$ 
+para todo $n$. Fixe $\varepsilon>0$ arbitrário. Para cada $n$ existe
+uma sequência $F_{n,k}$ ($k=1,2,\ldots$) em $\mathcal{A}$ tal que 
+$A_n\subset \cup _k F_{n,k}$ e 
+\begin{equation}\label{epsilon-aproximacao-med-ext}
+\sum_k \mu(F_{n,k}) -\mu^{*}(A_n) < \frac{\varepsilon}{2^n},
+\qquad
+\text{ para todo}\ n.
+\end{equation}
+Certamente temos que 
+$$
+A\subset \bigcup_{n}\bigcup_{k} F_{n,k}.
+$$
+Usando a monotonicidade, em seguida, a definição de $\mu^{*}$ e por 
+último a desigualdade \eqref{epsilon-aproximacao-med-ext} temos que
+$$
+\mu^{*}(A)
+\leq 
+\mu^{*}\left( \bigcup_{n}\bigcup_{k} F_{n,k} \right)
+\leq
+\sum_{n}\sum_{k} \mu(F_{n,k})
+\leq \sum_{n}\mu^{*}(A_n) +\varepsilon.
+$$
+\end{proof}
+ 
+ 
+
+\begin{definicao}[Medida $\sigma$-finita]
+	Sejam $\mathcal{A}$ uma álgebra de subconjuntos de $\Omega$ e 
+	$\mu:\mathcal{A}\to [0,\infty]$ uma medida.
+	Se existe uma sequência $A_n$ ($n=1,2,\ldots$) tal que $\mu(A_n)<\infty$ 
+	para todo $n\in\mathbb{N}$ e $\cup_{n=1}^{\infty}A_n =\Omega$, então 
+	dizemos que $\mu$ é uma medida $\sigma$-finita.
+\end{definicao} 
+ 
+Precisamos apenas de mais uma definição para podermos apresentar o enunciado
+preciso do Teorema da Extensão de Carathéodory.
+
+
+
+
+\begin{definicao}[Conjuntos $\mu^{*}$-mensuráveis]
+Dada uma medida exterior $\mu^{*}$ definida sobre as partes de um conjunto $\Omega$,
+dizemos que $A\subset \Omega$ é $\mu^{*}$-mensurável se a condição abaixo é satisfeita:
+\begin{equation}\label{cond-caratheodory}
+\mu^{*}(E) = \mu^*(E\cap A) + \mu^*(E\cap A^c),
+\qquad
+\text{ para todo } \ E\subset\Omega.
+\end{equation}
+A condição acima é conhecida como {\it Condição de Carathéodory}\index{Condição!de Carathéodory}.
+\end{definicao}
+
+
+
+
+\begin{teorema}[Teorema da Extensão de Carathéodory]
+\index{Teorema!da Extensão de Carathéodory}
+\label{teorema-caratheodory}
+Seja $\mu^*:\mathcal{P}(\Omega)\to [0,\infty]$ uma medida exterior sobre $\Omega$.
+\begin{itemize}
+	\item[1)] A coleção $\mathcal{M}$ de todos os conjuntos $\mu^*$-mensuráveis
+				é uma $\sigma$-álgebra e a restrição de $\mu^*$ a $\mathcal{M}$
+				é uma medida completa.
+	\item[2)] Se $\mu^*$ é definida por \eqref{def-medida-exterior}, com $\mathcal{A}$
+				sendo uma álgebra e $\mu$ uma medida em $\mathcal{A}$. Então 
+				$\sigma(\mathcal{A})\subset \mathcal{M}$ e $\mu^*=\mu$ em $\mathcal{A}$.
+	\item[3)] Se $\mu$ é uma medida $\sigma$-finita em uma álgebra $\mathcal{A}$ 
+				então ela se estende {\bf unicamente}
+				 a uma medida definida em $\sigma(\mathcal{A})$. Esta extensão 
+				 é dada por $\mu^*$, definida em \eqref{def-medida-exterior}, restrita
+				 a $\sigma(\mathcal{A})$.
+\end{itemize}
+\end{teorema}
+
+
+\begin{proof}
+Prova do item 1). Mostraremos primeiro que $\mathcal{M}$ é uma álgebra.
+Em primeiro lugar observamos que $A=\emptyset$ satisfaz 
+a condição de Carathéodory. Também é imediato verificar que se $A$ 
+satisfaz a condição de Carathéodory, então $A^c$ também satisfaz esta condição. 
+Pela subaditividade da medida exterior ( propriedade 3 da Definição \ref{definicao-medida-exterior}), 
+para verificar a condição de Carathéodory basta mostrar que 
+
+\begin{equation}\label{reducao-condicao-caratheodory}
+\mu^*(E\cap A)+\mu^*(E\cap A^c)\leq \mu^*(E),
+\qquad
+\text{para todo}\ E\in\Omega.
+\end{equation}
+Vamos mostrar que $\mathcal{M}$ é fechado com respeito a interseções finitas. 
+Para quaisquer $A,B\in\mathcal{M}$, temos
+\begin{align*}
+\mu^*(E) &= \mu^*(E\cap B) + \mu^*(E\cap B^c) \qquad 
+\\
+=& \mu^*(E\cap B\cap A)+\mu^*(E\cap B\cap A^c) + \mu^*(E\cap B^c\cap A)+ \mu^*(E\cap B^c\cap A^c)
+\\
+\geq & \mu^*(E\cap(B\cap A))+\mu^*(E\cap(B\cap A)^c),
+\end{align*}
+onde na última desigualdade, usamos que 
+$(B\cap A)^c=B^c\cup A^c = (B^c\cap A) \cup (B^c\cap A^c) \cup (B\cap A^c)$
+e a subaditividade de $\mu^*$. Isto mostra que a desigualdade 
+\eqref{reducao-condicao-caratheodory} é satisfeita para $A\cap B$, logo 
+$A\cap B\in \mathcal{M}$. Já que $\mathcal{M}$ é fechada para interseções,
+podemos concluir que $\mathbb{M}$ é fechada para uniões finitas.
+E portanto concluímos a prova que $\mathcal{M}$ é uma álgebra.
+
+Próximo passo é provar que $\mathcal{M}$ é uma $\sigma$-álgebra e
+que $\mu^*$ é $\sigma$-aditiva. 
+Seja $B_n$ ($n=1,2,\ldots$) uma sequência de conjuntos dois a 
+dois disjuntos em $\mathcal{M}$. 
+Defina $C_m = \cup_{n=1}^m B_n$ ($m=1,2,\ldots$).
+Vamos mostrar por indução em $m$ que 
+
+\begin{equation} \label{caratheodory-eq1}
+    \mu^*(E\cap C_m) = \sum_{n=1}^m \mu^*(E\cap B_n), 
+    \qquad \text{para todo} \ E\subset\Omega.
+\end{equation}
+
+Já que $C_1=B_1$ a fórmula acima é verdadeira para $m=1$. Suponha então que 
+\eqref{caratheodory-eq1} seja satisfeita para um dado $m$. Como $B_{m+1} \in  \mathcal{M}$,
+para todo o $ E \subset \Omega $, temos que
+\begin{align*}
+    \mu^*(E \cap C_{m+1}) & = \mu^*((E \cap C_{m+1})\cap B_{m+1}) + 
+    \mu^*((E \cap C_{m+1})\cap B^c_{m+1})\\
+    & = \mu^*(E \cap B_{m+1}) + \mu^*(E\cap C_{m})\\
+    & = \mu^*(E \cap B_{m+1}) + \sum_{n=1}^m \mu^*(E\cap B_n),
+\end{align*}
+onde na última igualdade usamos a hipótese de indução. 
+A igualdade acima mostra que \eqref{caratheodory-eq1} 
+é satisfeita para $m+1$ no lugar de $m$ e assim a indução está completa. 
+
+
+Seja $A = \cup_{n=1}^{\infty}B_n $. 
+Para todo $m\in\mathbb{N}$ e $E \subset \Omega$, temos que
+\begin{align*}
+    \mu^*(E)&= \mu^*(E\cap C_m) + \mu^*(E \cap C^c_m)
+    \qquad (\text{pois  }  C_m \in \mathcal{M} ) \\
+    & = \sum_{n=1}^m  \mu^*(E\cap B_n) + \mu^*(E \cap C^c_m)\\
+    & \ge  \sum_{n=1}^m  \mu^*(E\cap B_n) + \mu^*(E \cap A^c),
+\end{align*}
+pois $ A^c \subset C^c_m$. Tomando $ m \to \infty $, ficamos com a seguinte desigualdade
+\begin{equation} \label{caratheodory-eq2}
+    \mu^*(E) \ge \sum_{n=1}^{\infty}  \mu^*(E\cap B_n) + \mu^*(E \cap A^c) \ge 
+     \mu^*(E\cap A) + \mu^*(E \cap A^c),
+\end{equation}
+onde na última desigualdade usamos a propriedade 
+subaditiva da medida exterior. Isso mostra que 
+$ A \equiv \cup_{n=1}^{\infty} B_n \in \mathcal{M} $, 
+isto é, $ \mathcal{M} $ é fechado para
+uniões disjuntas contáveis. Se $A_n$, ($n=1,2,\ldots$) 
+é uma sequência em $ \mathcal{M} $, 
+podemos expressar $ A \equiv \cup_{n=1}^{\infty} A_n $ 
+como $  A = \cup_{n=1}^{\infty}B_n$, onde
+$ B_1 = A_1$ e $ B_n = A^c_1 \cap \dots \cap A^c_{n-1}\cap A_n$ para $ n \ge 2 $.
+Note que a sequência $B_n$ ($n=1,2,\ldots$) definida desta forma é 
+uma sequência de conjuntos dois a dois disjuntos e cada $B_n\in\mathcal{M}$. 
+Então $ A \in \mathcal{M}$, provando que $ \mathcal{M}$
+é fechada para uniões enumeráveis arbitrárias. 
+
+
+
+Para provar a $\sigma$-aditividade de $ \mu^* $ em $ \mathcal{M}$, 
+considere $B_n$ ($n=1,2,\ldots$) uma sequência de conjuntos 
+dois a dois disjuntos em $\mathcal{M}$. 
+Tomando $ E = A \equiv \cup_{n=1}^{\infty} B_n $ na primeira desigualdade em 
+\eqref{caratheodory-eq2} obtemos a seguinte estimativa: 
+$ \mu^*\left( \cup_{n=1}^{\infty} B_n \right)  \ge \sum_{n=1}^{\infty} \mu^*\left(  B_n \right) $. 
+Usando a propriedade subaditiva de uma medida exterior concluímos que
+$$ 
+\mu^*\left( \cup_{n=1}^{\infty} B_n \right) = \sum_{n=1}^{\infty} \mu^*\left(  B_n \right).
+$$
+Assim, concluímos a prova de que $\mu^*$ é uma medida na $\sigma$-álgebra $ \mathcal{M}$. 
+
+Vamos provar agora a última parte do item 1), isto é, 
+mostrar que a medida que acabamos de obter é completa.
+Sejam $N \in \mathcal{M}$ tal que $ \mu^*(N)=0$ e $A \subset N$. 
+Pela monotonicidade de $\mu^*$ temos que 
+$ \mu^*(E \cap A) \le \mu^*(A) \le \mu^*(N) = 0$ e $ \mu^*(E \cap A^c) \le \mu^*(E) $.
+Mas estas duas desigualdades implicam
+que \eqref{reducao-condicao-caratheodory} é satisfeita, provando que $ A \in \mathcal{M}$. 
+O que é suficiente para concluir que a $\sigma$-álgebra $\mathcal{M} $ é $\mu^*$-completa.
+
+
+Prova do item 2). Considere agora o caso em que $ \mathcal{A}$ é uma álgebra, $\mu$ é uma 
+medidade em $ \mathcal{A} $, e $ \mu^* $ é a medida exterior definida em \eqref{def-medida-exterior}.
+Para provar que $ \mathcal{A} \subset \mathcal{M} $, seja $ A \in \mathcal{A} $. Fixe 
+$E \subset \Omega $ e $ \epsilon > 0 $ arbitrariamente. 
+Invocando a definição de medida exterior \eqref{def-medida-exterior}, 
+podemos afirmar que existe $ A_n \in \mathcal{A}$, 
+$(n =1, 2 , \dots)$ tal que $ E \subset \cup_{n=1}^{\infty} A_n $ e 
+\begin{equation}\label{estimativa-teo-extensao-carateodory-1}
+  \sum_{n=1}^{\infty} \mu(A_n)-\epsilon \leq \mu^*(E).
+\end{equation}
+Além disso, segue da subaditividade da medida exterior e em seguida, 
+da definição dada em \eqref{def-medida-exterior} as seguintes desigualdades: 
+\begin{align*}
+    &\mu^*(E \cap A)  \le \mu^*\left( A \cap \bigcup_{n=1}^{\infty} A_n\right) 
+                      \le \sum_{n=1}^{\infty}\mu(A \cap  A_n)
+	%     
+     \\[0.2cm]
+     \text{e} \hspace*{3cm}&
+     \\[0.2cm]
+     %
+     &\mu^*(E \cap A^c)  \le \mu^*\left(A^c \cap \bigcup_{n=1}^{\infty} A_n\right) 
+                                \le \sum_{n=1}^{\infty}\mu(A^c \cap  A_n).
+\end{align*}
+Somando as duas desigualdades em ambos os lados e 
+usando a estimativa \eqref{estimativa-teo-extensao-carateodory-1}
+obtemos 
+\begin{align*}
+     \mu^*(E \cap A)+ \mu*(E \cap A^c)
+     \le& 
+     \sum_{n=1}^{\infty}[\mu(A \cap  A_n) +  \mu(A^c \cap  A_n)]
+     \\[0.2cm]
+     =& 
+     \sum_{n=1}^{\infty}\mu(A_n) 
+     \\[0.2cm]
+     \leq&
+     \mu^*(E)+\varepsilon.
+\end{align*}
+Como $\varepsilon>0$ é arbitrário a condição \eqref{reducao-condicao-caratheodory} 
+é satisfeita, provando que $ A \in \mathcal{M}$. 
+Para provar que $ \mu = \mu^* $ em $ \mathcal{A} $, seja $ A \in \mathcal{A}$. Pela defininição 
+\eqref{def-medida-exterior}, $ \mu^*(A) \le \mu(A) $ (tomando $ A_1 = A $ e $ A_n = \emptyset $,
+para $ n \ge 2 $ por exemplo). Por outro lado, $ \mu(A) \le \sum_{n=1}^{\infty} \mu(A_n)  $ para toda
+a sequência $ A_n \in \mathcal{A} $ ($  n \ge 1$) tal que $ A \subset \cup_{n=1}^{\infty} A_n $, então
+temos que  $ \mu^*(A) \ge \mu(A) $ (por subaditividade de $\mu$ em $ \mathcal{A} $).
+Mostrando que $ \mu(A) = \mu^*(A)$.
+
+Prova do item 3). 
+Suponha que $ \mu$ seja $\sigma$-finita 
+na álgebra $\mathcal{A}$ e seja
+$\mu^*$ sua extensão a $\sigma(\mathcal{A}) \subset \mathcal{M}$, 
+dada pelo item 2) deste teorema. Já que $\mu$ é $\sigma$-finita, podemos
+encontrar uma sequência $A_n$ ($n=1,2,\ldots$) de conjuntos
+dois a dois disjuntos tal que 
+$A_n\in \mathcal{A}$, $\mu(A_n)<\infty$, para todo $n\in\mathbb{N}$ e 
+$\Omega = \cup_{n=1}^{\infty} A_n$. 
+Seja $\nu$ uma extensão da medida $\mu$, definida em $\sigma(\mathcal{A})$.
+Fixado $n\in\mathbb{N}$, vamos mostrar primeiro que $\mu^{*} = \nu$, 
+em todos os conjuntos da coleção 
+$
+A_n\cap \sigma(\mathcal{A}) \equiv \{ A_n\cap A: A\in\sigma(\mathcal{A})\}.
+$
+Para provar este fato vamos mostrar que coleção 
+$
+\mathcal{C} = \{ A\in \mathcal{A} : \nu(A_n\cap A) = \mu^*(A_n\cap A)\}
+$
+é um $\lambda$-sistema contendo $\mathcal{A}$ (que é um $\pi$-sistema). 
+De fato, se $A \in\mathcal{C}$ então temos que: 
+\begin{align*}
+	&\nu(A_n) =
+	\nu((A_n\cap A^c) \cup (A_n\cap A)) 
+	= 
+	\nu(A_n\cap A^c)+ \nu(A_n\cap A)
+\\
+\text{e}\hspace*{1cm}&
+\\
+	&\mu^*(A_n) =
+	\mu^*((A_n\cap A^c) \cup (A_n\cap A)) 
+	= 
+	\mu^*(A_n\cap A^c)+ \mu^*(A_n\cap A).
+\end{align*}
+Observando que o lado esquerdo de ambas igualdades acima são iguais
+($\nu$ e $\mu^*$ são extensões de $\mu$ em $\mathcal{A}$) 
+e que as segundas parcelas do lado direito também são iguais 
+já que $A\in\mathcal{C}$, concluímos que $\mu^*((A_n\cap A^c)= \nu(A_n\cap A^c)$ 
+e portanto $A^c\in\mathcal{C}$. 
+Como o $\emptyset\in\mathcal{C}$ segue do fato que acabamos de provar que
+$\Omega\in\mathcal{C}$. 
+Seja $B_m$ ($m=1,2,\ldots$) uma sequência de conjuntos em 
+$\mathcal{C}$ dois a dois disjuntos. Segue da $\sigma$-aditividade
+de $\mu^*$ e $\nu$ que 
+$$
+\nu\left( A_n \cap \big(\cup_{m=1}^{\infty}B_m\big) \right)
+=
+\sum_{m=1}^{\infty} \nu\left( A_n \cap B_m \right)
+=
+\sum_{m=1}^{\infty} \mu^*\left( A_n \cap B_m \right)
+=
+\mu^*\left( A_n \cap \big(\cup_{m=1}^{\infty}B_m\big) \right).
+$$
+O que encerra a prova de que $\mathcal{C}$ é um $\lambda$-sistema.
+Como $\mathcal{C}$ é um $\lambda$-sistema que contém o $\pi$-sistema
+$\mathcal{A}$ segue do Teorema $\pi-\lambda$ de Dynkin que 
+$\sigma(A)\subset \mathcal{C}$.
+
+
+Para finalizar a prova, basta notar que dado $A\in \sigma(\mathcal{A})$, 
+podemos escrever
+$A=\cup_{n=1}^{\infty} (A\cap A_n)$.
+Agora, usando a continuidade das medidas $\nu$ e $\mu^*$,
+temos que  
+\begin{align*}
+\nu(A) = \nu\left( \cup_{n=1}^{\infty} (A\cap A_n) \right)
+	   = \lim_{n\to\infty} \nu(A\cap A_n)
+	   =& \lim_{n\to\infty} \mu^{*}(A\cap A_n)
+	   \\[0.2cm]
+	   =& \mu^*( \cup_{n=1}^{\infty} (A\cap A_n) )
+	   \\[0.2cm]
+	   =& \mu^*(A).
+\end{align*}
+\end{proof}

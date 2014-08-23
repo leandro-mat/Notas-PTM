@@ -1,0 +1,220 @@
+\chapter[Aula 1]{Conjuntos e Limite de Sequências de Conjuntos}
+\chaptermark{}
+
+
+
+
+\section{Teoria Básica de Conjuntos}
+Notações
+
+\begin{enumerate}
+\item[$\blacklozenge$] $\Omega$ espaço Amostral.
+\item[$\blacklozenge$] $\mathcal{P}(\Omega)$ conjunto das partes de $\Omega$.
+\item[$\blacklozenge$] $A,B$ em geral denotam subconjuntos de $\Omega$.
+\item[$\blacklozenge$] $\mathcal{A}, \mathcal{B}$ coleção de subconjuntos de $\Omega$.
+\item[$\blacklozenge$] $w \in \Omega$ elemento de $\Omega$.
+\end{enumerate}
+
+
+Operações de Conjuntos
+
+
+\begin{enumerate}
+\item[$\blacklozenge$] $A^{c}= \{w \in \Omega; w \notin A\}$
+\item[$\blacklozenge$] Se $T$ é um conjunto arbitrário
+	\begin{enumerate}
+	\item[$\lozenge$]  $\displaystyle\bigcap_{t \in T}{A_t}
+							= 
+						\{ w \in \Omega;\ w \in A_t,\ \forall t \in T\}$.
+	\item[$\lozenge$]  $\displaystyle\bigcup_{t \in T}{A_t}
+							= 
+						\{ w \in \Omega;\ w \in A_t,\ \text{para algum}\ t \in T \}$.
+	\end{enumerate}
+\end{enumerate}
+
+Quando $A \cap B = \emptyset$, dizemos que $A$ e $B$ são disjuntos.
+
+$A_1, A_2,\ldots$ é uma sequência mutuamente disjunta se $A_i \cap A_j = \emptyset$ 
+quando $i \neq j$. Nesse caso, denotamos
+
+$$
+	\displaystyle\bigcap_{n \geqslant 1}{A_n} = \sum_{n \geqslant 1} A_n.	
+$$
+
+Outras Notações:
+
+\begin{enumerate}
+\item[$\blacklozenge$] $ A \cap B = AB$.
+\item[$\blacklozenge$] $A \setminus B = A \cap B^c$.
+\item[$\blacklozenge$] Diferença Simétrica $A\triangle B = (A \setminus B) \cup (B\setminus A).$
+\item[$\blacklozenge$] $(A^c)^c = A $.
+\item[$\blacklozenge$] $\emptyset^c = \Omega$.
+\item[$\blacklozenge$] $\Omega^c = \emptyset$.
+\end{enumerate}
+
+Propriedade Associativa
+
+$(A\cup B)\cup C= A \cup ( B \cup C)$.
+
+$(A\cap B)\cap C= A \cap ( B \cap C)$.
+
+\vspace*{1cm}
+Leis de De Morgan
+
+$\left( \displaystyle\bigcup_{t \in T}{A_t} \right)^c = \displaystyle\bigcap_{t \in T}{A_t^c}$.
+
+$\left( \displaystyle\bigcap_{t \in T}{A_t} \right)^c = \displaystyle\bigcup_{t \in T}{A_t^c}$.
+
+
+\vspace*{1cm}
+Propriedade Distributiva
+
+$B \cap \left( \displaystyle\bigcup_{t \in T}{A_t} \right) = \displaystyle\bigcup_{t \in T}{(B\cap A_t)} $.
+
+$B \cup \left( \displaystyle\bigcap_{t \in T}{A_t} \right) = \displaystyle\bigcap_{t \in T}{(B\cup A_t)} $.
+
+\vspace*{1cm}
+\textbf{Função Indicadora}
+
+Se $A \subseteq \Omega$. A função indicadora de $A$ é denotada por $1_A: \Omega \to \R$ e definida 
+como segue
+
+$$
+	1_A(w) =
+	\begin{cases}
+		1, & \text{se}\ w \in A, \\
+		0, & \text{c.c.}
+	\end{cases}
+$$
+
+\begin{observacao} Usando a função indicadora, temos as relações
+
+$1_A \leqslant 1_B \Leftrightarrow A \subseteq B$.
+
+$1_{A^c}= 1- 1_A$.
+\end{observacao}
+
+
+\vspace*{1cm}
+\textbf{Limite de Conjuntos}
+
+Seja uma sequência $A_n \in \Omega$.
+\begin{enumerate}
+\item[$\blacklozenge$] $\inf \limits_{k\geqslant n} A_k = \displaystyle\bigcap_{k=n}^{\infty}{A_k}$.
+\item[$\blacklozenge$] $\sup \limits_{k\geqslant n} A_k = \displaystyle\bigcup_{k=n}^{\infty}{A_k}$.
+\item[$\blacklozenge$] 
+	$\liminf \limits_{n \to \infty} A_n 
+	= 
+	\displaystyle\bigcup_ {n\geqslant 1} \left(\displaystyle\bigcap_{k=n}^{\infty}{A_k} \right)$.
+\item[$\blacklozenge$] 
+	$\limsup \limits_{n \to \infty} A_n 
+	= 
+	\displaystyle\bigcap_ {n\geqslant 1} \left(\displaystyle\bigcup_{k=n}^{\infty}{A_k} \right)$.
+\end{enumerate}
+
+\begin{definicao}
+	Se para alguma sequência de conjuntos $B_n \subseteq \Omega$ temos
+
+	$$
+		\liminf \limits_{n \to \infty} B_n = \limsup \limits_{n \to \infty} B_n = B,
+	$$	
+	dizemos que existe $\lim \limits_{n \to \infty} B_n =B$.
+\end{definicao}
+
+Note que $\liminf \limits_{n\to \infty}A_n 
+			=
+			\lim \limits_{n\to \infty}\left(\inf \limits_{k\geqslant n}A_k \right)
+		 $.
+
+
+\begin{lema}
+Seja $\{A_n\}$ uma sequência de subconjuntos de $\Omega$.
+\begin{enumerate}
+\item[a)] $\limsup A_n = \{ w \in \Omega;\ \sum_{n \geqslant 1} 1_{A_n}(w)= \infty \}$.
+\item[b)] 
+\begin{align*}
+\vspace*{-2cm}
+\liminf A_n & = \{ w \in \Omega;\ w \in A_n \text{ para todo $n$ excepto uma quantidade finita} \} \\
+			& = \{w \in \Omega;\ \sum_{n\geqslant 1} 1_{A_n^c}(w) < \infty \} \\
+			& = \{w \in \Omega;\ w \in A_n, \forall n \geqslant n_0(w) \}. 
+\end{align*} 
+\end{enumerate}
+\end{lema}
+
+\begin{proof}
+Vejamos o item $(a)$. Suponha que $w \in \limsup A_n$, então $w \in \displaystyle\bigcup_{k \geq n} A_k,
+\forall n \in \N$, logo existe $k_n \geqslant n$ tal que $w \in A_{k_n}$. Assim
+
+	$$
+		\sum \limits_{k \geqslant 1} 1_{A_k}(w) \geqslant \sum \limits_{n\geqslant 1} 1_{A_{k_n}}(w) 
+		= 
+		\infty.
+	$$
+
+Reciprocamente, se $ w \in \{ w \in \Omega;\ \sum_{n \geqslant 1} 1_{A_n}(w)= \infty \}$ daí existem 
+infinitos $k$ tais que $w \in A_k$. Portanto $w \in \limsup A_n$.
+\end{proof}
+
+\begin{observacao}
+
+\begin{enumerate}
+\item[i)] $\liminf A_n \subseteq \limsup A_n$.
+\item[ii)] $\left( \liminf A_n \right)^c = \limsup A_n^c$. 
+\item[iii)] $\{X_n,\ n\geqslant 0\}$ sequência de v.a. No caso que desejamos mostrar que $X_n \to X$ q.c.
+podemos usar o seguinte critério:
+
+$$
+	\mathbb{P}( |X_n-X| > \epsilon \ \text{infinitas vezes} )=0
+$$ 
+isto é, fazendo $A_n= \{ |X_n-X|> \epsilon\}$ então $\mathbb{P} (\limsup A_n )=0$.
+\end{enumerate}
+\end{observacao}
+
+\vspace*{1cm}
+\textbf{Sequências Monótonas}
+
+Se $\{A_n\}$ é uma sequência de conjuntos de $\Omega$. Dizemos que $\{A_n\}$ é monótona não
+decrescente se $A_1 \subseteq A_2 \subseteq \ldots$ Analogamente definimos sequência não decrescente.
+
+Notação: $A_n \nearrow$ ou $A_n \uparrow$ (analogamente $A_n\searrow$ ou $A_n \downarrow$).
+
+\begin{proposicao}
+ Suponha que $\{A_n\}$ é uma sequência monótona.
+ \begin{enumerate}
+ \item[1)] Se $A_n \nearrow$ então 
+ 	$\exists \lim \limits_{n \to \infty} A_n= \displaystyle\bigcup_{n\geqslant 1} {A_n}$.
+ \item[2)] Se $A_n \searrow$ então 
+ 	$\exists \lim \limits_{n \to \infty} A_n= \displaystyle\bigcap_{n\geqslant 1} {A_n}$.
+ \end{enumerate}
+\end{proposicao}
+
+
+\begin{proof}
+Vejamos a primeira parte. Queremos mostrar que 
+$\liminf A_n = \limsup A_n =\displaystyle\bigcup_{n\geqslant 1} {A_n}$. Já que $A_j \subseteq A_{j+1}$
+então $\displaystyle\bigcap_{k\geqslant n} {A_k}=A_n$.
+
+Daí $\liminf A_n = \displaystyle\bigcup_{n\geqslant 1} {A_n}$. Agora 
+
+$$
+	\limsup A_n 
+	=
+	\displaystyle\bigcap_{n\geqslant 1} \left(\displaystyle\bigcup_{k\geqslant n}{A_k} \right)
+	\subseteq 
+	\displaystyle\bigcup_{k\geqslant 1} {A_k} 
+	=
+	\liminf A_n \subseteq \limsup A_n.
+$$
+Para a segunda parte é somente usar as leis de De Morgan. Isto conclui a prova.
+\end{proof}
+
+\vspace*{1cm}
+\textbf{Relações de ``Dualidade"}
+\begin{enumerate}
+\item[1)] $1_{\inf_{k\geqslant n} A_k} = \inf \limits_{k\geqslant n} 1_{A_k}$.
+\item[2)] $1_{\sup_{k\geqslant n} A_k} = \sup \limits_{k\geqslant n} 1_{A_k}$.
+\item[3)] $1_{\cup_{n\geqslant 1} A_n} \leqslant \sum \limits_{n \geqslant 1} 1_{A_n}$.
+\item[4)] $1_{\limsup A_n} = \limsup 1_{A_n}$.
+\item[5)] $1_{\liminf A_n} = \liminf 1_{A_n}$.
+\item[6)] $ 1_{A \triangle B} = 1_A + 1_B (\text{mod 2})$.
+\end{enumerate}
