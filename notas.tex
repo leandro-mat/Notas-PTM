@@ -1,0 +1,123 @@
+\documentclass[12pt,oneside]{book}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{DejaVuSerif}		% Fonte do texto
+
+%%%%%%%%%%%%%%%%%%%%% PACOTES USADOS PARA FAZER A CAPA
+%
+\usepackage[a4paper,bottom=2cm]{geometry} % geometry/margins of page
+\savegeometry{origin}
+\geometry{rmargin=2cm,lmargin=2cm}% for the title page
+\usepackage{multicol}		% multicolumn environments
+\usepackage{tikz}			% used for the 'logo' (remove if unwanted)
+\usepackage{subfig}			% Usada para alinhar o logo da capa
+%
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{imakeidx}\makeindex
+\usepackage{amsmath,amsthm,amssymb,color}
+\usepackage[Lenny]{fncychap} % Usado para decorar Headers and footers
+%
+%
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+
+
+% Muda de Chapter ou Capítulos para Aulas
+\addto\captionsbrazil{\renewcommand{\chaptername}{Aula}}
+
+
+
+
+%%%%%%%%%%%%% INICIO - Alguns Comandos Úteis
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\newtheorem{teorema}{Teorema}[chapter]
+\newtheorem{proposicao}[teorema]{Proposição}
+\newtheorem{lema}[teorema]{Lema}
+\newtheorem{corolario}[teorema]{Corolário}
+\newtheorem{definicao}[teorema]{Definição}
+\newtheorem{observacao}[teorema]{Observação}
+\newtheorem{exemplo}[teorema]{Exemplo}
+\newtheorem{exercicio}[teorema]{Exercício}
+%
+\renewenvironment{proof}[1][Demonstração]
+{\noindent\textbf{#1. \ }}{\hspace{\stretch{1}}\rule{1ex}{1ex}}
+%
+
+
+% operadores matemáticos
+\DeclareMathOperator{\e}{e}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\Graf}{Graf}
+\DeclareMathOperator{\intt}{int}
+\DeclareMathOperator{\sen}{sen}
+\renewcommand{\ker}{Nuc}
+\DeclareMathOperator{\supp}{supp}
+
+%%%%%%%%%%%%% FIM    - Alguns Comandos Úteis
+
+
+
+%   Comandos para gerar texto em cores
+\definecolor{Red}{cmyk}{0,1,1,0}
+\def\red{\color{Red}}
+\definecolor{Blue}{cmyk}{1,1,0,0}
+\def\blue{\color{Blue}}
+%  
+
+
+
+% Novos Comandos
+\newcommand{\tn}{\textnormal}
+
+
+
+% Begin document
+% ---------------
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%  Capa
+\frontmatter 
+\include{Capa/Capa-PTM}
+
+
+
+%%%%%%%%%%%%%%%%%%%%  Índice
+\tableofcontents
+
+
+ 
+%%%%%%%%%%%%%%%%%%%% Conteúdo das aulas    
+\mainmatter 
+
+% Aula 1 
+\include{Aulas/aula1}
+
+% Aula 2
+\include{Aulas/aula2}
+	
+% Aula 4
+\include{Aulas/aula3}
+
+
+
+%%%%%%%%%%%%%%%%%% Referências e Índice Remissivo
+\backmatter
+%
+%\chapter{Referências}
+%\include{./referencias/referencias}
+
+\printindex
+%\chapter{Índice de Símbolos}
+
+
+\end{document}
