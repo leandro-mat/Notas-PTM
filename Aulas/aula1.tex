@@ -41,7 +41,7 @@ $A_1, A_2,\ldots$ é uma sequência mutuamente disjunta se $A_i \cap A_j = \empt
 quando $i \neq j$. Nesse caso, denotamos
 
 $$
-	\displaystyle\bigcap_{n \geqslant 1}{A_n} = \sum_{n \geqslant 1} A_n.	
+	\displaystyle\bigcup_{n \geqslant 1}{A_n} = \sum_{n \geqslant 1} A_n.	
 $$
 
 \textbf{Outras Notações:}
@@ -90,7 +90,9 @@ $$
 	\end{cases}
 $$
 
-\begin{observacao} Usando a função indicadora, temos as relações
+\begin{observacao} Da definição de função indicadora, podemos mostrar facilmente 
+as seguintes relações,
+as quais serão importantes ao longo do texto
 
 $1_A \leqslant 1_B \Leftrightarrow A \subseteq B$.
 
@@ -101,7 +103,8 @@ $1_{A^c}= 1- 1_A$.
 \vspace*{1cm}
 \textbf{Limite de Conjuntos}
 
-Seja uma sequência $A_n \in \Omega$.
+Seja uma sequência de subconjuntos $A_n \in \Omega$, 
+vamos a definir as noções de limite para estos conjuntos como segue
 \begin{enumerate}
 \item[$\blacklozenge$] $\inf \limits_{k\geqslant n} A_k = \displaystyle\bigcap_{k=n}^{\infty}{A_k}$.
 \item[$\blacklozenge$] $\sup \limits_{k\geqslant n} A_k = \displaystyle\bigcup_{k=n}^{\infty}{A_k}$.
