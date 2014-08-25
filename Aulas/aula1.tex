@@ -8,8 +8,8 @@ vista axiomático.
 
   
 \section{Teoria Básica de Conjuntos}
-\textbf{Notações}.
-%
+
+
 Em geral, vamos trabalhar em um espaço que será denotado 
 por $\Omega$. Assim, operações de conjuntos serão sempre 
 consideradas com relação a este espaço. 
@@ -24,8 +24,9 @@ usaremos, na maioria das vezes, a notação $\omega\in\Omega$
 para denotar um ponto do espaço $\Omega$.
 
 
-\noindent
-\textbf{Operações de Conjuntos}
+
+
+\subsection{Operações de Conjuntos}
 
 O complementar de um conjunto $A$ será 
 denotado por $A^{c}= \{w \in \Omega; w \notin A\}$. 
@@ -50,25 +51,36 @@ $A_1, A_2,\ldots$ é mutuamente disjunta (ou dois a dois disjunta)
 se $A_i \cap A_j = \emptyset$ sempre que $i \neq j$. 
 Quando $A_1,A_2,\ldots $ for uma sequência mutuamente disjunta, 
 vamos usar a notação abaixo para denotar a união dos conjuntos $A_n$'s
-$$
+\[
 	\displaystyle\bigcup_{n \geqslant 1}{A_n} = \sum_{n \geqslant 1} A_n.	
-$$
+\]
 
 \noindent
 \textbf{Outras Notações:} Quando for conveniente 
 usaremos as seguintes notações e convenções:
 \begin{enumerate}
-\item[$\blacklozenge$] $AB\equiv A \cap B$.
-\item[$\blacklozenge$] $A \setminus B \equiv A \cap B^c$.
-\item[$\blacklozenge$] Diferença Simétrica $A\triangle B = (A \setminus B) \cup (B\setminus A).$
-\item[$\blacklozenge$] $\emptyset^c = \Omega$.
-\item[$\blacklozenge$] $\Omega^c = \emptyset$.
+\item[$\blacklozenge$] 
+$AB\equiv A \cap B$.
+
+\item[$\blacklozenge$] 
+$A \setminus B \equiv A \cap B^c$.
+
+\item[$\blacklozenge$] 
+Diferença Simétrica 
+$A\triangle B = (A \setminus B) \cup (B\setminus A).$
+
+\item[$\blacklozenge$] 
+$\emptyset^c = \Omega$.
+
+\item[$\blacklozenge$] 
+$\Omega^c = \emptyset$.
 \end{enumerate}
 
 
 
 
-\begin{exercicio}[Associatividade] Mostre que para quaisquer subconjuntos $A,B$ e $C$ 
+\begin{exercicio}[Associatividade] 
+Mostre que para quaisquer subconjuntos $A,B$ e $C$ 
 de $\Omega$ valem as seguintes igualdades:
 \begin{enumerate}
 	\item $(A\cup B)\cup C= A \cup ( B \cup C)$.
@@ -81,7 +93,8 @@ de $\Omega$ valem as seguintes igualdades:
 
 
 
-\begin{exercicio}[Leis de de Morgan] Sejam $I$ um conjunto arbitrário de índices
+\begin{exercicio}[Leis de de Morgan] 
+Sejam $I$ um conjunto arbitrário de índices
 e $A_i\subset \Omega$ para todo $i\in I$. Mostre que
 as seguintes igualdades são válidas:
 \begin{enumerate}
@@ -106,7 +119,8 @@ $.
 
 
 
-\begin{exercicio}[Distributiva] Sejam $I$ um conjunto arbitrário de índices, 
+\begin{exercicio}[Distributiva] 
+Sejam $I$ um conjunto arbitrário de índices, 
 $B\subset \Omega$ e $A_i\subset \Omega$ para todo $i\in I$. 
 Mostre que as seguintes igualdades são válidas:
 %
@@ -135,17 +149,17 @@ $.
 
 
 \begin{definicao}[Função Indicadora]\label{def-funcao-indicadora}
-Seja $A \subseteq \Omega$. 
-A função indicadora \index{função!indicadora} 
-de $A$ é denotada por $1_A: \Omega \to \R$ e definida 
-como segue
-$$
-	1_A(w) =
-	\begin{cases}
-		1, & \text{se}\ w \in A; \\
-		0, & \text{caso contrário.}
-	\end{cases}
-$$
+	Seja $A \subseteq \Omega$. 
+	A função indicadora \index{função!indicadora} 
+	de $A$ é denotada por $1_A: \Omega \to \R$ e definida 
+	como segue
+	\[
+		1_A(w) =
+			\begin{cases}
+				1, & \text{se}\ w \in A; \\
+				0, & \text{caso contrário.}
+			\end{cases}
+	\]
 \end{definicao}
 
 
@@ -155,141 +169,268 @@ $$
 
 
 
-\begin{observacao} Da definição de função indicadora, podemos mostrar facilmente 
-as seguintes relações,
-as quais serão importantes ao longo do texto
-\begin{enumerate}
-\item 
-$1_A \leqslant 1_B \Leftrightarrow A \subseteq B$.
+\begin{observacao} 
+	Da definição de função indicadora, podemos mostrar facilmente 
+	as seguintes relações,
+	as quais serão importantes ao longo do texto
+	\begin{enumerate}
+		\item 
+		$1_A \leqslant 1_B \Leftrightarrow A \subseteq B$.
 
-\item
-$1_{A^c}= 1- 1_A$.
+		\item
+		$1_{A^c}= 1- 1_A$.
 \end{enumerate}
 \end{observacao}
 
-\vspace*{1cm}
-\textbf{Limite de Conjuntos}
 
-Seja uma sequência de subconjuntos $A_n \in \Omega$, 
-vamos a definir as noções de limite para estos conjuntos como segue
+
+
+
+
+
+\subsection{Limite de Conjuntos}
+
+Seja $\{A_n\}$ uma sequência de subconjuntos de $\Omega$.
+A partir desta sequência podemos definir outros 4 novos conjuntos
+como segue:
 \begin{enumerate}
-\item[$\blacklozenge$] $\inf \limits_{k\geqslant n} A_k = \displaystyle\bigcap_{k=n}^{\infty}{A_k}$.
-\item[$\blacklozenge$] $\sup \limits_{k\geqslant n} A_k = \displaystyle\bigcup_{k=n}^{\infty}{A_k}$.
+\item[$\blacklozenge$] 
+	$\inf \limits_{k\geqslant n} A_k 
+	\equiv 
+	\displaystyle\bigcap_{k=n}^{\infty}{A_k}$.
+
+\item[$\blacklozenge$] 
+	$\sup \limits_{k\geqslant n} A_k 
+	\equiv 
+	\displaystyle\bigcup_{k=n}^{\infty}{A_k}$.
+
 \item[$\blacklozenge$] 
 	$\liminf \limits_{n \to \infty} A_n 
-	= 
-	\displaystyle\bigcup_ {n\geqslant 1} \left(\displaystyle\bigcap_{k=n}^{\infty}{A_k} \right)$.
+	\equiv 
+	\displaystyle\bigcup_ {n\geqslant 1} 
+		\left(\displaystyle\bigcap_{k=n}^{\infty}{A_k} \right)
+	$.
+
 \item[$\blacklozenge$] 
 	$\limsup \limits_{n \to \infty} A_n 
-	= 
-	\displaystyle\bigcap_ {n\geqslant 1} \left(\displaystyle\bigcup_{k=n}^{\infty}{A_k} \right)$.
+	\equiv 
+	\displaystyle\bigcap_ {n\geqslant 1} 
+		\left(\displaystyle\bigcup_{k=n}^{\infty}{A_k} \right)
+	$.
 \end{enumerate}
 
-\begin{definicao}
-	Se para alguma sequência de conjuntos $B_n \subseteq \Omega$ temos
 
-	$$
-		\liminf \limits_{n \to \infty} B_n = \limsup \limits_{n \to \infty} B_n = B,
-	$$	
-	dizemos que existe $\lim \limits_{n \to \infty} B_n =B$.
+
+
+
+
+\begin{definicao}[Limite de uma Sequência de Conjuntos]
+	Se uma sequência de conjuntos $B_n \subseteq \Omega$ é tal que 
+	\[
+		\liminf \limits_{n \to \infty} B_n 
+		= 
+		B
+		=
+		\limsup \limits_{n \to \infty} B_n, 
+	\]	
+	então dizemos que existe $\lim \limits_{n \to \infty} B_n = B$.
 \end{definicao}
 
-Note que $\liminf \limits_{n\to \infty}A_n 
+
+
+
+\begin{observacao}
+Com um resultado sobre limite de sequências monótonas de conjuntos, 
+mostraremos mais a frente que
+		 \[
+		 	\liminf \limits_{n\to \infty}A_n 
 			=
-			\lim \limits_{n\to \infty}\left(\inf \limits_{k\geqslant n}A_k \right)
-		 $.
+			\lim \limits_{n\to \infty}\left(\inf \limits_{k\geqslant n}A_k \right).
+		 \]
+\end{observacao}
+
+
+
+
+
+
 
 
 \begin{lema}
 Seja $\{A_n\}$ uma sequência de subconjuntos de $\Omega$.
 \begin{enumerate}
-\item[a)] $\limsup A_n = \{ w \in \Omega;\ \sum_{n \geqslant 1} 1_{A_n}(w)= \infty \}$.
-\item[b)] 
-\begin{align*}
-\vspace*{-2cm}
-\liminf A_n & = \{ w \in \Omega;\ w \in A_n \text{ para todo $n$ excepto uma quantidade finita} \} \\
-			& = \{w \in \Omega;\ \sum_{n\geqslant 1} 1_{A_n^c}(w) < \infty \} \\
-			& = \{w \in \Omega;\ w \in A_n, \forall n \geqslant n_0(w) \}. 
-\end{align*} 
+\item 
+$\displaystyle\limsup_{n\to\infty} A_n 
+= 
+\{ w \in \Omega;\ \sum_{n \geqslant 1} 1_{A_n}(w)= \infty \}$.
+
+\item  \ \\[-0.4cm] \hspace*{-0.35cm} % Arrumar esta gambiarra no futuro
+$
+\begin{array}{rl}
+\displaystyle\liminf_{n\to\infty} A_n 
+&= \{ w \in \Omega;\ w \in A_n \text{ para todo $n$ excepto uma quantidade finita} \} \\
+&= \{w \in \Omega;\ \sum_{n\geqslant 1} 1_{A_n^c}(w) < \infty \} \\[0.2cm]
+&= \{w \in \Omega;\ w \in A_n, \forall n \geqslant n_0(w) \}. 
+\end{array} 
+$
+
 \end{enumerate}
 \end{lema}
 
 \begin{proof}
-Vejamos o item $(a)$. Suponha que $w \in \limsup A_n$, então $w \in \displaystyle\bigcup_{k \geq n} A_k,
-\forall n \in \N$, logo existe $k_n \geqslant n$ tal que $w \in A_{k_n}$. Assim
-
-	$$
-		\sum \limits_{k \geqslant 1} 1_{A_k}(w) \geqslant \sum \limits_{n\geqslant 1} 1_{A_{k_n}}(w) 
+Prova do item $1$. Suponha que $w \in \limsup A_n$, então 
+$w \in \cup_{k \geq n} A_k,
+\forall n \in \N$, logo existe $k_n \geqslant n$ tal que $w \in A_{k_n}$. 
+Assim
+%
+	\[
+		\sum \limits_{n \geqslant 1} 1_{A_n}(w) 
+		\geqslant 
+		\sum \limits_{n\geqslant 1} 1_{A_{k_n}}(w) 
 		= 
 		\infty.
-	$$
+	\]
+%
+Reciprocamente, 
+se 
+$ w \in \{ w \in \Omega;\ \sum_{n \geqslant 1} 1_{A_n}(w)= \infty \}$, 
+então para infinitos valores de $k$ temos que $w \in A_k$. 
+Portanto $w \in \limsup A_n$.
 
-Reciprocamente, se $ w \in \{ w \in \Omega;\ \sum_{n \geqslant 1} 1_{A_n}(w)= \infty \}$ daí existem 
-infinitos $k$ tais que $w \in A_k$. Portanto $w \in \limsup A_n$.
-
-O item $(b)$ do lema segue direto do item $(a)$. 
+A prova do item $2$ segue diretamente do item $1$. 
 \end{proof}
 
-\begin{observacao}
 
+
+\begin{exercicio} 
+Seja $\{A_n\}$ uma sequência de subconjuntos de $\Omega$.
+Mostre que as seguintes igualdades são verdadeiras:
+%
 \begin{enumerate}
-\item[i)] $\liminf A_n \subseteq \limsup A_n$.
-\item[ii)] $\left( \liminf A_n \right)^c = \limsup A_n^c$. 
-\item[iii)] $\{X_n,\ n\geqslant 0\}$ sequência de v.a. No caso que desejamos mostrar que $X_n \to X$ q.c.
-podemos usar o seguinte critério:
-
-$$
-	\mathbb{P}( |X_n-X| > \epsilon \ \text{infinitas vezes} )=0
-$$ 
-isto é, fazendo $A_n= \{ |X_n-X|> \epsilon\}$ então $\mathbb{P} (\limsup A_n )=0$.
+\item $\liminf A_n \subseteq \limsup A_n$.
+\item $\left( \liminf A_n \right)^c = \limsup A_n^c$. 
 \end{enumerate}
+\end{exercicio}
+
+
+
+
+
+
+
+\begin{observacao} Este comentário pode ser omitido 
+por leitores que nunca fizeram um curso introdutório 
+de Probabilidade.
+Seja $\{X_n,\ n\geqslant 0\}$ uma sequência de v.a.'s.
+Uma das maneiras de mostrar que $X_n \to X$ q.c. 
+é provar que   
+\[
+	\mathbb{P}( |X_n-X| > \epsilon \ \text{infinitas vezes} )=0,
+\] 
+em outras palavras, 
+se denotamos por $A_n= \{ |X_n-X|> \epsilon\}$ 
+então basta provar que $\mathbb{P} (\limsup A_n )=0$.
+Voltaremos a este critério posteriormente e apresentaremos
+sua prova no momento apropriado.
 \end{observacao}
 
-\vspace*{1cm}
-\textbf{Sequências Monótonas}
 
-Se $\{A_n\}$ é uma sequência de conjuntos de $\Omega$. Dizemos que $\{A_n\}$ é monótona não
-decrescente se $A_1 \subseteq A_2 \subseteq \ldots$ Analogamente definimos sequência não decrescente.
 
-Notação: $A_n \nearrow$ ou $A_n \uparrow$ (analogamente $A_n\searrow$ ou $A_n \downarrow$).
+
+
+
+
+\begin{definicao}[Sequências Monótonas de Conjuntos]
+Seja $\{A_n\}$ é uma sequência de conjuntos de $\Omega$. 
+Dizemos que $\{A_n\}$ é monótona não-decrescente 
+se $A_1 \subseteq A_2 \subseteq \ldots$.
+Analogamente definimos sequência não-crescente.
+Usaremos as notações $A_n \nearrow$ ou $A_n \uparrow$ 
+(analogamente $A_n\searrow$ ou $A_n \downarrow$)
+para indicar que $A_n$ é uma sequência 
+não-decrescente (não-crescente).
+\end{definicao}
+
+
+
+
+
+
 
 \begin{proposicao}
  Suponha que $\{A_n\}$ é uma sequência monótona.
  \begin{enumerate}
- \item[1)] Se $A_n \nearrow$ então 
- 	$\exists \lim \limits_{n \to \infty} A_n= \displaystyle\bigcup_{n\geqslant 1} {A_n}$.
- \item[2)] Se $A_n \searrow$ então 
- 	$\exists \lim \limits_{n \to \infty} A_n= \displaystyle\bigcap_{n\geqslant 1} {A_n}$.
+ \item Se $A_n \nearrow$ então 
+ 	$\exists \lim \limits_{n \to \infty} A_n
+ 	= 
+ 	\displaystyle\bigcup_{n\geqslant 1} {A_n}$.
+ 	
+ \item Se $A_n \searrow$ então 
+ 	$\exists \lim \limits_{n \to \infty} A_n
+ 	= 
+ 	\displaystyle\bigcap_{n\geqslant 1} {A_n}$.
  \end{enumerate}
 \end{proposicao}
 
 
 \begin{proof}
-Vejamos a primeira parte. Queremos mostrar que 
-$\liminf A_n = \limsup A_n =\displaystyle\bigcup_{n\geqslant 1} {A_n}$. Já que $A_j \subseteq A_{j+1}$
-então $\displaystyle\bigcap_{k\geqslant n} {A_k}=A_n$.
-
-Daí $\liminf A_n = \displaystyle\bigcup_{n\geqslant 1} {A_n}$. Agora 
-
-$$
-	\limsup A_n 
+Vamos provar inicialmente o item 1. 
+Neste caso queremos mostrar que 
+%
+\[
+	\liminf_{n\to\infty} A_n
+	= 
+	\limsup_{n\to\infty} A_n
 	=
-	\displaystyle\bigcap_{n\geqslant 1} \left(\displaystyle\bigcup_{k\geqslant n}{A_k} \right)
+	\displaystyle\bigcup_{n\geqslant 1} {A_n}.
+\] 
+%
+Já que $A_j \subseteq A_{j+1}$
+então $\cap_{k\geqslant n} {A_k}=A_n$.
+Assim segue da definição que 
+\[
+\liminf_{n\to\infty} A_n 
+= 
+\bigcup_{n\geqslant 1} {A_n}.
+\]
+Usando a definição de $\limsup$ e que a interseção de 
+uma sequência de conjuntos
+está contida em qualquer elemento da sequência temos 
+\[
+	\limsup_{n\to\infty} A_n 
+	=
+	\displaystyle\bigcap_{n\geqslant 1} 
+		\left(\displaystyle\bigcup_{k\geqslant n}{A_k} \right)
 	\subseteq 
 	\displaystyle\bigcup_{k\geqslant 1} {A_k} 
 	=
-	\liminf A_n \subseteq \limsup A_n.
-$$
-Para a segunda parte é somente usar as leis de De Morgan. Isto conclui a prova.
+	\liminf_{n\to\infty} A_n 
+	\subseteq 
+	\limsup_{n\to\infty} A_n.
+\]
+Para provar o item 2 basta proceder de maneira análoga feita acima 
+e usar as Leis de De Morgan.
 \end{proof}
 
-\vspace*{1cm}
-\textbf{Relações de ``Dualidade"}
+\subsection{Relações de ``Dualidade''}
 \begin{enumerate}
-\item[1)] $1_{\inf_{k\geqslant n} A_k} = \inf \limits_{k\geqslant n} 1_{A_k}$.
-\item[2)] $1_{\sup_{k\geqslant n} A_k} = \sup \limits_{k\geqslant n} 1_{A_k}$.
-\item[3)] $1_{\cup_{n\geqslant 1} A_n} \leqslant \sum \limits_{n \geqslant 1} 1_{A_n}$.
-\item[4)] $1_{\limsup A_n} = \limsup 1_{A_n}$.
-\item[5)] $1_{\liminf A_n} = \liminf 1_{A_n}$.
-\item[6)] $ 1_{A \triangle B} = 1_A + 1_B (\text{mod 2})$.
+\item[1)] 
+$1_{\inf_{k\geqslant n} A_k} = \inf \limits_{k\geqslant n} 1_{A_k}$.
+
+\item[2)] 
+$1_{\sup_{k\geqslant n} A_k} = \sup \limits_{k\geqslant n} 1_{A_k}$.
+
+\item[3)] 
+$1_{\cup_{n\geqslant 1} A_n} 
+\leqslant 
+\sum \limits_{n \geqslant 1} 1_{A_n}$.
+
+\item[4)] 
+$1_{\limsup A_n} = \limsup 1_{A_n}$.
+
+\item[5)] 
+$1_{\liminf A_n} = \liminf 1_{A_n}$.
+
+\item[6)] 
+$ 1_{A \triangle B} = 1_A + 1_B (\text{mod 2})$.
 \end{enumerate}
