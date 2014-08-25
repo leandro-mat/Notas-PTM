@@ -8,8 +8,8 @@ vista axiomático.
 
   
 \section{Teoria Básica de Conjuntos}
-\textbf{Notações}
-
+\textbf{Notações}.
+%
 Em geral, vamos trabalhar em um espaço que será denotado 
 por $\Omega$. Assim operações de conjuntos serão sempre 
 consideradas com relação a este espaço. 
@@ -24,30 +24,34 @@ usaremos na maioria das vezes a notação $\omega\in\Omega$
 para denotar um ponto do espaço $\Omega$.
 
 
-
+\noindent
 \textbf{Operações de Conjuntos}
 
-
+O complementar de um conjunto $A$ será 
+denotado por $A^{c}= \{w \in \Omega; w \notin A\}$. 
+Se $I$ é um conjunto de índices arbitrários e 
+para cada $i\in I$ temos que $A_i\subset \Omega$ então 
+a interseção e união dos conjuntos $A_i$'s sobre a coleção
+$I$ são dados, respectivamente, por 
 \begin{enumerate}
-\item[$\blacklozenge$] $A^{c}= \{w \in \Omega; w \notin A\}$
-\item[$\blacklozenge$] Se $T$ é um conjunto arbitrário
-	\begin{enumerate}
-	\item[$\lozenge$]  $\displaystyle\bigcap_{t \in T}{A_t}
+	\item[]  $\displaystyle\bigcap_{t \in T}{A_t}
 							= 
 						\{ w \in \Omega;\ w \in A_t,\ \forall t \in T\}$.
-	\item[$\lozenge$]  $\displaystyle\bigcup_{t \in T}{A_t}
+	\item[]  $\displaystyle\bigcup_{t \in T}{A_t}
 							= 
 						\{ w \in \Omega;\ w \in A_t,\ \text{para algum}\ t \in T \}$.
-	\end{enumerate}
 \end{enumerate}
-
-Quando $A \cap B = \emptyset$, dizemos que $A$ e $B$ são disjuntos.
-
-$A_1, A_2,\ldots$ é uma sequência mutuamente disjunta se $A_i \cap A_j = \emptyset$ 
-quando $i \neq j$. Nesse caso, denotamos
-
+%
+%
+%
+Se $A \cap B = \emptyset$, dizemos que $A$ e $B$ são disjuntos.
+Dizemos que uma sequência de conjuntos 
+$A_1, A_2,\ldots$ é mutuamente disjunta (ou dois a dois disjunta) 
+se $A_i \cap A_j = \emptyset$ sempre que $i \neq j$. 
+Quando $A_1,A_2,\ldots $ for uma sequência mutuamente disjunta, 
+vamos usar a notação abaixo para denotar a união dos conjuntos $A_n$'s
 $$
-	\displaystyle\bigcap_{n \geqslant 1}{A_n} = \sum_{n \geqslant 1} A_n.	
+	\displaystyle\bigcup_{n \geqslant 1}{A_n} = \sum_{n \geqslant 1} A_n.	
 $$
 
 \textbf{Outras Notações:}
