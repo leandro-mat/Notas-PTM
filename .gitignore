@@ -17,4 +17,4 @@ notas.pdf
 *.tex.bak
 *.out
 *.ilg
-
+*.synctex.gz
