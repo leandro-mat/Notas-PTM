@@ -54,61 +54,118 @@ $$
 	\displaystyle\bigcup_{n \geqslant 1}{A_n} = \sum_{n \geqslant 1} A_n.	
 $$
 
-\textbf{Outras Notações:}
-
+\noindent
+\textbf{Outras Notações:} Quando for conveniente 
+usaremos as seguintes notações e convenções:
 \begin{enumerate}
-\item[$\blacklozenge$] $ A \cap B = AB$.
-\item[$\blacklozenge$] $A \setminus B = A \cap B^c$.
+\item[$\blacklozenge$] $AB\equiv A \cap B$.
+\item[$\blacklozenge$] $A \setminus B \equiv A \cap B^c$.
 \item[$\blacklozenge$] Diferença Simétrica $A\triangle B = (A \setminus B) \cup (B\setminus A).$
-\item[$\blacklozenge$] $(A^c)^c = A $.
 \item[$\blacklozenge$] $\emptyset^c = \Omega$.
 \item[$\blacklozenge$] $\Omega^c = \emptyset$.
 \end{enumerate}
 
-\textbf{Propriedade Associativa}
-
-$(A\cup B)\cup C= A \cup ( B \cup C)$.
-
-$(A\cap B)\cap C= A \cap ( B \cap C)$.
-
-\vspace*{1cm}
-\textbf{Leis de De Morgan}
-
-$\left( \displaystyle\bigcup_{t \in T}{A_t} \right)^c = \displaystyle\bigcap_{t \in T}{A_t^c}$.
-
-$\left( \displaystyle\bigcap_{t \in T}{A_t} \right)^c = \displaystyle\bigcup_{t \in T}{A_t^c}$.
 
 
-\vspace*{1cm}
-\textbf{Propriedade Distributiva}
 
-$B \cap \left( \displaystyle\bigcup_{t \in T}{A_t} \right) = \displaystyle\bigcup_{t \in T}{(B\cap A_t)} $.
+\begin{exercicio}[Associatividade] Mostre que para quaisquer subconjuntos $A,B$ e $C$ 
+de $\Omega$ valem as seguintes igualdades:
+\begin{enumerate}
+	\item $(A\cup B)\cup C= A \cup ( B \cup C)$.
+	\item $(A\cap B)\cap C= A \cap ( B \cap C)$.
+\end{enumerate}
+\end{exercicio}
 
-$B \cup \left( \displaystyle\bigcap_{t \in T}{A_t} \right) = \displaystyle\bigcap_{t \in T}{(B\cup A_t)} $.
 
-\vspace*{1cm}
-\textbf{Função Indicadora}
 
-Se $A \subseteq \Omega$. A função indicadora de $A$ é denotada por $1_A: \Omega \to \R$ e definida 
+
+
+
+\begin{exercicio}[Leis de de Morgan] Sejam $I$ um conjunto arbitrário de índices
+e $A_i\subset \Omega$ para todo $i\in I$. Mostre que
+as seguintes igualdades são válidas:
+\begin{enumerate}
+\item 
+$
+\left( \displaystyle\bigcup_{i \in I}{A_i} \right)^c 
+= 
+\displaystyle\bigcap_{i \in I}{{A_i}^c}
+$.
+
+\item
+$
+\left( \displaystyle\bigcap_{i \in I}{A_i} \right)^c 
+= 
+\displaystyle\bigcup_{i \in I}{A_i^c}
+$.
+%
+\end{enumerate}
+\end{exercicio}
+
+
+
+
+
+\begin{exercicio}[Distributiva] Sejam $I$ um conjunto arbitrário de índices, 
+$B\subset \Omega$ e $A_i\subset \Omega$ para todo $i\in I$. 
+Mostre que as seguintes igualdades são válidas:
+%
+\begin{enumerate}
+\item 
+$
+B \cap \left( \displaystyle\bigcup_{i \in I}{A_i} \right) 
+= 
+\displaystyle\bigcup_{i \in I}{(B\cap A_i)} 
+$.
+%
+\item
+$
+B \cup \left( \displaystyle\bigcap_{i \in I}{A_i} \right) 
+= 
+\displaystyle\bigcap_{i \in I}{(B\cup A_i)} 
+$.
+\end{enumerate}
+%
+\end{exercicio}
+
+
+
+
+
+
+
+\begin{definicao}[Função Indicadora]\label{def-funcao-indicadora}
+Seja $A \subseteq \Omega$. 
+A função indicadora \index{função!indicadora} 
+de $A$ é denotada por $1_A: \Omega \to \R$ e definida 
 como segue
-
 $$
 	1_A(w) =
 	\begin{cases}
-		1, & \text{se}\ w \in A, \\
-		0, & \text{c.c.}
+		1, & \text{se}\ w \in A; \\
+		0, & \text{caso contrário.}
 	\end{cases}
 $$
+\end{definicao}
+
+
+
+
+
+
+
 
 \begin{observacao} Da definição de função indicadora, podemos mostrar facilmente 
 as seguintes relações,
 as quais serão importantes ao longo do texto
-
+\begin{enumerate}
+\item 
 $1_A \leqslant 1_B \Leftrightarrow A \subseteq B$.
 
+\item
 $1_{A^c}= 1- 1_A$.
+\end{enumerate}
 \end{observacao}
-
 
 \vspace*{1cm}
 \textbf{Limite de Conjuntos}
