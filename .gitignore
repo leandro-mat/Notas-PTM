@@ -1,0 +1,20 @@
+#### Arquivos PDF's. 
+#### Cuidado não usar *.pdf porque as figuras 
+#### Seriam afetadas por tal configuração.
+
+Aulas/*.pdf
+Capa/*.pdf
+notas.pdf
+
+
+#### Demais arquivos auxiliares em toda a pasta
+*.aux
+*.dvi
+*.toc
+*.log
+*.idx
+*.ind
+*.tex.bak
+*.out
+*.ilg
+
