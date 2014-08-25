@@ -10,6 +10,7 @@ são: a fonte DejaVuSerif e o pacote imakeidx. A remoção de ambos não deve ca
 grave e o arquivo deve funcionar normalmente nas versões anteriores a de 2013 do Texlive.</strike>
 
 Abrimos mão de usar a fonte DejaVuSerif e também do pacote imakeidx.
-Assim para que você obtenha o indíce remissívo no final do arquivo 
-deve descomentar a linha referente ao comando printindex que se encontra
+Assim arquivo notas.tex deverá compilar agora em sistemas com versões mais 
+antigas do texlive e do miktex. Para que você obtenha o indíce remissívo 
+no final do texto deve <b>descomentar</b> a linha referente ao comando printindex que se encontra
 nos notas.tex e rodar o makeindex manualmente. 
