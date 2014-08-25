@@ -1,13 +1,13 @@
 \chapter[Aula 1]{Conjuntos e Limite de Sequências de Conjuntos}
 \chaptermark{}
 
+  
+\section{Teoria Básica de Conjuntos}
+
 Nesta seção são introduzidos alguns fatos básicos da teoria
 conjuntos. O ponto de vista adotado aqui é o da "teoria ingênua
 de conjuntos" e não temos objetivos de discutí-la do ponto 
 vista axiomático.
-
-  
-\section{Teoria Básica de Conjuntos}
 
 
 Em geral, vamos trabalhar em um espaço que será denotado 
@@ -24,9 +24,6 @@ usaremos, na maioria das vezes, a notação $\omega\in\Omega$
 para denotar um ponto do espaço $\Omega$.
 
 
-
-
-\subsection{Operações de Conjuntos}
 
 O complementar de um conjunto $A$ será 
 denotado por $A^{c}= \{w \in \Omega; w \notin A\}$. 
@@ -188,7 +185,7 @@ $.
 
 
 
-\subsection{Limite de Conjuntos}
+\section{Limite de Conjuntos}
 
 Seja $\{A_n\}$ uma sequência de subconjuntos de $\Omega$.
 A partir desta sequência podemos definir outros 4 novos conjuntos
@@ -412,25 +409,50 @@ Para provar o item 2 basta proceder de maneira análoga feita acima
 e usar as Leis de De Morgan.
 \end{proof}
 
-\subsection{Relações de ``Dualidade''}
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Relações de ``Dualidade''}
+
+Nesta seção deixamos como exercício para o leitor a prova de
+seis relações 
+entre a $\limsup,\ \liminf$ de conjuntos e de suas respectivas 
+funções indicadoras; bem como algumas relações ligadas as operações
+básicas de conjuntos. Estas relações explicam por si só a escolha 
+do título desta seção. 
+
+\begin{exercicio}
+Sejam $\{A_n\}$ uma sequência de subconjuntos de um espaço $\Omega$, 
+$A$ e $B$ dois subconjuntos arbitrários de $\Omega$. Mostre que 
 \begin{enumerate}
-\item[1)] 
+\item 
 $1_{\inf_{k\geqslant n} A_k} = \inf \limits_{k\geqslant n} 1_{A_k}$.
 
-\item[2)] 
+\item
 $1_{\sup_{k\geqslant n} A_k} = \sup \limits_{k\geqslant n} 1_{A_k}$.
 
-\item[3)] 
+\item
 $1_{\cup_{n\geqslant 1} A_n} 
 \leqslant 
 \sum \limits_{n \geqslant 1} 1_{A_n}$.
 
-\item[4)] 
+\item
 $1_{\limsup A_n} = \limsup 1_{A_n}$.
 
-\item[5)] 
+\item
 $1_{\liminf A_n} = \liminf 1_{A_n}$.
 
-\item[6)] 
+\item
 $ 1_{A \triangle B} = 1_A + 1_B (\text{mod 2})$.
 \end{enumerate}
+\end{exercicio}
+
