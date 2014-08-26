@@ -185,3 +185,52 @@ obtendo
 		$\displaystyle\lim_{n\to\infty}\P(E_n)=\P(E)$.		
 	\end{enumerate}
 \end{teorema}
+
+\begin{proof}
+Vamos provar o primeiro item do Teorema. 
+Suponha que $E_1\subset E_2\subset \ldots\subset E_n\subset \ldots$
+e defina a seguinte sequência de eventos 
+\[
+B_1= E_1,\ B_2= E_2\setminus E_2,\ \ldots,\  B_n=E_n\setminus E_{n-1}.
+\]
+Por construção a sequência $\{B_n\}$ é uma sequência de eventos
+mutuamente disjunta e além do mais 
+\[
+\bigcup_{j=1}^n B_j = E_n, \quad 
+\bigcup_{j=1}^{\infty} B_j = \bigcup_{j=1}^{\infty} E_j = E.
+\]
+Da $\sigma$-aditividade segue que 
+\begin{align*}
+	\P(E)
+	&=
+		\P\left( \bigcup_{n=1}^{\infty} E_n\right)
+		=
+		\sum_{n=1}^{\infty}\P(B_n)
+		=
+		\lim_{n\to\infty} \sum_{j=1}^n \P(B_j)
+	\\[0.3cm]
+	&=
+		\lim_{n\to\infty}\P\left( \bigcup_{j=1}^{n} B_j\right)
+		=
+		\lim_{n\to\infty}\P\left( E_n\right).
+\end{align*}
+
+Para provar o segundo item note que se $E_n\searrow E$ 
+então $E_n^c \nearrow E^c$. Aplicando o resultado que 
+acabamos de provar temos que 
+	\[
+		1-\P(E)
+		=
+		\P(E^c)		
+		=
+		\lim_{n\to\infty} \P(E_n^c)
+		=
+		\lim_{n\to\infty} [1-\P(E_n)]		
+	\]
+de onde segue o resultado.
+\end{proof}
+
+Vamos provar agora um lema de continuidade para sequências 
+que não são necessariamente monótonas. 
+Este lema será chamado de lema de Fatou para funções indicadoras
+e a razão para isto ficará clara futuramente.
