@@ -234,3 +234,83 @@ Vamos provar agora um lema de continuidade para sequências
 que não são necessariamente monótonas. 
 Este lema será chamado de lema de Fatou para funções indicadoras
 e a razão para isto ficará clara futuramente.
+
+\begin{lema}[Lema de Fatou para Funções Indicadoras]
+Seja $(\Omega,\F,\P)$ um espaço de probabilidade e 
+$\{E_n\}$ uma sequência de eventos.
+\begin{enumerate}
+	\item
+	$\displaystyle
+	\P(\liminf_{n\to\infty} E_n)
+	\leq 
+	\liminf_{n\to\infty} \P(E_n)
+	\leq
+	\limsup_{n\to\infty} \P(E_n)
+	\leq
+	\P(\limsup_{n\to\infty} E_n)$.
+	
+	\item Se $E_n\to E$ então $\P(E_n)\to \P(E)$.
+\end{enumerate}
+\end{lema}
+
+
+\begin{proof}
+Primeiro vamos assumir que 1 é válido e vamos mostrar 2.
+Suponha que $E_n\to E$. Então 
+\[
+ \liminf_{n\to\infty} E_n = \limsup_{n\to\infty} E_n = E.
+\]
+Aplicando 1 temos que 
+	\begin{align*}
+	\P(E)
+	&=\displaystyle
+		\P(\liminf_{n\to\infty} E_n)
+		\leq 
+		\liminf_{n\to\infty} \P( E_n)
+		\leq
+		\limsup_{n\to\infty}\P(E_n)
+		\leq
+		\P(\limsup_{n\to\infty} E_n)
+		=
+		P(E).
+	\end{align*}
+O que prova que $\P(E_n)\to P(E)$.
+
+Passamos agora a prova do item 1. Por definição 
+do $\liminf$, continuidade da probabilidade
+temos 
+\begin{align*}
+	\P(\liminf_{n\to\infty} E_n)
+	&=
+	\P\left( \lim_{n\to\infty} \bigcap_{k\geq n}E_k \right)
+	\\
+	&=
+	\lim_{n\to\infty} \P\left( \bigcap_{k\geq n}E_k \right)
+\end{align*}
+Por monotonicidade temos que 
+	\[
+		\P\left( \bigcap_{k\geq n}E_k \right)
+		\leq 
+		\P(E_n).
+	\] 
+Assim se tomamos $\liminf$ em ambos os lados e usamos as igualdades acima,
+obtemos a seguinte desigualdade
+	\begin{align*}
+	\P(\liminf_{n\to\infty} E_n)
+	\leq 
+	\liminf_{n\to\infty}\P(E_n).
+\end{align*} 
+
+De maneira análoga, temos 
+\begin{align*}
+	\P(\limsup_{n\to\infty} E_n)
+	&=
+	\P\left( \lim_{n\to\infty} \bigcup_{k\geq n}E_k \right)
+	\\[0.2cm]
+	&=
+	\lim_{n\to\infty} \P\left( \bigcup_{k\geq n}E_k \right)
+	\\[0.3cm]
+	&\geq 
+	\limsup_{n\to\infty} \P(E_n).
+\end{align*}
+\end{proof}
