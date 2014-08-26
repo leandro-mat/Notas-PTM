@@ -414,7 +414,22 @@ as seguintes propriedades:
 O objetivo nesta seção é construir uma 
 medida de probabilidade em $\R$ com uma 
 dada função distribuição $F$. 
-Para isto vamos usar a medida de Lebesgue que 
+Em outras palavras, vamos construir
+uma medida $\P_F$ tal que 
+\[
+	\P_{F}((-\infty,x]) = F(x).
+\]
+Para construir tal probabilidade
+vamos precisar da medida de Lebesgue que 
 nesta seção será denotada por $\lambda$.
+
+
+Vamos começar definindo uma função contínua a 
+esquerda $G$ que é uma ``inversa generalizada'' de $F$.
+Dado $y\in (0,1)$ defina 
+	\[
+		G(y)= \inf\{ s\in\R: F(s)\leq y\}
+	\]
+
 
 
