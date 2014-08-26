@@ -349,29 +349,20 @@ Então
 	$(-\infty,x]\subset (-\infty,y]$. O resultado segue diretamente 
 	da monotonicidade de $\P$ e da definição de $F$.
 	
-	Passamos agora para a prova do item 3. 
-	Se $x_n\to\infty$ quando $n\to\infty$, 
-	segue da monotonicidade de $F$ que 
-	existe $\lim_{n\to\infty} F(x_n)$. 
-	Usando a definição de $F$ e as propriedades de $\P$ temos 
-	as seguintes igualdades:
-	\begin{align*}
-	\lim_{x_n\to\infty} F(x_n)
-	&=
-	\lim_{n\to\infty} \P((-\infty, x_n])
-	\\
-	&=
-	\P \left( \lim_{n\to\infty} (-\infty,x_n] \right)
-	\\
-	&=
-	\P \left( \bigcup_{n=1}^{\infty} (-\infty,x_n] \right)
-	\\
-	&=
-	\P((-\infty,+\infty)=\P(\mathbb{R})=\P(\Omega)=1.
-	\end{align*}
-Já que $x_n$ é uma sequência arbitrária tendendo 
-a $+\infty$ podemos concluir que existe 
-$\lim_{x\to+\infty} F(x)=1$.  O cálculo do outro limite 
+	Passamos agora para a prova do item 3.  Considere uma subsequência
+	 $\{x_{n_j}\}\subset \{x_n\}$ monótona 	crescente  com
+	  $x_{n_{j}}\to \infty$,  como $(-\infty, x_{n_j}]$ é uma sequência 
+	  encaixada crescendo  para $\mathbb{R}$, segue da continuidade da probabilidade 
+	  que    
+	  \[
+	  \lim_{n\to \infty} F(x_{n_j})=1
+	  \]
+ou seja  dado  $\epsilon>0$ existe $n_{j_0}$ tal que para todo $n_j>n_{j_0}$ 
+vale que $F(x_{n_j})>1-\epsilon$. Como $x_n\to \infty$ temos que 
+existe $N$ tal que para todo $n>N$ tem-se $x_n> x_{n_{j_0}}$
+ portanto da monotonicidade de $F$ segue que $F(x_n)>1-\epsilon$
+  para todo $n>N$ donde segue o item 3.	
+	 O cálculo do outro limite 
 do item 3 é análoga, bastando agora usar a continuidade no 
 vazio. 
 
