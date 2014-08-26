@@ -1,0 +1,187 @@
+\chapter[Aula 4]{Espaços de Probabilidade}
+\chaptermark{}
+
+
+
+
+
+\section{Definições e Propriedades Básicas}
+
+Um espaço de probabilidade é um tripla 
+$(\Omega,\F,\P)$ onde 
+\begin{itemize}
+	\item 
+	$\Omega$ é um conjunto chamado de espaço amostral.
+
+	\item
+	$\F$ uma $\sigma$-álgebra de subconjuntos de $\Omega$.
+	Os elementos de $\F$ são chamados de eventos.
+	
+	\item $\P$ é uma medida de probabilidade, isto é, 
+	uma função com domínio em $\F$ tomando valores em 
+	$[0,1]$ satisfazendo 
+		\begin{itemize}
+			\item[i)] 
+			$\P(E)\geq 0$ para todo $E\in F$.
+
+			\item[ii)] 
+			$P$ é $\sigma$-aditiva: Para qualquer
+			sequência $\{E_n\}$ mutuamente disjunta 
+			de eventos em $\F$ temos 
+				\[
+					\P\left( \bigcup_{n=1}^{\infty} E_n \right)
+					=
+					\sum \P(E_n).
+				\]
+			\item[iii)] 
+			$\P(\Omega)=1$.
+		\end{itemize}
+\end{itemize}
+
+
+
+Seguem das propriedade $\textrm{ii})$ e $\textrm{iii})$ acima que 
+para qualquer evento $E\in\F$ vale a seguinte identidade
+	\[
+		P(E^c)=1-P(E).
+	\]
+De fato, 
+	\[
+		1=P(\Omega)= P(E\cup E^c)=P(E)+P(E^c).
+	\]
+Como toda medida de probabilidade é em particular uma medida então 
+temos que 
+	\[
+		\P(\emptyset)=0.
+	\] 
+\begin{proposicao} Seja $(\Omega,\F,\P)$ um espaço de probabilidade.
+Se $A,B$ são dois eventos arbitrários então 
+	\[
+		\P(A\cup B) = \P(A)+\P(B)-\P(A\cap B).
+	\]
+\end{proposicao}
+\begin{proof}
+Primeiro observamos que 
+%	
+	\begin{align*}
+		\P(A) = \P(A\cap B^c)+\P(A\cap B) 
+		\\
+		\P(B) = \P(B\cap A^c)+\P(B\cap A) 
+	\end{align*}
+Note que podemos escrever $A\cup B = (A\cap B^c) \cup (B\cap A^c) \cup (A\cap B)$.
+Tomando probabilidade em ambos lados desta igualdade 
+e usando as identidades acima, temos
+	\begin{align*}
+	\P(A\cup B) 
+	&=
+	\P(A\cap B^c) + \P(B\cap A^c) + \P(A\cap B)
+	\\
+	&=
+	[\P(A)-\P(A\cap B)] + [\P(B)-\P(A\cap B)] + P(A\cap B)
+	\\
+	&=
+	\P(A)+\P(B)-\P(A\cap B).
+	\end{align*}
+
+
+\end{proof}
+
+\begin{teorema}[Fórmula de Inclusão-Exclusão]
+Para quaisquer eventos $E_1,\ldots,E_n$ temos 
+	\begin{align*}
+		\P\left( \bigcup_{j=1}^{n} E_j \right)
+		&=
+		\sum_{j=1}^n \P(E_j)
+		-
+		\sum_{1\leq i<j\leq n} \P(E_i\cap E_j) 
+		+
+		\sum_{1\leq i<j<k\leq n} \P(E_i\cap E_j\cap E_k)-\ldots
+		\\[0.3cm]
+		&\hspace*{0.5cm} \ldots(-1)^n \P(E_1\cap\ldots\cap E_n).
+	\end{align*}
+\end{teorema}
+
+\begin{proof}
+ Podemos provar o teorema por indução. Para $n=2$ o teorema
+ segue diretamente da proposição acima. Para dar o passo de 
+ indução basta escrever $\cup_{j=1}^{k+1} E_j$ 
+ como $\cup_{j=1}^{k}E_j\cup E_{k+1}$, usar o caso $n=2$ 
+ para calcular a probabilidade desta decomposição, em seguida usar 
+ a hipótese de indução para 
+ \[	
+ \P \left( \bigcup_{j=1}^{k} E_j \right)
+ \qquad
+ \text{e}
+ \qquad
+ \P \left( \bigcup_{j=1}^{k} (E_j\cap E_{k+1}) \right)
+ \]
+ e reorganizar os termos de ambas as somas. Observe 
+ por exemplo, que as probabilidades de interseções de pares 
+ com $E_j$'s com índice menores ou iguais a $k$ virão 
+ da primeira probabilidade e interseção de pares de
+ eventos $E_j$'s onde um dos eventos é $E_{k+1}$ virá 
+ da segunda soma e assim por diante.
+\end{proof}
+
+Uma aplicação deste Teorema é a obtenção das
+chamadas {\bf Desigualdades de Bonferroni} \index{Desigualdade!Bonferroni}.
+A prova destas desigualdades segue simplesmente de negligenciarmos 
+os resto. Dois exemplos de tais desigualdades são mostrados
+abaixo:
+\[ 
+\begin{array}{c}
+	\displaystyle
+	\P \left( \bigcup_{j=1}^{n} E_j \right) 
+	\leq 
+	\sum_{j=1}^n P(E_j)
+	%
+	%
+	\\[0.5cm]
+	%
+	%
+	\displaystyle
+	\P \left( \bigcup_{j=1}^{n} E_j \right) 
+	\geq
+	\sum_{j=1}^n \P(E_j) - \sum_{1\leq i<j\leq n} \P(E_i\cap E_j)	
+\end{array}
+\]
+
+Outra propriedade importante é a {\bf Monotonicidade} de $\P$, isto é, 
+para quaisquer eventos $A,B$ tais que $A\subset B$ temos 
+$\P(A)\leq \P(B)$. De fato, 
+$\P(B)=\P(B\cap A)+\P(B\cap A^c)= \P(B)+\P(B\setminus A)\geq \P(A)$.
+
+Toda medida de probabilidade é $\sigma$-subaditiva, ou seja, 
+para quaisquer eventos $E_1,E_2,\ldots$ temos 
+	\[
+		\P\left( \bigcup_{n=1}^{\infty} E_n\right)
+		\leq 
+		\sum_{n=1}^{\infty} \P(E_n).
+	\]
+Para verificar que esta propriedade é verdadeira basta observar que 
+\[
+	\bigcup_{n=1}^{\infty} E_n = E_1+E_1^c\cap E_2 + E_1^c\cap E_2^c\cap E_3 +\ldots
+\]
+aplicar a $\sigma$-aditividade de $\P$ e em seguida usar a monotonicidade 
+obtendo
+	\begin{align*}
+	\P\left( \bigcup_{n=1}^{\infty} E_n\right)
+	&=
+	\P(E_1)+\P(E_1^c\cap E_2) + \P(E_1^c\cap E_2^c\cap E_3) +\ldots
+	\\
+	&\leq
+	\P(E_1) + \P(E_2) + \P(E_3) +\ldots
+	\end{align*}
+	
+\begin{teorema}[Continuidade da Probabilidade]
+	Sejam $(\Omega,\F,\P)$ um espaço de Probabilidade e
+	$\{E_n\}$ uma sequência de eventos neste espaço.
+	\begin{enumerate}
+		\item
+		Se $E_n\nearrow E$ então 
+		$\displaystyle\lim_{n\to\infty}\P(E_n)=\P(E)$.
+		\item 
+		Se $E_n\searrow E$ então 
+		$\displaystyle\lim_{n\to\infty}\P(E_n)=\P(E)$.		
+	\end{enumerate}
+\end{teorema}
