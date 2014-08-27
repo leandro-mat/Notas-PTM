@@ -425,11 +425,54 @@ nesta seção será denotada por $\lambda$.
 
 
 Vamos começar definindo uma função contínua a 
-esquerda $G$ que é uma ``inversa generalizada'' de $F$.
-Dado $y\in (0,1)$ defina 
+esquerda $G:(0,1)\to\R$ que é uma espécie de 
+``inversa generalizada'' de $F$.
+Esta função é definida da seguinte maneira:
+para cada $y\in (0,1)$ definimos 
 	\[
-		G(y)= \inf\{ s\in\R: F(s)\leq y\}
+		G(y)
+		\equiv 
+		\inf\{ s\in\R: F(s)\geq y\} 
+		= 
+		\inf \{ F^{-1}([y,+\infty))\}.
 	\]
+Para simplificar a notação vamos escrever
+	\[
+	 	A(y)\equiv \{ s\in\R: F(s)\geq y\}
+	\]	
 
+\begin{exercicio}
+ Mostre que a função $G$ dada acima está bem definida,
+ isto é, para todo $y\in (0,1)$ temos que 
+ $A(y)\neq \emptyset$ e que seu ínfimo pertence a $\R$.
+\end{exercicio}
 
+\begin{observacao}
+Em geral, $G$ {\bf não} é uma função injetiva. 
+Por exemplo, se 
+$x_0$ é um ponto de descontinuidade de $F$ então 
+para qualquer ponto $y$ pertencente ao 
+intervalo aberto $I_0=(F(x_0-),F(x_0))$ temos  
+$G(y)=x_0$, veja figura abaixo:
+\begin{center}
+{\red Colocar Figura.}
+\end{center}
+\end{observacao}
 
+\begin{proposicao}
+	Para todo $y\in (0,1)$ o conjunto $A(y)$ definido acima 
+	têm as seguintes propriedades:
+	\begin{enumerate}
+		\item 
+		$A(y)$ é um conjunto fechado.
+		
+		\item
+		$\inf A(y) \in A(y)$, ou seja, $F(G(y))\geq y$.
+		
+		\item 
+		$G(y)>t$ se, e somente se, $y>F(t)$.
+		
+		\item 
+		$G(y)\leq t$ se, e somente se, $y\leq F(t)$.
+	\end{enumerate}
+\end{proposicao}
