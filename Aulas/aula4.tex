@@ -432,13 +432,13 @@ para cada $y\in (0,1)$ definimos
 	\[
 		G(y)
 		\equiv 
-		\inf\{ s\in\R: F(s)\geq y\} 
+		\inf\{ s\in\R: y\leq F(s)\} 
 		= 
 		\inf \{ F^{-1}([y,+\infty))\}.
 	\]
 Para simplificar a notação vamos escrever
 	\[
-	 	A(y)\equiv \{ s\in\R: F(s)\geq y\}
+	 	A(y)\equiv \{ s\in\R: y\leq F(s)\}
 	\]	
 
 \begin{exercicio}
@@ -461,18 +461,55 @@ $G(y)=x_0$, veja figura abaixo:
 
 \begin{proposicao}
 	Para todo $y\in (0,1)$ o conjunto $A(y)$ definido acima 
-	têm as seguintes propriedades:
+	tem as seguintes propriedades:
 	\begin{enumerate}
 		\item 
 		$A(y)$ é um conjunto fechado.
 		
 		\item
-		$\inf A(y) \in A(y)$, ou seja, $F(G(y))\geq y$.
+		$\inf A(y) \in A(y)$, ou seja, $y\leq F(G(y))$.
 		
 		\item 
-		$G(y)>t$ se, e somente se, $y>F(t)$.
+		$t<G(y)$ se, e somente se, $F(t)<y$.
 		
 		\item 
 		$G(y)\leq t$ se, e somente se, $y\leq F(t)$.
 	\end{enumerate}
 \end{proposicao}
+
+
+\begin{proof}
+	Prova do item 1. 
+	Seja $\{s_n\}$ uma sequência em $A(y)$ tal que $s_n\to s$. 
+	Note que $\{s_n\}$ possui pelo menos uma subsequência 
+	monótona, não-crescente ou não-decrescente $\{s_{n_{k}}\}$ 
+	que converge para $s$. Vamos considerar primeiro o caso 
+	em que existe uma subsequência $s_{n_k}\downarrow s$. 
+	Já que $s_{n_k}\in A(y)$ então 
+	é válida a seguinte desigualdade $y\leq F(s_{n_k})$.
+	Tomando o limite, quando $k\to\infty$, nesta desigualdade 
+	obtemos da continuidade a direita de $F$ que 
+		\[ 
+			y \leq 
+			\lim_{k\to\infty} F(s_{n_k}) 
+			= 
+			F(s).
+		\]
+	O que mostra que $s\in A(y)$.
+	Por outro lado, se $\{s_n\}$ não possui uma subsequência 
+	$s_{n_k}\downarrow s$, então existe no máximo uma quantidade
+	finita de pontos da sequência $\{s_n\}$ 
+	que é maior ou igual a $s$.
+	Assim podemos afirmar que existe pelo menos 
+	uma subsequência $s_{n_k}\uparrow s$
+	tal que $s_{n_k} < s$. Usando  
+	a definição de $A(y)$ e a monotonicidade de $F$ 
+	temos que 
+		\[
+			y\leq F(s_{n_k})\leq F(s).
+		\]
+	Logo $s\in A(y)$ e isto conclui a prova de que $A(y)$ é 
+	um subconjunto fechado da reta.
+\end{proof}
+
+
