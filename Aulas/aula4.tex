@@ -458,7 +458,7 @@ $G(y)=x_0$, veja figura abaixo:
 \begin{center}
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\textwidth]{Figuras/inversa-gen.pdf}
+\includegraphics[width=0.8\textwidth]{Figuras/inversa-gen.pdf}
 \caption{Gráfico de uma função distribuição descontínua.}
 \label{Rotulo}
 \end{figure}
@@ -638,7 +638,37 @@ gerada por $\mathcal{G}$ que é $\mathscr{B}(\R)$. Este fato
 completa a prova do lema.
 \end{proof}
 
-
+Finalmente podemos apresentar a definição de $\P_F$.
+Para cada $A\in \mathscr{B}(\R)$ definimos 
+	\[
+		\P_{F}(A) =\lambda(\xi_{F}(A)),
+	\]
+onde $\lambda$ é a medida de Lebesgue em $(0,1]$.
+É simples verificar que $\P_F$ é de fato uma medida
+de probabilidade e que sua distribuição é dada por
+%
+\begin{align*}
+	\P_F((-\infty,x]) 
+	&=
+	\lambda (\xi_{F}((-\infty,x])
+	\\
+	&=
+	\lambda\Big( \{ y\in (0,1]: G(y)\in (-\infty,x] \} \Big)
+	\\
+	&=
+	\lambda\Big( \{ y\in (0,1]: G(y)\leq x \} \Big)
+	\\
+	&=
+	\lambda\Big( \{ y\in (0,1]: y\leq F(x) \} \Big)
+	\qquad
+	(\text{item 4 Proposição \ref{prop-propriedades-G}})
+	\\
+	&=
+	\lambda\Big( (0,F(x)] \Big)
+	\\
+	&=
+	F(x).
+\end{align*}
 
 
 
