@@ -258,3 +258,61 @@ $\{\omega\in\Omega: |f(\omega)|>\alpha\} \in \F$ o que
 encerra a prova do lema.
 \end{proof}
 
+
+\subsection*{Partes Positiva e Negativa de Funções a Valores Reais}
+
+A cada função $f:\Omega\to\mathbb{R}$ podemos associar duas funções 
+{\bf não-negativas} denotadas por $f^+$ e $f^-$ ambas definidas em $\Omega$
+por 
+	\[
+		f^+(\omega)= \sup\{f(\omega),0\} 
+		\qquad
+		\text{e}
+		\qquad
+		f^-(\omega)= \sup\{-f(\omega),0\} 
+	\]
+As funções $f^+$ e $f^-$ são chamadas, respectivamente 
+de {\bf parte positiva} e {\bf parte negativa} de $f$.
+
+Note que para qualquer que seja $\omega\in\Omega$, sempre temos
+	\[
+		f(\omega) = f^+(\omega)-f^{-}(\omega)
+		\qquad
+		\text{e}
+		\qquad
+		|f(\omega)| = f^+(\omega)+f^{-}(\omega).
+	\]
+	
+	
+\begin{lema}
+	Seja $(\Omega,\F)$ um espaço de medida. Uma função 
+	$f:\Omega\to\R$, é $\F$-mensurável se, e somente se,
+	$f^+$ e $f^-$ são $\F$-mensuráveis.
+\end{lema}
+
+\begin{proof}
+A prova deste lema é consequência direta das seguintes identidades:
+\[
+	f^{+} = \frac{1}{2}(|f|+f)
+	\qquad
+	\text{e}
+	\qquad
+	f^{-} = \frac{1}{2}(|f|-f).
+\]
+\end{proof}
+
+
+Até o momento trabalhamos com o conceito de mensurabilidade em 
+$\R$. Como frequentemente iremos trabalhar com sequências de 
+funções e estaremos interessados em tomar, supremos, ínfimos,
+limites e etc. é tecnicamente conveniente trabalhar com o 
+conjunto $\overline{\R}$. Esta é a razão de introduzirmos 
+na seção seguinte o conceito de mensurabilidade de uma função 
+tomando valores na reta estendida. 
+
+
+
+
+
+
+\section{Funções a Valores em $\overline{\R}$ Mensuráveis}
