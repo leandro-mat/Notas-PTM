@@ -599,8 +599,36 @@ Suponha que $A\in\mathscr{C}$, então
 $\xi_F(A)=G^{-1}(A)\cap (0,1]\in \mathscr{B}((0,1])$.
 Pela propriedades de imagem inversa temos que 
 \[
-	G^{-1}(A^c)= \Big(G^{-1}(A)\Big)^c.
+	G^{-1}(A^c)= \Big(G^{-1}(A)\Big)^c
 \]
+e como $\xi_F(A)$ é um boreliano de $(0,1]$, segue da definição 
+de topologia induzida que 
+	\[
+		\xi_F(A^c)
+		=
+		G^{-1}(A^c)\cap (0,1]
+		= 
+		\Big(G^{-1}(A)\Big)^c\cap (0,1]		
+	\]
+é um boreliano de $(0,1]$, mostrando que $A^c\in\mathscr{C}$.
+
+Se $\{A_n\}$ é uma família de 
+conjuntos mutuamente disjuntos em $\mathscr{C}$,
+então 
+	\begin{align*}
+	\xi_F\left( \bigcup_{n=1}^{\infty} A_n\right)
+	=&
+	G^{-1}\left( \bigcup_{n=1}^{\infty} A_n\right)\cap (0,1]
+	\\
+	=&
+	\bigcup_{n=1}^{\infty} G^{-1}\left(A_n \right)\cap (0,1]
+	\end{align*}
+pertence a $\mathscr{B}((0,1])$. Logo $\cup_{n\geq 1} A_n\in \mathscr{C}$
+o que prova encerra a prova de que $\mathscr{C}$ é um $\lambda$-sistema.
+
+Pelo Teorema $\pi-\lambda$ de Dynkin $\mathscr{C}$ contém a $\sigma$-álgebra
+gerada por $\mathcal{G}$ que é $\mathscr{B}(\R)$. Este fato 
+completa a prova do lema.
 \end{proof}
 
 
