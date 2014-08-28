@@ -4,28 +4,29 @@
 \section{Funções Mensuráveis}
 
 Denotamos por $\overline{\R}$ a reta estendida, isto é, 
-$\overline{\R} = \R\cup\{-\infty,+\infty\}$. Podemos 
-estender naturalmente conceito de soma e produto 
+$\overline{\R} = \R\cup\{-\infty,+\infty\}$. 
+Observe que podemos estender naturalmente conceito 
+de soma e produto  de números reais
 para os seguintes pares de elementos 
-de $\overline{\R}$ da seguinte maneira:
+de $\overline{\R}$:
 \begin{enumerate}
 	\item 
-	Se $x,y\in \R$ a soma é a soma usual 
+	para quaisquer $x,y\in \R$ a soma é a soma usual 
 	e o mesmo para o produto. 
 	
-	\item para todo $x\in \overline{R}$ temos 
+	\item para todo $x\in \overline{\R}$ temos 
 	$0\cdot x=0$.
 	
-	\item Para todo $x\in \overline{R}$ diferente de 
+	\item Para todo $x\in \overline{\R}$ diferente de 
 	$-\infty$ definimos $x+(+\infty)=+\infty$.
 
-	\item Para todo $x\in \overline{R}$ diferente de 
+	\item Para todo $x\in \overline{\R}$ diferente de 
 	$+\infty$ definimos $x+(-\infty)=-\infty$.
 \end{enumerate}
 
 Não vamos nos preocupar neste momento em munir $\overline{\R}$ 
 de uma topologia, mas vamos definir a $\sigma$-álgebra
-de Borel de $\overline{R}$,
+de Borel de $\overline{\R}$,
 como sendo a coleção formada pela reunião da
 coleção $\mathscr{B}(\R)$ 
 e de todos conjuntos da forma 
@@ -41,11 +42,11 @@ de borel de $\overline{R}$ e denotada por $\mathscr{B}(\overline{\R})$.
 \end{exercicio}
 
 \begin{exercicio}
-	Podemos ver $\overline{R}$ como um conjunto totalmente ordenado se 
+	Podemos ver $\overline{\R}$ como um conjunto totalmente ordenado se 
 	consideramos a relação de ordem ``$<$'' obtida pela extensão natural 
 	da relação de ordem em $\R$.
 	Seja $\tau$ a topologia da ordem definida por ``$<$'' 
-	em $\overline{R}$. Mostre que a $\sigma$-álgebra gerada pelos 
+	em $\overline{\R}$. Mostre que a $\sigma$-álgebra gerada pelos 
 	abertos de $\tau$ coincide com a coleção $\mathscr{B}(\overline{\R})$
 	definida acima. 
 	
@@ -63,7 +64,7 @@ de borel de $\overline{R}$ e denotada por $\mathscr{B}(\overline{\R})$.
 \subsection*{Funções a Valores Reais Mensuráveis}
 
 Nesta subseção vamos considerar funções que
-saem de um espaço mensurável $(\Omega,\F)$ e toma 
+saem de um espaço mensurável $(\Omega,\F)$ e tomam 
 valores em $\mathbb{R}$. O caso mais geral, onde
 as funções assumem valores em $\overline{R}$ será
 tratado na subseção seguinte.
@@ -169,6 +170,20 @@ $f:\Omega\to\R$.
 	E portanto todo função monótona não-crescente é borel 
 	mensurável, isto é, $\mathscr{B}(\R)$-mensurável.
 \end{exemplo}
+
+
+Vamos mostrar na sequência que algumas operações álgebricas
+entre funções mensuráveis fornece também um função mensurável.
+
+\begin{lema}
+	Sejam $(\Omega,\F)$ um espaço de medida e 
+	$f,g:\Omega\to\R$ funções $\F$-mensuráveis 
+	e $c$ uma constante real. Então as funções 
+	\[
+		cf, f^2, f+g, fg, |f|
+	\]
+ 	são também funções $\F$-mensuráveis.
+\end{lema} 
 
 
 
