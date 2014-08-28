@@ -124,7 +124,7 @@ $f:\Omega\to\R$.
 
 
 
-\begin{exemplo}
+\begin{exemplo}\label{exemplo-func-const.mensuravel}
 	Toda função constante $f:\Omega\to\R$ é mensurável.
 	De fato, se $f(\omega)=c$ para todo $\omega\in\Omega$ 
 	então temos que se $\alpha\geq c$ então 
@@ -172,7 +172,7 @@ $f:\Omega\to\R$.
 \end{exemplo}
 
 
-Vamos mostrar na sequência que algumas operações álgebricas
+Vamos mostrar na sequência que algumas operações algébricas
 entre funções mensuráveis fornece também um função mensurável.
 
 \begin{lema}
@@ -186,4 +186,75 @@ entre funções mensuráveis fornece também um função mensurável.
 \end{lema} 
 
 
+\begin{proof}
+Vamos mostrar primeiro que $cf$ é mensurável. 
+Se $c=0$ então $cf\equiv 0$ e a mensurabilidade de $cf$
+segue do Exemplo \ref{exemplo-func-const.mensuravel}.
+Se $c>0$, para todo $\alpha\in\R$ temos que
+\[ 
+	\{ \omega\in \Omega: cf(\omega)>\alpha\}
+	=
+	\left\{ \omega\in \Omega: f(\omega)>\frac{\alpha}{c} \right\}
+	\in \F.
+\]
+O caso $\alpha<0$ é análogo.
+
+Vamos provar agora que $f^2$ é $\F$-mensurável. 
+Vamos dividir o argumento em 
+dois casos, $\alpha<0$ e $\alpha \geq 0$.
+No primeiro caso $\alpha<0$, temos que 
+$\{ \omega\in \Omega: f^2(\omega)>\alpha\} = \Omega$
+Se $\alpha\geq 0$ então 
+\[ 
+	\{ \omega\in \Omega: f^2(\omega)>\alpha\} 
+	=
+	\{ \omega\in \Omega: f(\omega)>\sqrt{\alpha}\} 
+	\cup
+	\{ \omega\in \Omega: f(\omega)<-\sqrt{\alpha}\}
+	\in 
+	\F. 
+\]
+
+Passamos agora para a mensurabilidade da soma. 
+Por hipótese para qualquer número racional $r$
+e qualquer que seja $\alpha\in\R$, temos que 
+\[
+	S_r
+	\equiv 
+	\{ \omega\in\Omega: f(\omega)>r \} 
+		\cap 
+		\{ \omega\in\Omega: g(\omega)>\alpha-r \}
+	\in 
+	\F.
+\]
+Já que 
+\[
+	\{ \omega\in\Omega: (f+g)(\omega)>\alpha \}
+	=
+	\bigcup_{r\in \Q} S_r
+\]
+é um conjunto $\F$-mensurável, segue que $f+g$ é mensurável.
+
+Para mostrar que o produto $fg$ é mensurável, basta 
+notar que 
+\[ fg = \frac{1}{4}[(f+g)^2-(f-g)^2] \]
+e usar o resultados provados acima.
+
+Resta mostrar que $|f|$ é mensurável.
+Novamente consideramos dois casos, $\alpha<0$ e 
+$\alpha\geq 0$. No primeiro caso, $\alpha<0$, temos que 
+$\{\omega\in\Omega: |f(\omega)|>\alpha\} = \Omega$.
+Por outro lado, se $\alpha\geq 0$ então 
+\[ 
+	\{\omega\in\Omega: |f(\omega)|>\alpha\} 
+	= 
+	\{\omega\in\Omega: f(\omega)>\alpha\} 
+	\cup
+	\{\omega\in\Omega: f(\omega)<-\alpha\} .
+\]
+como ambos conjuntos do lado direito da igualdade 
+acima pertencem a $\F$, segue que 
+$\{\omega\in\Omega: |f(\omega)|>\alpha\} \in \F$ o que 
+encerra a prova do lema.
+\end{proof}
 
