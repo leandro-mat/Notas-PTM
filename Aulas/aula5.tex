@@ -74,7 +74,7 @@ Seja $(\Omega,\F)$ um espaço mensurável.
 Uma função $f:\Omega\to\R$ é dita $\F$-mensurável
 se para todo número real $\alpha$ temos que
 \[
-	\{x\in\Omega : f(x)>\alpha \} \in \F.
+	\{\omega \in\Omega : f(\omega)>\alpha \} \in \F.
 \]
 \end{definicao}
 
@@ -87,20 +87,88 @@ $f:\Omega\to\R$.
 \begin{enumerate}
 	\item 
 	Para todo $\alpha\in\R$ o conjunto 
-	$A_{\alpha}\equiv\{x\in\Omega : f(x)>\alpha \} \in \F$.
+	$A_{\alpha}\equiv\{\omega\in\Omega : f(\omega)>\alpha \} \in \F$.
 
 	\item 
 	Para todo $\alpha\in\R$ o conjunto 
-	$B_{\alpha}\equiv\{x\in\Omega : f(x)\leq \alpha \} \in \F$.
+	$B_{\alpha}\equiv\{\omega\in\Omega : f(\omega)\leq \alpha \} \in \F$.
 
 	\item 
 	Para todo $\alpha\in\R$ o conjunto 
-	$C_{\alpha}\equiv\{x\in\Omega : f(x)\geq\alpha \} \in \F$.
+	$C_{\alpha}\equiv\{\omega\in\Omega : f(\omega)\geq\alpha \} \in \F$.
 
 	\item 
 	Para todo $\alpha\in\R$ o conjunto 
-	$D_{\alpha}\equiv\{x\in\Omega : f(x)<\alpha \} \in \F$.
+	$D_{\alpha}\equiv\{\omega\in\Omega : f(\omega)<\alpha \} \in \F$.
 	
 \end{enumerate}
 \end{lema}
+
+
+\begin{proof}
+	Já que $A_{\alpha}$ e $B_{\alpha}$ são complementares um do outro
+	temos imediatamente que 1 e 2 são equivalentes. Pelo mesmo 
+	motivo segue que 3 e 4 são equivalentes. Vamos assumir agora que 
+	1 seja válido. Então temos que $A_{\alpha-1/n}\in \F$ para todo
+	$n\in\N$. Já que 
+	\[ 
+		C_{\alpha} = \bigcap_{n=1}^{\infty} A_{\alpha} 
+	\]
+	temos que 1 implica 3. Por outro lado, a igualdade
+	\[
+		A_{\alpha} = \bigcup_{n=1}^{\infty} C_{\alpha+1/n}
+	\]
+	mostra que 3 implica 1.
+\end{proof}
+
+
+
+\begin{exemplo}
+	Toda função constante $f:\Omega\to\R$ é mensurável.
+	De fato, se $f(\omega)=c$ para todo $\omega\in\Omega$ 
+	então temos que se $\alpha\geq c$ então 
+	$\{\omega\in\Omega: f(\omega)>\alpha\} =\emptyset$.
+	Por outro lado, se $\alpha<c$ então 
+	$\{\omega\in\Omega: f(\omega)>\alpha\} =\Omega$.
+\end{exemplo}
+
+
+
+
+
+\begin{exemplo}
+	Seja $(\Omega,\F)$ um espaço mensurável. 
+	Se $E\in\F$ então a função $1_E:\Omega\to\R$, a função indicadora de $E$,
+	é mensurável.
+	Para ver que a afirmação é verdadeira basta notar que 
+	$\{\omega\in\Omega: 1_{E}(\omega)>\alpha \}$ é igual $\Omega, E$
+	ou $\emptyset$.
+\end{exemplo}
+
+
+
+\begin{exemplo}
+	Considere o espaço mensurável $(\R,\mathscr{B}(\R))$. 
+	Então qualquer função $f:\R\to\R$ contínua é 
+	$\mathscr{B}(\R)$-mensurável.
+	Basta notar que para todo $\alpha\in \R$ temos
+	por continuidade que $\{x\in\R: f(x)\alpha\}$ é 
+	um aberto da reta e portanto pertence a $\sigma$-álgebra
+	de borel de $\R$.
+\end{exemplo}
+
+
+
+
+\begin{exemplo}
+	Considere o espaço mensurável $(\R,\mathscr{B}(\R))$ e 
+	seja $f:\R\to\R$ uma função monótona não-decrescente.
+	Para qualquer $\alpha\in\R$, 
+	temos que $\{x\in\R: f(x)<\alpha\}$ ou é uma semi-reta
+	da forma $(-\infty,a)$ ou $(-\infty,a]$ ou $\R$ ou $\emptyset$.
+	E portanto todo função monótona não-crescente é borel 
+	mensurável, isto é, $\mathscr{B}(\R)$-mensurável.
+\end{exemplo}
+
+
 
