@@ -459,7 +459,7 @@ $G(y)=x_0$, veja figura abaixo:
 \end{center}
 \end{observacao}
 
-\begin{proposicao}
+\begin{proposicao}\label{prop-propriedades-G}
 	Para todo $y\in (0,1)$ o conjunto $A(y)$ definido acima 
 	tem as seguintes propriedades:
 	\begin{enumerate}
@@ -530,5 +530,91 @@ $G(y)=x_0$, veja figura abaixo:
 	também uma aplicação direta do item 3.  
 	Isto completa a prova da proposição.
 \end{proof}
+
+\bigskip
+
+Para cada $A\subset \R$ definimos agora o seguinte conjunto:
+	\begin{equation}\label{def-xi-F}
+		\xi_F(A) \equiv \{ x\in (0,1]: G(x)\in A \} = G^{-1}(A)\cap (0,1].
+	\end{equation}
+No lema seguinte mostramos que se $A$ 
+é um boreliano de $\R$ (notação $A\in\mathscr{B}(\R)$)  
+então 
+$\xi_F(A)$ é um boreliano de $(0,1]$ 
+(notação $\xi_F(A) \in\mathscr{B}((0,1])$).
+
+\begin{lema}
+	Se $A\in\mathscr{B}(\R)$ então $\xi_F(A) \in\mathscr{B}((0,1])$, onde
+	$\xi_F(A)$ é dada em \eqref{def-xi-F}.
+\end{lema}
+
+
+
+\begin{proof}
+Considere a seguinte coleção 
+	\[
+		\mathscr{C} 
+		=
+		\{ A\subset\R: \xi_F(A) \in \mathscr{B}((0,1])\}.
+	\]
+Afirmamos que $\mathscr{C}$ contém qualquer intervalo finito da forma
+$(a,b]\subset \R$. De fato, segue dos item 3 e 4 
+da Proposição \ref{prop-propriedades-G} que 
+para todo $x\in (0,1)$ satisfazendo 
+$a<G(x)$ temos $F(a)<x$ e se $G(x)\leq b$ então 
+$x\leq F(b)$. Da definição de $\xi_{F}(A)$ e 
+das duas observações anteriores temos que
+%
+%
+\begin{align*}
+	\xi_F(A) 
+	&= 
+	\{ x\in (0,1]: G(x) \in (a,b] \}
+	\\
+	&=	
+	\{ x\in (0,1]: a<G(x)\leq b  \}
+	\\
+	&=
+	\{ x\in (0,1]:F(a) <x \leq F(b) \}
+	\\
+	&=
+	(F(a),F(b)].
+\end{align*}
+Como o lado direito da igualdade pertence a $\mathscr{B}((0,1])$
+segue que todo intervalo finito $(a,b]\in \mathscr{C}$.
+Em outras palavras, a coleção $\mathscr{C}$ 
+contém o $\pi$-sistema $\mathcal{G}=\{ (a,b]: a,b\in\R\}$.
+
+
+Vamos mostrar agora que $\mathscr{C}$ é um $\lambda$-sistema. 
+Para provar que $\R\in \mathscr{C}$, basta 
+notar que
+$
+	\xi_F(\R)
+	= G^{-1}(\mathbb{R})\cap (0,1] 
+	= (0,1)\cap (0,1]
+	\in \mathscr{B}((0,1]). 
+$
+Suponha que $A\in\mathscr{C}$, então 
+$\xi_F(A)=G^{-1}(A)\cap (0,1]\in \mathscr{B}((0,1])$.
+Pela propriedades de imagem inversa temos que 
+\[
+	G^{-1}(A^c)= \Big(G^{-1}(A)\Big)^c.
+\]
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
