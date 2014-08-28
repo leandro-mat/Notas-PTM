@@ -1,0 +1,106 @@
+\chapter[Aula 5]{Funções Mensuráveis e Variáveis Aleatórias}
+\chaptermark{}
+
+\section{Funções Mensuráveis}
+
+Denotamos por $\overline{\R}$ a reta estendida, isto é, 
+$\overline{\R} = \R\cup\{-\infty,+\infty\}$. Podemos 
+estender naturalmente conceito de soma e produto 
+para os seguintes pares de elementos 
+de $\overline{\R}$ da seguinte maneira:
+\begin{enumerate}
+	\item 
+	Se $x,y\in \R$ a soma é a soma usual 
+	e o mesmo para o produto. 
+	
+	\item para todo $x\in \overline{R}$ temos 
+	$0\cdot x=0$.
+	
+	\item Para todo $x\in \overline{R}$ diferente de 
+	$-\infty$ definimos $x+(+\infty)=+\infty$.
+
+	\item Para todo $x\in \overline{R}$ diferente de 
+	$+\infty$ definimos $x+(-\infty)=-\infty$.
+\end{enumerate}
+
+Não vamos nos preocupar neste momento em munir $\overline{\R}$ 
+de uma topologia, mas vamos definir a $\sigma$-álgebra
+de Borel de $\overline{R}$,
+como sendo a coleção formada pela reunião da
+coleção $\mathscr{B}(\R)$ 
+e de todos conjuntos da forma 
+$B\cup\{-\infty\}$, $B\cup\{+\infty\}$ e $B\cup\{-\infty,+\infty\}$,
+onde $B$ varia sobre todos os elementos de $\mathscr{B}(\R)$.
+Esta coleção que acabamos de definir
+é de fato uma $\sigma$-álgebra e será chamada de $\sigma$-álgebra
+de borel de $\overline{R}$ e denotada por $\mathscr{B}(\overline{\R})$.
+
+\begin{exercicio}
+	Mostre que a coleção $\mathscr{B}(\overline{\R})$ 
+	é uma $\sigma$-álgebra.
+\end{exercicio}
+
+\begin{exercicio}
+	Podemos ver $\overline{R}$ como um conjunto totalmente ordenado se 
+	consideramos a relação de ordem ``$<$'' obtida pela extensão natural 
+	da relação de ordem em $\R$.
+	Seja $\tau$ a topologia da ordem definida por ``$<$'' 
+	em $\overline{R}$. Mostre que a $\sigma$-álgebra gerada pelos 
+	abertos de $\tau$ coincide com a coleção $\mathscr{B}(\overline{\R})$
+	definida acima. 
+	
+\end{exercicio}
+
+
+
+
+
+
+
+
+
+
+\subsection*{Funções a Valores Reais Mensuráveis}
+
+Nesta subseção vamos considerar funções que
+saem de um espaço mensurável $(\Omega,\F)$ e toma 
+valores em $\mathbb{R}$. O caso mais geral, onde
+as funções assumem valores em $\overline{R}$ será
+tratado na subseção seguinte.
+
+
+\begin{definicao} 
+Seja $(\Omega,\F)$ um espaço mensurável. 
+Uma função $f:\Omega\to\R$ é dita $\F$-mensurável
+se para todo número real $\alpha$ temos que
+\[
+	\{x\in\Omega : f(x)>\alpha \} \in \F.
+\]
+\end{definicao}
+
+O próximo lema fornece três maneira alternativas de
+definir funções mensuráveis. 
+
+\begin{lema}
+As seguintes afirmações são equivalentes para uma função 
+$f:\Omega\to\R$.
+\begin{enumerate}
+	\item 
+	Para todo $\alpha\in\R$ o conjunto 
+	$A_{\alpha}\equiv\{x\in\Omega : f(x)>\alpha \} \in \F$.
+
+	\item 
+	Para todo $\alpha\in\R$ o conjunto 
+	$B_{\alpha}\equiv\{x\in\Omega : f(x)\leq \alpha \} \in \F$.
+
+	\item 
+	Para todo $\alpha\in\R$ o conjunto 
+	$C_{\alpha}\equiv\{x\in\Omega : f(x)\geq\alpha \} \in \F$.
+
+	\item 
+	Para todo $\alpha\in\R$ o conjunto 
+	$D_{\alpha}\equiv\{x\in\Omega : f(x)<\alpha \} \in \F$.
+	
+\end{enumerate}
+\end{lema}
+
