@@ -6,13 +6,119 @@
 % Inicio da Lista de Exercícios 
 \begin{enumerate}[leftmargin=*]
 
-\item 
-Exercício 1.
-
 
 \item 
-Exercício 2.
+Seja $\Omega$ um espaço não vazio. 
+Seja $\F_0$ a coleção de todos os 
+subconjuntos $E\subset\Omega$ 
+tais que $E$ ou $E^c$ é vazio.
+Considere a função de conjuntos $P:\F_0\to [0,1]$
+definida por 
+	\[
+		P(E) =
+		\begin{cases}
+		0,&\text{se}\ E \ \text{é finito};
+		\\
+		1,&\text{se}\ E^c \ \text{é finito}.
+		\end{cases}
+	\]
+	\begin{itemize}
+		\item[a)]
+		Mostre que $\F_0$ é uma álgebra de conjuntos.
+		
+		\item[b)] 
+		Assumindo que $\Omega$ é um conjunto infinito enumerável,
+		mostre que $P$ é finitamente aditiva, mas não é $\sigma$-aditiva.
+		
+		\item[c)]
+		Assumindo que $\Omega$ é não-enumerável, mostre que $P$ 
+		é $\sigma$-aditiva em $\F_0$.
+		
+	\end{itemize}
 
+
+
+
+
+\item 
+Seja $(\Omega,\F,\P)$ um espaço de probabilidade.
+Se para todo $n\in\N$ o evento 
+$B_n\subset A_n$ então mostre que 
+	\[
+		\P\left( \bigcup_{n=1}^{\infty} A_n \right)
+		-\P\left( \bigcup_{n=1}^{\infty} B_n  \right)	
+		\leq 
+		\sum_{n=1}^{\infty} \Big( \P(A_n)-\P(B_n) \Big)	
+	\]
+
+
+
+
+
+\item 
+Seja $(\Omega,\F)$ um espaço de mensurável. 
+Suponha que $\P$ é uma medida de probabilidade
+definida em $\F$ e que existe um conjunto $A\subset\Omega$
+tal que $A\notin\F$. Considere a $\sigma$-álgebra 
+$\F_1 = \sigma(\F,A)$. Mostre que $\P$ admite uma extensão 
+a uma medida de probabilidade $\P_1$ definida em $\F_1$. 
+
+
+
+
+
+\item 
+Seja $\P$ uma medida de probabilidade em $\mathscr{B}(\R)$.
+Mostre que para qualquer $B\in \mathscr{B}(\R)$ e $\varepsilon>0$ 
+dado, existe uma união finita de intervalos $A$ tal que 
+	\[
+		\P(A\bigtriangleup B) < \varepsilon.
+	\]
+\noindent{ Dica.} Defina a seguinte coleção:
+\[ 
+	\mathscr{C}
+	=
+	\{
+		B\in\mathscr{B}(\R): \forall \varepsilon>0,
+		\exists A_{\varepsilon} (\text{união finita de interv.})
+		\ \text{tal que} \P(A_{\varepsilon} \bigtriangleup B)<\varepsilon
+	\}
+\]
+
+
+
+\item 
+Dizemos uma sequência de eventos $\{A_n\}$ 
+em um espaço de probabilidade
+$(\Omega,\F,\P)$ é quase disjunta se 
+$\P(A_i\cap A_j)=0$ se $i\neq j$. 
+Para tais eventos mostre que 
+\[
+	\P\left( \bigcup_{n=1}^{\infty} A_n \right)
+	=
+	\sum_{n=1}^{\infty} \P(A_n).
+\]
+
+
+
+
+
+
+
+\item Sabemos que $\P_1=\P_2$ em $\F$ dado que $\P_1=\P_2$
+em $\mathcal{C}$ e $\mathcal{C}$ é $\pi$-sistema 
+que gera $\F$. 
+Mostre que a hipótese de $\mathcal{C}$ ser um $\pi$-sistema
+não pode ser removida, através do seguinte exemplo:
+considere $\Omega=\{a,b,c,d\}$ e que 
+\[
+	\P_1(\{a\}) = \P_1(\{d\}) = \P_2(\{b\}) = \P_2(\{c\}) = \frac{1}{6}
+\]
+e
+\[
+	\P_1(\{b\}) = \P_1(\{c\}) = \P_2(\{a\}) = \P_2(\{d\}) = \frac{1}{3}.
+\]
+Tome $\mathcal{C}=\{ \{a,b\}, \{d,c\}, \{a,c\}, \{b,d\} \}$.
 
 \end{enumerate}
 %  Fim da Lista de Exercícios
