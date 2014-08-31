@@ -377,6 +377,79 @@ conjuntos regulares.
 
 
 
+\item Sejam $(\Omega,\F,\P)$ um espaço de probabilidade
+e $A\i\F$ um conjunto fixado. Mostre que a função 
+definida em $\F$ dada por $E\mapsto \P(A\cap E)$ é uma medida.
+
+
+\item Seja $(\Omega,\F)$ um espaço mensurável. 
+Suponha que $\P_1,\ldots, \P_n$ seja uma família 
+de medidas de probabilidade definidas em $\F$ e 
+$\lambda_1,\ldots,\lambda_n$ números reais tais que 
+$0\leq \lambda_i\leq 1$ e $\lambda_1+\ldots+\lambda_n=1$.
+Mostre que 
+	\[
+		\P\equiv \lambda_1\P_1+\ldots +\lambda_n\P_n
+	\]
+é uma medida de probabilidade.
+
+
+
+
+
+
+\item 
+Sejam $\Omega=\N$, $\F=\mathcal{P}(\N)$ e
+$\{a_n\}$ é uma sequência em $[0,+\infty]$. 
+Defina $\mu:\F\to [0,+\infty]$ por 
+\[
+	\mu(E)
+	=
+	\begin{cases}
+	0,&\text{se}\ E=\emptyset;
+	\\[0.4cm]
+	\displaystyle
+	\sum_{n\in E} a_n,&\text{se}\ E\neq\emptyset.
+	\end{cases}
+\]
+Mostre que $\mu$ é uma medida.
+Reciprocamente, mostre que toda medida 
+$\mu$ definida em $\mathcal{P}(\N)$ pode 
+ser obtida desta maneira para alguma sequência
+$\{a_n\}$ em $[0,+\infty]$. 
+
+
+
+
+\item 
+Sejam $\Omega=\N$, $\F=\mathcal{P}(\N)$. 
+Se $E$ é finito seja $\mu(E)=0$ e se $E$ é
+infinito seja $\mu(E)=+\infty$. 
+A função $\mu$ definida desta maneira é uma 
+medida em $\F$ ?
+
+
+
+\item 
+Seja $\lambda$ a medida de Lebesgue em $\R$
+definida sobre $\mathscr{B}(\R)$.
+	\begin{itemize}
+		\item[a)]
+		Se $\# E<+\infty$(cardinalidade de $E$), 
+		mostre que $E\in \mathscr{B}(\R)$ e $\lambda(E)=0$.
+		
+		\item[b)]
+		Se $E$ é um conjunto enumerável, 
+		mostre que $E\in \mathscr{B}(\R)$ e $\lambda(E)=0$.
+		
+		\item[c)]
+		Seja $A$ é um aberto de $\R$. Mostre que $A$ é 
+		não-vazio se, e somente se, $\lambda(E)>0$.
+		
+		\item[d)]
+		Mostre que se $K\subset\R$ é compacto então 
+		$\lambda(K)<+\infty$.
+	\end{itemize}
 
 
 
@@ -385,12 +458,29 @@ conjuntos regulares.
 
 
 
+\item
+Mostre que o conjunto de Cantor, do terço médio, pertence a 
+$\sigma$-álgebra de Borel e que sua medida de Lebesgue é
+nula.
+
+
+
+\item 
+Fazendo uma adaptação na construção do conjunto de Cantor,
+obtenha um conjunto de medida de Lebesgue positiva que 
+não possui intervalos abertos.
 
 
 
 
-
-
+\item 
+Seja $(\Omega,\F,\P)$ um espaço de probabilidade. 
+Sejam $E,N\subset \Omega$ tais que 
+$E\notin \F$, $N\in\F$, $E\subset N$  e $\P(N)=0$.
+Mostre que a sequência de funções $f_n:\Omega\to\R$
+dada por $f_n\equiv 0$, converge $\P$-quase certamente
+para $1_{E}$. Assim limite quase certo de uma sequência
+de funções mensuráveis pode não ser mensurável.
 
 
 
