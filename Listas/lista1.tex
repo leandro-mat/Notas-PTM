@@ -120,6 +120,80 @@ e
 \]
 Tome $\mathcal{C}=\{ \{a,b\}, \{d,c\}, \{a,c\}, \{b,d\} \}$.
 
+
+
+
+
+
+
+
+
+
+
+
+\item 
+{\bf Definição.} \index{Conjuntos!\P equivalentes}
+Seja $(\Omega,\F,\P)$ um espaço de probabilidade. 
+Dizemos que dois conjuntos $A,B\in \F$ são equivalentes
+se $\P(A\bigtriangleup B)=0$. A classe de equivalência
+do envento $A$ é dada por 
+\[ 
+	[A] = \{B\in \F: \P(A \bigtriangleup B)=0 \}.
+\]
+Desta forma podemos decompor $\F$ em classes de equivalência.
+\\
+{\bf Definição.} Um átomo \index{Átomo} em um espaço 
+de probabilidade $(\Omega,\F,\P)$ é definido como sendo
+um conjunto $A\in\F$ tal que $P(A)>0$ e se 
+$B\subset A$ e $B\in \F$, então $\P(B)=0$ ou 
+$P(A\setminus B)=0$. 
+Além do mais o espaço de probabilidade é dito não-atômico
+se ele não possui átomos, isto é, se $A\in F$ e 
+$P(A)>0$ então existe pelo menos um evento $B\in \F$ tal que
+$B\subset A$ e $0<P(B)<P(A)$.
+
+	\begin{itemize}
+		\item[a)]
+		Se $\Omega=\R$ e $\P$ é determinada por uma 
+		função distribuição $F$, mostre que os átomos
+		são $\{x\in\R: F(x)-F(x-)>0\}$.
+				
+		\item[b)]
+		Mostre que o espaço de probabilidade  
+		$(\Omega,\F,\P)=((0,1],\mathscr{B}((0,1]),\lambda)$,
+		onde $\lambda$ é a medida de Lebesgue, é não-atômico. 
+
+		\item[c)]
+		Mostre que se $A$ e $B$ são átomos tais que
+		$\P(A\bigtriangleup B)>0$ então temos que
+		$\P((A\cap B) \bigtriangleup \emptyset)=0$.
+
+
+		\item[d)] 
+		Um espaço de probabilidade contém no máximo 
+		uma quantidade enumerável de átomos. 
+		\\
+		(Dica. Qual é o número máximo de átomos que o
+		espaço pode conter tendo probabilidade pelo menos $1/n$\ ?)
+		
+		
+		\item[e)]
+		Se um espaço de probabilidade $(\Omega,\F,\P)$
+		não contém átomos, então para todo $a\in (0,1]$
+		existe pelo menos um conjunto $A\in\F$ tal que 
+		$\P(A)=a$. 
+		\\
+		(Uma maneira de provar este fato é usando o Lema de Zorn.)
+		
+		\item[f)] 
+	\end{itemize}
+
+
+
+
+
+
+
 \end{enumerate}
 %  Fim da Lista de Exercícios
 
