@@ -32,49 +32,6 @@
 \def\numberline#1{}
 
 
-% Cria o ambiente de Lista de Exercicios
-% Não numerado e com a decoração igual ao
-% das Aulas - Isto é na verdade apenas uma
-% modificação do chapter*
-\makeatletter
-
-\ChNameVar{\fontsize{14}{16}\usefont{OT1}{phv}{m}{n}\selectfont}
-\ChNumVar{\fontsize{60}{62}\usefont{OT1}{ptm}{m}{n}\selectfont}
-\ChTitleVar{\Huge\bfseries\rm}
-\ChRuleWidth{1pt}
-
-
-\renewcommand{\DOTIS}[1]{%
-
-\settowidth{\px}{\CNV\FmN{Lista de Exerc\'icios}}
-    \addtolength{\px}{2pt}
-    \settoheight{\py}{\CNV\FmN{Lista de Exerc\'icios}}
-    \addtolength{\py}{1pt}
-
-    \settoheight{\pyy}{\CNoV\thechapter}
-    \addtolength{\pyy}{-2pt}
-    \setlength{\myhi}{\pyy}
-    \addtolength{\myhi}{-1\py}
-    \par
-    \parbox[b]{\textwidth}{%
-    \rule[\py]{\RW}{\myhi}%
-    \hskip -\RW%
-    \rule[\pyy]{\px}{\RW}%
-    \hskip -\px%
-    \raggedright%
-    \CNV\FmN{Lista de Exerc\'icios}\space\CNoV %
-    \hskip1pt%
-    \mghrulefill{\RW}%
-    \rule{\RW}{\pyy}\par\nobreak%
-    \vskip -\baselineskip%
-    \vskip -\pyy%
-    \hskip \mylen%
-    \mghrulefill{\RW}\par\nobreak%
-    \vskip \pyy}%
-    \vskip -2\p@}
-\makeatother
-%
-
 
 
 
@@ -170,6 +127,59 @@
 %%%%%%%%%%%%%%%%%%%%  Índice
 \tableofcontents
 \addtocontents{toc}{~\hfill\textbf{Página}\par}
+
+
+
+% Cria o ambiente de Lista de Exercicios
+% Não numerado e com a decoração igual ao
+% das Aulas - Isto é na verdade apenas uma
+% modificação do chapter*
+\makeatletter
+
+\ChNameVar{\fontsize{14}{16}\usefont{OT1}{phv}{m}{n}\selectfont}
+\ChNumVar{\fontsize{60}{62}\usefont{OT1}{ptm}{m}{n}\selectfont}
+\ChTitleVar{\Huge\bfseries\rm}
+\ChRuleWidth{1pt}
+
+
+\renewcommand{\DOTIS}[1]{%
+
+\settowidth{\px}{\CNV\FmN{Lista de Exerc\'icios}}
+    \addtolength{\px}{2pt}
+    \settoheight{\py}{\CNV\FmN{Lista de Exerc\'icios}}
+    \addtolength{\py}{1pt}
+
+    \settoheight{\pyy}{\CNoV\thechapter}
+    \addtolength{\pyy}{-2pt}
+    \setlength{\myhi}{\pyy}
+    \addtolength{\myhi}{-1\py}
+    \par
+    \parbox[b]{\textwidth}{%
+    \rule[\py]{\RW}{\myhi}%
+    \hskip -\RW%
+    \rule[\pyy]{\px}{\RW}%
+    \hskip -\px%
+    \raggedright%
+    \CNV\FmN{Lista de Exerc\'icios}\space\CNoV %
+    \hskip1pt%
+    \mghrulefill{\RW}%
+    \rule{\RW}{\pyy}\par\nobreak%
+    \vskip -\baselineskip%
+    \vskip -\pyy%
+    \hskip \mylen%
+    \mghrulefill{\RW}\par\nobreak%
+    \vskip \pyy}%
+    \vskip -2\p@}
+\makeatother
+%
+
+
+
+
+
+
+
+
 
  
 %%%%%%%%%%%%%%%%%%%% Conteúdo das aulas    
