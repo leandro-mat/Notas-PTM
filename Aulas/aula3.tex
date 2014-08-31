@@ -86,7 +86,8 @@ $\tn{Leb}^{*}((a,b))=b-a$
 \begin{proof}
 Como o intervalo $(a,b)$ está contido no seu 
 fecho $[a,b]$ portanto temos que  $\tn{Leb}^{*}((a,b))\leq b-a.$ 
-Agora considere um intervalo $[a+\epsilon,b-\epsilon]$ 
+Agora considere um intervalo $[a+\epsilon,b-\epsilon]$,
+para algum $\epsilon>0$, 
 contido em $(a,b)$ note que qualquer cobertura de 
 $(a,b)$ por intervalos fechados é também uma cobertura 
 de $[a+\epsilon,b-\epsilon]$ de modo que 
@@ -95,8 +96,8 @@ b-a-2\epsilon= \tn{Leb}^{*}([a_0,b_0])\leq  \tn{Leb}^{*}((a,b))\leq b-a
 $$
 como $\epsilon$ é arbitrário segue que  $\tn{Leb}^{*}((a,b))=b-a$.
 \end{proof}
-Usando a mesma técnica da demonstração acima mostramos 
-resultados análogos se considerarmos intervalos  
+Usando a mesma técnica da demonstração acima pode-se mostrar 
+resultados análogos considerando intervalos  
 da forma $[a,b)$ e $(a,b]$.
 
 
@@ -106,7 +107,7 @@ da forma $[a,b)$ e $(a,b]$.
 \begin{lema}\label{LEB 3}
 Seja $A\subset \mathbb{R}$,  aberto e $A=\bigsqcup_{k=1}^M(a_k,b_k)$ então temos 
 $$
-\tn{Leb}^{*}(A)=\sum_{k=1}^M(b_k-a_k)
+\tn{Leb}^{*}(A)=\sum_{k=1}^M(b_k-a_k).
 $$
 \end{lema}
 
@@ -115,19 +116,19 @@ Segue diretamente da defininção que
 $\tn{Leb}^{*}(A)\leq\sum_{k=1}^M(b_k-a_k)$. 
 Suponha que vale a desigualdade estrita, 
 isto é, $\tn{Leb}^{*}(A)<\sum_{k=1}^M(b_k-a_k)$. 
-Seja $c=\inf A$ e $d=\sup A$
+Seja $a=\inf A$ e $b=\sup A$
 e considere o conjunto $[a,b]\setminus A=\bigsqcup_{k=1}^{N}[c_l,d_l]$ 
 então temos
 $$
 [a,b]=\left(~\bigsqcup_{k=1}^M(a_k,b_k)~\right)
 \cup \left(~\bigsqcup_{l=1}^{N}(c_l,d_l)~\right)
 $$
-então 
+então pela propriedade da medida exterior 
 \begin{eqnarray*}
 \tn{Leb}^{*}([a,b])
 &\leq &
-\tn{Leb}\left(~\bigsqcup_{k=1}^M(a_k,b_k)~\right)
-+\tn{Leb}\left(~\bigsqcup_{l=1}^{N}(c_l,d_l)~\right)
+\tn{Leb}^*\left(~\bigsqcup_{k=1}^M(a_k,b_k)~\right)
++\tn{Leb}^*\left(~\bigsqcup_{l=1}^{N}(c_l,d_l)~\right)
 \\
 &
 <
@@ -139,7 +140,7 @@ então
 &
 b-a
 \end{eqnarray*}
-contradizendo (\ref{LEB 2}).
+contradizendo o lema (\ref{LEB 2}).
 
 \end{proof}
 
