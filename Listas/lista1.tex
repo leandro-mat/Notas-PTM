@@ -184,9 +184,171 @@ $B\subset A$ e $0<P(B)<P(A)$.
 		$\P(A)=a$. 
 		\\
 		(Uma maneira de provar este fato é usando o Lema de Zorn.)
-		
-		\item[f)] 
 	\end{itemize}
+
+
+
+
+
+
+\item
+Suponha que $\{E_n\}$ é uma sequência de eventos tal que
+para todo $n\in\mathbb{N}$ temos $\P(E_n)=1$. Mostre que 
+\[	
+	\P\left(  \bigcap_{n=1}^{\infty} E_n\right) =1 
+\]
+
+
+
+
+
+
+\item
+Suponha que $\mathcal{C}$ seja uma coleção de subconjuntos de 
+$\Omega$ e que $B\subset \Omega$ é um evento satisfazendo
+$B\in\sigma(\mathcal{C})$.
+Mostre que existe uma coleção enumerável $\mathcal{C}_{B}$
+tal que $B\in \sigma(\mathcal{C}_{B})$.
+\\
+(Dica. Considere o conjunto 
+$\mathcal{G}=\{ B\subset\Omega: \exists\ \text{uma coleção enumerável}\ 
+\mathcal{C}_B\subset \mathcal{C}\ 
+\text{tal que}\ B\in\sigma(\mathcal{C}_{B}) \}
+$
+e mostre que $\mathcal{G}$ é uma $\sigma$-álgebra contendo
+$\mathcal{C}$.)
+
+
+
+
+
+
+
+\item 
+Se $\{E_k\}$ é uma coleção de eventos tal que 
+	\[
+		\sum_{k=1}^{n} \P(E_k) > n-1
+	\]
+então 
+\[	
+	\P\left(  \bigcap_{n=1}^{n} E_n\right) >0. 
+\]	
+
+
+
+
+
+
+\item 
+Mostre que se $F$ é uma função distribuição, 
+então $F$ tem no máximo uma quantidade enumerável 
+de descontinuidades.
+
+
+
+
+
+
+\item 
+Seja $F$ uma função distribuição e considere as seguintes
+funções $G,H:(0,1)\to \mathbb{R}$ dadas por 
+	\[
+		G(y)= \inf\{t\in\mathbb{R}: y\leq F(t) \}
+		\quad
+		\text{e}
+		\quad
+		H(y)= \inf\{t\in\mathbb{R}: y < F(t) \}
+	\]
+	\begin{itemize}
+		\item[a)	]
+		Mostre que $G$ é contínua a esquerda e que $H$
+		é contínua a direita.  
+
+		\item[b)] 
+		$\lambda \{t\in (0,1]: G(t)\neq H(t) \} =0$, 
+		onde $\lambda$ é a medida de Lebesgue. 
+	\end{itemize}
+
+
+
+
+
+
+
+\item 
+Suponha que $F$ é uma função distribuição contínua 
+em $R$. Mostre que $F$ é uniformemente contínua.
+
+
+
+
+\item 
+Seja $\{E_n\}$ uma sequência de eventos e defina
+\[
+\begin{array}{c}
+	\displaystyle \mathcal{S}_{1} 
+	= \sum_{i=1}^{n} \P(E_i) 
+	\\[0.5cm]
+	%
+	\displaystyle \mathcal{S}_{2} 
+	= \sum_{1\leq i<j\leq n} \P(E_i\cap E_j) 
+	\\[0.5cm]
+	%
+	\displaystyle\mathcal{S}_{3} 
+	= \sum_{1\leq i<j<k\leq n} \P(E_i\cap E_j\cap E_k ) 
+	\\[0.3cm]
+	\vdots
+\end{array}
+\]
+	Mostre que a probabilidade $(1\leq m\leq n)$
+		\[
+			p(m) = \P\left( \sum_{i=1}^n 1_{A_i} = m \right)
+		\]
+	de $m$ eventos ocorrerem é dada por 
+		\[
+			\begin{array}{rcl}
+			p(m) 
+			&=&\displaystyle
+			\mathcal{S}_{m+1} 
+			- 
+			\binom{m+1}{m}\mathcal{S}_{m+1}
+			+
+			\binom{m+2}{m}\mathcal{S}_{m+2}
+			-
+			\ldots
+			\\[0.7cm]
+			&&\displaystyle
+			+ (-1)^{n-m} \binom{n}{m}\mathcal{S}_{m+2}			
+			\end{array}
+		\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
