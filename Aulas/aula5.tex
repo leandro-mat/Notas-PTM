@@ -352,6 +352,33 @@ são conjuntos $\F$-mensuráveis.
 
 
 
-Vamos apresentar na sequência uma nova caracterização 
+O próximo lema apresenta uma caracterização 
 do conceito de mensurabilidade que acabamos de introduzir.
+Ele será muito útil para provar mensurabilidade de funções
+tomando valores em $\overline{\R}$. 
+
+
+\begin{lema}
+	Seja $(\Omega,\F)$ um espaço de medida. 
+	Uma função $f:\Omega\to\overline{R}$ é 
+	mensurável se, e somente se, os conjuntos 
+	\[
+	A=\{ \omega\in\Omega: f(\omega)=+\infty \}
+	\quad
+	\text
+	\quad
+	B=\{ \omega\in\Omega: f(\omega)=-\infty \}	
+	\]
+	são $\F$-mensuráveis e a função  
+	$f_{1}:\Omega\to\overline{\R}$ dada por 
+	\[
+	f_1(\omega)=
+		\begin{cases}
+			f(x),&\text{se}\ x\notin A\cup B;
+			\\
+			0,&\text{se}\ x\in A\cup B.
+		\end{cases}
+	\]
+	é $\F$-mensurável.
+\end{lema}
 
