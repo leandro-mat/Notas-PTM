@@ -442,6 +442,114 @@ A prova é uma aplicação dos Lemas
 \ref{lema-operacoes-alg-com-func-mensuraveis} 
 e
 \ref{lema-truncamento-func-mensuravel-eh-mensuravel}.
-
+Para exemplificar vamos mostrar que $f^2\in M(\Omega,\F)$. 
+Vamos mostrar primeiro que $(f^2)_1=f_1f_1$.
+Sejam $A$ e $B$ os conjuntos definidos no Lema 
+\ref{lema-truncamento-func-mensuravel-eh-mensuravel}
+com respeito a função $f$.
+Se $\omega \notin A\cup B$, então 
+$f(\omega)\in\R$ e assim $(f^2)_1(\omega)=f^2(\omega) = f_1(\omega)f_1(\omega)$.
+Por outro lado, se $\omega\in A\cup B$ então temos que 
+$(f^2)_1(\omega)= 0\cdot 0 = f_1(\omega)f_1(\omega)$.
+Já que $(f^2)_1=f_1f_1$ segue do 
+Lema \ref{lema-operacoes-alg-com-func-mensuraveis} 
+que $(f^2)_1$ é mensurável. Observando que os conjuntos 
+$A$ e $B$ para $f^2$ são $\F$-mensuráveis segue do 
+Lema \ref{lema-truncamento-func-mensuravel-eh-mensuravel}
+que $f^2$ é $\F$-mensurável.
 \end{proof}
 
+
+
+\begin{observacao}
+Se $f$ e $g$ pertencem a $M(\Omega,\F)$, então a função 
+soma $(f+g)(\omega)$ não está bem definida pela fórmula 
+$(f+g)(\omega)=f(\omega)+g(\omega)$ nos seguintes conjuntos:
+\[
+\begin{array}{c}
+	E_1=\{\omega\in\Omega: f(\omega)=+\infty\ \text{e}\ g(\omega)=-\infty\}
+	\\
+	\text{e}
+	\\
+	E_2=\{\omega\in\Omega: f(\omega)=-\infty\ \text{e}\ g(\omega)=+\infty\}.
+\end{array}
+\] 
+Note que $E_1$ e $E_2\in \F$. Assim se definimos $(f+g)$ 
+sobre a união destes conjuntos como sendo zero, 
+então a função resultante é $\F$-mensurável. 
+Após o lema seguinte vamos discutir sobre a mensurabilidade
+de $fg$.
+\end{observacao}
+
+
+
+\begin{lema}\label{inf-sup-func-mensuraval-eh-mensuravel}
+	Seja $\{f_n\}$ uma sequência de funções em $M(\Omega,\F)$.
+	Defina as seguintes funções:
+	\[	
+	\begin{array}{cc}
+	\displaystyle
+	f(\omega) = \inf_{n\to\infty}f_n(\omega), & 	
+	\displaystyle
+	F(\omega) = \sup_{n\to\infty}f_n(\omega),
+	%
+	\\[0.5cm]
+	\displaystyle
+	f^*(\omega) = \liminf_{n\to\infty}f_n(\omega), & 	
+	\displaystyle
+	F^*(\omega) = \limsup_{n\to\infty}f_n(\omega).	
+	\end{array}
+	\]
+Então $f,F,f^*$ e $F^*$ pertencem a $M(\Omega,\F)$.
+\end{lema}
+
+
+\begin{proof}
+Para cada $n\in\N$ fixado, segue da 
+hipótese de mensurabilidade de $f_n$ que 
+o seguinte conjunto é $\F$-mensurável
+\[
+\{\omega\in\Omega: f_n(\omega)\geq \alpha\}
+=
+\bigcap_{k=1}^{\infty}
+\left\{
+	\omega\in\Omega: f_n(\omega)>\alpha-\frac{1}{k} 
+\right\}. 
+\]
+Como as seguinte igualdade são válidas:
+	\[	
+	\{\omega\in\Omega: f(\omega)\geq \alpha\} 
+	=
+	\bigcap_{n=1}^{\infty}
+	\left\{
+		\omega\in\Omega: f_n(\omega)\geq \alpha 
+	\right\}
+	\]
+e
+ 	\[
+ 	\{\omega\in\Omega: F(\omega)> \alpha\} 
+	=
+	\bigcup_{n=1}^{\infty}
+	\left\{
+		\omega\in\Omega: f_n(\omega)> \alpha 
+	\right\}
+	\]
+temos que $f$ e $F$ são mensuráveis sempre que $f_n$
+é mensurável para todo $n\in\N$.
+Já que 
+	\[	
+	f^*(\omega)
+	=
+	\sup_{n\geq 1}
+	\left\{ \inf_{m\geq n} f_{m}(\omega) \right\}
+	\quad
+	\text{e}
+	\quad
+	F^*(\omega)
+	=
+	\inf_{n\geq 1}
+	\left\{ \sup_{m\geq n} f_{m}(\omega) \right\}
+	\]
+basta aplicar duas vezes consecutivas o resultado que acabamos 
+para concluir que ambas $f^*$ e $F^*$ são $\F$-mensuráveis.
+\end{proof}
