@@ -382,3 +382,48 @@ tomando valores em $\overline{\R}$.
 	é $\F$-mensurável.
 \end{lema}
 
+
+
+\begin{proof}
+Suponha que a função $f$ seja $\F$ mensurável. 
+Como já observamos, se $f\in M(\Omega,\F)$ então $A$ e $B$ 
+são $\F$-mensuráveis. Seja $\alpha\in \R$. Se $\alpha\geq 0$
+então temos que 
+\[
+	\{\omega\in\Omega:f_1(\omega)>\alpha\}
+	=
+	\{\omega\in\Omega:f(\omega)>\alpha\}
+	\setminus A.	
+\] 
+Se $\alpha<0$ então 
+\[	
+	\{\omega\in\Omega:f_1(\omega)>\alpha\}
+	=
+	\{\omega\in\Omega:f(\omega)>\alpha\}
+	\setminus B.	
+\]
+Portanto podemos concluir que $f_1$ é $\F$-mensurável.
+
+
+Reciprocamente, suponha que $f_1\in M(\Omega,\F)$ e $A,B\in\F$.
+Então para $\alpha\geq 0$ temos
+\[
+	\{\omega\in\Omega:f(\omega)>\alpha\}
+	=
+	\{\omega\in\Omega:f_1(\omega)>\alpha\}
+	\cup A	
+\] 
+e se $\alpha<0$ temos que
+\[
+	\{\omega\in\Omega:f(\omega)>\alpha\}
+	=
+	\{\omega\in\Omega:f_1(\omega)>\alpha\}
+	\setminus B,	
+\] 
+o que mostra que $f\in M(\Omega,\F)$.
+\end{proof}
+
+
+
+
+
