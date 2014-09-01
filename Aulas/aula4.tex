@@ -97,7 +97,7 @@ Para quaisquer eventos $E_1,\ldots,E_n$ temos
 		+
 		\sum_{1\leq i<j<k\leq n} \P(E_i\cap E_j\cap E_k)-\ldots
 		\\[0.3cm]
-		&\hspace*{0.5cm} \ldots(-1)^n \P(E_1\cap\ldots\cap E_n).
+		&\hspace*{0.5cm} \ldots(-1)^{n+1} \P(E_1\cap\ldots\cap E_n).
 	\end{align*}
 \end{teorema}
 
@@ -149,7 +149,7 @@ abaixo:
 Outra propriedade importante é a {\bf Monotonicidade} de $\P$, isto é, 
 para quaisquer eventos $A,B$ tais que $A\subset B$ temos 
 $\P(A)\leq \P(B)$. De fato, 
-$\P(B)=\P(B\cap A)+\P(B\cap A^c)= \P(B)+\P(B\setminus A)\geq \P(A)$.
+$\P(B)=\P(B\cap A)+\P(B\cap A^c)= \P(A)+\P(B\setminus A)\geq \P(A)$.
 
 Toda medida de probabilidade é $\sigma$-subaditiva, ou seja, 
 para quaisquer eventos $E_1,E_2,\ldots$ temos 
@@ -191,7 +191,7 @@ Vamos provar o primeiro item do Teorema.
 Suponha que $E_1\subset E_2\subset \ldots\subset E_n\subset \ldots$
 e defina a seguinte sequência de eventos 
 \[
-B_1= E_1,\ B_2= E_2\setminus E_2,\ \ldots,\  B_n=E_n\setminus E_{n-1}.
+B_1= E_1,\ B_2= E_2\setminus E_1,\ \ldots,\  B_n=E_n\setminus E_{n-1}.
 \]
 Por construção a sequência $\{B_n\}$ é uma sequência de eventos
 mutuamente disjunta e além do mais 

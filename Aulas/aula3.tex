@@ -15,9 +15,9 @@ um intervalo, isto é, queremos uma medida
 $\mu$ definida em alguma classe razoável de 
 subconjuntos de $\mathbb{R}$ tal que se I é um intervalo
 com fecho $\overline{I}=[a,b]$ então $\mu(I)=b-a$ 
-e se $A=\bigsqcup_{i=1}^nI_j$ onde cada $I,I_j$ 
-é um intervalo do tipo $(a,b), [a,b],(a,b]$ ou $[a,b)$,  
-então $\mu(A)=\sum_{i=1}^n(b_i-a_i)$ e
+e se $A=\bigsqcup_{j=1}^nI_j$ onde cada $I_j$ 
+é um intervalo do tipo $(a_j,b_j), [a_j,b_j],(a_j,b_j]$ ou $[a_j,b_j)$,  
+então $\mu(A)=\sum_{j=1}^n(b_j-a_j)$ e
 além do mais $\mu(\emptyset)=0$.
 
 
@@ -71,7 +71,7 @@ $e_{M-1}=\frac{c_{M-1}+d_{M-2}}{2}$ e $e_{M}=b.$
 Agora note que  para cada $k$, 
 tem-se $[e_k,e_{k+1}]\subsetneqq [c_k,d_k]$ assim 
 $$
-\sum_{k=1}^M d_k-d_k>\sum_{k=1}^M e_{k+1}-e_k=b-a
+\sum_{k=0}^{M-1} (d_k-c_k)>\sum_{k=0}^{M-1} (e_{k+1}-e_k)=b-a
 $$ 
 donde $\tn{Leb}^{*}([a,b])\geq b-a$.
 
@@ -86,7 +86,8 @@ $\tn{Leb}^{*}((a,b))=b-a$
 \begin{proof}
 Como o intervalo $(a,b)$ está contido no seu 
 fecho $[a,b]$ portanto temos que  $\tn{Leb}^{*}((a,b))\leq b-a.$ 
-Agora considere um intervalo $[a+\epsilon,b-\epsilon]$ 
+Agora considere um intervalo $[a+\epsilon,b-\epsilon]$,
+para algum $\epsilon>0$, 
 contido em $(a,b)$ note que qualquer cobertura de 
 $(a,b)$ por intervalos fechados é também uma cobertura 
 de $[a+\epsilon,b-\epsilon]$ de modo que 
@@ -95,8 +96,8 @@ b-a-2\epsilon= \tn{Leb}^{*}([a_0,b_0])\leq  \tn{Leb}^{*}((a,b))\leq b-a
 $$
 como $\epsilon$ é arbitrário segue que  $\tn{Leb}^{*}((a,b))=b-a$.
 \end{proof}
-Usando a mesma técnica da demonstração acima mostramos 
-resultados análogos se considerarmos intervalos  
+Usando a mesma técnica da demonstração acima pode-se mostrar 
+resultados análogos considerando intervalos  
 da forma $[a,b)$ e $(a,b]$.
 
 
@@ -106,7 +107,7 @@ da forma $[a,b)$ e $(a,b]$.
 \begin{lema}\label{LEB 3}
 Seja $A\subset \mathbb{R}$,  aberto e $A=\bigsqcup_{k=1}^M(a_k,b_k)$ então temos 
 $$
-\tn{Leb}^{*}(A)=\sum_{k=1}^M(b_k-a_k)
+\tn{Leb}^{*}(A)=\sum_{k=1}^M(b_k-a_k).
 $$
 \end{lema}
 
@@ -115,19 +116,19 @@ Segue diretamente da defininção que
 $\tn{Leb}^{*}(A)\leq\sum_{k=1}^M(b_k-a_k)$. 
 Suponha que vale a desigualdade estrita, 
 isto é, $\tn{Leb}^{*}(A)<\sum_{k=1}^M(b_k-a_k)$. 
-Seja $c=\inf A$ e $d=\sup A$
+Seja $a=\inf A$ e $b=\sup A$
 e considere o conjunto $[a,b]\setminus A=\bigsqcup_{k=1}^{N}[c_l,d_l]$ 
 então temos
 $$
 [a,b]=\left(~\bigsqcup_{k=1}^M(a_k,b_k)~\right)
 \cup \left(~\bigsqcup_{l=1}^{N}(c_l,d_l)~\right)
 $$
-então 
+então pela propriedade da medida exterior 
 \begin{eqnarray*}
 \tn{Leb}^{*}([a,b])
 &\leq &
-\tn{Leb}\left(~\bigsqcup_{k=1}^M(a_k,b_k)~\right)
-+\tn{Leb}\left(~\bigsqcup_{l=1}^{N}(c_l,d_l)~\right)
+\tn{Leb}^*\left(~\bigsqcup_{k=1}^M(a_k,b_k)~\right)
++\tn{Leb}^*\left(~\bigsqcup_{l=1}^{N}(c_l,d_l)~\right)
 \\
 &
 <
@@ -139,7 +140,7 @@ então
 &
 b-a
 \end{eqnarray*}
-contradizendo (\ref{LEB 2}).
+contradizendo o lema (\ref{LEB 2}).
 
 \end{proof}
 
@@ -202,7 +203,7 @@ $$
 \end{lema}
 
 \begin{proof}
-Temos pela proposição  que 
+Temos pela definição de medida exterior que 
 $\tn{Leb}^{*}(A)\leq \sum_{k\in \mathbb{N}}(b_k-a_k).$ 
 Suponha que tenhamos na verdade 
 $\tn{Leb}^{*}(A)< \sum_{k\in \mathbb{N}}(b_k-a_k)$ 
