@@ -182,7 +182,7 @@ $f:\Omega\to\R$.
 Vamos mostrar na sequência que algumas operações algébricas
 entre funções mensuráveis fornece também um função mensurável.
 
-\begin{lema}
+\begin{lema}\label{lema-operacoes-alg-com-func-mensuraveis}
 	Sejam $(\Omega,\F)$ um espaço de medida e 
 	$f,g:\Omega\to\R$ funções $\F$-mensuráveis 
 	e $c$ uma constante real. Então as funções 
@@ -364,7 +364,7 @@ Ele será muito útil para provar mensurabilidade de funções
 tomando valores em $\overline{\R}$. 
 
 
-\begin{lema}
+\begin{lema}\label{lema-truncamento-func-mensuravel-eh-mensuravel}
 	Seja $(\Omega,\F)$ um espaço de medida. 
 	Uma função $f:\Omega\to\overline{R}$ é 
 	mensurável se, e somente se, os conjuntos 
@@ -437,5 +437,11 @@ o que mostra que $f\in M(\Omega,\F)$.
 	as funções $cf,\ f^2,\ |f|,\ f^{+}$ e $f^{-}\in M(\Omega,\F)$. 
 \end{corolario} 
 
+\begin{proof}
+A prova é uma aplicação dos Lemas 
+\ref{lema-operacoes-alg-com-func-mensuraveis} 
+e
+\ref{lema-truncamento-func-mensuravel-eh-mensuravel}.
 
+\end{proof}
 
