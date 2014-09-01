@@ -318,6 +318,40 @@ tomando valores na reta estendida.
 
 \section{Funções a Valores em $\overline{\R}$ Mensuráveis}
 
-\begin{center}
-{\red Em preparação.}
-\end{center}
+\begin{definicao}[Função Mensurável em $\overline{\R}$]
+Seja $(\Omega,\F)$ um espaço de mensurável. Uma função 
+$f:\Omega\to\overline{\R}$ é dita $\F$-mensurável, se para todo
+$\alpha\in\R$ temos que 
+$\{\omega\in\Omega:f(\omega)>\alpha\}\in\F$.
+\end{definicao}
+
+
+A coleção de todas as funções $\F$-mensuráveis 
+tomando valores em $\overline{\R}$ é denotada por
+$M(\Omega,\F)$. Observe que se $f\in M(\Omega,\F)$
+então 
+%
+\[
+\begin{array}{c}
+	\displaystyle
+	\{ \omega\in\Omega: f(\omega)=+\infty \}
+	=
+	\bigcap_{n=1}^{\infty} \{x\in\Omega: f(x)>n\}
+	\\[0.3cm]
+	\text{e}
+	\\[0.3cm]
+	\displaystyle
+	\{ \omega\in\Omega: f(\omega)=-\infty \}
+	=
+	\left( 
+		\bigcup_{n=1}^{\infty} \{x\in\Omega: f(x)>-n\}
+	\right)^c
+\end{array}
+\]
+são conjuntos $\F$-mensuráveis.
+
+
+
+Vamos apresentar na sequência uma nova caracterização 
+do conceito de mensurabilidade que acabamos de introduzir.
+
