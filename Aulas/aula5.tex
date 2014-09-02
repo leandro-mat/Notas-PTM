@@ -613,8 +613,124 @@ que $fg_m \in M(\Omega,\F)$. Observando que
 		=
 		\lim_{m\to\infty} f(\omega)g_m(\omega)
 	\]	
+outra aplicação do Corolário \ref{cor-lim-mensuravel-eh-mensuravel}
+mostra finalmente que $fg\in M(\Omega,\F)$.
 
 
+
+
+\begin{definicao}[Sequência Monótona de Funções]
+ Uma sequência $\{f_n\}$ em $M(\Omega,\F)$ é dita
+ monótona não-decrescente, se para todo $\omega\in\Omega$
+ fixado, temos que 
+ 	\[
+ 		f_n(\omega)\leq f_{n+1}(\omega)
+ 		\quad
+ 		\forall n\in\N.
+ 	\]
+Analogamente definimos sequências monótonas não-crescentes.
+\end{definicao}
+
+
+
+
+\begin{definicao}[Função Simples]
+Seja $(\Omega,\F)$ um espaço mensurável. 
+Uma função $f:\Omega\to\overline{R}$ é dita 
+simples se assume no máximo uma quantidade
+finita de valores, isto é, $\# f(\Omega)<\infty$.
+
+\end{definicao}
+
+
+
+O Corolário \ref{cor-lim-mensuravel-eh-mensuravel} afirma que 
+limite pontual de funções em $M(\Omega,\F)$ é uma função em 
+$M(\Omega,\F)$.
+Assumindo apenas que $f$ é não-negativa e mensurável
+mostramos no próximo lema um fato ainda mais
+forte. Sob tais condições vamos ver que  
+$f$ é limite pontual de alguma sequência 
+monótona não-decrescente $f_n$ em $M(\Omega,\F)$,
+além do mais a demostração fornece uma maneira de construir
+tal sequência.
+
+\begin{teorema}\label{teo:aproximacao-monotona-por-func-simples}
+	Seja $(\Omega,\F)$ um espaço de medida. 
+	Se $f:\Omega\to [0,+\infty]$
+	é mensurável, existe uma sequência de funções 
+	simples $f_n:\Omega\to[0,\infty]$ tal que
+	para todo $\omega\in\Omega$ temos
+	$0\leq f_1(\omega)\leq f_2(\omega)\leq \ldots\leq f(\omega)$ 
+	e 
+	$f_n(\omega)\to f(\omega)$.
+\end{teorema}
+
+
+\begin{proof} 
+Fixe $n\in\mathbb{N}$ e considere uma partição do 
+intervalo $[0,n)$ em intervalos semi-abertos de
+mesmo comprimento igual a $1/2^n$, da seguinte 
+forma:
+\[
+[0,n)
+=
+\left[ 0,\frac{1}{2^n} \right) 
+\cup
+\left[ \frac{1}{2^n},\frac{2}{2^n} \right) 
+\cup
+\ldots
+\cup 
+\left[ \frac{k}{2^n},\frac{k+1}{2^n} \right) 
+\cup
+\ldots
+\cup
+\left[ \frac{n2^n-1}{2^n}, \frac{n2^n}{2^n} \right).
+\]
+Estes $n2^n$ intervalos 
+junto com o intervalo $[n,+\infty]$ formam uma partição 
+de $[0,+\infty]$. 
+
+Esta partição induz uma partição em $\Omega$
+que é determinada pelas pré-imagens destes conjuntos 
+por $f$, isto é, para $k\in\mathbb{N}$ satisfazendo 
+$0\leq k\leq n2^{n}-1$, defina
+\[
+E_{n}^{k}=
+f^{-1}\left( \left[\frac{k}{2^n},\frac{k+1}{2^n} \right) \right)
+\qquad \text{e} \qquad
+E_n^{n2^n}=f^{-1}\big( [n,+\infty]\big).
+\]
+Com auxilio desta partição, 
+definimos uma sequência de funções simples
+não-negativas $\{f_n\}$, onde 
+\[
+f_n =\sum_{k=0}^{n2^n-1} \frac{k}{2^n} 1_{E_{n}^{k}} + n 1_{F_n}.
+\]
+
+Segue diretamente da definição dos conjuntos 
+$E_{n}^{k}$ que $f_n(\omega)\leq f_{n+1}(\omega)$ 
+para todo $\omega\in\Omega$.
+Note também que se $f(\omega)<n$ 
+então $0\leq f(\omega)-f_n(\omega)<\frac{1}{2^n}$. 
+Por outro lado, se 
+$f(\omega)=+\infty$ temos que $f_n(\omega)= n$,
+logo $f_n(\omega)\to+\infty$.
+Portanto para todo $\omega\in\Omega$ temos que 
+$f_n(\omega)\to f(\omega)$, quando $n\to\infty$.
+\end{proof}
+
+\begin{observacao} 
+O leitor mais atento deve ter notado que 
+a última estimativa apresentada na demonstração acima 
+implica que a convergência das funções simples $f_n$ 
+para $f$ é uniforme nos conjuntos 
+onde $f$ é limitada, isto é, dado $M>0$ 
+seja $\Omega_M=\{\omega\in\Omega; f(\omega)\leq M\}$ então a sequência 
+$f_n|_{\Omega_M}\to f|_{\Omega_M}$ uniformemente.
+\end{observacao}
+
+ 
 
 
 
