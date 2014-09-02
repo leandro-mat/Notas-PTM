@@ -557,7 +557,7 @@ para concluir que ambas $f^*$ e $F^*$ são $\F$-mensuráveis.
 
 
 
-\begin{corolario}
+\begin{corolario}\label{cor-lim-mensuravel-eh-mensuravel}
 Se $\{f_n\}$ é uma sequência em $M(\Omega,\F)$ tal que
 $f_n(\omega)\to f(\omega)$ para todo $\omega\in\Omega$,
 então $f\in M(\Omega,\F)$.
@@ -571,3 +571,61 @@ então $f\in M(\Omega,\F)$.
 			=\liminf_{n\to\infty} f_n(\omega).
 		\]
 \end{proof}
+
+
+Voltamos a questão da mensurabilidade do produto $fg$,
+quando ambas $f$ e $g\in M(\Omega,\F)$. Para isto 
+vamos introduzir a noção de truncamento de uma função em 
+$M(\Omega,\F)$. Para cada $n\in\N$ considere a função 
+$f_n$ que é chamada de um truncamento de $f$, definida por 
+	\[
+		f_n(\omega)
+		=
+		\begin{cases}
+			f(\omega),&\text{se}\ |f(\omega)|\leq n;
+			\\
+			n,&\text{se}\ f(\omega)>n;
+			\\
+			-n,&\text{se}\ f(\omega)<-n.
+		\end{cases}
+	\]
+\begin{exercicio}
+	Sejam $f\in M(\Omega,\F)$ e $n\in\N$. 
+	Mostre que se $f_n$ é um truncamento de $f$, 
+	como definido acima, então $f_n\in M(\Omega,\F)$. 
+\end{exercicio}
+
+Se $f_n$ e $g_m$ são truncamentos de $f$ e $g$, respectivamente
+segue do Lema \ref{lema-operacoes-alg-com-func-mensuraveis}
+que o produto $f_n\cdot g_m$ é mensurável. Já que 
+para todo $\omega\in \Omega$ temos 
+	\[
+		f(\omega)g_m(\omega) 
+		=
+		\lim_{n\to\infty} f_n(\omega)g_m(\omega)
+	\]
+segue do Corolário \ref{cor-lim-mensuravel-eh-mensuravel}
+que $fg_m \in M(\Omega,\F)$. Observando que
+	\[
+		(fg)(\omega) 
+		=
+		f(\omega)g(\omega)
+		=
+		\lim_{m\to\infty} f(\omega)g_m(\omega)
+	\]	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
