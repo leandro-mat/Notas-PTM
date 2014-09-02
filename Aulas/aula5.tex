@@ -553,3 +553,21 @@ Já que
 basta aplicar duas vezes consecutivas o resultado que acabamos 
 para concluir que ambas $f^*$ e $F^*$ são $\F$-mensuráveis.
 \end{proof}
+
+
+
+
+\begin{corolario}
+Se $\{f_n\}$ é uma sequência em $M(\Omega,\F)$ tal que
+$f_n(\omega)\to f(\omega)$ para todo $\omega\in\Omega$,
+então $f\in M(\Omega,\F)$.
+\end{corolario} 
+
+\begin{proof}
+	Basta observar que 
+		\[
+			f(\omega) 
+			=\lim_{n\to\infty} f_n(\omega)
+			=\liminf_{n\to\infty} f_n(\omega).
+		\]
+\end{proof}
