@@ -11,7 +11,7 @@ Uma coleção $\mathcal{A}$ de subconjuntos de $\Omega$ é chamada de
 	\item[2)] $A\in \mathcal{A} \Rightarrow A^c\in\mathcal{A}$;
 	\item[3)] $A,B\in \mathcal{A} \Rightarrow A\cup B\in\mathcal{A}$.
 \end{itemize}
-Note que 1) e 2) implicam que $\mathcal{A}$ é fechada para uniões 
+Note que 2) e 3) implicam que $\mathcal{A}$ é fechada para uniões 
 e interseções finitas. Se substituímos 3) por:
 \begin{itemize}
 	\item[3')] $A_n\in\mathcal{A}\ \, (n=1,2,\ldots) 
@@ -76,7 +76,7 @@ $$
 $$
 Para verificar que este fato é verdadeiro, definimos $B_1=A_1$
 e $B_n = A_1^c\cap \ldots \cap A_{n-1}^c\cap A_n$ para todo $n\in\mathbb{N}$.
-então $B_n$ forma uma sequência de conjuntos dois a dois disjuntos e além do
+Então $B_n$ forma uma sequência de conjuntos dois a dois disjuntos e além do
 mais $\cup_{n=1}^{\infty} A_n=\cup_{n=1}^{\infty} B_n$, logo 
 $$
 \mu(A) 	= \mu(A\cap [\cup_{n=1}^{\infty} B_n])
@@ -130,7 +130,7 @@ $$
 \}
 $$
 é uma $\sigma$-álgebra $\overline{\mu}$ completa, onde $\overline{\mu}(A\cup B):=\mu(A)$.
-Observe $\overline{\mu}$ está bem definida e 
+Observe que $\overline{\mu}$ está bem definida e 
 que $\overline{\mu}$ é uma medida definida em $\overline{\mathcal{F}}$ que estende $\mu$.
 Esta extensão de $\mu$ é chamada de \index{Completamento! de uma medida} 
 {\it completamento}
@@ -398,7 +398,7 @@ Logo segue da definição de ínfimo que $\mu^{*}(A)\leq \mu^{*}(B)$.
 Resta agora verificar que $\mu^{*}$ satisfaz a propriedade 3) de medida exterior.
 Seja $A_n$ ($n=1,2,\ldots$) uma coleção enumerável de subconjuntos de $\Omega$
 e $A=\cup_n A_n$. Se para algum índice $n$ temos $\mu^{*}(A_n)=\infty$,
-então segue da monotonicidade $\mu^{*}$ que $\mu^{*}(A)=\infty$, e portanto 
+então segue da monotonicidade $\mu$ que $\mu^{*}(A)=\infty$, e portanto 
 3) é válida neste caso. Vamos assumir então que $\mu^{*}(A_n)<\infty$ 
 para todo $n$. Fixe $\varepsilon>0$ arbitrário. Para cada $n$ existe
 uma sequência $F_{n,k}$ ($k=1,2,\ldots$) em $\mathcal{A}$ tal que 
