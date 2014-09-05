@@ -1,0 +1,31 @@
+\chapter[Aula 6]{Variáveis Aleatórias e Independência}
+\chaptermark{}
+
+\section{Variáveis Aleatórias}
+
+\begin{definicao}[Variável Aleatória]\label{def-var-aleatoria}
+Seja $(\Omega,\F)$ um espaço de medida e $\Lambda\in\F$.
+Uma função $X:\Lambda\to\overline{\R}$ tal que para todo 
+$B\in\mathscr{B}(\overline{\R})$ temos 
+	\[
+		\{\omega \in\Lambda: X(\omega)\in B\} 
+		\in \Lambda\cap\F,
+	\]
+onde $\Lambda\cap \F$ denota a coleção de todos os 
+subconjuntos de $\Omega$ da forma $\Lambda\cap F$
+com $F\in\F$.
+\end{definicao}
+
+\begin{observacao}
+Esta definição nesta generalidade é necessária por razões
+lógicas em algumas aplicações, mas para a discussão das
+propriedades básicas de variáveis aleatórias, podemos 
+supor que $\Lambda =\Omega$.
+\end{observacao}
+
+
+\begin{exercicio}
+Suponha que $\Lambda=\Omega$ na Definição \ref{def-var-aleatoria}.
+Mostre que uma variável aleatória é uma função $\F$-mensurável
+tomando valores em $\overline{\R}$ no sentido da seção anterior.  
+\end{exercicio}
