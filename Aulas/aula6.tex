@@ -29,3 +29,119 @@ Suponha que $\Lambda=\Omega$ na Definição \ref{def-var-aleatoria}.
 Mostre que uma variável aleatória é uma função $\F$-mensurável
 tomando valores em $\overline{\R}$ no sentido da seção anterior.  
 \end{exercicio}
+
+Seja $(\Omega,\F,\P)$ um espaço de probabilidade. 
+Se $X:\Omega\to\overline{\R}$ é uma variável aleatória então vamos 
+usar a notação
+	\[
+		\P(X\in B) \equiv \P(\{\omega\in\Omega: X(\omega)\in B\}).
+	\]
+Vamos usar a abreviação v.a. para nos referir a uma variável aleatória
+e ao invés de escrever $X:\Omega\to \overline{\R}$ é uma 
+v.a., vamos escrever simplesmente $X$ é uma v.a..
+Quando $X(\Omega)\subset \R$ vamos dizer que $X$ é uma 
+v.a. real.
+
+
+
+
+
+\begin{proposicao}
+	Se $X$ uma v.a. real em $(\Omega,\F,\P)$ então 
+	$\mu:\F\to [0,1]$ dada por 
+		\[
+			\mu(F)\equiv \P(X^{-1}(B))=\P(X\in B)
+		\]
+	é uma medida de probabilidade em 
+	$(\R,\mathscr{B}(\R))$.
+\end{proposicao}
+
+\begin{proof}
+Claramente $\mu(F)\geq 0$ para todo $F\in\F$. 
+Se $\{A_n\}$ é uma sequência de conjuntos 
+mutuamente disjunta em $\mathscr{B}(\R)$ então 
+$\{X^{-1}(A_n)\}$ é uma sequência mutuamente disjunta em $\Omega$, 
+portanto 
+\begin{align*}
+	\mu \left( \bigcup_{n=1}^{\infty} A_n   \right)
+	=
+	\P \left( X^{-1}\left(\bigcup_{n=1}^{\infty} A_n \right) \right)
+	=
+	\P \left( \bigcup_{n=1}^{\infty} X^{-1}(A_n) \right)
+	=&
+	\sum_{n=1}^{\infty}\P(X^{-1}(A_n))
+	\\
+	=&
+	\sum_{n=1}^{\infty}\mu(A_n)
+\end{align*}
+Já que $X^{-1}(\R)=\Omega$, temos que $\mu(\R)=1$ e
+isto encerra a prova de que $\mu$ é uma medida de probabilidade.
+\end{proof}
+
+A medida de probabilidade $\mu$ induzida pela v.a. real $X$, 
+definida na proposição acima, é frequentemente denotada por 
+	\[
+		\mu = \P\circ X^{-1}.
+	\]
+Neste caso, a função distribuição $F$ associada 
+a medida $\mu$ é chamada 
+{\bf função distribuição de $X$}, 
+\index{Função!Distribuição de $X$}
+mais especificamente 
+	\[
+		F(x) = \mu((-\infty,x]) = \P(X\leq x).
+	\] 
+Quando estivermos lidando com mais de uma v.a. usamos 
+a notação $F_X$ para indicar que estamos falando da 
+função distribuição de $X$.
+
+
+\begin{teorema}
+	Seja $(\Omega,\F)$ um espaço mensurável. 
+	Se $X$ é uma v.a. real e $f:\R\to\R$ é uma 
+	função mensurável (com respeito a $\sigma$-álgebra de Borel), 
+	então $f(X)$ é uma v.a. real.
+\end{teorema}
+
+\begin{proof}
+ Segue das propriedades elementares de composição de função que 
+ $(f(X))^{-1}(A) = (f\circ X)^{-1}(A) = X^{-1}(f^{-1}(A))$.
+ Logo 
+ \[
+ 	(f\circ X)^{-1}(\mathscr{B}(\R))
+ 	=
+ 	X^{-1}(f^{-1}(\mathscr{B}(\R)))
+ 	=
+ 	X^{-1}(\mathscr{B}(\R))
+ 	\subset 
+ 	\F.
+ \]
+O que completa a demostração.
+\end{proof}
+
+
+
+
+
+
+
+
+
+\section{Independência}
+
+Independência é uma propriedade básica de eventos e variáveis 
+aleatórias em vários modelos de probabilidade. A definição deste
+conceito é motivada pelo raciocínio intuitivo de que a ocorrência 
+ou não de um evento não afeta nossa estimativa da probabilidade 
+que um evento independente ocorra ou não. 
+Apesar deste conceito ter um  apelo 
+intuitivo é importante entender que independência em Teoria 
+da Probabilidade é um conceito técnico com uma definição 
+precisa e que deve ser verificada, cada modelo específico
+que estiver sendo estudado.
+ 
+Certamente existem exemplos de eventos dependentes que nossa 
+intuição nos diz que eles devem ser dependentes e exemplos que 
+nossa intuição diz que não devem ser independentes, mas que 
+satisfazem a definição. Assim devemos recorrer sempre a definição 
+para termos certeza sobre a independência de determinados eventos.  
