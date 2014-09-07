@@ -1,0 +1,192 @@
+\chapter*{Lista 2}
+\addcontentsline{toc}{chapter}{Lista 2}
+\chaptermark{}
+
+
+% Inicio da Lista de Exercícios 
+\begin{enumerate}[leftmargin=*]
+
+
+\item 
+Sejam $B_1,\ldots, B_n$ eventos independentes. 
+Mostre que 
+	\[
+		\P \left( \bigcup_{i=1}^n B_i \right)
+		=
+		1- \prod_{i=1}^n [1-\P(B_i)].
+	\]
+
+
+\item 
+Qual é a quantidade mínima de pontos que um espaço de
+probabilidade $(\Omega,\F,\P)$ deve ter para que possa
+existir $n$ eventos independentes $B_1,\ldots,B_n$ 
+que não tenham probabilidade zero ou um. 
+
+
+\item Se $\{A_n\}$ é uma sequência de eventos independentes,
+mostre que 
+	\[
+		\P \left( \bigcap_{i=1}^n A_n \right)
+		=
+		\prod_{n=1}^{\infty} \P(A_n).
+	\]
+
+
+
+\item 
+Considere o espaço de probabilidade $([0,1],\mathscr{B}([0,1]),\lambda)$,
+onde $\lambda$ é a medida de Lebesgue em $[0,1]$.
+Seja $X:[0,1]\to\R$ a v.a. dada por $X(\omega)=\omega$.
+	\begin{itemize}
+		\item[a)]
+		Existe alguma variável aleatória que é independente de 
+		$X$ e não constante quase certamente ?
+		
+		\item[b)] Defina a v.a. $Y=X(1-X)$. Construa uma v.a.
+		$Z$ tal que $Z$ e $Y$ sejam independentes.
+	\end{itemize}
+
+
+
+\item 
+Suponha que $X$ seja uma variável aleatória.
+	\begin{itemize}
+		\item[a)] 
+		Mostre que a v.a. $X$ é independente de si mesma 
+		se, e somente se, existe uma constante $c$ tal que 
+		$\P(X=c)=1$.
+		
+		\item[b)]
+		Se existe uma função mensurável 
+		$g:(\R,\mathscr{B}(\R))\to(\R,\mathscr{B}(\R))$
+		tal que $X$ e $g(X)$ são independentes, então prove que
+		existe uma constante $c$ tal que $\P(g(X)=c)= 1$. 				
+	\end{itemize}	 
+		
+		
+\item 
+$^*$ Seja $\{X_k,k\in\N\}$ uma sequência de v.a's iid com distribuição
+comum $F$. Seja $\pi$ uma permutação de $\{1,\ldots,n\}$. 
+Mostre que 
+	\[
+		(X_1,\ldots,X_n) 
+		\,{\buildrel d \over =}\, 
+		(X_{\pi(1)},\ldots,X_{\pi(n)}),
+	\]
+onde ${\buildrel d \over =}$ significa que os dois vetores
+têm a mesma distribuição conjunta. 
+
+
+
+\item 
+Se $A,B,C$ são eventos independentes, mostre que 
+ambos $A\cup B$ e $A\setminus B$ são independentes de 
+$C$.
+
+
+
+\item Se $X$ e $Y$ são variáveis aleatórias independentes
+e $f,g:\R\to\R$ são funções mensuráveis porque $f(X)$ e $g(Y)$
+são independentes ?
+\\
+(Nenhuma conta é necessária).
+
+
+
+
+\item
+Suponha que $\{A_n\}$ é uma sequência de eventos independentes
+satisfazendo $\P(A_n)<1$, para todo $n\in \N$. Mostre que 
+	\[
+		\P \left( \bigcup_{i=1}^n A_n \right) = 1
+		\quad
+		\Longleftrightarrow
+		\quad
+		\P(\limsup A_n) =1.
+	\]
+Dê um exemplo mostrando que a condição $\P(A_n)<1$ 
+não pode ser removida.
+
+
+\item 
+Suponha que $\{X_n, n\in\N\}$ seja uma sequência de variáveis 
+aleatórias independentes. Mostre que 
+\[
+	\P \left(  \sup_{n\in\N} X_n <\infty  \right)=1
+	\quad
+	\Longleftrightarrow
+	\quad
+	\sum_{n=1}^{\infty} \P(X_n>M) <\infty,\quad 
+	\text{ para algum}\ M>0.
+\]
+
+
+
+\item
+Use o Lema de Borel-Cantelli para mostrar que dada 
+qualquer sequência de v.a.'s $\{X_n, n\in\N\}$, tomando valores 
+reais, existe uma sequência 
+$\{c_n\}$ (que não depende da sequência $\{X_n\}$) 
+tal que 
+	\[
+		\P \left( \lim_{n\to\infty} \frac{X_n}{c_n}=0 \right)=1.
+	\]
+Dê uma descrição precisa das possíveis escolhas da sequência $c_n$.
+
+
+
+\item 
+O seguinte resultado é útil para ser usado juntamente 
+com a Lei Zero-Um de Borel: suponha que $\{a_n\}$ 
+e $\{b_n\}$ sejam duas sequências de números reais
+não-negativos, satisfazendo $a_n \sim b_n$, 
+isto é, $a_n/b_n\to 1$, quando $n\to\infty$.
+Mostre que 
+	\[	
+		\sum_{n=1}^{\infty} a_n <\infty
+		\quad
+		\Longleftrightarrow
+		\quad
+		\sum_{n=1}^{\infty} b_n <\infty.
+	\]	
+
+
+
+
+\item 
+Seja $\{X_n, n\in\N\}$ uma sequência de v.a.'s iid com
+	\[
+		\P(X_1=1)=p=1-\P(X_1=0).
+	\]
+Qual é a probabilidade que o padrão $1,0,1$ apareça
+infinitas vezes ? 
+\\
+(Dica. Considere os eventos $A_k=\{X_k=1,X_{k+1}=0,X_{k+2}=1\}$ e 
+olhe para a sequência $A_1,A_4,A_7,\ldots$).
+
+
+
+\item 
+Em uma sequência de v.a.'s de Bernoulli $\{X_n, n\in\N\}$
+com 
+	\[
+		\P(X_n=1)=p=1-\P(X_n=0).
+	\]
+Seja $A_n$ o evento ocorrem $n$ uns consecutivos entre as 
+observações $2^n$ e $2^{n+1}$. Mostre que se $p \geq 1/2$,
+então $A_n$ ocorre infinitas vezes com probabilidade 1.
+\\
+Dica. Prove algo como 
+\[
+	\P(A_n) \geq 
+	1-(1-p^n)^{\frac{2^n}{n}}
+	>
+	1-e^{-\frac{(2p)^n}{2n}}.		
+\]
+
+
+\item 
+ 
+
+\end{enumerate}
