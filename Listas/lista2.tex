@@ -731,7 +731,7 @@ $A = \cup_{i=1}^n A_i$, então
 
 \item {\bf Os Números de Ramsey}. 
 O objetivo deste exercício é usar o ``Método Probabilístico''
-para obter uma cota inferior dos números de Ramsey. 
+para obter cotas inferior e superior dos números de Ramsey. 
 
 {\bf Grafo.} Um grafo é um par ordenado $G=(V,E)$,
 onde $V$ é um conjunto arbitrário (chamado conjunto de vértices de $G$)  
@@ -770,11 +770,75 @@ monocromático {\bf vermelho}.
 
 
 O número de Ramsey $R(k,l)$ é o menor inteiro
-$n$ tal que para qualquer coloração $c:E_n\to\{0,1\}$
-de $K_n$ possui um subgrafo $K_k$ monocromático azul 
+$n$ tal que qualquer coloração $c:E_n\to\{0,1\}$
+de $K_n$ possui pelo menos um subgrafo $K_k$ monocromático azul 
 ou um subgrafo $K_l$ monocromático vermelho.
 
+Em 1929 Ramsey mostrou que $R(k,l)$ é finito para 
+quaisquer inteiros $k$ e $l$. 
+Nosso objetivo neste exercício será 
+exibir cotas inferior e superior para 
+os números de Ramsey da diagonal, isto é, 
+$R(k,k)$. 
 
+	\begin{itemize}
+		\item[a)] 
+		Construa um espaço de probabilidade 
+		$(\Omega,\F,\P)$ e defina o que é uma coloração aleatória 
+		de $K_n$. 
+		
+		\item[b)] Mostre que existe uma coloração aleatória de $K_n$,
+		onde cada aresta de $E_n$ é colorida aleatoriamente
+		de azul ou vermelho com igual probabilidade.
+		
+		\item[b)] Para qualquer conjunto $R$ possuindo $k$ ($k\leq n$)
+		vértices em $K_n$, 
+		seja $A_R$ o evento o subgrafo de $K_n$ induzido 
+		por $R$ é monocromático, isto é, todas as arestas
+		de vértices em $R$ estão pintadas com a mesma cor. 
+		Mostre que
+			\[ 
+				\P(A_R) = \frac{1}{2^{\binom{n}{k}-1  }}
+			\]
+		
+		\item[c)] Mostre que a probabilidade de pelo menos um 
+		evento do tipo $A_R$ ocorrer é no máximo 
+			\[
+				\binom{n}{k}\frac{1}{2^{\binom{n}{k}-1  }}.
+			\]
+			
+		\item[d)] Mostre que se $n$ e $k$ satisfazem
+			\[
+				\binom{n}{k}\frac{1}{2^{\binom{n}{k}-1  }} < 1
+			\]
+		então $R(k,k)> n$.
+		
+		\item[e)] Mostre que se $n=\lfloor 2^{k/2} \rfloor$ então
+			\[
+				\binom{n}{k}\frac{1}{2^{\binom{n}{k}-1  }} < 1.
+			\]
+		Conclua que $R(k,k)> \lfloor 2^{k/2} \rfloor $ para todo 
+		$k\geq 3$.		
+		
+		\item[f)] É fácil mostrar que $R(3,3)=6$. 
+		O valor de $R(4,4)=18$ foi determinado apenas em 1979 
+		por 	Evans, Pulham e Sheehan. 
+		O valor de $R(k,k)$ para $k\geq 5$ não é conhecido ainda.
+		Em uma entrevista o famoso matemático Paul Erdös 
+		explica usando a seguinte anedota,
+		o grau de dificuldade de se calcular exatamente
+		tais números com a tecnologia matemática disponível atualmente: \\
+		`` Suponha que uma civilização alienígena muito 
+		mais desenvolvida e poderosa que a nossa, 
+		pouse sobre a Terra e exija que façamos o cálculo do valor
+		exato de $R(5,5)$ ou caso contrário, eles destruirão nosso planeta. 
+		Neste caso, 
+		na minha opinião, a melhor estratégia é pegar todos os matemáticos e todos
+		os computadores do mundo e tentar encontrar este valor.
+		Mas, se os alienígenas exigirem o valor exato de $R(6,6)$,
+		eu acredito que 	a melhor estratégia seja destruí-los.''
+		 
+	\end{itemize}
 
 
 
