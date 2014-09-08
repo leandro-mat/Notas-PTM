@@ -762,11 +762,17 @@ caso $c(e)=1$ vamos dizer que $e$ está colorida de vermelho.
 
 Fixada uma coloração $c$ de $K_n$ e um número natural $k<n$, 
 dizemos que $K_n$ possui um subgrafo monocromático
-{\bf azul} $K_k$, se existem $k$ vértices em 
+{\bf azul} $K_k$, se existem $k$ vértices 
 $\{v_1,\ldots,v_k\}\subset \{1,\ldots,n\}$
-tais que 
+tais que $c(\{v_i,v_j\})=0$ para todo $i,j=1,\ldots,k$
+com $i\neq k$. Analogamente definimos $K_k$ 
+monocromático {\bf vermelho}.
 
 
+O número de Ramsey $R(k,l)$ é o menor inteiro
+$n$ tal que para qualquer coloração $c:E_n\to\{0,1\}$
+de $K_n$ possui um subgrafo $K_k$ monocromático azul 
+ou um subgrafo $K_l$ monocromático vermelho.
 
 
 
