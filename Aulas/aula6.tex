@@ -137,7 +137,7 @@ que um evento independente ocorra ou não.
 Apesar deste conceito ter um  apelo 
 intuitivo é importante entender que independência em Teoria 
 da Probabilidade é um conceito técnico com uma definição 
-precisa e que deve ser verificada, cada modelo específico
+precisa e que deve ser verificada em cada modelo específico
 que estiver sendo estudado.
  
 Certamente existem exemplos de eventos dependentes que nossa 
@@ -145,6 +145,87 @@ intuição nos diz que eles devem ser dependentes e exemplos que
 nossa intuição diz que não devem ser independentes, mas que 
 satisfazem a definição. Assim devemos recorrer sempre a definição 
 para termos certeza sobre a independência de determinados eventos.  
+
+
+\begin{definicao}
+\label{def-2-eventos-independentes}
+\index{Eventos!Independentes}
+%
+	Seja $(\Omega,\F,\P)$ um espaço de probabilidade fixado. 
+	Os eventos $A$ e $B$ são ditos independentes  se 
+		\[
+			\P(A\cap B) = \P(A) \P(B).
+		\]
+%
+\end{definicao}
+%
+%
+%
+%
+%
+\begin{definicao}{def-n-eventos-independentes}
+Seja $(\Omega,\F,\P)$ um espaço de probabilidade fixado.
+Dizemos que os eventos $A_1,\ldots,A_n$ são independentes
+se 
+	\[
+		\P\left( \bigcap_{i\in I} A_i \right)
+		=
+		\prod_{i\in I} \P(A_i),
+		\qquad
+		\forall I\subset \{1,\ldots,n\}.
+	\]	
+\end{definicao}
+
+Deve se observar que a condição de independência 
+de eventos $A_1,\ldots,A_n$ envolve a verificação de 
+	\[
+		\sum_{k=2}^n \binom{n}{k} = 2^n-n-1
+	\]
+equações. 
+
+Definimos em seguida, o conceito de independência de uma 
+quantidade finita de coleções de subconjuntos de um espaço
+de probabilidade. Em grande parte das aplicações vamos usar
+este conceito com cada coleção sendo uma $sigma$-álgebra 
+de conjuntos de $\Omega$. 
+
+
+\begin{definicao}
+\label{def-n-colecoes-independentes}
+Sejam $(\Omega,\F,\P)$ um espaço de probabilidade fixado
+e $\mathcal{C}_i\subset \F$,  $i=1,\ldots,n$ 
+coleções de eventos. 
+Dizemos que as coleções $\mathcal{C}_i$'s são independentes
+se para qualquer escolha de $A_1,\ldots,A_n$, 
+com $A_i\in \mathcal{C}_i$, $i=1,\ldots,n$, temos que 
+os eventos $A_1,\ldots,A_n$ são eventos independentes.
+\end{definicao}
+
+Prosseguimos apresentando um critério bastante útil
+para provar independência de uma 
+quantidade finita de sub-$\sigma$-álgebras de $\F$.
+Devido a sua importância nesta seção, vamos apresentá-lo
+na forma de um teorema.
+
+\begin{teorema}
+Seja $(\Omega,\F,\P)$ um espaço de probabilidade fixado.
+Se $\mathcal{C}_i$ para $i=1,\ldots,n$ é uma 
+coleção (não vazia) de {\bf eventos} tais que 
+	\begin{enumerate}
+		\item $\mathcal{C}_i	$ é um $\pi$-sistema;
+		\item $\mathcal{C}_i,\ i=1,\ldots, n$ são independentes,
+	\end{enumerate}	 	
+então $\sigma(\mathcal{C}_1),\ldots, \sigma(\mathcal{C}_n)$ são 
+independentes.
+\end{teorema}
+
+
+
+
+
+
+
+
 
 
 \begin{center}
