@@ -222,6 +222,95 @@ independentes.
 
 
 
+\begin{proof}
+A prova deste teorema será feita por indução 
+no número de coleções. 
+Primeiro mostramos que a tese do teorema se 
+verifica para o caso $n=2$. 
+Fixe $A_2\in\mathcal{C}_2$ e defina
+	\[
+		\mathcal{L}
+		=
+		\{ A\in \F: \P(A\cap A_2) = \P(A)\P(A_2)\}.
+	\]
+Afirmamos que $\mathcal{L}$ é um $\lambda$-sistema.
+De fato, primeiramente temos que $\Omega\in \mathcal{L}$ pois, 
+$\P(\Omega\cap A_2)=\P(A_2)=\P(\Omega)\P(A_2)$.
+A coleção $\mathcal{L}$ é fechada para complementação pois, 
+para qualquer $A\in\mathcal{L}$, temos que
+	\begin{align*}
+	\P(A^c\cap A_2) 
+	&=
+	\P((\Omega\setminus A)\cap A_2)
+	\\
+	&=
+	\P( A_2\setminus (A\cap A_2))
+	\\
+	&=
+	\P( A_2) -\P(A\cap A_2)
+	\\
+	&=
+	\P( A_2) -\P(A)\P(A_2)
+	\\
+	&=
+	\P( A_2) (1-\P(A))
+	\\
+	&=
+	\P(A_2)\P(A^c).
+	\end{align*}
+O que mostra que $A^c\in\mathcal{L}$. 
+Para encerrar a prova da afimarção resta
+mostrar que se $\{B_n\}$ uma coleção dois a dois disjunta 
+em $\mathcal{L}$ então $\cup_{i=1}^{\infty} B_n\in\mathcal{L}$.
+Este fato segue das seguintes igualdades
+	\begin{align*}
+	\P \left( A_2 \cap \bigcup_{n=1}^{\infty} B_n \right) 
+	&=
+	\P \left( \bigcup_{n=1}^{\infty} (A_2 \cap B_n) \right) 
+	\\
+	&=
+	\sum_{n=1}^{\infty}\P \left( A_2 \cap B_n \right) 
+	\\
+	&=
+	\sum_{n=1}^{\infty}\P(A_2)\P(B_n)
+	\\
+	&=
+	\P(A_2)\sum_{n=1}^{\infty}\P(B_n)
+	\\
+	&=
+	\P(A_2) \P \left( \bigcup_{n=1}^{\infty} B_n \right). 
+	\end{align*}
+%
+%
+%
+Por hipótese $\mathcal{C}_1\subset \mathcal{L}$ 
+e é um $\pi$-sistema.
+Como mostramos que $\mathcal{L}$ é um 
+$\lambda$-sistema podemos 
+aplicar o Teorema de Dynkin para concluir que 
+$\sigma(\mathcal{C}_1)\subset \mathcal{L}$.
+Como $A_2$ é arbitrário em $\mathcal{C}_2$ 
+temos mostrado neste momento que as coleções 
+$\sigma(\mathcal{C}_1)$ e $\mathcal{C}_2$ 
+são independentes.
+
+Agora fixamos $A_1\in \sigma(\mathcal{C}_1)$ e
+de maneira análoga definimos 
+	\[
+	\mathcal{K}=
+	\{ A\in \F: \P(A\cap A_1) = \P(A)\P(A_1)\}
+	\]
+e verificamos que está coleção é um $\lambda$-sistema.
+Como vimos acima, $\sigma(\mathcal{C}_1)$ e $\mathcal{C}_2$ 
+são independentes logo $\mathcal{C}_2 \subset \mathcal{K}$.
+Usando novamente o Teorema de Dynkin completamos a prova
+do caso $n=2$. 
+
+Claramente o passo de indução pode 
+ser feito utilizando a técnica apresentada acima e 
+assim o teorema está provado.
+\end{proof}
+
 
 
 
