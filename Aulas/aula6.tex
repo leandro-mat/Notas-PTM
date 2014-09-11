@@ -457,7 +457,7 @@ Dizemos que uma v.a. $X$ é discreta se $X(\Omega)$
 \end{definicao}
 
 
-\begin{corolario}
+\begin{corolario}\label{cor-criterio-independencia-v.a.-discreta}
 Seja $(\Omega,\F,\P)$ um espaço de probabilidade.
 Suponha que $X_1,\ldots,X_n$ seja uma coleção de 
 v.a.'s {\bf discretas} com conjunto imagem comum igual 
@@ -534,6 +534,129 @@ são independentes.
 
 
 
+
+
+
+\section{O Teorema de Renyi}\label{sec-teo-Renyi}
+
+O objetivo desta seção é apresentar um exemplo 
+interessante de variáveis aleatórias independentes
+bem como alguns cálculos explícitos de eventos 
+associados a elas. Antes passar à prova do 
+Teorema de Renyi apresentamos um lema que 
+nos ajudará com os cálculos envolvidos na 
+prova do teorema.
+
+\begin{lema}
+Sejam $(\Omega,\F,\P)$ um espaço de probabilidade e 
+$\{X_n\}$ uma sequência de variáveis aleatórias
+iid com função distribuição {\bf contínua} comum 
+dada por $F$. Então para todo $i\neq j$ temos que
+	\[
+		\P(X_i=X_j)=0.
+	\]
+\end{lema}
+
+
+\begin{proof}
+Para fixar as ideias vamos provar o lema para 
+o caso $i=1$ e $j=2$, isto é, $\P(X_1=X_2)=0$.
+Primeiro observe que temos para todo $n\in\N$ 
+a seguinte continência de conjuntos 
+	\[
+	\{X_1=X_2\}
+	\subset
+	\bigcup_{k=-\infty}^{\infty}
+	\left\{
+		\frac{k-1}{2^n}<X_1\leq \frac{k}{2^n}
+	\right\}
+	\cap
+	\left\{
+		\frac{k-1}{2^n}<X_2\leq \frac{k}{2^n}
+	\right\}
+	\]
+Usando a monotonicidade e subaditividade da medida
+de probabilidade $\P$ e a independência de 
+$X_1$ e $X_2$ temos a seguinte estimativa
+	\begin{align*}
+	\P(X_1=X_2)
+	&\leq
+	\sum_{k=-\infty}^{\infty}
+	\P \left(
+		\left\{
+			\frac{k-1}{2^n}<X_1\leq \frac{k}{2^n}
+		\right\}
+		\cap
+		\left\{
+			\frac{k-1}{2^n}<X_2\leq \frac{k}{2^n}
+		\right\}
+	\right)
+	\\[0.4cm]
+	&=
+	\sum_{k=-\infty}^{\infty}
+	\P \left(
+		\left\{
+			\frac{k-1}{2^n}<X_1\leq \frac{k}{2^n}
+		\right\}
+	\right)^2.
+	\end{align*}
+%
+%
+%
+Como $X_1$ tem função distribuição $F$ o lado 
+direito da desigualdade acima é igual 
+	\begin{align*}
+	\sum_{k=-\infty}^{\infty}
+	\left(
+		F\left(\frac{k}{2^n}\right)
+		-
+		F\left(\frac{k-1}{2^n}\right)
+	\right)^2
+	\end{align*}
+que por sua vez é cotado superiormente por 
+	\begin{align*}
+	\sup_{k\in\Z}
+		\left(
+			F\left(\frac{k}{2^n}\right)
+			-
+			F\left(\frac{k-1}{2^n}\right)
+		\right)
+	\sum_{k=-\infty}^{\infty}
+	\left(
+		F\left(\frac{k}{2^n}\right)
+		-
+		F\left(\frac{k-1}{2^n}\right)
+	\right)	
+	\end{align*}
+Usando um argumento telescópico e que $F$ é uma 
+função de distribuição podemos verificar que a soma
+acima é majorada por 1. Juntando todas estas estimativas
+temos
+	\begin{align*}
+	\P(X_1=X_2)
+	\leq 
+	\sup_{k\in\Z}
+		\left(
+			F\left(\frac{k}{2^n}\right)
+			-
+			F\left(\frac{k-1}{2^n}\right)
+		\right).
+	\end{align*}
+ Usando novamente que $F$ é uma função distribuição podemos
+ afirmar que $F$ é uniformemente contínua em $\R$, daí dado 
+ $\varepsilon>0$ para todo $n\geq n_0(\varepsilon)$ temos que 
+	\[
+			F\left(\frac{k}{2^n}\right)
+			-
+			F\left(\frac{k-1}{2^n}\right)
+			< 
+			\varepsilon
+			\qquad
+			\forall k\in\Z
+	\]  
+e portanto segue que $\P(X_1=X_2)< \varepsilon$. 
+Como $\varepsilon$ é arbitrário o lema está provado.
+\end{proof}
 
 
 \begin{center}
