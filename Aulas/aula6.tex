@@ -430,6 +430,112 @@ $\{ \sigma(\mathcal{C}_j)=\sigma(X_j)\}_{j\in J}$
 são independentes. 	
 \end{proof}
 
+
+
+
+
+\begin{corolario}
+	Uma coleção finita de v.a.'s $X_1,\ldots,X_n$
+	em um espaço de probabilidade $(\Omega,\F,\P)$ é
+	independente se, e somente se, 
+		\[
+			\P(X_1\leq x_1,\ldots, X_n\leq x_n)
+			=
+			\prod_{i=1}^n \P(X_i\leq x_i)
+			\qquad
+			\forall\ (x_1,\ldots,x_n)\in\R^n.
+		\]
+\end{corolario}
+
+
+\begin{definicao}[Variável Aleatória Discreta]
+\label{def-var-aleatoria-discreta}
+\index{Variável Aleatória!Discreta}
+Seja $(\Omega,\F,\P)$ um espaço de probabilidade.
+Dizemos que uma v.a. $X$ é discreta se $X(\Omega)$ 
+é um subconjunto enumerável de $\R$.
+\end{definicao}
+
+
+\begin{corolario}
+Seja $(\Omega,\F,\P)$ um espaço de probabilidade.
+Suponha que $X_1,\ldots,X_n$ seja uma coleção de 
+v.a.'s {\bf discretas} com conjunto imagem comum igual 
+a $\mathcal{R}\subset \R$. Sob estas condições 
+a coleção $X_1,\ldots,X_n$ é independente 
+se, e somente se,  
+	 	\begin{equation}\label{eq-fatorizacao-func-distribuicao-v.a.-discretas}
+			\P(X_1= x_1,\ldots, X_n=x_n)
+			=
+			\prod_{i=1}^n \P(X_i = x_i)
+			\qquad
+			\forall\ (x_1,\ldots,x_n)\in\mathcal{R}^n.
+		\end{equation}
+\end{corolario}
+
+
+\begin{proof}
+Supondo que $X_1,\ldots,X_n$ é uma família de v.a.'s independentes
+temos que $\sigma(X_i), i=1,\ldots,n$ é uma coleção
+de $\sigma$-álgebras independentes.
+Já que $\{X_i=x_i\}\in \sigma(X_i)$ temos que 
+$\{X_i=x_i\}, i=1,\ldots, n$ são eventos independentes e assim a 
+condição \ref{eq-fatorizacao-func-distribuicao-v.a.-discretas}
+é satisfeita.
+
+Por questão de simplicidade vamos 
+mostrar a recíproca para o caso $n=2$. 
+A prova para o caso geral é obtida
+de maneira análoga. 
+%
+Sejam $(z_1,z_2)$ e $(x_1,x_2)$ vetores em $\R^2$. 
+Considere a seguinte relação de ordem parcial em $\R^2$, 
+$(z_1,z_2)\preceq (x_1,x_2)$ se $z_1\leq x_1$ e $z_2\leq x_2$.
+Usando a condição \ref{eq-fatorizacao-func-distribuicao-v.a.-discretas}
+temos para qualquer $(x_1,x_2)\in\R^2$ a seguintes igualdades:
+\begin{align*}
+\P(X_1\leq x_1,\, X_2\leq x_2)
+&=
+	\sum_{
+		\substack {(z_1,z_2)\preceq (x_1,x_2) 
+					\\ (z_1,z_2)\in\mathcal{R}^2 }  
+	} 
+	\P(X_1= z_1,\, X_2= z_2)
+\\[0.3cm]
+&=
+	\sum_{
+		\substack {(z_1,z_2)\preceq (x_1,x_2) 
+					\\ (z_1,z_2)\in\mathcal{R}^2 }  
+	} 
+	\P(X_1= z_1) \P(X_2= z_2)
+\\[0.3cm]
+&=
+	\sum_{\substack {z_1\leq x_1 \\ z_1\in\mathcal{R} } } 
+	\sum_{\substack {z_2\leq x_2 \\ z_2\in\mathcal{R} } }
+	\P(X_1= z_1) \P(X_2= z_2)
+\\[0.3cm]
+&=
+	\sum_{\substack {z_1\leq x_1 \\ z_1\in\mathcal{R} } } 
+	\P(X_1= z_1)
+	\sum_{\substack {z_2\leq x_2 \\ z_2\in\mathcal{R} } }
+	\P(X_2= z_2)
+\\[0.3cm]
+&=
+	\P(X_1\leq x_1)\P(X_2\leq x_2).
+\end{align*}
+Usando o corolário anterior segue que $X_1$ e $X_2$
+são independentes.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
 \begin{center}
 	{\red Em andamento.}
 \end{center}
