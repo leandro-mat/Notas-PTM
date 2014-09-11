@@ -207,7 +207,7 @@ quantidade finita de sub-$\sigma$-álgebras de $\F$.
 Devido a sua importância nesta seção, vamos apresentá-lo
 na forma de um teorema.
 
-\begin{teorema}
+\begin{teorema}\label{teo-criterio-basico-independencia}
 Seja $(\Omega,\F,\P)$ um espaço de probabilidade fixado.
 Se $\mathcal{C}_i$ para $i=1,\ldots,n$ é uma 
 coleção (não vazia) de {\bf eventos} tais que 
@@ -380,12 +380,55 @@ Antes porém, vamos introduzir algumas notações.
 
 
 
-Fixado um espaço de probabilidade $(\Omega,\F,\P)$,
+Fixe um espaço de probabilidade $(\Omega,\F,\P)$,
 um conjunto de índices $T$ e uma família de v.a.'s   
-$\{X_t}_{i\in T}$ 
+$\{X_t\}_{t\in T}$. Para cada $J\subset T$ finito
+definimos  
+	\[
+		F_J(x_j, j\in J) 
+		\equiv 
+		\P \left(\, \bigcap_{j\in J} \{X_j\leq x_j\} \right).
+	\]
+
+\begin{teorema}
+	Fixe um espaço de probabilidade $(\Omega,\F,\P)$ e
+	um conjunto arbitrário de índices $T$.
+	Uma família de v.a.'s $\{X_t\}_{t\in T}$ é independente
+	se, e somente se, para todo subconjunto $J\subset T$ 
+	finito temos que 
+		\begin{equation}\label{eq-teo-fatorizacao-funcao-distribuicao}
+			F_{J}(x_j,j\in J) = \prod_{j\in J}\P(X_j\leq x_j)
+			\qquad
+			\forall x_j\in \R.		
+		\end{equation}
+\end{teorema}
 
 
+\begin{proof}
+Para demonstrar o teorema é suficiente provar que 
+para todo subconjunto {\bf finito} $J\subset T$ temos que 
+as v.a.'s $\{X_j\}_{j\in J}$ são independentes
+se, e somente se, vale a condição 
+\eqref{eq-teo-fatorizacao-funcao-distribuicao}.
 
+Para cada $j\in J$, defina 
+	\[
+		\mathcal{C}_j
+		=
+		\bigcup_{x\in\R} \{X_j\leq x\}.
+	\]
+É imediato verificar que $\mathcal{C}_j$	é 
+um $\pi$-sistema e que 
+$\sigma(\mathcal{C}_j)=\sigma(X_j)$.
+Observe que a condição 
+\eqref{eq-teo-fatorizacao-funcao-distribuicao}
+diz que $\mathcal{C}_j$ é uma coleção de eventos
+independentes e portanto segue do 
+Teorema \ref{teo-criterio-basico-independencia}
+que as $\sigma$-álgebras 
+$\{ \sigma(\mathcal{C}_j)=\sigma(X_j)\}_{j\in J}$
+são independentes. 	
+\end{proof}
 
 \begin{center}
 	{\red Em andamento.}
