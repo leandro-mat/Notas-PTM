@@ -540,12 +540,16 @@ são independentes.
 \section{O Teorema de Renyi}\label{sec-teo-Renyi}
 
 O objetivo desta seção é apresentar um exemplo 
-interessante de variáveis aleatórias independentes
-bem como alguns cálculos explícitos de eventos 
-associados a elas. Antes passar à prova do 
-Teorema de Renyi apresentamos um lema que 
-nos ajudará com os cálculos envolvidos na 
-prova do teorema.
+interessante onde aparecem variáveis aleatórias 
+independentes bem como alguns cálculos explícitos de eventos 
+associados a elas. Este exemplo é conhecido como 
+Teorema de Renyi e antes de passarmos à sua prova
+vamos provar um lema sobre v.a.'s iid com distribuição 
+contínua, em seguida introduzimos algumas notações e 
+depois enunciamos e provamos o Teorema de Renyi
+
+
+
 
 \begin{lema}
 Sejam $(\Omega,\F,\P)$ um espaço de probabilidade e 
@@ -658,6 +662,53 @@ e portanto segue que $\P(X_1=X_2)< \varepsilon$.
 Como $\varepsilon>0$ é arbitrário, 
 o lema está provado.
 \end{proof}
+
+
+
+\bigskip
+
+Considere uma sequência $\{X_n\}$ de v.a.'s iid 
+com distribuição contínua $F$ em um espaço de probabilidade
+$(\Omega,\F,\P)$. 
+Dizemos que há um ``empate'' entre estas v.a.'s  se
+para algum $\omega\in\Omega$ temos que
+$X_i(\omega)=X_j(\omega)$ para todo $i,j\in\N$.
+Vamos usar a notação simplificada 
+	\[
+		\{ \text{Empate} \}
+		=
+		\bigcup_{i\neq j} \{X_i=X_j\}	
+	\]
+Pelo lema anterior temos que
+$\P(\{\text{Empate}\})=0$.
+Vamos dizer que $X_n$ é um recorde (entre $X_1,\ldots,X_{n-1}$)
+se 
+	\[ 
+	X_n>\max\{X_1,\ldots,X_{n-1}\}.
+	\]
+Para simplificar a notação vamos denotar por 
+$A_n = \{X_n \ \text{é um recorde}\ \}$.
+O Teorema de Renyi entre outras coisas afirma que
+os eventos $\{A_n\}$ são independentes e também que 
+	\[
+		\P(A_j)=\frac{1}{j}
+		\qquad 
+		\forall\ j\geq 2.
+	\]
+Isto é na verdade um caso particular de ``{\it ranks}''
+relativos de $X_n$ que é v.a.'s definida da seguinte maneira:
+	\[
+		R_n = \sum_{i=1}^n 1_{\{X_j\geq X_n\}}.
+	\]
+Note que $R_n=1$ se, e somente se, $X_n$ é um recorde.
+Quando $R_n=2$ temos que $X_n$ é o segundo maior 
+valor entre $X_1,\ldots,X_n$ e assim por diante. 
+
+
+
+
+
+
 
 
 \begin{center}
