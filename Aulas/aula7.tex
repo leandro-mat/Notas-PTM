@@ -30,13 +30,61 @@ para $\omega=1/2$ temos
 Um fato importante é que este é o único tipo 
 de não unicidade que ocorre na expansão diádica de um 
 número no intervalo $(0,1]$. 
-Assim $d_n$ estará
-bem definida como função 
-se escolhemos sempre $d_n(\omega)$ como 
-o $n$-ésimo digito da expansão diádica de $\omega$ 
-que termina em uma sequência infinita de uns consecutivos.
-No exemplo acima escolheríamos a primeira, isto é,
-a expansão diádica de $1/2$ é dada por $d_1(1/2)=0$ e
+Este fato permite fazer uma escolha apropriada
+de forma que $d_n:\Omega\to\{0,1\}$ seja de fato 
+uma função. Esta escolha é feita da seguinte maneira:
+sempre que $\omega$ admitir mais de uma 
+expansão diádica, 
+seja $d_n(\omega)$ o $n$-ésimo digito da expansão 
+diádica de $\omega$ que termina em uma sequência 
+infinita de uns consecutivos.
+Esta escolha no exemplo acima determina uma 
+única expansão diádica para $1/2$ que é dada por $d_1(1/2)=0$ e
 $d_n(1/2)=1$, para todo $n\geq 2$.
+
+\begin{proposicao}
+	Para todo $n\in\N$ a função $d_n:\Omega\to\{0,1\}$ 
+	como definida acima é uma variável aleatória. 
+\end{proposicao}
+
+
+
+\begin{proof}
+Como $d_n$ assume apenas dois valores, 
+para provar a proposição basta mostrar 
+que 
+	\[
+		\{d_n=0\}\in\mathscr{B}((0,1])
+		\qquad
+		\text{e}
+		\qquad
+		\{d_n=1\}\in\mathscr{B}((0,1]),
+	\]
+para todo $n\in\N$.
+Já que $\{d_n=0\} = \{d_n=1\}^c$, é suficiente
+mostrar que $\{d_n=1\}\in \mathscr{B}((0,1])$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{proof}
+
+
+
 
 
