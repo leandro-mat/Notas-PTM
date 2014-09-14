@@ -551,7 +551,7 @@ depois enunciamos e provamos o Teorema de Renyi
 
 
 
-\begin{lema}
+\begin{lema}\label{lema-P(X_i-dif-X_j)=1}
 Sejam $(\Omega,\F,\P)$ um espaço de probabilidade e 
 $\{X_n\}$ uma sequência de variáveis aleatórias
 iid com função distribuição {\bf contínua} comum 
@@ -706,6 +706,12 @@ valor entre $X_1,\ldots,X_n$ e assim por diante.
 
 
 
+
+
+%%% TEOREMA DE RENYI
+
+
+
 \begin{teorema}
 	Seja $(\Omega,\F,\P)$ um espaço de probabilidade. 
 	Suponha que $\{X_n\}$ seja uma sequência iid 
@@ -725,11 +731,82 @@ valor entre $X_1,\ldots,X_n$ e assim por diante.
 			\[
 				\P(A_n) = \frac{1}{n},\qquad \forall n\geq 2.
 			\]
-		
-		
 	\end{itemize}
 \end{teorema} 
 
+
+
+
+
+
+
+\begin{proof}
+	Observe que o item $b)$ é uma consequência imediata do 
+	item $a)$ já que $A_n=\{R_n=1\}$. 
+	
+	Seguimos com a prova do item a). 
+	Usando o Lema \ref{lema-P(X_i-dif-X_j)=1}	
+	temos, com probabilidade um, que 
+	existem exatamente $n!$ ordenamentos das v.a.'s 
+	$X_1,\ldots,X_n$, isto é, se 	$\omega\in\Omega$ é
+	escolhido no conjunto de probabilidade um dado pelo 
+	Lema \ref{lema-P(X_i-dif-X_j)=1} então  
+    uma das $n!$ alternativas ocorrem 
+    $X_{\sigma(1)}(\omega)<X_{\sigma(2)}(\omega)<\ldots <X_{\sigma(n)}(\omega)$,
+    onde $\sigma$ é uma permutação arbitrária do conjunto $\{1,\ldots,n\}$.
+	
+
+\begin{exercicio}
+	Sob as hipóteses do teorema prove que
+		\[
+			\P(X_{\sigma(1)}<X_{\sigma(2)}<\ldots <X_{\sigma(n)})=\frac{1}{n!}
+			\qquad \forall \sigma\in \mathbb{S}_n,
+		\]
+onde $\mathbb{S}_n$ é o grupo de permutações de $n$ símbolos.
+\end{exercicio}
+
+
+Observamos que cada realização de 
+$R_1,\ldots, R_n$ determina uma ordenação,
+por exemplo, se $n=3$ e $R_1(\omega)=1,\ R_2(\omega)=1$
+e $R_3(\omega)=1$ temos que 
+$X_1(\omega)<X_2(\omega)<X_3(\omega)$.
+Se $R_1(\omega)=1,\ R_2(\omega)=2$ e $R_3(\omega)=3$,
+então temos que $X_3(\omega)<X_2(\omega)<X_1(\omega)$.
+Por causa da correspondência citada acima para todo
+$r_i=1,\ldots,i$, com $i=1,\ldots,n$ temos 
+	\[
+		\P(R_1=r_1,\ldots, R_n=r_n)=\frac{1}{n!}.
+	\]
+Note que 
+	\begin{align*}
+	\P(R_n=r_n)
+	&=
+	\sum_{r_1,\ldots,r_{n-1}} \P(R_1=r_1,\ldots,R_n=r_n) 
+	\\
+	&=
+	\sum_{r_1,\ldots, r_{n-1}} \frac{1}{n!}.
+	\end{align*}
+Já que cada $i=1,\ldots,n$ temos $1\leq r_i\leq i$,
+segue que a soma acima possui exatamente 
+$1\cdot 2\cdot 3\cdot\ldots\cdot n-1=(n-1)!$
+termos. Logo  
+	\[
+		\P(R_n=r_n)=\frac{(n-1)!}{n!}=\frac{1}{n}
+		\qquad
+		n=1,2,\ldots
+	\]
+Esta igualdade juntamente com o Corolário 
+\ref{cor-criterio-independencia-v.a.-discreta}
+implica que as variáveis aleatórias $\{R_i\}$
+são independentes, pois para todo $n\in\N$ temos
+	\begin{align*}
+		\P(R_1=r_1,\ldots R_n=r_n)
+		&=\frac{1}{n!}
+		\\
+		&=\P(R_1=r_1)\P(R_2=r_2)\P(R_3=r_3)\ldots\P(R_n=r_n).
+	\end{align*}
+\end{proof}
 
 
 
