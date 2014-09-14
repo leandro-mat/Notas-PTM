@@ -327,5 +327,51 @@ independente de $\sigma$-álgebras.
 
 
 \begin{proof}
-Inicio da prova.
+Sem perda de generalidade podemos assumir que $S$ é finito. 
+Defina 
+	\[
+		\mathcal{C}_{T_s}
+		\equiv
+		\left\{
+			\bigcap_{t\in K} B_{t}:\
+			B_{t}\in\mathscr{B}_{t},\
+			K\subset T_s,\
+			K\ \text{finito}
+		\right\}.
+	\]
+Por definição temos que $\mathcal{C}_{T_s}$ é um 
+$\pi$-sistema para cada $s\in S$ e além do mais 
+este $\pi$-sistemas $\{ \mathcal{C}_{T_s}, s\in S\}$ são independentes.
+
+Observe que $\mathcal{C}_{T_s}\subset \mathscr{B}_{T_s}$ 
+e por definição de $\sigma$-álgebra gerada que 
+$\sigma(\mathcal{C}_{T_s})\subset \mathscr{B}_{T_s}$.
+Segue da definição de $\mathcal{C}_{T_s}$, 
+tomando $K=\{t\}$, que
+para todo $t\in T_s$, é verdadeira a seguinte continência
+$\mathscr{B}_{t}\subset \mathcal{C}_{T_s}$. 
+Daí segue que $\mathscr{B}_{t}\subset \sigma(\mathcal{C}_{T_s})$,
+para todo $t\in T_s$. 
+Assim podemos concluir que 
+	\[
+		\bigcup_{t\in T_s}\mathscr{B}_{t}
+		\subset
+		\sigma(\mathcal{C}_{T_s}).
+	\]
+O que implica novamente pela definição de $\sigma$-álgebra
+gerada que
+	\[
+		\mathscr{B}_{T_s}
+		\equiv
+		\sigma
+		\left(
+			\bigcup_{t\in T_s}\mathscr{B}_{t}
+		\right)		
+		\subset
+		\sigma(\mathcal{C}_{T_s}).
+	\]
+Usando a observação do início do paragrafo temos que 
+$\sigma(\mathcal{C}_{T_s}) = \mathscr{B}_{T_s}$. Para finalizar 
+a prova basta agora aplicar o 
+Teorema \ref{teo-criterio-basico-independencia}.
 \end{proof}
