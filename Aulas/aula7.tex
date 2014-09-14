@@ -227,4 +227,100 @@ proposição anterior que $\{d_n\}$ é identicamente distribuída.
 Portanto basta provar que esta sequência é independente. 
 Para isto é suficiente mostrar que para todo $n\in\N$ 
 as variáveis aleatórias $\{d_1,\ldots,d_n\}$ são independentes.
+
+Note que para qualquer $(u_1,\ldots,u_n)\in \{0,1\}^n$
+temos 
+	\begin{align*}
+		\bigcap_{i=1}^{n} \{d_i=u_i\}
+		&=
+		\left(
+		\frac{u_1}{2^1}+\frac{u_2}{2^2}+\ldots+\frac{u_{n}}{2^{n}}+\frac{1}{2^{n+1}}
+		+\frac{0}{2^{n+2}}+\frac{0}{2^{n+3}}+
+		\ldots
+		\right.
+		\\
+		&\qquad\qquad\qquad
+		\ \ \mathbf{,} 
+		\left.
+		\frac{u_1}{2^1}+\frac{u_2}{2^2}+\ldots+\frac{u_{n}}{2^{n}}+\frac{1}{2^{n+1}}
+		+\frac{1}{2^{n+2}}+\frac{1}{2^{n+3}}+
+		\ldots
+		\right].
+	\end{align*}
+Como a medida de Lebesgue de um intervalo é seu comprimento temos que  
+	\[
+		\lambda
+		\left( 
+				\bigcap_{i=1}^{n} \{d_i=u_i\}
+		\right)
+		=
+		\sum_{k=n+1}^{\infty} \frac{1}{2^k}
+		=
+		\frac{1}{2^n}
+		=
+		\prod_{i=1}^n \lambda(\{d_i=u_i\}),
+	\]
+onde na última igualdade usamos o lema anterior.
+Agora para concluir que $d_1,\ldots,d_n$ são independentes
+basta aplicar o Corolário 
+\ref{cor-criterio-independencia-v.a.-discreta}.
+Como $n$ é arbitrário segue que a sequência 
+$\{d_n\}$ é independente.
 \end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Agrupamentos de v.a.'s Independentes}
+
+
+É possível agrupar variáveis aleatórias independentes
+e eventos independentes, criando partições no conjunto
+que indexam estas variáveis ou eventos. Está é uma
+propriedade muito útil da independência.
+
+%%%  Figura sobre Ilustrando o Lema do Agrupamento
+\begin{center}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.7\textwidth]{Figuras/figura-agrupamento-va-idenpendentes.pdf}
+\caption{Lema do Agrupamento.}
+\label{Rotulo}
+\end{figure}
+\end{center}
+%%%
+
+
+\begin{lema}[Lema do Agrupamento]
+Sejam $T$ um conjunto arbitrário de índices e 
+$\{\mathscr{B}_{t},\ t\in T\}$ uma família de 
+$\sigma$-álgebras independentes. Seja $S$ 
+um conjunto de índices e suponha que 
+para cada $s\in S$ temos $T_s\subset T$
+e $\{T_s,\ s\in S\}$ seja uma coleção mutuamente disjunta.
+Defina 
+	\[
+		\mathscr{B}_{T_s} 
+		=
+		\sigma\left(
+			\bigcup_{t\in T_s}\mathscr{B}_{t}
+		\right).
+	\]
+Então $\{\mathscr{B}_{T_s},\ s\in S\}$ é uma família 
+independente de $\sigma$-álgebras.
+\end{lema}
+
