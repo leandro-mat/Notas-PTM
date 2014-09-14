@@ -66,25 +66,83 @@ mostrar que $\{d_n=1\}\in \mathscr{B}((0,1])$.
 
 
 
+Para ajudar na compreensão do argumento mostramos 
+qual é a ideia da prova em um 
+caso mais simples, onde $n=1$. Neste caso 
+temos 
+	\begin{align*}
+		\{d_n=1\}
+		&=
+		\left(
+		\frac{1}{2^1}+\frac{0}{2^2}+\frac{0}{2^3}+\ldots
+		\right.
+		\ \ \mathbf{,} \ \ 
+		\left.
+		\frac{1}{2^1}+\frac{1}{2^2}+\frac{1}{2^3}+\ldots
+		\right]
+		\\[0.3cm]
+		&=
+		\left(\frac{1}{2},1\right]
+		\in \mathscr{B}((0,1]).
+	\end{align*}
+Observe que o intervalo acima é aberto no extremo esquerdo
+por causa da escolha que fizemos da expansão e portanto 
+$1/2\in \{d_1=0\}$.
 
+Para $n\geq 2$ temos que 
+	\begin{align*}
+		\{d_n=1\}
+		&=
+		\bigcup_{i=1}^{n-1}\bigcup_{u_i\in\{0,1\}}
+		\left(
+		\frac{u_1}{2^1}+\frac{u_2}{2^2}+\ldots+\frac{u_{n-1}}{2^{n-1}}+\frac{1}{2^{n}}
+		+\frac{0}{2^{n+1}}+\frac{0}{2^{n+2}}+
+		\ldots
+		\right.
+		\\
+		&\qquad\qquad\qquad
+		\ \ \mathbf{,} 
+		\left.
+		\frac{u_1}{2^1}+\frac{u_2}{2^2}+\ldots+\frac{u_{n-1}}{2^{n-1}}+\frac{1}{2^{n}}
+		+\frac{1}{2^{n+1}}+\frac{1}{2^{n+2}}+
+		\ldots
+		\right].
+	\end{align*}
+O lado direito da igualdade acima é uma união 
+disjunta de $2^{n-1}$ intervalos e portanto este
+conjunto pertence a $\mathscr{B}((0,1])$.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Por exemplo, 
+	\[
+	\{d_2=1\} 
+	= \left( \frac{1}{4},\frac{1}{2} \right]
+	\cup 
+	\left( \frac{3}{4},1  \right].
+	\]
 \end{proof}
 
 
+
+As variáveis aleatórias $\{d_n\}$ definem uma 
+função {\bf bijetiva} sobre sua imagem $d:\Omega\to d(\Omega)\subset \{0,1\}^{\N}$ que é dada por 
+	\[
+		d(\omega)
+		=
+		(d_1(\omega),d_2(\omega),\ldots,d_n(\omega),\ldots).
+	\]
+Assim podemos usar esta aplicação para definir uma medida de
+probabilidade em $d(\Omega)\subset \{0,1\}^{\N}$ dada por $\lambda\circ d^{-1}$
+que está definida na $\sigma$-álgebra $d(\mathscr{B}((0,1]))$
+(observe que estamos usando que $d$ é invertível).
+Vamos denotar esta medida por $\P$.
+
+
+
+\begin{proposicao}
+ Considere o espaço de probabilidade $(d(\Omega),d(\mathscr{B}((0,1])),\P)$
+ como definido acima. Então para todo $n\geq 1$ temos que
+ $\P(\{d_n=1\})=1/2$.
+\end{proposicao}
 
 
 
