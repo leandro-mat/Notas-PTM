@@ -1,7 +1,42 @@
 \chapter[Aula 7]{Independência e Leis Zero-Um}
 \chaptermark{}
 
-\section{Variáveis Aleatórias}
-
-
 \section{Expansões Diádicas de Números Aleatórios Distribuídos Uniformemente}
+
+Apresentamos nesta seção outro exemplo interessante
+de v.a.'s independentes. Desta vez nosso espaço 
+de probabilidade será 
+$(\Omega,\F,\P)=\Big((0,1],\mathscr{B}((0,1]),\lambda\Big)$,
+onde $\lambda$ é a medida de Lebesgue em $(0,1]$.
+
+Para definir a v.a.'s que estamos interessados,
+precisamos fazer primeiro algumas observações. 
+Para cada $\omega\in (0,1]$ existem
+números $d_n(\omega)\in\{0,1\}$, com $n\in\N$  
+tais que 
+	\[
+		\omega = \sum_{n=1}^{\infty} \frac{d_n(\omega)}{2^n}.
+	\] 
+Observamos que os números $d_n(\omega)$ na igualdade 
+acima não são unicamente determinados por $\omega$. Por exemplo, 
+para $\omega=1/2$ temos 
+	\[
+		\frac{1}{2} = \frac{0}{2^1}+\frac{1}{2^2}+\frac{1}{2^3}+\ldots
+		\qquad
+		\text{e}
+		\qquad
+		\frac{1}{2}= \frac{1}{2^1}+\frac{0}{2^2}+\frac{0}{2^3}+\ldots.
+	\]  
+Um fato importante é que este é o único tipo 
+de não unicidade que ocorre na expansão diádica de um 
+número no intervalo $(0,1]$. 
+Assim $d_n$ estará
+bem definida como função 
+se escolhemos sempre $d_n(\omega)$ como 
+o $n$-ésimo digito da expansão diádica de $\omega$ 
+que termina em uma sequência infinita de uns consecutivos.
+No exemplo acima escolheríamos a primeira, isto é,
+a expansão diádica de $1/2$ é dada por $d_1(1/2)=0$ e
+$d_n(1/2)=1$, para todo $n\geq 2$.
+
+
