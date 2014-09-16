@@ -13,7 +13,7 @@ isto é, $X_n\geq 0$ e
 
 O objetivo desta seção é provar que 
 %
-	\[
+	\begin{equation}\label{exemplo-seq-exp-par-1-indep-cresce-logn}
 		\P
 		\left(
 			\limsup_{n\to\infty}
@@ -21,7 +21,7 @@ O objetivo desta seção é provar que
 			=1
 		\right)	
 		=1.
-	\]
+	\end{equation}
 
 Este resultado é as vezes considerado surpreendente.
 Esta tendência está associada ao erro comum que alguns
@@ -37,5 +37,185 @@ Para provar este resultado vamos precisar de um fato
 bastante simples que se $\{A_n\}$ é uma sequência 
 de eventos em um espaço de probabilidade $(\Omega,\F,\P)$
 tal que $\P(A_n)=1$ então $\P(\cap_{n=1}^{\infty} A_n)=1$,
-veja Lista 1 de exercícios. 
- 
+veja Lista 1 de exercícios.
+
+
+\medskip
+
+\noindent
+{\bf Prova de \eqref{exemplo-seq-exp-par-1-indep-cresce-logn} }.
+Se $\omega\in \Omega$ é tal que 
+	\[
+		\limsup_{n\to\infty}
+		\frac{X_n(\omega)}{\log n} 
+		=1,
+	\]
+isto significa que 
+\begin{itemize}
+	\item[a)]
+	para todo $\varepsilon>0$ temos que se $n\geq n_0\equiv n_0(\omega)$ então
+	$\displaystyle\frac{X_n(\omega)}{\log n}\leq 1+\varepsilon$.
+	
+	
+	\item[b)]
+	para todo $\varepsilon>0$ para infinitos valores de $n$ 
+	temos que 	
+	$1-\varepsilon<\displaystyle\frac{X_n(\omega)}{\log n}$.
+		
+\end{itemize}
+
+
+
+
+Observe que o item a) diz que não existe nenhuma 
+subsequência com limite maior que $1+\varepsilon$ enquanto
+b) diz que sempre existe uma subsequência limitada inferiormente
+por $1-\varepsilon$. 
+
+
+
+
+Para qualquer sequência $\varepsilon_k\downarrow 0$, 
+note que temos a seguinte igualdade
+de conjuntos
+\begin{align*}
+\left\{ \limsup_{n\to\infty} \frac{X_n}{\log n} =1  \right\}
+&
+\\[0.3cm]
+&
+\hspace*{-2cm}
+=\bigcap_{k=1}^{\infty}
+\left[ 
+	\liminf_{n\to\infty} 
+		\left\{ 
+			\frac{X_n}{\log n} \leq 1+\varepsilon_k 
+		\right\}  
+\right]
+\quad
+\bigcap
+\quad
+\bigcap_{k=1}^{\infty}
+\left[ 
+	\limsup_{n\to\infty} 
+		\left\{ 
+			\frac{X_n}{\log n} > 1-\varepsilon_k  
+		\right\}  
+\right].
+\end{align*}
+%
+%
+%
+%
+Para provar que o lado direito acima tem probabilidade
+um, basta mostrar que cada um dos eventos 
+entre colchetes tem probabilidade um. 
+
+Para todo $k\in\N$ fixado temos 
+\begin{align*}
+\sum_{n=1}^{\infty} 
+\P\left(  
+	\frac{X_n}{\log n} > 1-\varepsilon_k 
+\right)
+&=
+\sum_{n=1}^{\infty} 
+\P\left(  
+	X_n > (1-\varepsilon_k)\log n  
+\right)
+\\
+&=
+\sum_{n=1}^{\infty} 
+\exp\left(  
+	 -(1-\varepsilon_k)\log n  
+\right)
+\\
+&=
+\sum_{n=1}^{\infty} 
+\frac{1}{n^{1-\varepsilon_k}}
+\\
+&=
+\infty,
+\end{align*}
+onde na última desigualdade usamos que $k$ 
+está fixado. Assim segue da Lei Zero-Um de Borel
+que 
+	\[
+		\P\left( 
+			\limsup_{n\to\infty} 
+			\left\{ 
+				\frac{X_n}{\log n} > 1-\varepsilon_k  
+			\right\}  
+		\right)
+		=
+		1.
+	\]
+
+De maneira análoga podemos verificar que
+\begin{align*}
+\sum_{n=1}^{\infty} 
+\P\left(  
+	\frac{X_n}{\log n} > 1+\varepsilon_k 
+\right)
+&=
+\sum_{n=1}^{\infty} 
+\P\left(  
+	X_n > (1+\varepsilon_k)\log n  
+\right)
+\\
+&=
+\sum_{n=1}^{\infty} 
+\exp\left(  
+	 -(1+\varepsilon_k)\log n  
+\right)
+\\
+&=
+\sum_{n=1}^{\infty} 
+\frac{1}{n^{1+\varepsilon_k}}
+\\
+&<
+\infty.
+\end{align*}
+Aplicando novamente a Lei Zero-Um de Borel
+temos que 
+	\[
+		\P\left( 
+			\limsup_{n\to\infty} 
+			\left\{ 
+				\frac{X_n}{\log n} > 1+\varepsilon_k  
+			\right\}  
+		\right)
+		=
+		0.
+	\]
+Tomando complementar obtemos 
+	\[
+		\P\left( 
+			\liminf_{n\to\infty} 
+			\left\{ 
+				\frac{X_n}{\log n} \leq 1+\varepsilon_k  
+			\right\}  
+		\right)
+		=1.
+	\]
+O que encerra a demonstração.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Lei Zero-Um de Komolgorov}
+
+Seja $(\Omega,\F,\P)$ um espaço de probabilidade e 
+$\{X_n\}$ uma sequência de v.a.'s e defina
+	\[
+		\F_n' = \sigma( X_{n+1},X_{n+2},\ldots)
+	\] 
