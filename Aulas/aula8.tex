@@ -2,3 +2,40 @@
 \chaptermark{}
 
 \section{Uma Propriedade de Sequências de v.a.'s Exponenciais Independentes}
+
+
+Nesta seção vamos assumir que $\{X_n\}$ é uma sequência 
+de v.a.'s iid com distribuição exponencial de parâmetro 1,
+isto é, $X_n\geq 0$ e  
+\[
+	\P(X_n>x)=e^{-x}.
+\] 
+
+O objetivo desta seção é provar que 
+%
+	\[
+		\P
+		\left(
+			\limsup_{n\to\infty}
+			\frac{X_n}{\log n} 
+			=1
+		\right)	
+		=1.
+	\]
+
+Este resultado é as vezes considerado surpreendente.
+Esta tendência está associada ao erro comum que alguns
+matemáticos cometem pensando que sequências iid 
+são ``moralmente constantes'' e portanto a divisão 
+por $\log n$ deveria fazer com que o limite fosse
+zero. 
+Entretanto muito frequentemente a sequência $\{X_n\}$
+toma valores que vão aumentando com o índice e 
+este aumento é aproximadamente dado por $\log n$.
+
+Para provar este resultado vamos precisar de um fato 
+bastante simples que se $\{A_n\}$ é uma sequência 
+de eventos em um espaço de probabilidade $(\Omega,\F,\P)$
+tal que $\P(A_n)=1$ então $\P(\cap_{n=1}^{\infty} A_n)=1$,
+veja Lista 1 de exercícios. 
+ 
