@@ -400,3 +400,80 @@ Se $\sum_{n=1}^{\infty} \P(A_n)<\infty$ então
 		\P\left(\limsup_{n\to\infty} A_n\right)=0.
 	\]
 \end{lema}
+
+
+
+
+\begin{proof}
+Usando a definição de $\limsup$, a continuidade de $\P$,
+a subaditividade e a hipótese de convergência da série, 
+obtemos
+	\begin{align*}
+	\P\left(\limsup_{n\to\infty} A_n\right)
+	&=
+	\P\left( \lim_{n\to\infty} \bigcup_{j\geq n} A_j \right)
+	\\
+	&=
+	\lim_{n\to\infty}\P\left( \bigcup_{j\geq n} A_j \right)
+	\\
+	&\leq
+	\limsup_{n\to\infty} \sum_{j=n}^{\infty}\P\left( A_j \right)
+	\\
+	&=
+	0.
+	\end{align*}
+\end{proof}
+
+
+
+\begin{exemplo}
+	Suponha que $\{X_n\}$ sejam v.a.'s de Bernoulli 
+	com $\P(X_n=1)=p_n=1-\P(X_n=0)$. 
+	Observe que não estamos supondo que $\{X_n\}$ é
+	uma sequência independente e nem identicamente distribuídas.
+	Afirmamos que se $\sum_{n=1}^{\infty}p_n<\infty$ então 
+		\[
+			\P\left( \lim_{n\to\infty} X_n=0\right)=1. 
+		\]
+	De fato, se 
+		\[
+			 \sum_{n=1}^{\infty} \P(X_n=1) 
+			 = 
+			 \sum_{n=1}^{\infty}p_n 
+			 < \infty,
+		\]
+	então segue do Lema de Borel-Cantelli que $\P(\limsup \{X_n=1\})=0$.
+	Tomando complementar ficamos com 
+	\[
+		1
+		=
+		\P(\liminf \{X_n=1\}^c)
+		=
+		\P(\liminf \{X_n=0\}).
+	\]
+	Por definição do $\liminf$ temos 
+	para todo 
+	\[
+		\omega
+		\in 
+		\liminf_{n\to\infty} \{X_n=0\}
+		=
+		\bigcup_{k\geq 1} \bigcap_{n\geq k} \{X_n=0\}		
+	\]
+	que existe $k=k(\omega)$ tal que 
+	$\omega \in \bigcap_{n\geq k(\omega)} \{X_n=0\}$,
+	isto é, $X_n(\omega)=0$ para todo $n\geq k(\omega)$
+	mostrando que $\lim_{n\to\infty} X_n(\omega)=0$.
+	Como este fato vale para $\omega$ em um conjunto 
+	de probabilidade um, a afirmação está provada.
+\end{exemplo}
+
+
+
+
+
+
+
+
+
+
