@@ -709,6 +709,9 @@ Dizemos que $A\in\F$ é um evento crescente,
 se para todo par $\omega,\omega'$ tal que 
 $\omega\preceq \omega'$, temos 
 $1_{A}(\omega)\leq 1_{A}(\omega')$.
+De maneira análoga, defina o conceito de
+eventos decrescentes.
+
 
 Assuma que a medida de probabilidade $\P$ é tal que
 para todo par de eventos crescentes $A,B\in\F$ temos
@@ -716,13 +719,24 @@ para todo par de eventos crescentes $A,B\in\F$ temos
 		\P(A\cap B) -\P(A)\P(B) \geq 0.
 	\end{equation}
 %
-Sejam $A_1,\ldots,A_n$ eventos crescentes e equiprováveis tais que 
+Mostre que 
+\begin{itemize}
+
+\item[a)] 
+se $A$ e $B$ são crescentes então seus complementares
+são eventos decrescentes e que 
+	\begin{equation}
+		\P(A^c\cap B^c) -\P(A^c)\P(B^c) \geq 0;
+	\end{equation}
+
+\item[b)]
+se $A_1,\ldots,A_n$ são eventos crescentes e equiprováveis, 
+tais que 
 $A = \cup_{i=1}^n A_i$, então 
 	\[
 		\P(A_i)\geq 1-[1-\P(A)]^{\frac{1}{n}}.
 	\]
-
-
+\end{itemize}
 
 
 
