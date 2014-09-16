@@ -615,5 +615,25 @@ podemos concluir que \eqref{eq-lim-duplo-lei-zero-um-borel}
 
 
 
+\begin{exemplo}[Continuação]
+	Suponha que $\{X_n\}$ sejam v.a.'s de Bernoulli 
+	independentes com $\P(X_n=1)=p_n=1-\P(X_n=0)$. 
+	Afirmamos que  
+		\[
+			\P\left( \lim_{n\to\infty} X_n=0\right)=1
+			\Longleftrightarrow
+			\sum_{n=1}^{\infty}p_n<\infty.
+		\]
+	Para verificar que a afirmação é verdadeira
+	basta notar que 
+	\[
+		\P\left( \lim_{n\to\infty} X_n=1\right)=0
+		\Longleftrightarrow
+		\sum_{n=1}^{\infty} \P(X_n=1)
+		=		
+		\sum_{n=1}^{\infty}p_n<\infty.
+	\]
+\end{exemplo}
+
 
 \end{proof}
