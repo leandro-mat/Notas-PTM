@@ -215,7 +215,130 @@ O que encerra a demonstração.
 \section{Lei Zero-Um de Komolgorov}
 
 Seja $(\Omega,\F,\P)$ um espaço de probabilidade e 
-$\{X_n\}$ uma sequência de v.a.'s e defina
+$\{X_n\}$ uma sequência de v.a.'s. 
+Para cada $n\in\N$ defina
 	\[
-		\F_n' = \sigma( X_{n+1},X_{n+2},\ldots)
+		\F_n' = \sigma( X_{n+1},X_{n+2},\ldots).
 	\] 
+A $\sigma$-álgebra caudal $\mathcal{T}$
+é definida como sendo 
+	\[
+		\mathcal{T}
+		=
+		\bigcap_{n=1}^{\infty}
+		\F_n'
+		=
+		\lim_{n\to\infty} \sigma(X_n,X_{n+1},\ldots).
+	\]
+Um evento $A\in\mathcal{T}$ é chamado de evento caudal.
+Uma variável aleatória mensurável com respeito a $\mathcal{T}$
+é chamada de variável aleatória caudal. 
+
+Antes de apresentar alguns exemplos de v.a.'s e eventos caudais
+vamos provar definir e provar alguns fatos sobre 
+vetores aleatórios. 
+
+\subsubsection*{Vetores Aleatórios em $\R^n$}
+
+Se consideramos $\R^n$ como um espaço munido de uma 
+topologia $\tau$ então a $\sigma$-álgebra de Borel 
+é a $\sigma$-álgebra gerada pelos conjuntos abertos,
+isto é, $\sigma(\tau)$.
+Nos interessa apenas o caso onde $\tau$ é induzida 
+pela métrica euclidiana e neste caso a 
+$\sigma$-álgebra de Borel em $\R^n$ é 
+$\sigma$-álgebra gerada pela coleção 
+dos retângulos da forma 
+	\[
+		(a_1,b_1) \times\ldots\times (a_n,b_n)
+		\equiv
+		\{
+		(x_1,\ldots,x_n)\in\R^n\ ; a_i<x_i<b_i,\ i=1,\ldots,n
+		\},
+	\]
+onde $a_i,b_i\in \R$. Esta $\sigma$-álgebra será denotada
+por $\mathscr{B}(\R^n)$.
+
+
+
+\begin{definicao}[Vetor Aleatório]
+	Seja $(\Omega,\F,\P)$ um espaço de probabilidade.
+	Um vetor aleatório é uma aplicação $\mathbf{X}:\Omega\to\R^n$,
+	tal que para todo boreliano $E\in \R^n$ temos que 
+	$\mathbf{X}^{-1}(E)\in \F$.
+\end{definicao}
+
+
+\begin{exercicio}
+Seja $(\Omega,\F,\P)$ um espaço de probabilidade e 
+$\mathbf{X}$ um vetor aleatório em $\R^n$.  
+Mostre que para qualquer coleção 
+$\mathcal{C}$ de subconjuntos de $\Omega$ que 
+$
+\mathbf{X}^{-1}(\sigma(\mathcal{C}))
+=
+\sigma(\mathbf{X}^{-1}(\mathcal{C}))
+$
+\end{exercicio}
+
+
+Segue do exercício acima que uma
+aplicação $\mathbf{X}:\Omega\to\R^n$ é um vetor aleatório
+em $(\Omega,\F,\P)$ se, e somente se, 
+$\mathbf{X}^{-1}(R)\in \F$ para todo retângulo $R\subset \R^n$.   
+
+
+
+\begin{proposicao}
+Seja $(\Omega,\F,\P)$ um espaço de probabilidade.
+Uma aplicação $\mathbf{X}:\Omega\to\R^n$ 
+dada por $\mathbf{X}(\omega)=(X_1(\omega),\ldots,X_n(\omega))$
+é um vetor aleatório, se e somente se, $X_i:\Omega\to\R$ 
+para todo $i=1,\ldots n$ é uma v.a. real.
+\end{proposicao}
+
+
+\begin{proof}
+Vamos supor que $\mathbf{X}$ é um vetor aleatório.
+Considere as projeções $\pi_i:\R^n\to \R$ dadas por 
+$\pi_i(x_1,\ldots,x_n)=x_i$ e seja $I=(-\infty,a)$,
+onde $a\in\R$. Já que $X_i = \pi_i\circ \mathbf{X}$,
+temos que 
+\[
+	X_i^{-1}\big((-\infty,a)\big) 
+	= 
+	\mathbf{X}^{-1}\Big( \pi_i^{-1}\big( (-\infty,a)\big)\Big).
+\]
+Já que 
+$\pi_i^{-1}\big( (-\infty,a)\big)
+ = 
+ \R\times\ldots\times\R\times (-\infty,a)\times\R\times\ldots\times\R
+ \in
+ \mathscr{B}(\R^n)
+$
+e $\mathbf{X}^{-1}(\mathscr{B}(\R^n))\subset \F$ temos que 
+que $X_i$ é variável aleatória.
+\end{proof}
+
+
+
+
+
+
+
+
+No que segue apresentamos
+alguns exemplos de eventos e v.a.'s caudais.
+
+\begin{exemplo}
+	Seja $(\Omega,\F,\P)$ um espaço de probabilidade e
+	$\{X_n\}$ uma sequência de v.a.'s. Então o evento 
+		\[
+			\left\{
+			\omega\in \Omega: \sum_{n=1}^{\infty} X_n(\omega)<\infty
+			\right\}
+		\]
+	é um evento caudal.
+\end{exemplo}
+
+
