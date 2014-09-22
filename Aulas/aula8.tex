@@ -442,7 +442,7 @@ que $f(X_1(\omega),\ldots,X_n(\omega)=Y(\omega)$.
 
 
 
-\begin{teorema}
+\begin{teorema}\label{teo-f(X1,...,X_n)-sigma(X1,...,X_n)}
 	Sejam $(\Omega,\F,\P)$ um espaço de probabilidade,
 	$X_1,\ldots,X_n$ variáveis aleatórias, então 
 \begin{itemize}
@@ -615,6 +615,47 @@ alguns exemplos de eventos e v.a.'s caudais.
 			\omega\in \Omega: \sum_{n=1}^{\infty} X_n(\omega)<\infty
 			\right\}
 		\]
+	é um evento caudal.
+	Para prova este fato primeiro observamos 
+	que para todo $m\in\N$ temos a seguinte 
+	igualdade de conjuntos 
+		\[
+			\left\{
+			\omega\in \Omega: \sum_{n=1}^{\infty} X_n(\omega)<\infty
+			\right\}
+			=
+			\left\{
+			\omega\in \Omega: \sum_{n=m}^{\infty} X_n(\omega)<\infty
+			\right\}.
+		\]
+	Fixado $m\in \N$ temos que 
+		\[
+		\sum_{n=m}^{\infty} X_n(\omega)
+		=
+		\lim_{k\to\infty} \sum_{n=m}^{m+k} X_n(\omega).
+		\]
+	Pelo Teorema \ref{teo-f(X1,...,X_n)-sigma(X1,...,X_n)}
+	para qualquer $m\in\N$ 
+	temos que $\sum_{n=m}^{m+k} X_n \in \sigma(X_{m},\ldots,X_{m+k})
+	\subset \sigma(X_{m},X_{m+1},\ldots)$. 
+	Logo
+	$
+	\lim_{k\to\infty}\sum_{n=m}^{m+k} X_n
+	\in
+	\sigma(X_{m},X_{m+1},\ldots),
+	$
+	para todo $m\in \N$. 
+	Daí segue que 
+		\[
+			\left\{
+			\omega\in \Omega: \sum_{n=1}^{\infty} X_n(\omega)<\infty
+			\right\}
+			\in
+			\mathcal{F}_m'
+			\qquad
+			\forall m\in\N.			
+		\]
+	O que implica imediatamente pela definição que o evento acima
 	é um evento caudal.
 \end{exemplo}
 
