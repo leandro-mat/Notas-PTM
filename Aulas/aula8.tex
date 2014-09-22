@@ -345,13 +345,118 @@ acima que a prova está concluída.
 
 
 
-\begin{proposicao}
+
+
+\begin{teorema}
+Sejam $(\Omega,\F,\P)$ um espaço de probabilidade
+e $X_1,\ldots,X_n$ variáveis aleatórias {\bf simples}. Então
+\begin{itemize}
+	\item[a)]
+	A $\sigma$-álgebra $\sigma(X_1,\ldots,X_n)$ 
+	consiste exatamente dos conjuntos da forma
+	\[
+		\{(X_1,\ldots,X_n)\in H\} 
+		\equiv
+		\{\omega\in\Omega; (X_1(\omega),\ldots,X_n(\omega))\in H\},
+	\]
+	onde $H\subset \R^n$. 
+	Observamos que nesta representação, 
+	podemos considerar apenas $H$'s finitos.
+	
+	\item[b)]
+	Uma variável aleatória $Y$ é mensurável segundo 
+	$\sigma(X_1,\ldots,X_n)$ se, e somente se,
+	$Y=f(X_1,\ldots,X_n)$ para alguma função 
+	$f:\R^n\to\R$.	
+\end{itemize}
+\end{teorema}
+
+
+\begin{proof}
+Prova do item a). Seja $\mathcal{C}$ a coleção de todos os conjuntos da forma 
+$\{(X_1,\ldots,X_n)\in H\}$, quando $H$ varia sobre todos os 
+subconjuntos de $\R^n$. 
+Dentre este subconjuntos estão todos da forma 
+$\{(X_1,\ldots,X_n)=(x_1,\ldots,x_n)\}=\cap_{i=1}^n \{X_i=x_i\}$,
+que certamente pertencem a $\sigma(X_1,\ldots,X_n)$.
+Como $X_1,\ldots,X_n$ são v.a.'s simples, segue que os conjuntos da 
+forma $\{(X_1,\ldots,X_n)\in H\}$, com $H\in \R^n$ são uniões 
+finitas de elementos de $\sigma(X_1,\ldots,X_n)$.
+Portanto $\mathcal{C}\subset \sigma(X_1,\ldots,X_n)$.
+
+
+Por outro lado, temos que $\mathcal{C}$ é uma $\sigma$-álgebra,
+pois: 
+\begin{itemize}
+\item
+$\{(X_1,\ldots,X_n)\in \R^n\}=\Omega$; 
+
+\item
+$\{(X_1,\ldots,X_n)\in H\}^c = \{(X_1,\ldots,X_n)\in H^c\}$;
+
+\item 
+$
+\left\{ (X_1,\ldots,X_n)\in \bigcup_{n\in \N} H_n \right\} 
+=
+\bigcup_{n\in \N}\{(X_1,\ldots,X_n)\in H_n\}.
+$
+\end{itemize}
+Observamos que cada $X_i$ é mensurável com respeito a
+$\mathcal{C}$. De fato, $\{X_i=x\}$ pode ser expresso 
+como uma união finita de conjuntos da forma 
+$\{(X_1,\ldots,X_n)=(x_1,\ldots,x_n)\}$, com $x_i=x$.
+Logo $\sigma(X_1,\ldots,X_n)\subset \mathcal{C}$, 
+o que junto com a continência demonstrada acima
+implica que $\sigma(X_1,\ldots,X_n)= \mathcal{C}$.
+
+Já que a interceptar $H$ com a imagem do 
+vetor $(X_1,\ldots,X_n)$ (que é composta por um número 
+finito de pontos de $\R^n$) não modifica a coleção 
+$\{(X_1,\ldots,X_n)\in H\}$, podemos considerar 
+que $H$ é finto.  
+
+
+
+Prova do item b). Suponha, para todo $\omega\in\Omega$, que
+$Y(\omega)=f(X_1(\omega),\ldots,X_n(\omega))$ para
+alguma função $f:\R^n\to\R$. 
+Já $\{Y=y\}$ pode ser escrito na forma $\{(X_1,\ldots,X_n)\in H\}$,
+onde $H=\{(x_1,\ldots,x_n)\in \R^n ;\ f(x_1,\ldots,x_n)=y\}$
+segue que $Y$ é mensurável segundo $\sigma(X_1,\ldots,X_n)$.
+
+
+Reciprocamente, assuma que $Y$ é $\sigma(X_1,\ldots,X_n)$-mensurável.
+
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{teorema}
 	Sejam $(\Omega,\F,\P)$ um espaço de probabilidade,
 	$X_1,\ldots,X_n$ v.a.'s e $f:\R^n\to\R$ uma função contínua.
 	Então $f(X_1,\ldots,X_n)$ é uma v.a. e além do mais 
 	$f(X_1,\ldots,X_n)$ é mensurável 
 	segundo $\sigma(X_1,\ldots,X_n)$.
-\end{proposicao}
+\end{teorema}
 
 
 
