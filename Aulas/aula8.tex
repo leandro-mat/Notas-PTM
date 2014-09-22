@@ -782,5 +782,36 @@ também é um evento caudal.
 		\right\}
 		\in
 		\mathcal{T}.
-	\]	 
+	\]
+	De fato, para qualquer $m\in\N$ temos que
+		\[
+			\limsup_{n\to\infty} \frac{S_n}{n}
+			=
+			\limsup_{n\to\infty} \frac{\sum_{i=1}^n X_i}{n}
+			=
+			\limsup_{n\to\infty} \frac{\sum_{i=m+1}^n X_i}{n}
+			\in
+			\mathcal{F}_{m}'.
+		\]
+	Segue do exemplos anteriores que os conjunto de pontos 
+	de $\Omega$ para o qual existe $\lim_{n\to\infty} S_n/n$ 
+	é mensurável segundo $\mathcal{T}$. Portanto
+	\[
+		\left\{
+			\omega\in \Omega: 
+			\lim_{n\to\infty} \frac{S_n}{n}=0
+		\right\}
+		=
+		\left\{
+			\omega\in \Omega: 
+			\limsup_{n\to\infty} \frac{S_n}{n}=0
+		\right\}
+		\cap
+		\left\{
+			\omega\in \Omega: 
+			\exists \lim_{n\to\infty} \frac{S_n}{n}
+		\right\}
+		\in
+		\mathcal{T}.
+	\]
 \end{exemplo}
