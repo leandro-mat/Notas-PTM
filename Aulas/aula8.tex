@@ -212,33 +212,7 @@ O que encerra a demonstração.
 
 
 
-\section{Lei Zero-Um de Komolgorov}
-
-Seja $(\Omega,\F,\P)$ um espaço de probabilidade e 
-$\{X_n\}$ uma sequência de v.a.'s. 
-Para cada $n\in\N$ defina
-	\[
-		\F_n' = \sigma( X_{n+1},X_{n+2},\ldots).
-	\] 
-A $\sigma$-álgebra caudal $\mathcal{T}$
-é definida como sendo 
-	\[
-		\mathcal{T}
-		=
-		\bigcap_{n=1}^{\infty}
-		\F_n'
-		=
-		\lim_{n\to\infty} \sigma(X_n,X_{n+1},\ldots).
-	\]
-Um evento $A\in\mathcal{T}$ é chamado de evento caudal.
-Uma variável aleatória mensurável com respeito a $\mathcal{T}$
-é chamada de variável aleatória caudal. 
-
-Antes de apresentar alguns exemplos de v.a.'s e eventos caudais
-vamos provar definir e provar alguns fatos sobre 
-vetores aleatórios. 
-
-\subsubsection*{Vetores Aleatórios em $\R^n$}
+\section{Vetores Aleatórios em $\R^n$}
 
 Se consideramos $\R^n$ como um espaço munido de uma 
 topologia $\tau$ então a $\sigma$-álgebra de Borel 
@@ -289,7 +263,7 @@ $\mathbf{X}^{-1}(R)\in \F$ para todo retângulo $R\subset \R^n$.
 
 
 
-\begin{proposicao}
+\begin{proposicao}\label{prop-caracterizacao-vetor-aleatorio}
 Seja $(\Omega,\F,\P)$ um espaço de probabilidade.
 Uma aplicação $\mathbf{X}:\Omega\to\R^n$ 
 dada por $\mathbf{X}(\omega)=(X_1(\omega),\ldots,X_n(\omega))$
@@ -338,7 +312,7 @@ temos que
 	\]	
 Já que estamos assumindo que 
 $X_j$ para todo $j=1,\ldots,n$ é v.a.
-então $X_j^{-1}(I_j)\in \F$, logo $\mathbf{X}^{-1}(R)\in F$,
+então $X_j^{-1}(I_j)\in \F$, logo $\mathbf{X}^{-1}(R)\in \F$,
 como $R$ é um retângulo arbitrário segue da observação feita 
 acima que a prova está concluída.
 \end{proof}
@@ -470,17 +444,166 @@ que $f(X_1(\omega),\ldots,X_n(\omega)=Y(\omega)$.
 
 \begin{teorema}
 	Sejam $(\Omega,\F,\P)$ um espaço de probabilidade,
-	$X_1,\ldots,X_n$ v.a.'s e $f:\R^n\to\R$ uma função contínua.
-	Então $f(X_1,\ldots,X_n)$ é uma v.a. e além do mais 
-	$f(X_1,\ldots,X_n)$ é mensurável 
-	segundo $\sigma(X_1,\ldots,X_n)$.
+	$X_1,\ldots,X_n$ variáveis aleatórias, então 
+\begin{itemize}
+	\item[a)]
+	A $\sigma$-álgebra $\sigma(X_1,\ldots,X_n)$ 
+	consiste exatamente dos conjuntos da forma
+	\[
+		\{(X_1,\ldots,X_n)\in E\} 
+		\equiv
+		\{\omega\in\Omega; (X_1(\omega),\ldots,X_n(\omega))\in E\},
+	\]
+	onde $E\in \mathscr{B}(\R^n)$.
+	
+	\item[b)]
+	Uma variável aleatória $Y$ é mensurável segundo 
+	$\sigma(X_1,\ldots,X_n)$ se, e somente se,
+	$Y=f(X_1,\ldots,X_n)$ para alguma função 
+	$f:\R^n\to\R$ borel mensurável,
+	isto é, $f^{-1}(B)\in\mathscr{B}(\R^n)$ para todo
+	$B\in\mathscr{B}(\R)$.
+\end{itemize}
 \end{teorema}
 
 
+\begin{proof}
+Prova do item a). 
+A coleção $\mathcal{C}$ de todos os subconjuntos 
+de $\Omega$ da forma 
+$\{(X_1,\ldots,X_n)\in E\}$, onde $E\in\mathscr{B}(\R^n)$
+é uma $\sigma$-álgebra. 
+Pela Proposição \ref{prop-caracterizacao-vetor-aleatorio}
+temos que a aplicação $\omega\mapsto (X_1(\omega),\ldots,X_n(\omega))$
+é mensurável segundo a $\sigma$-álgebra $\sigma(X_1,\ldots,X_n)$.
+Logo $\mathcal{C}\subset \sigma(X_1,\ldots,X_n)$. 
+Como $\omega\mapsto (X_1(\omega),\ldots,X_n(\omega))$ é claramente 
+mensurável segundo $\mathcal{C}$ segue que 
+$\sigma(X_1,\ldots,X_n)\subset\mathcal{C}$ e portanto o 
+item a) está provado.
+
+
+Prova do item b).
+Se $Y=f(X_1,\ldots,X_n)$ então $Y=f\circ \mathbf{X}$,
+onde $\mathbf{X}(\omega)=(X_1(\omega),\ldots,X_n(\omega))$.
+Logo para todo $B\in\mathscr{B}(\R)$ temos que 
+$Y^{-1}(B)= \mathbf{X}^{-1}(f^{-1}(B))= \mathbf{X}^{-1}(E)$
+que pelo item a) implica que $Y$ 
+é $\sigma(X_1,\ldots,X_n)$-mensurável.
+
+
+Para provar a recíproca, suponha inicialmente 
+que $Y$ é uma variável aleatória simples assumindo 
+os valores $y_1,\ldots,y_m$. Por hipótese temos que 
+$
+A_i
+=
+\{\omega\in\Omega: Y(\omega)=y_i\}
+\in 
+\sigma(X_1,\ldots,X_n).
+$
+Pelo item a) temos que $A_i=\{(X_1,\ldots,X_n)\in E_i\}$ 
+para algum boreliano $E_i$ de $\R^n$. Defina a função 
+$f:\R^n\to\R$ dada por 
+	\[
+	f(x_1,\ldots,x_n)=\sum_{i=1}^r y_i 1_{E_i}(x_1,\ldots,x_n).
+	\]
+Note que $f$ é Borel mensurável. 
+Já que os conjuntos $A_i$'s são disjuntos nenhum ponto 
+de $\R^n$ da forma $\mathbf{X}(\omega)$ pertence a mais 
+de um $E_i$ 
+(observe que não estamos afirmando que os conjuntos 
+$E_i$'s são mutuamente disjuntos)
+e portanto temos $f(\mathbf{X}(\omega))=Y(\omega)$.
+
+
+Para provar o teorema no caso geral lembramos que 
+se $Y$ é uma v.a. então 
+existe uma sequência de v.a.'s $\{Y_n\}$ simples
+tal que $Y_n(\omega)\to Y(\omega)$, 
+para todo $\omega\in\Omega$
+(para provar este fato basta aplicar 
+o Teorema \ref{teo:aproximacao-monotona-por-func-simples}
+às partes positiva e negativa de $Y$).
+Para cada $n\in\N$ segue do argumento acima que 
+existe $f_n:\R^n\to\R$ tal que $Y_n=f_n(\mathbf{X})$.
+Seja $M\subset \R^n$ o conjunto dos pontos $x\in\R^n$ 
+tais que a sequência $\{f_n(x)\}$ converge.
+Uma vez que 
+ \[
+ 	M
+ 	=
+ 	\left\{
+ 		x\in\R^n:\ \limsup_{n\to\infty}f_n(x)=\liminf_{n\to\infty}f_n(x)
+ 	\right\}\in \mathscr{B}(\R^n).
+ \]
+a seguinte função  
+	\[
+	f(x_1,\ldots,x_n)
+	=
+	\begin{cases}
+	\displaystyle
+	\lim_{n\to\infty} f_n(x_1,\ldots,x_n),& \text{se}\ (x_1,\ldots,x_n)\in M;
+	\\[0.3cm]
+	0,&\text{se}\ (x_1,\ldots,x_n)\in \R^n\setminus M.
+	\end{cases}
+	\]
+é Borel mensurável pois $\lim_{n\to\infty} f_n1_{M}$ e $f_n1_{M}$ são 
+Borel mensuráveis.
+Observe que para cada $\omega\in\Omega$ temos que 
+$Y(\omega)=\lim_{n\to\infty} f_n(\mathbf{X}(\omega))$.
+Logo $\mathbf{X}(\omega)\in M$ e portanto temos finalmente
+que 
+	\[
+	Y(\omega) 
+	=
+	\lim_{n\to\infty} f_n(\mathbf{X}(\omega))
+	=
+	f(\mathbf{X}(\omega)).
+	\] 
+\end{proof}
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Lei Zero-Um de Komolgorov}
+
+Seja $(\Omega,\F,\P)$ um espaço de probabilidade e 
+$\{X_n\}$ uma sequência de v.a.'s. 
+Para cada $n\in\N$ defina
+	\[
+		\F_n' = \sigma( X_{n+1},X_{n+2},\ldots).
+	\] 
+A $\sigma$-álgebra caudal $\mathcal{T}$
+é definida como sendo 
+	\[
+		\mathcal{T}
+		=
+		\bigcap_{n=1}^{\infty}
+		\F_n'
+		=
+		\lim_{n\to\infty} \sigma(X_n,X_{n+1},\ldots).
+	\]
+Um evento $A\in\mathcal{T}$ é chamado de evento caudal.
+Uma variável aleatória mensurável com respeito a $\mathcal{T}$
+é chamada de variável aleatória caudal. 
 No que segue apresentamos
 alguns exemplos de eventos e v.a.'s caudais.
 
