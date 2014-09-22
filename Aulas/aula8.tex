@@ -318,9 +318,40 @@ $\pi_i^{-1}\big( (-\infty,a)\big)
 $
 e $\mathbf{X}^{-1}(\mathscr{B}(\R^n))\subset \F$ temos que 
 que $X_i$ é variável aleatória.
+
+Para provar a recíproca primeiro lembramos que
+a $\sigma$-álgebra dos gerada pelos 
+retângulos abertos é igual a $\mathscr{B}(\R^n)$. Portanto 
+segue do comentário que está logo acima do enunciado
+desta proposição que é suficiente provar que 
+$\mathbf{X}^{-1}(R)\in F$ para todo retângulo $R$ em 
+$\R^n$. 
+
+Supondo que $X_1,\ldots,X_n$ são variáveis aleatórias e 
+fixando um retângulo aberto $R$ da forma 
+$R=I_1\times\ldots\times I_n$, onde $I_j=(a_j,b_j)$ com $a_j<b_j$
+temos que 
+	\[
+	\mathbf{X}^{-1}(R) 
+	= 
+	\bigcap_{j=1}^n X_j^{-1}(I_j).
+	\]	
+Já que estamos assumindo que 
+$X_j$ para todo $j=1,\ldots,n$ é v.a.
+então $X_j^{-1}(I_j)\in \F$, logo $\mathbf{X}^{-1}(R)\in F$,
+como $R$ é um retângulo arbitrário segue da observação feita 
+acima que a prova está concluída.
 \end{proof}
 
 
+
+\begin{proposicao}
+	Sejam $(\Omega,\F,\P)$ um espaço de probabilidade,
+	$X_1,\ldots,X_n$ v.a.'s e $f:\R^n\to\R$ uma função contínua.
+	Então $f(X_1,\ldots,X_n)$ é uma v.a. e além do mais 
+	$f(X_1,\ldots,X_n)$ é mensurável 
+	segundo $\sigma(X_1,\ldots,X_n)$.
+\end{proposicao}
 
 
 
