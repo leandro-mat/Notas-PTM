@@ -426,7 +426,25 @@ segue que $Y$ é mensurável segundo $\sigma(X_1,\ldots,X_n)$.
 
 
 Reciprocamente, assuma que $Y$ é $\sigma(X_1,\ldots,X_n)$-mensurável.
-
+Seja $y_1,\ldots,y_r$ todos os valores que a variável aleatória 
+$Y$ assume. Pelo item a) podemos afirmar que existem 
+$H_1,\ldots,H_r\subset \R^n$ tais que 
+	\[
+	\{\omega\in\Omega;\ Y(\omega)=y_i\}
+	=
+	\{\omega\in\Omega;\ (X_1(\omega),\ldots,X_n(\omega))\in H_i\}.
+	\]
+Agora defina a seguinte função $f:\R^n\to\R$
+	\[
+		f(x_1,\ldots,x_n)=\sum_{i=1}^r y_i 1_{H_i}(x_1,\ldots,x_n).
+	\] 
+Embora {\it a priori} não seja sempre verdadeiro que $H_1,\ldots,H_r$
+são mutuamente disjuntos, temos que se 
+$(X_1(\omega),\ldots,X_n(\omega))\in H_i\cap H_j$,
+então $Y(\omega)=y_i$ e $Y(\omega)=y_j$ o que é impossível.
+Portanto cada ponto da forma $(X_1(\omega),\ldots,X_n(\omega))$
+pertence a exatamente um dos conjuntos $H_i$ e deste fato segue 
+que $f(X_1(\omega),\ldots,X_n(\omega)=Y(\omega)$.
 \end{proof}
 
 
