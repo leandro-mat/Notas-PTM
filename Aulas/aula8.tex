@@ -660,3 +660,109 @@ alguns exemplos de eventos e v.a.'s caudais.
 \end{exemplo}
 
 
+\begin{exemplo}
+	Seja $(\Omega,\F,\P)$ um espaço de probabilidade e
+	$\{X_n\}$ uma sequência de v.a.'s. Então as seguintes
+	v.a.'s são mensuráveis segundo a $\sigma$-álgebra caudal. 
+		\begin{itemize}
+			\item 
+			$\displaystyle \limsup_{n\to\infty} X_n$.
+			
+			\item
+			$\displaystyle \liminf_{n\to\infty} X_n$.
+		\end{itemize}		 
+
+A prova de ambos os itens são semelhantes, portanto vamos 
+mostrar apenas o argumento no primeiro caso.  
+Pela definição de $\limsup$ temos que 
+		\[
+			\limsup_{n\to\infty} X_n
+			=
+			\inf_{n\geq 1} \sup_{k\geq n} X_k.
+		\]
+Para todo $n\geq 2$ fixado, 
+afirmamos que $\sup_{k\geq n} X_k\in \mathcal{F}_{n-1}'$.
+De fato,  
+\[
+	\sup_{k\geq n} X_k  
+	= 
+	\lim_{m\to\infty} \sup_{n\leq k\leq m} X_k.
+\]
+Pelo Teorema \ref{teo-f(X1,...,X_n)-sigma(X1,...,X_n)} 
+temos que  
+$\sup_{n\leq k\leq m} X_k
+\in 
+\sigma(X_n,X_{n+1},\ldots,X_{m})
+\subset
+\mathcal{F}_{n-1}'$.
+Tomando o limite quando $m\to\infty$ a afirmação está provada. 
+Defina 
+	\[
+		Y_{n} = \sup_{k\geq n} X_k.
+	\]
+Pela afirmação acima temos que $Y_n$ é $\mathcal{F}_{n-1}'$ mensurável.
+Já que  $Y_{n+r}\leq Y_n$, para todo $r\in\N$ temos que 
+$\inf_{n} Y_{n} = \inf_{n} Y_{n+r}$. Escrevendo o ínfimo 
+a direita novamente como limite é fácil ver que 
+$\inf_{n} Y_{n+r}\in \mathcal{F}_{n+r-1}'$ para todo 
+$r\in\N$. Portanto 
+	\[
+		\inf_{n} Y_{n}\in 
+		\bigcap_{n=1}^{\infty}
+		\mathcal{F}_{n}'.
+	\]
+\end{exemplo}
+
+
+
+
+
+
+
+\begin{exemplo}
+	Seja $(\Omega,\F,\P)$ um espaço de probabilidade e
+	$\{X_n\}$ uma sequência de v.a.'s. Então 
+		\[
+			\left\{
+				\omega\in \Omega: 
+				\exists \lim_{n\to\infty} X_n
+			\right\}
+			\in
+			\mathcal{T}.
+		\]
+	Para provar este fato vamos usar o exemplo anterior.
+	Pela definição de limite temos que 
+	\begin{align*}
+		\left\{
+			\omega\in \Omega: 
+			\exists \lim_{n\to\infty} X_n
+		\right\}^c
+		&=
+		\left\{
+			\omega\in \Omega: 
+			\liminf_{n\to\infty} X_n 
+			< 
+			\limsup_{n\to\infty} X_n
+		\right\}
+		\\[0.3cm]
+		&\hspace*{-1cm}=
+		\bigcup_{r\in \Q}
+		\left(		
+		\left\{
+			\omega\in \Omega: 
+			\liminf_{n\to\infty} X_n 
+			\leq r 
+		\right\}
+		\cap
+		\left\{
+			\omega\in \Omega: 
+			\limsup_{n\to\infty} X_n 
+			> r 
+		\right\}
+		\right).
+	\end{align*}
+Como ambas v.a.'s $\limsup$ e $\liminf$ são $\mathcal{T}$-mensuráveis
+segue que o lado esquerdo da igualdade acima é um evento pertencente 
+a $\sigma$-álgebra caudal e portanto seu complementar, o que desejamos,
+também é um evento caudal.
+\end{exemplo}
