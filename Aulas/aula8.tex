@@ -815,3 +815,78 @@ também é um evento caudal.
 		\mathcal{T}.
 	\]
 \end{exemplo}
+
+
+
+
+
+Seja $(\Omega,\F,\P)$ um espaço de probabilidade.
+Chamamos uma sub-$\sigma$-álgebra $\mathcal{B}$ de
+{\bf quase trivial} se todos seus eventos têm probabilidade
+zero ou um. Um exemplo de sub-$\sigma$-álgebra 
+quase trivial é $\mathcal{B}=\{\emptyset,\Omega\}$.
+
+Na sequência provamos um lema que será utilizado 
+na prova da Lei Zero-Um de Kolmogorov. 
+
+
+
+
+\begin{lema}[$\sigma$-Álgebras quase-triviais]
+Sejam $(\Omega,\F,\P)$ um espaço de probabilidade,
+$\mathcal{B}$ uma sub-$\sigma$-álgebra de $\F$
+quase-trivial e $X$ uma v.a. $\mathcal{B}$-mensurável.
+Então existe uma constante $c\in\R$ tal que 
+$\P(X=c)=1$.
+\end{lema}
+
+
+
+\begin{proof}
+Seja $F(x)=\P(X\leq x)$. Como já sabemos $F$ é uma 
+função monótona não-decrescente e já que 
+$\{X\leq x\}\in\sigma(X)\subset \mathcal{B}$ 
+temos que $F(x)\in\{0,1\}$, para qualquer 
+que seja $x\in\R$. Seja $c =\sup\{x\in\R: F(x)=0\}$.
+Pelas propriedades de função distribuição segue que 
+$c<\infty$. Pela definição de $c$ e pelo fato de 
+$F(x)$ assumir apenas os valores $0$ ou $1$
+temos para todo $\varepsilon>0$ que
+$F(c+\varepsilon)=\P(X\leq c+\varepsilon)=1$.
+Tomando o limite quando $\varepsilon\to 0$ segue da 
+continuidade a direita de $F$ que $F(c)=1$.
+Já que $1=F(c)= \P(X<c)+\P(X=c)$ e $P(X<c)=0$
+temos que $\P(X=c)=1$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{teorema}
+[Lei Zero-Um de Kolmogorov]
+\label{teo-lei-zero-um-kolmogorov}
+Sejam $(\Omega,\F,\P)$ um espaço de probabilidade. 
+Se $\{X_n\}$ é uma sequência de v.a.'s independentes
+com $\sigma$-álgebra caudal $\mathcal{T}$, então 
+para todo evento $E\in\mathcal{T}$ temos que 
+$\P(E)=0$ ou $1$. Portanto a $\sigma$-álgebra 
+$\mathcal{T}$ é quase-trivial.
+\end{teorema}
+
+
+
+
+
+
+
