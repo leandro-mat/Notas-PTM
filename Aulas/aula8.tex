@@ -826,13 +826,11 @@ Chamamos uma sub-$\sigma$-álgebra $\mathcal{B}$ de
 zero ou um. Um exemplo de sub-$\sigma$-álgebra 
 quase trivial é $\mathcal{B}=\{\emptyset,\Omega\}$.
 
-Na sequência provamos um lema que será utilizado 
-na prova da Lei Zero-Um de Kolmogorov. 
-
 
 
 
 \begin{lema}[$\sigma$-Álgebras quase-triviais]
+\label{lema-sigma-algebras-quase-triviais}
 Sejam $(\Omega,\F,\P)$ um espaço de probabilidade,
 $\mathcal{B}$ uma sub-$\sigma$-álgebra de $\F$
 quase-trivial e $X$ uma v.a. $\mathcal{B}$-mensurável.
@@ -876,13 +874,122 @@ temos que $\P(X=c)=1$.
 \begin{teorema}
 [Lei Zero-Um de Kolmogorov]
 \label{teo-lei-zero-um-kolmogorov}
-Sejam $(\Omega,\F,\P)$ um espaço de probabilidade. 
-Se $\{X_n\}$ é uma sequência de v.a.'s independentes
+Sejam $(\Omega,\F,\P)$ um espaço de probabilidade
+e $\{X_n\}$ é uma sequência de v.a.'s independentes
 com $\sigma$-álgebra caudal $\mathcal{T}$, então 
 para todo evento $E\in\mathcal{T}$ temos que 
-$\P(E)=0$ ou $1$. Portanto a $\sigma$-álgebra 
-$\mathcal{T}$ é quase-trivial.
+$\P(E)=0$ ou $1$, isto é, $\mathcal{T}$ 
+é uma $\sigma$-álgebra quase-trivial.
 \end{teorema}
+
+
+\begin{proof}
+A ideia da prova é mostrar que se $E\in\mathcal{T}$
+então $E$ é independente de si mesmo, ou seja,
+$\P(E)=\P(E\cap E)=\P(E)\P(E)$. Desta igualdade 
+temos que $\P(E)=\P(E)^2$ e logo $\P(E)$ é solução 
+da equação quadrática $x=x^2$ e portanto só pode 
+assumir os valores zero ou um.   
+
+
+Para cada $n\in\N$ defina $\mathcal{F}_n=\sigma(X_1,\ldots,X_n)$.
+Como $\mathcal{F}_n\subset \mathcal{F}_{n+1}$ temos que  
+\[
+	\mathcal{F}_{\infty}
+	\equiv
+	\sigma(X_1,X_2,\ldots)
+	=
+	\sigma\left( \bigcup_{n\in\N} \sigma(X_n) \right)
+	=
+	\sigma\left( \bigcup_{n\in\N} \mathcal{F}_n \right).
+\]
+Observamos que
+\begin{equation}\label{eq-aux1-teo-lei-zero-um-kolmogorov}
+	E\in \mathcal{T}\subset \mathcal{F}_n'
+	=
+	\sigma(X_{n+1},X_{n+2},\ldots)
+	\subset 
+	\mathcal{F}_{\infty}.
+\end{equation}
+Em particular, $E\in \mathcal{F}_n,\ \forall n\in\N$.
+Já que a sequência $\{X_n\}$ é independente temos que
+as $\sigma$-álgebras $\mathcal{F}_n$ e $\mathcal{F}_n'$
+são claramente independentes e assim $E$ é independente
+de qualquer evento em $\mathcal{F}_n$ para qualquer 
+que seja $n\in\N$. Isto implica que $E$ é independente
+de $\cup_{n\in\N} \mathcal{F}_n$.
+Considere as seguintes coleções $\mathcal{C}_1=\{E\}$ 
+e $\mathcal{C}_2=\cup_{n\in\N} \mathcal{F}_n$. Claramente
+$\mathcal{C}_1$ e $\mathcal{C}_2$ são $\pi$-sistemas e 
+além do mais este $\pi$-sistemas são independentes,
+então pelo Teorema \ref{teo-criterio-basico-independencia}
+segue que as $\sigma$-álgebras
+	\[
+	\sigma(\mathcal{C}_1)=\{\emptyset,E,E^c,\Omega\}
+	\qquad
+	\text{e}
+	\qquad
+	\sigma(\mathcal{C}_2)
+		=\sigma\left( \bigcup_{n\in\N} \mathcal{F}_n \right)
+		=\mathcal{F}_{\infty}
+	\]
+são independentes. Da primeira 
+igualdade acima temos que 
+$E\in \sigma(\mathcal{C}_1)$ e de 
+\eqref{eq-aux1-teo-lei-zero-um-kolmogorov} 
+segue que 
+$E\in \mathcal{F}_{\infty}=\sigma(\mathcal{C}_2)$, 
+portanto $E$ é independente de si mesmo.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{corolario}
+Sejam $(\Omega,\F,\P)$ um espaço de probabilidade e 
+$\{X_n\}$ é uma sequência de v.a.'s independentes, 
+então 
+	\begin{itemize}
+		\item[a)]
+		O evento $\{ \sum_{n\in\N} X_n\ \text{converge}\}$ tem probabilidade
+		zero ou um.		
+		
+		\item[b)]
+		As v.a.'s $\liminf X_n$ e $\limsup X_n$ são contantes quase certamente.
+		
+		\item[c)]
+		O evento $\{S_n/n\to 0\}$ tem probabilidade zero ou um.		
+		
+	\end{itemize}
+\end{corolario}
+
+
+\begin{proof}
+Basta usar os exemplos desta seção para concluir que os eventos
+em a) e c) são caudais e para b) usar também os exemplos desta
+seção  junto com o Lema \ref{lema-sigma-algebras-quase-triviais}. 
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
