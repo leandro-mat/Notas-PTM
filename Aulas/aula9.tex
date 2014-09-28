@@ -376,5 +376,73 @@ Prova do item b). Já que $1_{E}f\leq 1_{F}f$
 a prova segue do item anterior.
 \end{proof}
 
+\bigskip
+
+Já temos tudo preparado para apresentar um dos resultados
+mais importantes desta seção que é um teorema de B. Levi 
+conhecido hoje em dia como Teorema da Convergência Monótona.
+Ele será fundamental na determinação de várias propriedades
+da integral de Lebesgue bem como base para outros teoremas 
+de convergência de integrais. 
 
 
+
+
+
+
+
+
+
+
+
+
+
+\begin{teorema}
+[Teorema da Convergência Monótona]
+\label{Teo-Convergencia-Monótona}
+Seja $\{f_n\}$ uma sequência monótona
+não decrescente em 
+$M^{+}(\Omega,\F)$, isto é, 
+para todo $n\in\N$ temos $0\leq f_n\leq f_{n+1}$.
+Se $f_n$ converge para uma função$f$,
+então temos que  $f\in M^{+}(\Omega,\F)$ e
+além do mais
+	\[
+	\int_{\Omega} f\, d\mu 
+	=
+	\lim_{n\to\infty}\int_{\Omega} f_n\, d\mu.
+	\]
+\end{teorema}
+
+
+
+\begin{proof}
+Já que $f_n\in M^{+}(\Omega,\F)$ e $f=\lim f_n\geq 0$
+segue do Corolário \ref{cor-lim-mensuravel-eh-mensuravel} 
+que $f\in M^{+}(\Omega,\F)$.
+Da monotonicidade da sequência $\{f_n\}$ e da 
+integral de Lebesgue, temos que 
+$f_n\leq f_{n+1}\leq f$ e 
+	\[
+		\int_{\Omega} f_n\, d\mu 
+		\leq
+		\int_{\Omega} f_{n+1}\, d\mu
+		\leq 
+		\int_{\Omega} f\, d\mu
+		\qquad
+		\forall n\in\N.
+	\] 
+Portanto existe o limite em $\overline{\R}$ da
+sequência de números reais estendidos $\int_{\Omega}f_n\, d\mu$ 
+e ele satisfaz a seguinte desigualdade
+	\[
+		\lim_{n\to\infty} \int_{\Omega} f_n\, d\mu 
+		\leq
+		\int_{\Omega} f\, d\mu. 
+	\]
+
+
+Para estabelecer a desigualdade oposta, seja 
+$\alpha\in (0,1)$ e $\varphi$ uma função mensurável
+simples satisfazendo $0\leq \varphi\leq f$.
+\end{proof}
