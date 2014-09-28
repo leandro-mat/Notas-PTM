@@ -1,7 +1,7 @@
 \chapter[Aula 9]{A Integral de Lebesgue}
 \chaptermark{}
 
-\section{A Integral}
+\section{A Integral de Funções em $M^{+}(\Omega,\F)$}
 
 A principal diferença entre a integral de Riemann e a integral
 de Lebesgue é que na integral de Riemann é feita uma 
@@ -311,3 +311,61 @@ com respeito a medida $\mu$ é definida pela seguinte número real estendido
 		\int_{\Omega} \varphi \, d\mu
 	\]
 \end{definicao}
+
+
+
+
+
+
+Observe que se $f\in M^{+}(\Omega,F)$ então para
+todo $E\in\F$ temos que $1_E\cdot f\in M^{+}(\Omega,\F)$
+e definimos a integral de $f$ com respeito a $\mu$ 
+sobre $E$ sendo o número real estendido 
+	\[
+		\int_{E} f\, d\mu
+		=
+		\int_{\Omega} 1_{E}f\, d\mu.
+	\]
+
+Vamos mostrar a seguir que a integral é monótona 
+com respeito a ambos, o integrando e o conjunto
+sobre o qual a integral é realizada.
+
+
+
+
+
+
+\begin{lema}
+\label{lema-monotonicidade-integral-funcao-nao-negativas}
+Seja $(\Omega,\F,\mu)$ um espaço de medida.
+\begin{itemize}
+	\item[a)]
+	Se $f,g\in M^{+}(\Omega,\F)$	 e $f\leq g$, então 
+		\[
+			\int_{\Omega} f\, d\mu
+			\leq
+			\int_{\Omega} g\, d\mu.
+		\]
+	
+	\item[b)] 
+	Se $f\in M^{+}(\Omega,\F)$ para 
+	qualquer par $E,F\in \F$, com 
+	$E\subset F$ temos que 
+		\[
+			\int_{E} f\, d\mu
+			\leq
+			\int_{F} f\, d\mu.
+		\]
+	 
+\end{itemize}
+\end{lema}
+
+
+
+
+
+
+
+
+
