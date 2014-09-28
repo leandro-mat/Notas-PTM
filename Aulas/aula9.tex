@@ -594,5 +594,24 @@ Prova do item b). Sejam
 $\{\varphi_n\}$ e $\{psi_n\}$ sequências
 monótonas não-decrescentes de funções simples em 
 $M^{+}(\Omega,\F)$ que convergem para $f$ e $g$,
-respectivamente.
+respectivamente. Claramente temos que 
+$(\varphi_n+\psi_n) \uparrow (f+g)$.
+Segue do item b) do 
+Lema \ref{lema-lin-int-funcao-simples-positiva}
+e do Teorema da Convergência Monótona que 
+	\[
+	\int_{\Omega} f+g\, d\mu
+	=
+	\lim_{n\to\infty} \int_{\Omega} \varphi_n+\psi_n\, d\mu
+	=
+	\lim_{n\to\infty} \int_{\Omega} \varphi_n\, d\mu
+	+		
+	\lim_{n\to\infty} \int_{\Omega} \varphi_n\, d\mu	
+	=
+	\int_{\Omega} f\, d\mu+\int_{\Omega} g\, d\mu
+	\] 
+
+
+
+
 \end{proof}
