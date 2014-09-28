@@ -20,6 +20,9 @@
 
 
 %\usepackage{imakeidx}\makeindex
+\usepackage{makeidx}\makeindex
+
+
 \usepackage{amsmath,amsthm,amssymb,color}
 \usepackage[Lenny]{fncychap} % Usado para decorar Headers and footers
 %
@@ -269,8 +272,11 @@ Roberto Vila Gabriel
 %\chapter{Referências}
 %\include{./referencias/referencias}
 
-%\printindex
-%\chapter{Índice de Símbolos}
+
+
+\pagestyle{empty}
+\printindex 			% Gera Índice Remissivo
+
 
 
 \end{document}

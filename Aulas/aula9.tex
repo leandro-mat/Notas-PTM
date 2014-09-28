@@ -400,6 +400,7 @@ de convergência de integrais.
 \begin{teorema}
 [Teorema da Convergência Monótona]
 \label{Teo-Convergencia-Monótona}
+\index{Teorema!da Convergência Monótona}
 Seja $\{f_n\}$ uma sequência monótona
 não decrescente em 
 $M^{+}(\Omega,\F)$, isto é, 
@@ -614,4 +615,24 @@ e do Teorema da Convergência Monótona que
 
 
 
+
+O próximo resultado é uma consequência do Teorema 
+da Convergência Monótona e é um resultado muito 
+importante para lidarmos com integrais de sequências
+de funções que não não monótonas.
+
+
+
+
+\begin{lema}[Lema de Fatou]\index{Lema!de Fatou}
+Sejam $(\Omega,\F,\mu)$ um espaço de medida e 
+$\{f_n\}$ uma sequência arbitrária de 
+funções em $M^+(\Omega,\F)$. Então 
+	\[
+		\int_{\Omega}\left( \liminf_{n\to\infty} f_n\right) \, d\mu
+		\leq
+		\liminf_{n\to\infty} \int_{\Omega}f_n\, d\mu
+	\]
+
+\end{lema}
 \end{proof}
