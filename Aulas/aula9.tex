@@ -173,12 +173,140 @@ seguintes representações padrões
 		\qquad
 		\psi 
 		=
-		\sum_{k=1}^m b_k 1_{F_k} 		
+		\sum_{k=1}^m b_k 1_{F_k}.
 	\]
-	
+Daí temos a seguinte representação para a soma 
+destas funções 
+	\[
+		\varphi+\psi
+		=
+		\sum_{j=1}^n\sum_{k=1}^m (a_j+b_k) 1_{E_jF_k}.
+	\]
+Apesar da coleção $\{E_j\cap F_k\}$ ser disjunta 
+quando $j=1,\ldots,n$ e $k=1,\ldots,m$ a representação
+acima não é necessariamente a 
+representação padrão de $\varphi+\psi$ 
+pois não é garantido que $E_j\cap F_k\neq \emptyset$ 
+e nem que a coleção $\{a_j+b_k\}$ seja uma coleção de
+números reais distintos. Para obter a representação 
+padrão procedemos da seguinte maneira. 
+Seja $c_h$, com $1\leq h\leq p\leq nm$ a coleção 
+de todos os número distintos da coleção 
+$\{ a_j+b_k: j=1,\ldots,n;\ k=1,\ldots,m\}$. 
+Para cada $h=1,\ldots, p$ defina 
+	\[
+		G_h
+		=
+		\bigcup_{ \substack {j,k : E_j\cap E_k\neq \emptyset \\a_j+b_k=c_h}  }
+		E_j\cap E_k.
+	\] 
+Assim temos que 
+	\begin{equation}\label{eq-aux1-linearidade-integral-func-simples-positiva}
+		\mu(G_h)
+		=
+		\sum_{ \substack {j,k : E_j\cap E_k\neq \emptyset \\a_j+b_k=c_h}  }
+		\mu(E_j\cap E_k).
+	\end{equation} 
+Já que a representação padrão de $\varphi+\psi$ é dada por 
+	\[
+		\varphi+\psi = \sum_{h=1}^p c_h 1_{G_h}.
+	\]
+Pela definição da integral e pela igualdade 
+\eqref{eq-aux1-linearidade-integral-func-simples-positiva} 
+temos que 
+\begin{align*}
+\int_{\Omega}(\varphi+\psi)\, d\mu 
+&= 
+\sum_{h=1}^p c_h \mu(G_h)
+\\
+&=
+\sum_{h=1}^p 
+	c_h 
+	\sum_{ \substack {j,k : E_j\cap E_k\neq \emptyset \\a_j+b_k=c_h}  }
+		\mu(E_j\cap E_k)
+\\
+&=
+\sum_{h=1}^p  \ \ 
+	\sum_{ \substack {j,k : E_j\cap E_k\neq \emptyset \\a_j+b_k=c_h}  }
+		c_h\mu(E_j\cap E_k)
+\\
+&=
+\sum_{h=1}^p \ \  
+	\sum_{ \substack {j,k : E_j\cap E_k\neq \emptyset \\a_j+b_k=c_h}  }
+		(a_j+b_k)\mu(E_j\cap E_k)
+\\
+&=
+	\sum_{j=1}^n \   
+	\sum_{k=1}^m
+		(a_j+b_k)\mu(E_j\cap E_k)
+\\
+&=
+	\sum_{j=1}^n \   
+	\sum_{k=1}^m
+		a_j\mu(E_j\cap E_k)
+	+
+	\sum_{j=1}^n \   
+	\sum_{k=1}^m
+		b_k\mu(E_j\cap E_k)
+\\
+&=
+	\sum_{j=1}^n 
+		a_j\mu(E_j)
+	+
+	\sum_{k=1}^m
+		b_k\mu(E_k)
+\\
+&=
+\int_{\Omega} \varphi\, d\mu 
++
+\int_{\Omega} \psi \, d\mu
+\end{align*}
+
+Prova do item c). Usando os itens a), b) e a representação
+\[
+	\varphi 1_{E} 
+	=
+	\sum_{j=1}^n a_j 1_{E_j\cap E}
+\]
+temos que 
+	\[
+		\lambda(E)
+		=
+		\int_{\Omega}\varphi 1_{E}\, d\mu
+		=
+		\sum_{j=1}^n a_j \int_{\Omega}1_{E_j\cap E} \, d\mu
+		=
+		\sum_{j=1}^n a_j \mu(E_j\cap E).	
+	\]
+Já que aplicação $E\mapsto \mu(E_j\cap E)$ define uma medida 
+em $\F$, $a_j$'s são não negativos e combinações lineares
+de medidas com coeficientes não negativos são medidas então o 
+lema está provado.
 \end{proof}
 
 
 
+Agora estamos preparados para introduzir a definição de
+integral para qualquer função em $M^{+}(\Omega,\F)$. 
+Como no caso de funções simples não-negativas 
+está integral estará 
+sempre bem definida como um número em $\overline{\R}$.
 
 
+
+\begin{definicao}[Integral de Função Não-Negativa]
+\label{def-integral-func-mens-nao-negativa}
+A integral de Lebesgue de uma função $f\in M^{+}(\Omega,\F)$
+com respeito a medida $\mu$ é dada por 
+	\[
+		\int_{\Omega} f\, d\mu
+		=
+		\sup_{ \substack{ 	\varphi \in M^{+}(\Omega,\F)
+							\\
+							\varphi\ \text{simples}
+							\\ 
+							0\leq\varphi\leq f }  } 
+		\ 
+		\int_{\Omega} \varphi \, d\mu
+	\]
+\end{definicao}
