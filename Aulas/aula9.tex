@@ -71,7 +71,7 @@ simples $f:\Omega\to\R$ é única.
 \begin{definicao}[Integral de Funções Simples não-negativas]
 \label{def-integral-funcao-simples-positiva}
 Sejam $(\Omega,\F,\mu)$ um espaço de medida e 
-$\varphi:\Omega\to\R$ uma função simples cuja representação 
+$\varphi:\Omega\to [0,+\infty)$ uma função simples cuja representação 
 padrão é dada por $\varphi = \sum_{j=1}^n a_j1_{E_j}$.
 Definimos a integral de $\varphi$ com respeito a $\mu$ 
 sendo o número real estendido 
@@ -88,3 +88,97 @@ função identicamente nula é zero independentemente do
 espaço $\Omega$ ter medida finita ou não. 
 Devemos observar que a integral de qualquer função 
 simples não-negativa está bem definida em $\overline{\R}$.
+Passamos agora à prova de alguma propriedades 
+básicas desta integral.
+
+
+
+
+
+
+
+
+\begin{lema}
+Sejam $(\Omega,\F,\mu)$ um espaço de medida, 
+$\varphi,\psi \in M^+(\Omega,\F)$ 
+funções simples e $c\in [0,+\infty)$,
+então
+\begin{itemize}
+	\item[a)]
+	\(\displaystyle 
+		\int_{\Omega} c\varphi\, d\mu
+		=
+		c\int_{\Omega} \varphi \, d\mu.
+	\)
+	
+
+	\item[b)]
+	\(\displaystyle 
+		\int_{\Omega} (\varphi+\psi)\, d\mu
+		=
+		\int_{\Omega} \varphi \, d\mu
+		+
+		\int_{\Omega} \psi \, d\mu.
+	\)
+	
+	\item[c)] A aplicação $\lambda:\F\to\overline{\R}$
+	dada por 
+		\(\displaystyle
+			\lambda(E) = \int_{\Omega} \varphi 1_{E}\, d\mu
+		\)
+	é uma medida em $\F$.
+\end{itemize}
+\end{lema}
+
+
+
+\begin{proof}
+Prova do item a). Se $c=0$ então $c\varphi$ é a função 
+identicamente nula e portanto a igualdade é válida. 
+Se $c>0$ e $\varphi\in M^{+}(\Omega,\F)$ tem 
+representação padrão 
+	\[
+		\varphi  
+		=
+		\sum_{j=1}^n a_j 1_{E_j} 
+	\]
+então $c\varphi\in M^{+}(\Omega,\F)$ e tem 
+representação padrão dada por 
+	\[
+		c\varphi  
+		=
+		\sum_{j=1}^n ca_j 1_{E_j} 
+	\]
+Portanto temos que 
+	\[
+	\int_{\Omega} c\varphi\, d\mu
+	=
+	\sum_{j=1}^n ca_{j} \mu(E_j)
+	=
+	c \sum_{j=1}^n a_{j} \mu(E_j)
+	=
+	c \int_{\Omega} \varphi\, d\mu.
+	\]
+
+
+
+Prova do item b). Suponha que $\varphi$ e $\psi$ têm as 
+seguintes representações padrões
+	\[
+		\varphi  
+		=
+		\sum_{j=1}^n a_j 1_{E_j} 
+		\qquad
+		\text{e}
+		\qquad
+		\psi 
+		=
+		\sum_{k=1}^m b_k 1_{F_k} 		
+	\]
+	
+\end{proof}
+
+
+
+
+
