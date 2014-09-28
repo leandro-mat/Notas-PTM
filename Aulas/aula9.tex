@@ -564,3 +564,35 @@ então
 
 \end{itemize}
 \end{corolario}
+
+
+\begin{proof}
+Prova do item a). 
+Se $c=0$ então o resultado é imediato.
+Se $c>0$, seja $\{\varphi_n\}$ uma sequência 
+monótona não-decrescente de funções simples em 
+$M^{+}(\Omega,\F)$ que converge para $f$.
+A existência de tal sequência é garantida 
+pelo Teorema \ref{teo:aproximacao-monotona-por-func-simples}.
+Já que $c\varphi_n \uparrow cf$ podemos aplicar o item a) do
+Lema \ref{lema-lin-int-funcao-simples-positiva} e
+o Teorema da Convergência Monótona para verificar que 
+são válidas as seguintes igualdades
+	\[
+	\int_{\Omega} cf\, d\mu
+	=
+	\lim_{n\to\infty} \int_{\Omega} c\varphi_n\, d\mu
+	=
+	c\lim_{n\to\infty} \int_{\Omega} \varphi_n\, d\mu	
+	=
+	c\int_{\Omega} f d\mu		
+	\] 
+
+
+
+Prova do item b). Sejam 
+$\{\varphi_n\}$ e $\{psi_n\}$ sequências
+monótonas não-decrescentes de funções simples em 
+$M^{+}(\Omega,\F)$ que convergem para $f$ e $g$,
+respectivamente.
+\end{proof}
