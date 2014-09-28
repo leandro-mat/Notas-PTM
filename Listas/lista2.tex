@@ -27,7 +27,7 @@ que não tenham probabilidade zero ou um.
 \item Se $\{A_n\}$ é uma sequência de eventos independentes,
 mostre que 
 	\[
-		\P \left( \bigcap_{i=1}^n A_n \right)
+		\P \left( \bigcap_{i=1}^{\infty} A_n \right)
 		=
 		\prod_{n=1}^{\infty} \P(A_n).
 	\]
@@ -99,7 +99,7 @@ são independentes ?
 Suponha que $\{A_n\}$ é uma sequência de eventos independentes
 satisfazendo $\P(A_n)<1$, para todo $n\in \N$. Mostre que 
 	\[
-		\P \left( \bigcup_{i=1}^n A_n \right) = 1
+		\P \left( \bigcup_{i=1}^{\infty} A_n \right) = 1
 		\quad
 		\Longleftrightarrow
 		\quad
@@ -203,7 +203,9 @@ com probabilidade 1, temos que
 
 
 \item
-Este exercício está relacionado ao Exemplo ???
+Este exercício está relacionado a Seção 
+\ref{secao-props-va-exp-indep}
+%
 {\bf (Comportamento de v.a.'s com distribuição exponencial)}.
 	\begin{itemize}
 
@@ -236,7 +238,7 @@ Este exercício está relacionado ao Exemplo ???
 			\]
 		Dica: Reveja ou prove que 
 			\[
-				\lim_{n\to\infty}
+				\lim_{x\to\infty}
 				\frac{\P(X_n>x)}{n(x)/x}=1,
 			\]
 		onde $n(x)$ denota a densidade de uma v.a. normal
@@ -454,7 +456,7 @@ de eventos tal que
 \[
 	\lim_{n\to\infty} \P(A_n)=0,
 	\qquad
-	\sum_{n=1}^{\infty} \P(A_n\cap A_{n+1})<\infty.
+	\sum_{n=1}^{\infty} \P(A_n\cap A_{n+1}^c)<\infty.
 \]
 Prove que $\P(\limsup A_n)=0$. 
 \\
@@ -709,6 +711,9 @@ Dizemos que $A\in\F$ é um evento crescente,
 se para todo par $\omega,\omega'$ tal que 
 $\omega\preceq \omega'$, temos 
 $1_{A}(\omega)\leq 1_{A}(\omega')$.
+De maneira análoga, defina o conceito de
+eventos decrescentes.
+
 
 Assuma que a medida de probabilidade $\P$ é tal que
 para todo par de eventos crescentes $A,B\in\F$ temos
@@ -716,13 +721,24 @@ para todo par de eventos crescentes $A,B\in\F$ temos
 		\P(A\cap B) -\P(A)\P(B) \geq 0.
 	\end{equation}
 %
-Sejam $A_1,\ldots,A_n$ eventos crescentes e equiprováveis tais que 
+Mostre que 
+\begin{itemize}
+
+\item[a)] 
+se $A$ e $B$ são crescentes então seus complementares
+são eventos decrescentes e que 
+	\begin{equation}
+		\P(A^c\cap B^c) -\P(A^c)\P(B^c) \geq 0;
+	\end{equation}
+
+\item[b)]
+se $A_1,\ldots,A_n$ são eventos crescentes e equiprováveis, 
+tais que 
 $A = \cup_{i=1}^n A_i$, então 
 	\[
 		\P(A_i)\geq 1-[1-\P(A)]^{\frac{1}{n}}.
 	\]
-
-
+\end{itemize}
 
 
 
@@ -731,7 +747,8 @@ $A = \cup_{i=1}^n A_i$, então
 
 \item {\bf Os Números de Ramsey}. 
 O objetivo deste exercício é usar o ``Método Probabilístico''
-para obter cotas inferior e superior dos números de Ramsey. 
+para obter cotas inferiores para os números de Ramsey
+da diagonal. 
 
 {\bf Grafo.} Um grafo é um par ordenado $G=(V,E)$,
 onde $V$ é um conjunto arbitrário (chamado conjunto de vértices de $G$)  
@@ -760,7 +777,8 @@ Seja $e\in E_n$ uma aresta de $K_n$.
 Dizemos que $e$ está colorida de azul se $c(e)=0$, 
 caso $c(e)=1$ vamos dizer que $e$ está colorida de vermelho.
 
-Fixada uma coloração $c$ de $K_n$ e um número natural $k<n$, 
+Fixada uma coloração $c$ de $K_n$ e um 
+número natural $2\leq k \leq n$, 
 dizemos que $K_n$ possui um subgrafo monocromático
 {\bf azul} $K_k$, se existem $k$ vértices 
 $\{v_1,\ldots,v_k\}\subset \{1,\ldots,n\}$
@@ -777,7 +795,7 @@ ou um subgrafo $K_l$ monocromático vermelho.
 Em 1929 Ramsey mostrou que $R(k,l)$ é finito para 
 quaisquer inteiros $k$ e $l$. 
 Nosso objetivo neste exercício será 
-exibir cotas inferior e superior para 
+exibir cotas inferiores para 
 os números de Ramsey da diagonal, isto é, 
 $R(k,k)$.
 
@@ -798,7 +816,7 @@ $R(k,k)$.
 		de vértices em $R$ estão pintadas com a mesma cor. 
 		Mostre que
 			\[ 
-				\P(A_R) = \frac{1}{2^{\binom{n}{k}-1  }}
+				\P(A_R) = \frac{1}{2^{\binom{k}{2}-1  }}
 			\]
 		
 		\item[c)] Mostre que a probabilidade de pelo menos um 

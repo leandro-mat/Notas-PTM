@@ -290,7 +290,7 @@ $\{d_n\}$ é independente.
 
 É possível agrupar variáveis aleatórias independentes
 e eventos independentes, criando partições no conjunto
-que indexam estas variáveis ou eventos. Está é uma
+que indexa estas variáveis ou eventos. Está é uma
 propriedade muito útil da independência.
 
 %%%  Figura sobre Ilustrando o Lema do Agrupamento
@@ -341,7 +341,7 @@ Defina
 	\]
 Por definição temos que $\mathcal{C}_{T_s}$ é um 
 $\pi$-sistema para cada $s\in S$ e além do mais 
-este $\pi$-sistemas $\{ \mathcal{C}_{T_s}, s\in S\}$ são independentes.
+estes $\pi$-sistemas $\{ \mathcal{C}_{T_s}, s\in S\}$ são independentes.
 
 Observe que $\mathcal{C}_{T_s}\subset \mathscr{B}_{T_s}$ 
 e por definição de $\sigma$-álgebra gerada que 
@@ -400,3 +400,250 @@ Se $\sum_{n=1}^{\infty} \P(A_n)<\infty$ então
 		\P\left(\limsup_{n\to\infty} A_n\right)=0.
 	\]
 \end{lema}
+
+
+
+
+\begin{proof}
+Usando a definição de $\limsup$, a continuidade de $\P$,
+a subaditividade e a hipótese de convergência da série, 
+obtemos
+	\begin{align*}
+	\P\left(\limsup_{n\to\infty} A_n\right)
+	&=
+	\P\left( \lim_{n\to\infty} \bigcup_{j\geq n} A_j \right)
+	\\
+	&=
+	\lim_{n\to\infty}\P\left( \bigcup_{j\geq n} A_j \right)
+	\\
+	&\leq
+	\limsup_{n\to\infty} \sum_{j=n}^{\infty}\P\left( A_j \right)
+	\\
+	&=
+	0.
+	\end{align*}
+\end{proof}
+
+
+
+\begin{exemplo}
+	Suponha que $\{X_n\}$ sejam v.a.'s de Bernoulli 
+	com $\P(X_n=1)=p_n=1-\P(X_n=0)$. 
+	Observe que não estamos supondo que $\{X_n\}$ é
+	uma sequência independente e nem identicamente distribuídas.
+	Afirmamos que se $\sum_{n=1}^{\infty}p_n<\infty$ então 
+		\[
+			\P\left( \lim_{n\to\infty} X_n=0\right)=1. 
+		\]
+	De fato, se 
+		\[
+			 \sum_{n=1}^{\infty} \P(X_n=1) 
+			 = 
+			 \sum_{n=1}^{\infty}p_n 
+			 < \infty,
+		\]
+	então segue do Lema de Borel-Cantelli que $\P(\limsup \{X_n=1\})=0$.
+	Tomando complementar ficamos com 
+	\[
+		1
+		=
+		\P(\liminf \{X_n=1\}^c)
+		=
+		\P(\liminf \{X_n=0\}).
+	\]
+	Por definição do $\liminf$ temos 
+	para todo 
+	\[
+		\omega
+		\in 
+		\liminf_{n\to\infty} \{X_n=0\}
+		=
+		\bigcup_{k\geq 1} \bigcap_{n\geq k} \{X_n=0\}		
+	\]
+	que existe $k=k(\omega)$ tal que 
+	$\omega \in \bigcap_{n\geq k(\omega)} \{X_n=0\}$,
+	isto é, $X_n(\omega)=0$ para todo $n\geq k(\omega)$
+	mostrando que $\lim_{n\to\infty} X_n(\omega)=0$.
+	Como este fato vale para $\omega$ em um conjunto 
+	de probabilidade um, a afirmação está provada.
+\end{exemplo}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Lei Zero-Um de Borel}
+
+Uma importante característica do Lema de Borel-Cantelli, 
+provado na seção anterior, é não exigir a hipótese 
+de independência dos eventos $\{A_n\}$. Nesta seção 
+adicionando a hipótese de independência vamos provar
+vamos caracterizar completamente o valor de 
+$P(\limsup A_n)$ em termos da série de $\P(A_n)$.
+Antes de provar este resultado de caracterização, 
+vamos apresentar uma desigualdade básica 
+envolvendo funções reais. Esta desigualdade é formulada
+no seguinte lema.
+
+
+\begin{lema}\label{lema-1-x<=exp(-x)}
+Para todo $x\in (0,1)$ temos que 
+	\[
+		1-x\leq e^{-x}.
+	\]
+\end{lema}
+
+\begin{proof}
+Para todo $x\in(0,1)$ podemos
+obter através da integração termo a termo da série geométrica
+	\(
+		1+x+x^2+\ldots+x^n+\ldots = 1/(1-x)
+	\)
+a seguinte igualdade
+	\[
+		x+\frac{x^2}{2}+\frac{x^3}{3}+\ldots+\frac{x^n}{n} = -\ln(1-x).
+	\]
+Já que $0<x<1$ podemos desprezar os termos da série acima de
+ordem maior ou igual que dois obtendo a seguinte desigualdade 
+	\[
+	 x \leq -\ln(1-x)
+	 \Longrightarrow
+	 e^x\leq \frac{1}{1-x}
+	 \Longrightarrow
+	 1-x\leq e^{-x}.
+	\]	
+\end{proof}
+
+
+
+\begin{teorema}[Lei Zero-Um de Borel]
+\label{teo-lei-zero-um-de-Borel}
+Sejam $(\Omega,\F,\P)$ um espaço de probabilidade 
+e $\{A_n\}$ uma sequência de eventos independentes, 
+então
+	\[
+		\P\left(\limsup_{n\to\infty} A_n\right)
+		=
+		\begin{cases}
+		0,&\text{se, e somente se,}\  \sum_{n=1}^{\infty} \P(A_n)<\infty;
+		\\
+		1,&\text{se, e somente se,}\  \sum_{n=1}^{\infty} \P(A_n)=\infty.   
+		\end{cases}
+	\]
+\end{teorema}
+
+
+
+
+\begin{proof}
+Do Lema de Borel-Cantelli
+segue que se $\sum_{n=1}^{\infty} \P(A_n)<\infty$
+então $\P (\limsup A_n )=0$. 
+
+
+
+
+Reciprocamente, suponha que $\sum_{n=1}^{\infty} \P(A_n)=\infty$.
+Então
+%
+%
+%
+\begin{align*}
+\P\left(\limsup_{n\to\infty} A_n\right)
+&=
+1-\P\left(\liminf_{n\to\infty} A_n^c\right)
+\\
+&=
+1-\P\left(\lim_{n\to\infty} \bigcap_{k\geq n} A_n^c\right)
+\\
+&=
+1-\lim_{n\to\infty}\P\left( \bigcap_{k\geq n} A_n^c\right)
+\\
+&=
+1-\lim_{n\to\infty}\P\left(\lim_{m\to\infty} \bigcap_{k=n}^m A_n^c\right)
+\\
+&=
+1-\lim_{n\to\infty}\lim_{m\to\infty}\P\left( \bigcap_{k=n}^m A_n^c\right)
+\\
+&=
+1-\lim_{n\to\infty}\lim_{m\to\infty}\prod_{k=n}^m (1-\P\left( A_n\right)),
+\end{align*}
+%
+%
+%
+%
+%
+%
+onde na última igualdade usamos a independência. 
+Resta mostrar que 
+	\begin{equation}\label{eq-lim-duplo-lei-zero-um-borel}
+		\lim_{n\to\infty}\lim_{m\to\infty}\prod_{k=n}^m (1-\P\left( A_n\right))
+		=
+		0.
+	\end{equation}
+Do Lema \ref{lema-1-x<=exp(-x)} e da hipótese de divergência,
+temos, para todo $n\in\N$, que
+%
+\begin{align*}
+	\lim_{m\to\infty}\prod_{k=n}^m (1-\P\left( A_n\right))
+	\leq
+	\lim_{m\to\infty}\prod_{k=n}^m e^{-\P\left( A_n\right)}
+	&=
+	\lim_{m\to\infty}e^{-\sum_{k=n}^m\P\left( A_n\right)}
+	\\
+	&=
+	e^{-\sum_{k=n}^{\infty}\P\left( A_n\right)}
+	\\
+	&=
+	e^{-\infty}
+	\\
+	&=
+	0.
+\end{align*}
+%
+Como o limite acima é independente de $n$
+podemos concluir que \eqref{eq-lim-duplo-lei-zero-um-borel}
+é verdadeiro e portanto o teorema está provado. 
+\end{proof}
+
+
+
+
+
+
+
+\begin{exemplo}[Continuação]
+	Suponha que $\{X_n\}$ sejam v.a.'s de Bernoulli 
+	independentes com $\P(X_n=1)=p_n=1-\P(X_n=0)$. 
+	Afirmamos que  
+		\[
+			\P\left( \lim_{n\to\infty} X_n=0\right)=1
+			\Longleftrightarrow
+			\sum_{n=1}^{\infty}p_n<\infty.
+		\]
+	Para verificar que a afirmação é verdadeira
+	basta notar que 
+	\[
+		\P\left( \lim_{n\to\infty} X_n=1\right)=0
+		\Longleftrightarrow
+		\sum_{n=1}^{\infty} \P(X_n=1)
+		=		
+		\sum_{n=1}^{\infty}p_n<\infty.
+	\]
+\end{exemplo}
+
+
+
+
+
+
+
+
