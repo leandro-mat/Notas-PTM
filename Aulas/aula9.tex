@@ -637,3 +637,42 @@ funções em $M^+(\Omega,\F)$. Então
 		\liminf_{n\to\infty} \int_{\Omega}f_n\, d\mu
 	\]
 \end{lema}
+
+
+\begin{proof}
+Para cada $n\in\N$ seja $g_n =\inf_{k\geq n} f_k$.
+Pela definição de ínfimo temos para
+qualquer $m\in \N$ fixado que $g_m\leq f_n$
+para todo $n\geq m$. Portanto é válida a 
+seguinte desigualdade
+	\[
+	\int_{\Omega} g_m\, d\mu
+	\leq
+	\int_{\Omega} f_n\, d\mu,
+	\] 
+desde que $n\geq m$. Daí temos que
+	\begin{equation}\label{des-aux1-lema-fatou}
+	\int_{\Omega} g_m\, d\mu
+	\leq
+	\liminf_{n\to\infty}\int_{\Omega} f_n\, d\mu.
+	\end{equation} 
+Já que $g_{m}\leq g_{m+1}$ para todo $m\in\N$ 
+e que 
+\[	
+	\lim_{m\to\infty} g_m(\omega) 
+	\uparrow 
+	\liminf_{n\to\infty} f_n(\omega)
+	\qquad
+	\forall \omega\in\Omega,
+\]
+segue do Teorema da Convergência Monótona e 
+da Desigualdade \eqref{des-aux1-lema-fatou} que 
+\[
+	\int_{\Omega} \left( \liminf_{n\to\infty} f_n\right) \, d\mu
+	=
+	\lim_{m\to\infty}\int_{\Omega} g_m\, d\mu
+	\leq
+	\liminf_{n\to\infty}\int_{\Omega} f_n\, d\mu.
+\]
+
+\end{proof}
