@@ -98,7 +98,7 @@ básicas desta integral.
 
 
 
-\begin{lema}
+\begin{lema}\label{lema-lin-int-funcao-simples-positiva}
 Sejam $(\Omega,\F,\mu)$ um espaço de medida, 
 $\varphi,\psi \in M^+(\Omega,\F)$ 
 funções simples e $c\in [0,+\infty)$,
@@ -435,14 +435,85 @@ $f_n\leq f_{n+1}\leq f$ e
 Portanto existe o limite em $\overline{\R}$ da
 sequência de números reais estendidos $\int_{\Omega}f_n\, d\mu$ 
 e ele satisfaz a seguinte desigualdade
-	\[
+	\begin{equation}\label{des-aux1-TCM}
 		\lim_{n\to\infty} \int_{\Omega} f_n\, d\mu 
 		\leq
 		\int_{\Omega} f\, d\mu. 
-	\]
+	\end{equation}
 
 
 Para estabelecer a desigualdade oposta, seja 
 $\alpha\in (0,1)$ e $\varphi$ uma função mensurável
 simples satisfazendo $0\leq \varphi\leq f$.
+Defina a seguinte sequência de conjuntos 
+\[
+	A_n = \{\omega\in\Omega: 
+			\alpha \varphi(\omega)\leq f_n(\omega)
+		\}
+\]
+Claramente $A_n\in \F$ para todo $n\in\N$. Também 
+podemos observar que $A_n\subset A_{n+1}$.
+De fato, se $\omega\in A_n$ então 
+temos que 
+$\alpha \varphi(\omega)\leq f_n(\omega)\leq f_{n+1}(\omega)$
+o que mostrar que $\omega\in A_{n+1}$.
+Afirmamos que $\cup_{n\in\N} A_n = \Omega$.
+Para verificar que esta afirmação é verdadeira 
+fixado $\omega\in\Omega$ seja 
+$\varepsilon>0$ tal que 
+$0<\varepsilon<f(\omega)-\alpha\varphi(\omega)$. 
+Para tal $\varepsilon>0$
+segue da desigualdade anterior e da convergência de $f_n$
+para $f$ que existe $N_0\in\N$
+(que pode depender de $\omega$) tal que   
+se $n\geq N_0$ temos 
+$\alpha\varphi(\omega)< f(\omega)-\varepsilon < f_n(\omega)$, 
+logo $\omega\in A_n$. Pelo lema anterior temos que 
+	\begin{equation}\label{eq-aux1-TCM}
+	\int_{A_n} \alpha\varphi\, d\mu
+	\leq 
+	\int_{A_n} f_n\, d\mu
+	\leq
+	\int_{\Omega} f_n\, d\mu.
+	\end{equation}
+Já que $A_n\uparrow \Omega$ segue dos item c) do 
+Lema \ref{lema-lin-int-funcao-simples-positiva} e 
+da continuidade da medida que 
+	\[
+		\int_{\Omega} \varphi\, d\mu
+		=
+		\lim_{n\to\infty} \int_{A_n} \varphi\, d\mu.
+	\]
+Da desigualdade acima e de \eqref{eq-aux1-TCM} temos 
+	\[
+		\alpha\int_{\Omega} \varphi\, d\mu
+		\leq
+		\lim_{n\to\infty} \int_{\Omega} f_n\, d\mu.
+	\]
+Como a desigualdade acima é válida para todo $\alpha\in(0,1)$
+podemos afirmar que 
+	\[
+		\int_{\Omega} \varphi\, d\mu
+		\leq
+		\lim_{n\to\infty} \int_{\Omega} f_n\, d\mu.
+	\]
+Observando que $\varphi$ é uma função simples 
+arbitrária em $M^{+}(\Omega,\F)$ satisfazendo 
+$0\leq \varphi\leq f$, podemos concluir que
+\[
+		\int_{\Omega} f\, d\mu
+		=
+		\sup_{ \substack{ 	\varphi \in M^{+}(\Omega,\F)
+							\\
+							\varphi\ \text{simples}
+							\\ 
+							0\leq\varphi(\omega)\leq f(\omega)
+							,\ \forall \omega\in\Omega }  } 
+		\ 
+		\int_{\Omega} \varphi \, d\mu
+		\leq
+		\lim_{n\to\infty} \int_{\Omega} f_n\, d\mu.
+\]
+Esta desigualdade junto com \eqref{des-aux1-TCM}
+encerra a prova do teorema.
 \end{proof}
