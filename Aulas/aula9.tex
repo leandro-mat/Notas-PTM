@@ -392,9 +392,7 @@ de convergência de integrais.
 
 
 
-\section{O Teorema da Convergência Monótona}
-
-
+\section{O Teorema da Convergência Monótona e Lema de Fatou}
 
 
 \begin{teorema}
@@ -625,7 +623,7 @@ de funções que não não monótonas.
 
 
 
-\section{Lema de Fatou}
+
 
 \begin{lema}[Lema de Fatou]\index{Lema!de Fatou}
 Sejam $(\Omega,\F,\mu)$ um espaço de medida e 
@@ -746,6 +744,47 @@ $\{E_j\}$ é mutuamente disjunta para garantir que $E\cap E_j=E_j$.
 
 
 
+
+\begin{corolario}
+\label{cor-int-f-nneg-eh-zero-equiv-fnula-qtp}
+Sejam $(\Omega,\F,\mu)$ um espaço de medida e 
+$f\in M^{+}(\Omega,\F)$. Então $f=0$ $\mu$-quase 
+certamente se, e somente se, 
+	\begin{equation}
+	\label{eq-aux1-f-nneg-eh-zero-equiv-fnula-qtp}
+	\int_{\Omega}f\, d\mu = 0.
+	\end{equation}
+\end{corolario}
+
+
+\begin{proof}
+Suponha que  vale a igualdade 
+\eqref{eq-aux1-f-nneg-eh-zero-equiv-fnula-qtp}
+e seja 
+	\[
+	E_n 
+	=
+	\left\{
+		\omega\in\Omega: \frac{1}{n}< f(\omega).
+	\right\}
+	\]
+Da definição de $E_n$ segue que $(1/n)1_{E_{n}}\leq f$, 
+para todo $n\in\N$ e assim 
+	\[
+	0\leq \frac{1}{n}\mu(E_n)\leq \int_{\Omega} f\, d\mu =0.
+	\]
+O que implica que $\mu(E_n)=0,\ \forall n\in\N$.
+Já que o conjunto 
+	\[
+	\left\{
+		\omega\in\Omega: 0< f(\omega)
+	\right\}
+	=
+	\bigcup_{n=1}^{\infty} E_n
+	\]
+tem medida $\mu$ zero, 
+segue que $f=0$ $mu$-quase certamente.
+\end{proof}
 
 
 
