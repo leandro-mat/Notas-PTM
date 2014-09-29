@@ -846,9 +846,41 @@ No que segue mostramos que o Teorema
 da Convergência Monótona contínua 
 verdadeiro se a convergência da sequência 
 $f_n$ para $f$ se verifica em quase certamente.
-De maneira mais precisa.
+O enunciado preciso deste resultado é enunciado 
+abaixo.
 
+
+
+
+
+\begin{corolario}
+\label{Teo-TCM-quase-certamente}
+\index{Teorema!da Convergência Monótona}
+Seja $\{f_n\}$ uma sequência monótona
+não decrescente em 
+$M^{+}(\Omega,\F)$, isto é, 
+para todo $n\in\N$ temos $0\leq f_n\leq f_{n+1}$.
+Se $f_n \to f$ $\mu$-quase certamente 
+e $f\in M^{+}(\Omega,\F)$ então
+	\[
+	\int_{\Omega} f\, d\mu 
+	=
+	\lim_{n\to\infty}\int_{\Omega} f_n\, d\mu.
+	\]
+\end{corolario}
  
+ 
+\begin{proof}
+Seja $N\in \F$ tal que $\mu(N)=0$ e 
+$f_n(\omega)\to f(\omega)$ para todo 
+$\omega\in M\equiv \Omega\setminus N$.
+Pela definição de $M$ segue que a sequência
+$\{f_n\cdot 1_{M}\}$ converge (em todo $\Omega$)
+para $f\cdot 1_{M}$, além do mais 
+$f_n\cdot 1_{M}\uparrow f\cdot 1_{M}$.
+Aplicando o Teorema da Convergência Monótona 
+temos 
+\end{proof}
 
 
 
