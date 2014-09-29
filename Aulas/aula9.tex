@@ -783,7 +783,28 @@ Já que o conjunto
 	\bigcup_{n=1}^{\infty} E_n
 	\]
 tem medida $\mu$ zero, 
-segue que $f=0$ $mu$-quase certamente.
+segue que $f=0$ $\mu$-quase certamente.
+
+
+Reciprocamente, suponha que 
+$f(\omega)=0$ $\mu$-quase certamente, 
+então o conjunto $E=\{\omega\in\Omega: f(\omega)>0\}$
+é tal que  $\mu(E)=0$. 
+Seja $f_n = n\cdot 1_{E}$. 
+Já que $f(\omega)\leq \liminf_{n\to\infty} f_n$ 
+segue do Lema de Fatou que 
+	\[
+	0
+	\leq
+	\int_{\Omega}f\, d\mu
+	\leq 
+	\int_{\Omega} \left( \liminf_{n\to\infty} f_n\right)\, d\mu 
+	\leq 
+	\liminf_{n\to\infty}	\int_{\Omega}f_n\, d\mu 
+	=
+	0.
+	\]
+
 \end{proof}
 
 
