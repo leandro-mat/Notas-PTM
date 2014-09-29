@@ -804,10 +804,38 @@ segue do Lema de Fatou que
 	=
 	0.
 	\]
-
 \end{proof}
 
 
+
+
+
+
+
+
+\begin{corolario}
+Sejam $(\Omega,\F,\mu)$ um espaço de medida e 
+$f\in M^{+}(\Omega,\F)$. Se  
+$\lambda(E)=\int_{E}f d\mu$ então a medida 
+$\lambda$ é absolutamente contínua com respeito 
+a $\mu$, ou seja, para todo $E\in\F$ tal que 
+$\mu(E)=0$ temos que $\lambda(E)=0$. 
+\end{corolario}
+
+
+\begin{proof}
+Se $E\in\F$ é tal que $\mu(E)=0$, 
+então $f\cdot 1_{E} =0$ $\mu$-quase certamente.
+Pelo Corolário \ref{cor-int-f-nneg-eh-zero-equiv-fnula-qtp}
+temos que 
+	\[
+		\lambda(E)
+		=
+		\int_{\Omega}f\cdot 1_{E}\, d\mu
+		=
+		0.
+	\]
+\end{proof}
 
 
 
