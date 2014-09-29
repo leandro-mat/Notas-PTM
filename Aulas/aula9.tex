@@ -702,3 +702,67 @@ $\lambda:\F\to[0,+\infty]$ dada por
 	\]
 é uma medida.
 \end{corolario}
+
+
+\begin{proof}
+Já que $f\geq 0$ temos para todo $E\in\F$ que
+$\lambda(E)\geq 0$. Para verificar que 
+$\lambda(\emptyset)=0$, 
+basta observar que $1_{\emptyset}\cdot f\equiv 0$.
+Para mostrar que $\lambda$ é $\sigma$-aditiva, 
+seja $\{E_n\}$ uma sequência em $\F$ 
+mutuamente disjunta e defina 
+	\[
+		f_n = \sum_{j=1}^n 1_{E_j}\cdot f.
+	\]
+Pelo Corolário \ref{cor-lin-int-funcao-simples-positiva}
+item b) temos que 
+	\[
+		\int_{\Omega} f_n\, d\mu 
+		 =
+		 \sum_{j=1}^n \int_{\Omega} 1_{E_j} f\, d\mu
+		 =
+ 		 \sum_{j=1}^n \lambda(E_j).
+	\]
+Observe que $f_n \uparrow 1_{E}f$, onde $E=\cup_{n\in\N }E_n$.
+Pelo Teorema da Convergência Monótona temos que 
+	\[
+		\lambda(E)
+		=
+		\int_{\Omega} 1_{E}f\, d\mu 
+		=
+		\lim_{n\to\infty}\int_{\Omega} 1_{E}f_n\, d\mu 
+		=
+		\lim_{n\to\infty} 
+			\sum_{j=1}^n \int_{\Omega} 1_{E\cap E_j} f\, d\mu
+		=
+ 		\sum_{j=1}^{\infty} \lambda(E_j),
+	\]
+onde na última igualdade usamos que a sequência 
+$\{E_j\}$ é mutuamente disjunta para garantir que $E\cap E_j=E_j$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
