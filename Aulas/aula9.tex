@@ -539,7 +539,7 @@ que pode eventualmente não pertencer a $\R$.
 
 
 \begin{corolario}
-\label{cor-lin-int-funcao-simples-positiva}
+\label{cor-linearidade-int-funcao-mens-positiva}
 Sejam $(\Omega,\F,\mu)$ um espaço de medida, 
 $f,g \in M^+(\Omega,\F)$ e $c\in [0,+\infty)$,
 então
@@ -951,8 +951,454 @@ exigir que os valores tanto das funções quanto
 da integrais sejam números reais.
 
 
+\begin{definicao}[Integral de Lebesgue de Função Real]
+Seja $(\Omega,\F,\mu)$ um espaço de medida. 
+Denotamos por $L(\Omega,\F,\mu)$ a coleção 
+de todas as funções $f:\Omega\to\R$ que 
+são $\F$-mensuráveis e tais que ambas
+partes positiva e negativa de $f$ são integráveis, 
+ou seja,
+\[
+	\int_{\Omega} f^+\, d\mu<\infty
+	\quad\text{e}\quad
+	\int_{\Omega} f^-\, d\mu<\infty.
+\]
+Neste caso definimos a integral $f$ 
+com respeito a $\mu$ por
+	\[
+		\int_{\Omega} f\, d\mu
+		=
+		\int_{\Omega} f^{+}\, d\mu
+		-
+		\int_{\Omega} f^{-}\, d\mu
+	\]
+e dizemos que {\bf $f$ é integrável}.
+Analogamente à seção anterior, se $E\in \F$ então definimos 
+	\[
+		\int_{E} f\, d\mu 
+		=
+		\int_{E} f^{+}\, d\mu - \int_{E} f^{-}\, d\mu.
+	\]
+\end{definicao}
+
+\begin{observacao}\label{obs-int-diferenca-2func-positivas}
+Embora a integral de uma função $f\in L(\Omega,\F,\mu)$ 
+seja definida como sendo a diferença 
+entre as integrais de $f^{+}$
+e $f^{-}$ é fácil ver que se $f=f_1-f_2$,
+onde $f_1$ e $f_2$ são funções não-negativas 
+com integrais finitas, então 
+	\[
+		\int_{\Omega} f\, d\mu 
+		=
+		\int_{\Omega} f_1\, d\mu 
+		-
+		\int_{\Omega} f_2\, d\mu.
+	\]
+De fato, já que $f^{+}-f^{-}=f=f_1-f_2$ então 
+$f^{+}+f_2=f_1+f^{-}$. Desta igualdade 
+e do item b) do 
+Corolário \ref{cor-linearidade-int-funcao-mens-positiva}
+segue que
+\[	
+	\int_{\Omega}f^{+}\, d\mu 
+	+
+	\int_{\Omega}f_2\, d\mu 
+	=
+	\int_{\Omega}f_1\, d\mu 
+	+
+	\int_{\Omega}f^{-}\, d\mu
+\]
+Já que todas os termos da igualdade acima 
+são finitos obtemos 
+\[
+	\int_{\Omega}f\, d\mu 
+	=
+	\int_{\Omega}f^{+}\, d\mu 
+	-
+	\int_{\Omega}f^{-}\, d\mu 
+	=
+	\int_{\Omega}f_1\, d\mu 
+	-
+	\int_{\Omega}f_2\, d\mu.
+\]
+\end{observacao}
+
+
+\subsubsection*{Cargas em $(\Omega,\F)$ }
+
+Se $(\Omega,\F)$ é um espaço mensurável uma 
+função $\lambda:\F\to\R$ é chamada de uma 
+{\bf carga} \index{Carga}
+se $\lambda(\emptyset)=0$ e $\lambda$ 
+é $\sigma$-aditiva, isto é, se $\{E_n\}$ é uma
+sequência de conjuntos mutuamente disjuntos de $\F$ 
+então 
+	\[
+		\lambda\left(\bigcup_{n=1}^{\infty}E_n\right)
+		=
+		\sum_{n=1}^{\infty} \lambda(E_n).
+	\]
+Existe uma sutileza muito grande nesta definição
+que está relacionada ao seguinte fato.
+Já que o lado esquerdo da igualdade acima é 
+independente de qualquer reordenamento que se
+faça da coleção $\{E_n\}$ a igualdade acima 
+requer no fundo que a série que aparece a direita 
+seja incondicionalmente somável para todas as 
+sequências disjuntas de conjuntos mensuráveis. 
+
+\begin{exercicio}\label{exercicio-cargas-esp-vet}
+Mostre que o espaço de todas as cargas
+de um espaço mensurável $(\Omega,\F)$ é um espaço vetorial
+sobre $\R$, onde a soma de duas cargas 
+$\lambda_1$ e $\lambda_2$ é definida por 
+$(\lambda_1+\lambda_2)(E)=\lambda_1(E)+\lambda_2(E), 
+\ \forall E\in\F$
+e a multiplicação de uma carga $\lambda$ 
+por um escalar real $\alpha$ é definida por
+$(\alpha\cdot \lambda)(E)=\alpha\cdot\lambda(E)$. 
+\end{exercicio}
+
+
+\begin{lema}\label{lema-int-f-dmu-define-uma-carga}
+Sejam $(\Omega,\F\,\mu)$ um espaço de medida, 
+$f\in L(\Omega,\F,\mu)$. Então a aplicação 
+$\lambda:\F\to\R$ dada por 
+%
+\begin{equation}\label{integral-indefinida}	
+	\lambda(E)=\int_{E} f\, d\mu 
+\end{equation}
+%
+é uma carga.
+\end{lema}
+
+
+\begin{proof}
+Já que $f^+$ e $f^-$ pertencem a $M^{+}(\Omega,\F)$
+segue do Corolário \ref{cor-lambda(E)-eh-uma-medida}
+que as funções $\lambda^{+}$ e $\lambda^{-}$ definidas
+em $\F$ por 
+	\[
+		\lambda^{+}(E)\equiv \int_{E} f^{+}\, d\mu 
+		\qquad\text{e}\qquad
+		\lambda^{-}(E)\equiv \int_{E} f^{-}\, d\mu 		
+	\] 
+são medidas definidas sobre $\F$. Note que ambas são medidas finitas
+pois $f\in L(\Omega,\F,\mu)$. 
+Já que $\lambda =\lambda^{+}-\lambda^{-}$ segue do 
+Exercício \ref{exercicio-cargas-esp-vet}
+que $\lambda$ é uma carga.
+\end{proof}
+
+A função $\lambda$ definida em \eqref{integral-indefinida}
+é frequentemente chamada de 
+\index{Integral!Indefinida}
+{\bf integral indefinida de $f$}.
+Uma vez que $\lambda$ é uma carga se $\{E_n\}$
+é uma sequência mutuamente disjunta em $\F$ cuja 
+união é $E$, então temos que
+	\[
+	\int_{E}f\, d\mu 
+	=
+	\sum_{n=1}^{\infty} \int_{E_n}f\, d\mu.	
+	\]
+Nos referimos a esta igualdade dizendo que 
+a {\it integral de uma função em $L(\Omega,\F,\mu)$ 
+é contavelmente aditiva}.
+
+
+
+
+O próximo resultado é as vezes chamado de 
+{\it propriedade da integrabilidade absoluta}
+da integral de Lebesgue. Aqui vale mencionar que 
+embora o valor absoluto de uma função 
+Riemann integrável seja Riemann integrável
+em intervalos compactos, isto não é necessariamente
+verdadeiro para funções que possuem 
+integral de Riemann imprópria, 
+por exemplo considere a função $f(x)=x^{-1}\text{sen}\, x$,
+definida no intervalo $1\leq x<+\infty$.
+
+Outra diferença importante que deve ser destacada
+é quanto ao uso da expressão {\it integrável}
+no contexto de integrais de Riemann e Lebesgue. 
+No contexto de integral de Riemann integrabilidade
+de uma dada função se refere meramente a existência da integral de Riemann 
+de tal função podendo ser $\pm\infty$.
+Na teoria de integração segundo Lebesgue, 
+esta expressão é usada para dizer que tal função 
+tem integral é finita. 
 
 
 
 
 
+
+\begin{teorema}
+Uma função mensurável $f:\Omega\to\R$ 
+pertence a $L(\Omega,\F,\mu)$ se, e somente se,
+$|f|\in L(\Omega,\,F,\mu)$.  Além do mais é válida
+a seguinte desigualdade 
+	\[
+		\left|
+		\int_{\Omega}f\, d\mu 
+		\right|
+		\leq
+		\int_{\Omega}|f|\, d\mu.
+	\]
+\end{teorema}
+
+
+\begin{proof}
+Por definição temos que $f\in L(\Omega,\,F,\mu)$
+se, e somente, se $f^{+}$ e $f^{-}\in L(\Omega,\,F,\mu)$.
+Já que $|f|^{+}=|f|=f^{+}+f^{-}$ e $|f|^{-}=0$ a prova de 
+que $|f|\in L(\Omega,\F,\P)$ segue do item b) do 
+Corolário \ref{cor-linearidade-int-funcao-mens-positiva}
+e do Corolário \ref{cor-int-f-nneg-eh-zero-equiv-fnula-qtp}.
+Para provar a desigualdade do enunciado basta observar que 
+	\begin{align*}
+		\left|
+		\int_{\Omega}f\, d\mu 
+		\right|
+		&=
+		\left|
+		\int_{\Omega}f^{+}\, d\mu - \int_{\Omega}f^{-}\, d\mu 
+		\right|
+		\\
+		&\leq
+		\int_{\Omega}f^{+}\, d\mu+\int_{\Omega}f^{-}\, d\mu
+		\\
+		&=
+		\int_{\Omega}|f|\, d\mu 		
+	\end{align*}
+\end{proof}
+
+
+
+
+
+
+
+
+
+\begin{corolario}\label{cor-g-integravel-e-|f|<=|g|-f-integravel}
+Seja $(\Omega,\F,\mu)$ um espaço de medida. 
+Se $f,g:\Omega\to\R$ são funções mensuráveis 
+com $g\in L(\Omega,\F,\mu)$ e $|f|\leq |g|$
+então $f\in L(\Omega,\F,\mu)$.
+\end{corolario}
+
+\begin{proof}
+A prova segue da monotonicidade da integral e do teorema acima.
+\end{proof}
+
+
+Nosso próximo passo é mostrar que a integral é linear 
+no espaço $L(\Omega,\F,\mu)$ no seguinte sentido.
+
+
+
+\begin{teorema}\label{teo-linearidadde-integral-func-real}
+Sejam $(\Omega,\F,\mu)$ um espaço de medida,
+$f,g\in L(\Omega,\F,\mu)$ e $\alpha\in\R$. 
+Então
+\[
+	\int_{\Omega}\alpha f\, d\mu 
+	= 
+	\alpha\int_{\Omega} f\, d\mu
+	\quad
+	\text{e}
+	\quad
+	\int_{\Omega} (f+g)\, d\mu 
+	= 
+	\int_{\Omega} f\, d\mu +\int_{\Omega} g\, d\mu.
+\]
+\end{teorema}
+
+
+\begin{proof}
+Se $\alpha=0$, então $\alpha f= 0$ em todo ponto e portanto
+	\[
+	\int_{\Omega}\alpha f\, d\mu 
+	=
+	0
+	= 
+	\alpha\int_{\Omega} f\, d\mu.
+	\]
+Se $\alpha>0$ , então $(\alpha f)^{+}=\alpha\cdot f^{+}$ e 
+$(\alpha f)^{-}=\alpha \cdot f^{-}$, assim 
+$\alpha\cdot f\in L(\Omega,\F,\mu)$ e também temos que 
+\begin{align*}
+	\int_{\Omega} \alpha\cdot f\, d\mu 
+	&=
+	\int_{\Omega} \alpha \cdot f^{+}\, d\mu 
+	-
+	\int_{\Omega} \alpha \cdot f^{-}\, d\mu 
+	\\[0.3cm]
+	&=
+	\alpha
+	\left(
+	\int_{\Omega}  f^{+}\, d\mu 
+	-
+	\int_{\Omega}  f^{-}\, d\mu 
+	\right)
+	\\[0.3cm]
+	&=
+	\alpha \int_{\Omega} f\, d\mu.
+\end{align*}
+O caso $\alpha<0$ pode ser tratado de maneira similar.
+
+Vamos verificar agora que que $f+g\in L(\Omega,\F,\mu)$.
+Para isto basta notar que pelo teorema anterior
+temos $|f|$ e $|g| \in L(\Omega,\F,\mu)$. Da desigualdade
+triangular segue que $|f+g|\leq |f|+|g|$. Aplicando  
+corolário anterior temos que $f+g$ é integrável. 
+Observe que 
+	\[
+		f+g = (f^{+}+g^{+})-(f^{-}+g^{-}).
+	\]
+Já que $f^{+}+g^{+}$ e $f^{-}+g^{-}$ são funções não-negativas
+segue da Observação \ref{obs-int-diferenca-2func-positivas}
+que 
+	\[
+		\int_{\Omega} f+g\, d\mu 
+		=
+		\int_{\Omega} (f^{+}+g^{+})\, d\mu 
+		-
+		\int_{\Omega} (f^{-}+g^{-})\, d\mu.
+	\]
+Aplicando o Corolário \ref{cor-linearidade-int-funcao-mens-positiva}
+e rearranjando os termos, no lado esquerdo da igualdade acima, ficamos
+com
+	\begin{align*}
+		\int_{\Omega} f+g\, d\mu 
+		&=
+		\int_{\Omega} f^{+} \, d\mu 
+		-
+		\int_{\Omega} f^{-} \, d\mu 
+		+
+		\int_{\Omega} g^{-}\, d\mu 
+		-
+		\int_{\Omega} g^{-} \, d\mu 
+		\\[0.3cm]
+		&=
+		\int_{\Omega} f \, d\mu 
+		+
+		\int_{\Omega} g \, d\mu.
+	\end{align*}
+\end{proof}
+
+
+
+
+
+
+
+
+
+Vamos encerrar esta seção estabelecendo um dos 
+teoremas de convergência mais importantes 
+sobre funções integráveis. 
+
+\section{Teorema da Convergência Dominada}
+
+
+\begin{teorema}
+[Teorema da Convergência Dominada de Lebesgue]
+\label{Teo-Convergencia-Dominada}
+Sejam $(\Omega,\F\,\mu)$ um espaço de medida,
+$\{f_n\}$ uma sequência de funções integráveis 
+que converge $\mu$-quase certamente para uma função
+mensurável $f:\Omega\to\R$. Se existe uma função 
+integrável $g$ tal que $|f_n|\leq g$ para todo
+$n\in\N$, então $f$ é integrável e 
+	\[
+		\int_{\Omega} f\, d\mu 
+		=
+		\lim_{n\to\infty} \int_{\Omega} f_n\, d\mu.
+	\]
+\end{teorema}
+
+
+
+\begin{proof}
+A menos de redefinir as funções $f_n$ e $f$ em 
+um conjunto de medida nula, podemos assumir que 
+$f_n(\omega)\to f(\omega)$, para todo $\omega\in\Omega$.
+Já que $|f_n|\leq g,\ \forall n\in\N$, segue que 
+$|f|=\lim_{n\to\infty}|f_n|\leq g$ e do Corolário 
+\ref{cor-g-integravel-e-|f|<=|g|-f-integravel}
+que $f$ é integrável. Já que $g+f_n\geq 0$
+podemos aplicar o 
+Teorema \ref{teo-linearidadde-integral-func-real}
+Lema de Fatou para obter
+\begin{align*}
+	\int_{\Omega} g\, d\mu + \int_{\Omega} f\, d\mu 
+	&=
+	\int_{\Omega} (g+f)\, d\mu 
+	\\
+	&\leq 
+	\liminf_{n\to\infty}\int_{\Omega} (g+f_n)\, d\mu 
+	\\
+	&=
+	\liminf_{n\to\infty}
+	\left( 
+		\int_{\Omega} g\, d\mu 
+		+
+		\int_{\Omega} f_n\, d\mu 
+	\right)
+	\\
+	&=
+	\int_{\Omega} g\, d\mu 
+	+
+	\liminf_{n\to\infty}\int_{\Omega} f_n\, d\mu.
+\end{align*}
+Já que $g$ é integrável segue da desigualdade 
+acima que 	
+	\[
+	\int_{\Omega} f\, d\mu
+	\leq	
+	\liminf_{n\to\infty}\int_{\Omega} f_n\, d\mu.
+	\]
+Observando que $g-f_n\geq 0$ outra aplicação do 
+Teorema \ref{teo-linearidadde-integral-func-real} 
+e do Lema de Fatou nos fornece a desigualdade
+\begin{align*}
+	\int_{\Omega} g\, d\mu - \int_{\Omega} f\, d\mu 
+	&=
+	\int_{\Omega} (g-f)\, d\mu 
+	\\
+	&\leq 
+	\liminf_{n\to\infty}\int_{\Omega} (g-f_n)\, d\mu 
+	\\
+	&=
+	\liminf_{n\to\infty}
+	\left( 
+		\int_{\Omega} g\, d\mu 
+		-
+		\int_{\Omega} f_n\, d\mu 
+	\right)
+	\\
+	&=
+	\int_{\Omega} g\, d\mu 
+	-
+	\limsup_{n\to\infty}\int_{\Omega} f_n\, d\mu.
+\end{align*}
+Usando novamente que $g$ é integrável podemos 
+concluir da desigualdade acima que 
+	\[
+	\limsup_{n\to\infty}\int_{\Omega} f_n\, d\mu
+	\leq	
+	\int_{\Omega} f\, d\mu.
+	\]
+Combinado as duas estimativas obtidas para a
+integral de $f$ obtemos finalmente que 
+	\[
+	\lim_{n\to\infty}\int_{\Omega} f_n\, d\mu
+	=	
+	\int_{\Omega} f\, d\mu.
+	\]
+\end{proof}
