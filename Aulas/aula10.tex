@@ -38,21 +38,37 @@ são chamadas as secções de $f$ determinadas por $x$ e por $y$ respectivamente
 \medskip
 
 \begin{proof}
-Fixe $x$ e considere o mapa $T_x:Y\to X\times Y$ dado por $T_x(y)=(x,y)$.
+ \emph{Item (a):} Fixe $x$ e considere o mapa $T_x:Y\to X\times Y$ dado por $T_x(y)=(x,y)$.
  Note que se $E=A\times B\in \mathscr{X}\times \mathscr{Y}$
-é um retângulo então $T_{y}^{-1}E=B~\textnormal{ou}~\varnothing$ dependendo apenas se 
-$A$ contém ou não o ponto $x$. Vamos mostrar que $T_x$ é $\mathscr{Y}$-$\mathscr{X}\times \mathscr{Y}$ 
+é um retângulo então $T_{y}^{-1}E=B~\textnormal{ou}~\varnothing$ 
+dependendo apenas se 
+$A$ contém ou não o ponto $x$.  De qualquer modo $T_x^{-1}E\in \mathscr{Y}$.
+\medskip
+
+\noindent \emph{Item (b)}:  Neste item o primeiro passo é  mostrar 
+que $T_x$ é $\mathscr{Y}$-$\mathscr{X}\times \mathscr{Y}$ 
 mensurável. 
 \medskip
 
-\noindent \emph{Afirmação:}  A classe
- $\mathcal{C}=\{E\in \mathscr{X}\times \mathscr{Y};~~T_x^{-1}E\in \mathscr{Y} \}$ é uma sigma-álgebra.
+\noindent \emph{Afirmação:} A classe
+ $\mathcal{C}=\{E\in \mathscr{X}\times \mathscr{Y};~~T_x^{-1}E\in \mathscr{Y} \}$ 
+ é uma sigma-álgebra.
 \medskip 
  
-\noindent É claro que a classe  $\mathcal{C}$ é não vazia pois $X\times Y\in \mathcal{C}$. 
+\noindent É claro que a classe  $\mathcal{C}$ é
+ não vazia pois $X\times Y\in \mathcal{C}$. 
  Se $E\in \mathcal{C}$ então 
 $T_x^{-1}(X\times Y\setminus E)=Y\setminus T_x^{-1}E\in \mathscr{Y}.$  
-Se $E_1, \ldots, E_n, \ldots \in \mathcal{C}$ então $T_x^{-1}(\bigcup E_n)=\bigcup T_x^{-1}E_n\in \mathscr{Y}$. Portanto 
+Se $E_1, \ldots, E_n, \ldots \in \mathcal{C}$ entã
+o $T_x^{-1}(\bigcup E_n)=\bigcup T_x^{-1}E_n\in \mathscr{Y}$. Portanto 
 $C$ é uma sigma álgebra.
+\medskip
+
+Por outro lado mostramos acima que $\mathcal{C}$ contém a
+ classe $\mathscr{R}$ dos retângulos mensuráveis. Sendo assim $\mathcal{C}$ contém a 
+ sigma-álgebra gerada por $\mathscr{R}$ que para nossa sorte é $\mathscr{X}\times \mathscr{Y}$ 
+ provando que $T_x$ é $\mathscr{Y}$-$\mathscr{X}\times \mathscr{Y}$ 
+mensurável.  Agora, como $f$ é $\mathscr{X}\times \mathscr{Y}$-$\mathscr{B}(\mathbb{R})$ mensurável 
+ segue que a composição $f\circ T_x$ é $\mathscr{Y}$-$\mathscr{B}(\mathbb{R})$ mensurável.
 
 \end{proof}
