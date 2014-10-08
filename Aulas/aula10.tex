@@ -14,7 +14,7 @@ a denotamos por $\mathscr{X}\times \mathscr{Y}$.
 
 
 
-\begin{proposicao}
+\begin{proposicao}\label{Prod. 1}
 Sejam $(X, \mathscr{X})$ e $(Y, \mathscr{Y})$ espaços mensuráveis e 
 $\mathscr{X}\times \mathscr{Y}$ a sigma-álgebra produto em $X\times Y$.
 Então as seguintes afirmações são verdade:
@@ -72,3 +72,42 @@ mensurável.  Agora, como $f$ é $\mathscr{X}\times \mathscr{Y}$-$\mathscr{B}(\m
  segue que a composição $f\circ T_x$ é $\mathscr{Y}$-$\mathscr{B}(\mathbb{R})$ mensurável.
 
 \end{proof}
+
+
+\section{Medidas Produto}
+
+
+Sejam $(X, \mathscr{X}, \mu)$ e $(Y, \mathscr{Y}, \nu)$
+ espaços de medida com $\mu$ e $\nu$ finitas. 
+ Temos pela proposição (\ref{Prod. 1}) que dado
+  $E\in \mathscr{X}\times \mathscr{Y}$ as funções 
+  $X\ni x\mapsto \nu(E_x)\in [0, \infty)$ e
+   $Y\ni y\mapsto \mu(E_y)\in [0, \infty)$ estão bem definidas.
+Denote por $\mathscr{L}$ a classe dos $E\in \mathscr{X}\times \mathscr{Y}$
+para os quais as funções acima são $\mathscr{X}$ e $\mathscr{Y}$ mensuráveis 
+respectivamente.
+
+\begin{proposicao}
+A classe $\mathscr{L}$ coincide com $\mathscr{X}\times \mathscr{Y}$.
+\end{proposicao}
+\begin{proof}
+Começamos por mostrar que $\mathscr{L}$ é um $\lambda$ sistema. De fato, temos que
+$\nu_x(X\times Y)=\nu(Y)=1$ para todo $x\in X$ portanto
+ a função $X\ni x\mapsto \nu_x(X\times Y)\in [0,\infty)$ é a função constante
+igual a $1$, que como sabemos é mensurável.
+  Agora note que $\nu_x(E^c)=\nu(E^c_x)=\nu((E_x)^c)=1-\nu(E_x).$
+ Assim, se $X\ni x\mapsto \nu_x(E)\in [0, \infty)$  é mensurável temos que 
+ $X\ni x\mapsto \nu_x(E^c)=1-\nu_x(E)\in [0, \infty)$ é mensurável, sendo pois 
+ a diferença de duas funções mensuráveis.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
