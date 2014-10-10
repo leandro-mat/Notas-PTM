@@ -2,3 +2,245 @@
 \chaptermark{}
 
 \section{Espaço Produto}
+
+Sejam $(X, \mathscr{X})$ e $(Y, \mathscr{Y})$ espaços mensuráveis. 
+Uma vez que sabemos que produto cartesiano de sigma-álgebras não 
+constitui uma sigma álgebra, a sigma álgebra mais natural a ser 
+considerada em $X\times Y$ passa a ser a sigma álgebra gerada pelos
+\emph{retângulos mensuráveis}, a saber, a classe $\mathscr{R}=\{
+A\times B;~~A\in \mathscr{X}, B\in \mathscr{Y}\}.$ Chamamos a 
+sigma-álgebra gerada por $\mathscr{R}$ de sigma-álgebra produto e 
+a denotamos por $\mathscr{X}\times \mathscr{Y}$.
+
+
+
+\begin{proposicao}\label{Prod. 1}
+Sejam $(X, \mathscr{X})$ e $(Y, \mathscr{Y})$ espaços mensuráveis e 
+$\mathscr{X}\times \mathscr{Y}$ a sigma-álgebra produto em $X\times Y$.
+Então as seguintes afirmações são verdade:
+\begin{itemize}
+\item[(a)] Se $E\in \mathscr{X}\times \mathscr{Y}$ então, para cada $x$ fixado,
+ o conjunto $E_x=\{y: (x,y)\in E\}$ pertence a $\mathscr{Y}$. De modo análogo 
+, fixado y,  o conjunto $E_y=\{x: (x,y)\in E\}$ pertence a $\mathscr{X}$.
+
+
+
+\item[(b)] Se $f$ é uma função $\mathscr{X}\times \mathscr{Y}$ mensurável 
+então, para cada $x$ fixado, a função $f(x, \cdot)$ é $\mathscr{Y}$-mensurável. De 
+modo análogo, para cada $y$ fixo, a função $f(\cdot, y)$ é $\mathscr{X}$-mensurável
+\end{itemize}
+\end{proposicao}
+
+
+Os conjunto $E_x$, e $E_y$ são chamados as secções de $E$ determinadas por $x$ e 
+por $y$ respectivamente. Do mesmo modo as funções $f(x, \cdot)$ e $f(\cdot, y)$ 
+são chamadas as secções de $f$ determinadas por $x$ e por $y$ respectivamente.
+\medskip
+
+\begin{proof}
+ \emph{Item (a):} Fixe $x$ e considere o mapa $T_x:Y\to X\times Y$ dado por $T_x(y)=(x,y)$.
+ Note que se $E=A\times B\in \mathscr{X}\times \mathscr{Y}$
+é um retângulo então $T_{y}^{-1}E=B~\textnormal{ou}~\varnothing$ 
+dependendo apenas se 
+$A$ contém ou não o ponto $x$.  De qualquer modo $T_x^{-1}E\in \mathscr{Y}$.
+\medskip
+
+\noindent \emph{Item (b)}:  Neste item o primeiro passo é  mostrar 
+que $T_x$ é $\mathscr{Y}$-$\mathscr{X}\times \mathscr{Y}$ 
+mensurável. 
+\medskip
+
+\noindent \emph{Afirmação:} A classe
+ $\mathcal{C}=\{E\in \mathscr{X}\times \mathscr{Y};~~T_x^{-1}E\in \mathscr{Y} \}$ 
+ é uma sigma-álgebra.
+\medskip 
+ 
+\noindent É claro que a classe  $\mathcal{C}$ é
+ não vazia pois $X\times Y\in \mathcal{C}$. 
+ Se $E\in \mathcal{C}$ então 
+$T_x^{-1}(X\times Y\setminus E)=Y\setminus T_x^{-1}E\in \mathscr{Y}.$  
+Se $E_1, \ldots, E_n, \ldots \in \mathcal{C}$ entã
+o $T_x^{-1}(\bigcup E_n)=\bigcup T_x^{-1}E_n\in \mathscr{Y}$. Portanto 
+$C$ é uma sigma álgebra.
+\medskip
+
+Por outro lado mostramos acima que $\mathcal{C}$ contém a
+ classe $\mathscr{R}$ dos retângulos mensuráveis. Sendo assim $\mathcal{C}$ contém a 
+ sigma-álgebra gerada por $\mathscr{R}$ que para nossa sorte é $\mathscr{X}\times \mathscr{Y}$ 
+ provando que $T_x$ é $\mathscr{Y}$-$\mathscr{X}\times \mathscr{Y}$ 
+mensurável.  Agora, como $f$ é $\mathscr{X}\times \mathscr{Y}$-$\mathscr{B}(\mathbb{R})$ mensurável 
+ segue que a composição $f\circ T_x$ é $\mathscr{Y}$-$\mathscr{B}(\mathbb{R})$ mensurável.
+
+\end{proof}
+
+
+\section{Medidas Produto}
+Sejam $(X, \mathscr{X}, \mu)$ e $(Y, \mathscr{Y}, \nu)$
+ espaços de medida. A nossa  vontade é encontrar uma medida $\pi$ definida 
+ em $\mathscr{X}\times \mathscr{Y}$ tal que se $E=A\times B$ seja um retângulo mensurável 
+ tenhamos que $\pi(E)=\mu(A)\nu(B)$. A seguir vamos ver que quando 
+ $ \mu$ e $\nu$ são sigma finitas a \emph{medida produto} não só existe como é única.
+ \medskip
+ 
+
+Sejam $(X, \mathscr{X}, \mu)$ e $(Y, \mathscr{Y}, \nu)$
+ espaços de medida com $\mu$ e $\nu$ finitas. 
+ Temos pela proposição (\ref{Prod. 1}) que dado
+  $E\in \mathscr{X}\times \mathscr{Y}$ as funções 
+  $X\ni x\mapsto \nu(E_x)\in [0, \infty)$ e
+   $Y\ni y\mapsto \mu(E_y)\in [0, \infty)$ estão bem definidas.
+Denote por $\mathscr{L}$ a classe dos $E\in \mathscr{X}\times \mathscr{Y}$
+para os quais as funções acima são $\mathscr{X}$ e $\mathscr{Y}$ mensuráveis 
+respectivamente.
+
+\begin{proposicao}\label{Mens. Prod}
+A classe $\mathscr{L}$ coincide com $\mathscr{X}\times \mathscr{Y}$.
+\end{proposicao}
+\begin{proof}
+Começamos por mostrar que $\mathscr{L}$ é um $\lambda$-sistema. De fato, temos que
+$\nu_x(X\times Y)=\nu(Y)=1$ para todo $x\in X$ portanto
+ a função $X\ni x\mapsto \nu_x(X\times Y)\in [0,\infty)$ é a função constante
+igual a $1$, que como sabemos é mensurável.
+  Agora note que $\nu_x(E^c)=\nu(E^c_x)=\nu((E_x)^c)=1-\nu(E_x).$
+ Assim, se $X\ni x\mapsto \nu_x(E)\in [0, \infty)$  é mensurável temos que 
+ $X\ni x\mapsto \nu_x(E^c)=1-\nu_x(E)\in [0, \infty)$ é mensurável, sendo pois 
+ a diferença de duas funções mensuráveis.
+  Sejam $E_1, E_2, \ldots E_n, \ldots$ em $\mathscr{L}.$ E suficiente 
+  considerarmos o caso em que os $E_n^{'s}$ são disjuntos. Note que $E_x=(\bigcup E_n)_x=\bigcup (E_n)_x$. Assim temos que 
+  $$
+  \nu_x(E)=\nu(E_x)=\nu(\bigcup (E_n)_x)=\sum_{n\geq 1}\nu_x(E_n).
+  $$
+  Como, por hipótese, para cada $n$, o mapa $X\ni x\mapsto \nu_x(E_n)\in [0,\infty)$ é mensurável, segue que 
+  o mapa 
+  $$
+ X\ni x\mapsto \nu_x(E)=\sum_{n\geq 1}\nu_x(E_n)\in [0,\infty),
+ $$ 
+ sendo pois o limite de uma sequência de funções mensuráveis, também é mensurável. Isto conclui que $\mathscr{L}$ é um $\lambda$-sistema.
+ 
+ Para finalizar veja  que $\mathscr{L}$ contém os retângulos mensuráveis $\mathscr{R}$, com efeito se $E=A\times B\in \mathscr{R}$ então o mapa $x\mapsto \nu(E_x)$ pode ser escrito como $1_A(x)\nu(B)$ que é claramente mensurável. Sendo assim temos pelo Teorema $\pi$-$\lambda$ que $\mathscr{X}\times \mathscr{Y}= \sigma(\mathscr{R})\subset \mathscr{L}\subset \mathscr{X}\times \mathscr{Y}$ concluindo a demonstração.
+\end{proof}
+\medskip
+
+
+Passemos à construção da medida produto. Comecemos definindo funções de conjunto $\pi_1$ e $\pi_2$ como segue
+\begin{equation}\label{M.Prod. 1}
+\pi_1(E)=\int_X \nu_x(E) d\mu(x),~~~~~E \in \mathscr{X}\times \mathscr{Y}
+\end{equation}
+e 
+\begin{equation}\label{M. Prod. 2}
+\pi_2(E)=\int_Y \mu_y(E)d\nu(y),~~~~~E \in \mathscr{X}\times \mathscr{Y}
+\end{equation}
+é fácil ver que tanto $\pi_1$ quanto $\pi_2$ são medidas finitas em $\mathscr{X}\times \mathscr{Y}$. Agora note que se $E=A\times B\in\mathscr{X}\times \mathscr{Y}$  é um retângulo mensurável então temos que  $\nu_x(E)=1_A(x)\nu(B)$ e $\mu_y(E)=1_B\mu(A)$, de modo que 
+\begin{equation}
+\pi_1(A\times B)=\mu(A)\nu(B)=\pi_2(A\times B)
+\end{equation}
+de modo que as medidas $\pi_1$ e $\pi_2$ coincidem no $\pi$-sistema $\mathscr{R}$.  Denote por $\mathscr{L}$ a classe dos elementos $E$ de 
+$\mathscr{X}\times \mathscr{Y}$  para os quais $\pi_1(E)=\pi_2(E)$.
+
+\begin{proposicao}
+A classe $\mathscr{L}$ coincide com $\mathscr{X}\times \mathscr{Y}$
+\end{proposicao}
+
+
+\begin{proof}
+Seja $E=X\times Y$, então $\nu_x(E)=1_X(x)\nu(Y)=1_X(x)$ e $\mu_y(E)=1_Y(y)\mu(X)=1_Y(y)$. Portanto 
+$$
+\pi_1(X\times Y)=1=\pi_2(X\times Y)
+$$
+donde $X\times Y\in \mathscr{L}$. Seja $E\in \mathscr{L}$, então temos que
+$$
+\begin{array}{rcl}
+\pi_1(E^c)&=&\displaystyle\int_X \nu_x(E^c)d\mu(x)
+=
+\int_X (1-\nu_x(E))d\mu(x)
+\\[5mm]
+&
+=
+&
+\displaystyle 1-\int_X\nu_x(E) d\mu (x)
+=
+1-\int_Y \mu_y(E)d\nu(y)
+\\[5mm]
+&
+=
+&
+1-\pi_2(E)
+\\[5mm]
+&
+=
+&
+\pi_2(E^c)
+\end{array}
+$$
+portanto $E^c\in \mathscr{L}$.  Finalmente sejam $E_1, \ldots, E_n, \ldots $ em $\mathscr{L}$, vamos mostrar que $E=\bigcup E_n\in \mathscr{L}.$ É suficiente considerar o caso em que os $E_n^{'s}$ são disjuntos. Para cada $n$ considere os conjunto $\bigcup_{j=1}^nE_n$, é claro que   $\bigcup_{j=1}^nE_n\nearrow E.$ Note também que para cada $n$ a função $x\mapsto \nu_x(E_n)$ é uma função não negativa. Sendo assim a temos que  $f_n=\sum_{j=1}^n\nu_{(\cdot)}(E_j)=\nu_x(\bigcup_{j=1}^{n}E_j)$ e $g_n=\sum_{j=1}^n\mu_{(\cdot)}(E_j)=\mu_y(\bigcup_{j=1}^{n}E_j)$ são  uma famílias não decrescentes de funções não negativas. Portanto segue do teorema da convergência monótona
+que  $\bigcup_{j=1}^nE_n$
+
+$$
+\begin{array}{rcl}
+\pi_1(E)&=&\displaystyle\lim_{n\to \infty}\pi_1(\bigcup_{j=1}^{n}E_j)
+=
+\lim_{n\to \infty}\int_X \nu_x(\bigcup_{j=1}^{n}E_j))d\mu(x)
+\\[5mm]
+&
+=
+&
+\displaystyle \lim_{n\to \infty}\int_X (\sum_{j=1}^n\nu_x(E_j)) d\mu(x)
+=
+\lim_{n\to \infty}\int_Y(\sum_{j=1}^{n}\mu_y(E_j)d\nu(y)
+\\[5mm]
+&
+=
+&
+\displaystyle\lim_{n\to \infty} \int_Y \mu_y(\bigcup_{j=1}^{n}E_j)d\nu(y)
+\\
+&=&
+\pi_2(E)
+\end{array}
+$$
+concluindo que $E\in \mathscr{L}$. Portanto $\mathscr{L}$ é um $\lambda$-sistema 
+que contém o $\pi$-sistema $\mathscr{R}$, logo $\mathscr{X}\times \mathscr{Y}=\sigma(\mathscr{R})\subset \mathscr{L}\subset \mathscr{X}\times \mathscr{Y}.$
+
+\end{proof}
+
+\begin{corolario}
+As medidas definidas em (\ref{M.Prod. 1}) e (\ref{M. Prod. 2}) estão bem definidas e  coincidem mesmo que as medidas 
+$\mu$ e $\nu$ sejam apenas $\sigma$-fintas.
+\end{corolario}
+
+\begin{proof}
+Sejam $\{A_n\}$ e $\{B_n\}$ decomposição de $X$ e $Y$ respectivamente em subconjuntos 
+disjuntos de medida finita. Para cada $n,m$ defina as medidas $\mu_n$ e $\nu_m$ 
+em  $\mathscr{X}$ e $ \mathscr{Y}$ respectivamente  pondo  $\mu_n(A)=\mu(A\cap A_n)$ e 
+$\nu_m(B)=\nu(B\cap B_m)$. 
+\medskip
+
+\noindent \emph{Afirmação 1:} Seja $E=A\times B\in \mathscr{X}\times \mathscr{Y}$ um retângulo mensurável, temos que o mapa 
+$X\ni x\mapsto \nu_x(E)\in [0, \infty)$ é mensurável.
+\medskip
+
+
+ De fato, temos para cada $n$ que  $\nu_n(E_x)=\nu(E_x\cap B_n)=1_A(x)  \nu(B\cap B_n)$, logo 
+ $x\mapsto \nu_n(E_x)$ é mensurável. Como $\nu(E_x)=\sum_{n\geq 1}\nu_n(E_x)$ temos que 
+ $x\mapsto \nu_x(E)$ é mensurável. De modo análogo mostra-se que $y\mapsto \mu_y(E)$ é mensurável.
+
+Agora defina a classe $\mathscr{L}$ dos elementos de $E$ de $\mathscr{X}\times \mathscr{Y}$ tais que 
+o mapa $x\mapsto \nu_x(E)$ é mensurável.
+
+\noindent \emph{Afirmação 2:} A classe $\mathscr{L}$ coincide com $\mathscr{X}\times \mathscr{Y}$.
+\medskip
+
+A demonstração consiste em mostrar que $\mathscr{L}$ é um $\lambda$-sistema que contém o $\pi$-sistema dos 
+retângulos mensuráveis.
+ O fato de $\mathscr{L}$ conter os retângulos 
+ mensuráveis é o conteúdo da afirmação anterior.
+ Para provar que $\mathscr{L}$ é um $\lambda$-sistema basta procedermos como na proposição (\ref{Mens. Prod}).
+  Tem-se uma afirmação análoga para o mapa $x\mapsto \mu_y(E)$. 
+  
+  Temos então que tanto $\pi_1$ quando $\pi_2$ estão bem definidas. Para ver que $\pi_1$ e $\pi_2$ coincidem 
+  
+ 
+
+
+\end{proof}
+
+
