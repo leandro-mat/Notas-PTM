@@ -258,7 +258,7 @@ para funções em $L^1(\mu\times \nu)$(Teorema de Fubini).
 
 
 
-\begin{teorema}[Tonelli]
+\begin{teorema}[Tonelli]\label{Tonelli}
 Sejam $(X, \mathscr{X}, \mu)$ e $(Y, \mathscr{Y}, \nu)$
  espaços de medida com $\mu$ e $\nu$ sigma finitas. Considere na sigma álgebra
  produto $\mathscr{X}\times \mathscr{Y}$ a medida produto $\mu\times \nu$ e $f$ uma função $\mathscr{X}\times \mathscr{Y}$-mensurável \textbf{não negativa} definida em $X\times Y$. Nestas condições valem (\ref{Fubini1}) e (\ref{Fubini2}). 
@@ -288,3 +288,42 @@ ejam $(X, \mathscr{X}, \mu)$ e $(Y, \mathscr{Y}, \nu)$
  produto $\mathscr{X}\times \mathscr{Y}$ a medida produto $\mu\times \nu$ e $f$ uma função $\mathscr{X}\times \mathscr{Y}$-mensurável tal que 
  $|f|$ seja integrável.  Nestas condições valem (\ref{Fubini1}) e (\ref{Fubini2}). 
 \end{corolario}
+
+\begin{proof}
+Como $|f|$ é integrável, temos pelo Teorema (\ref{Tonelli}) que 
+\begin{eqnarray}\label{Fubini 2}
+\int_X(\int_Y |f|(x,y) d\nu)d\mu=\int_{X\times Y}|f|(x,y) d(\mu\times \nu)<\infty.
+\end{eqnarray}
+segue  a função $\varphi:X\to \mathbb{R}$ definida por $\varphi(x)=\int_Y |f|(x,y) d\nu$ sastisfaz 
+$\varphi(x)<\infty$ para $x$-$\mu$ qtp.  Denote por $A_0$ o conjunto dos $x\in X$ tais que $\varphi(x)<\infty$. Então temos que 
+$\mu(X\setminus A_0)=0
+$ e para $x\in A_0$ vale  
+\begin{equation}
+\int_Y f(x,y) d\nu=\int_{Y}f^{+}(x,y)d\nu-\int_Y f^{-}(x,y)d\nu
+\end{equation}
+sendo assim temos que 
+\begin{eqnarray*}
+\int_X (\int_Y f(x,y)d\nu)d\mu&=&\int_{A_0}(\int_Y f(x,y)d\nu)d\mu+\underbrace{\int_{X\setminus A_0}\int_Y f(x,y)d\nu)d\mu}_{=0}
+\\
+&
+=
+&
+\int_{A_0}(\int_{Y}f^{+}(x,y)d\nu)d\mu-\int_{A_0}(\int_{Y}f^{-}(x,y)d\nu)d\mu
+\\[3mm]
+&
+=
+&
+\int_{X}(\int_{Y}f^{+}(x,y)d\nu)d\mu-\int_{X}(\int_{Y}f^{-}(x,y)d\nu)d\mu
+\\[3mm]
+&
+=
+&
+\int_{X\times Y}f^{+}(x,y)d(\mu\times \nu)-\int_{X\times Y}f^{-}(x,y)d(\mu\times \nu)
+\\[3mm]
+&
+=
+&
+\int_{X\times Y}f(x,y) d(\mu\times \nu).
+\end{eqnarray*}
+onde, da antepenúltima para a útima linha usamos o Teorema de Tonelli.
+\end{proof}
