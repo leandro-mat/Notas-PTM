@@ -242,19 +242,49 @@ retângulos mensuráveis.
 \section{Teorema de Fubini}  
  Sejam $(X, \mathscr{X}, \mu)$ e $(Y, \mathscr{Y}, \nu)$
  espaços de medida com $\mu$ e $\nu$ sigma finitas. Considere na sigma álgebra
- produto $\mathscr{X}\times \mathscr{Y}$ a medida produto $\mu\times \nu$. Nosso sonho 
+ produto $\mathscr{X}\times \mathscr{Y}$ a medida produto $\mu\times \nu$ e $f$ uma função $\mathscr{X}\times \mathscr{Y}$-mensurável. Nosso sonho 
  é verificar que valem expressões do tipo 
  \begin{equation}\label{Fubini1}
- \int_{X\times Y}f(x,y) d\mu\times d\nu=\int_X(\int_Yf(x,y) d\nu)d\mu
+ \int_{X\times Y}f(x,y) d(\mu\times\nu)= \int_X(\int_Yf(x,y) d\nu)d\mu
  \end{equation}
  \begin{equation}\label{Fubini2}
- \int_{X\times Y}f(x,y) d\mu\times d\nu=\int_Y(\int_Xf(x,y) d\mu)d\nu
+ \int_{X\times Y}f(x,y) d(\mu\times \nu)=\int_Y(\int_Xf(x,y) d\mu)d\nu.
  \end{equation}
-é claro, pois a vida não é uma poesia, que as expressões (\ref{Fubini1}) e (\ref{Fubini2}) não devem ser
+É claro, pois a vida não é uma poesia, que as expressões (\ref{Fubini1}) e (\ref{Fubini2}) não devem ser
 verificadas para todas as funções mensuráveis. Verificaremos abaixo que elas valem para uma classe bastante 
 grande de funções, primeiro verificaremos que valem para funções mensuráveis positivas(Teorema de Tonneli), e mais geralmente
 para funções em $L^1(\mu\times \nu)$(Teorema de Fubini).
-
 \end{proof}
 
 
+
+\begin{teorema}[Tonelli]
+Sejam $(X, \mathscr{X}, \mu)$ e $(Y, \mathscr{Y}, \nu)$
+ espaços de medida com $\mu$ e $\nu$ sigma finitas. Considere na sigma álgebra
+ produto $\mathscr{X}\times \mathscr{Y}$ a medida produto $\mu\times \nu$ e $f$ uma função $\mathscr{X}\times \mathscr{Y}$-mensurável \textbf{não negativa} definida em $X\times Y$. Nestas condições valem (\ref{Fubini1}) e (\ref{Fubini2}). 
+\end{teorema}
+
+
+\begin{proof}
+O Roteiro da demonstração é o padrão, vamos mostrar primeiro que o teorema vale para funções $1_E,~E\in \mathscr{X}\times \mathscr{Y}$. Para isso vamos calcular separadamente cada lado das expressões (\ref{Fubini1}) e (\ref{Fubini2}) e ver que eles coincidem.
+\begin{equation}
+\int_{X\times Y} 1_E d(\mu\times \nu)=\mu\times \nu( E)=\int_X \nu_x(E) d\mu(x)
+\end{equation}
+Por outro lado note que para cada $x\in X$ fixado $1_E(x,\cdot)=1_{E_x}(\cdot)$, e além disto está função é $\mathscr{Y}$-mensurável por (\ref{Prod. 1}),  portanto temos que 
+\begin{equation}
+\int_X(\int_Y 1_E(x,y) d\nu)d\mu= \int_X \nu_x(E) d\mu(x)
+\end{equation}
+concluindo que vale (\ref{Fubini1}). De modo análogo verificamos que vale (\ref{Fubini2}). Da linearidade da integral e do exposto acima 
+concluimos que o teorema também vale para funções simples (que são funções mensuráveis!). O proximo passo é aproximar $f$ por uma sequência
+não decrescente de funções simples. Usando o Teorema de convergência monótona verificamos que  (\ref{Fubini1}) e (\ref{Fubini2}) valem para $f$.
+\end{proof}
+
+
+
+
+\begin{corolario}[Fubini]
+ejam $(X, \mathscr{X}, \mu)$ e $(Y, \mathscr{Y}, \nu)$
+ espaços de medida com $\mu$ e $\nu$ sigma finitas. Considere na sigma álgebra
+ produto $\mathscr{X}\times \mathscr{Y}$ a medida produto $\mu\times \nu$ e $f$ uma função $\mathscr{X}\times \mathscr{Y}$-mensurável tal que 
+ $|f|$ seja integrável.  Nestas condições valem (\ref{Fubini1}) e (\ref{Fubini2}). 
+\end{corolario}
