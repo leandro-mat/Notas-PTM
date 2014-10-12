@@ -327,3 +327,17 @@ sendo assim temos que
 \end{eqnarray*}
 onde, da antepenúltima para a útima linha usamos o Teorema de Tonelli.
 \end{proof}
+
+
+\subsection{Contraexemplos}
+
+
+\noindent\emph{\textbf{Contra exemplo 1:}} Vamos mostrar que não se pode tirar do Teorema de Fubini a hipótese de $|f|$ ser integrável. Para isso considere uma sequência $(\delta_n)\subset [0,1]$ com $\delta_0=0$, $\delta_0<\delta_1<\cdots \delta_n<\cdots $ e $\delta_n\to 1$. Seja $(g_n)$ uma sequência de funções contínuas positivas definidas em $[0,1]$ onde cada $g_n$ tem suporte em $(\delta_n,\delta_{n+1})$ e tais que 
+$\int_{0}^{1}g_n(t)dt=1$. Defina então $f:[0,1]\times [0,1]\to \mathbb{R}$ pondo 
+$$
+f(x,y)=\sum_{n=1}^{\infty}[(g_n(x)-g_{n-1}(x)]g_n(y)
+$$
+note que $f$ está bem definida, de fato, para cada par $(x,y)$ no máximo um dos termos da série que define $f$ é não nulo. Também não temos problemas quanto à mensurabilidade de $f$. Veja, 
+$$
+\int_{0}^1(\int_{0}^{1}f(x,y)dy)dx
+$$
