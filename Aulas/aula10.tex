@@ -237,10 +237,107 @@ retângulos mensuráveis.
   Tem-se uma afirmação análoga para o mapa $x\mapsto \mu_y(E)$. 
   
   Temos então que tanto $\pi_1$ quando $\pi_2$ estão bem definidas. Para ver que $\pi_1$ e $\pi_2$ coincidem 
-  
- 
+{\red continua}
 
-
+\section{Teorema de Fubini}  
+ Sejam $(X, \mathscr{X}, \mu)$ e $(Y, \mathscr{Y}, \nu)$
+ espaços de medida com $\mu$ e $\nu$ sigma finitas. Considere na sigma álgebra
+ produto $\mathscr{X}\times \mathscr{Y}$ a medida produto $\mu\times \nu$ e $f$ uma função $\mathscr{X}\times \mathscr{Y}$-mensurável. Nosso sonho 
+ é verificar que valem expressões do tipo 
+ \begin{equation}\label{Fubini1}
+ \int_{X\times Y}f(x,y) d(\mu\times\nu)= \int_X(\int_Yf(x,y) d\nu)d\mu
+ \end{equation}
+ \begin{equation}\label{Fubini2}
+ \int_{X\times Y}f(x,y) d(\mu\times \nu)=\int_Y(\int_Xf(x,y) d\mu)d\nu.
+ \end{equation}
+É claro, pois a vida não é uma poesia, que as expressões (\ref{Fubini1}) e (\ref{Fubini2}) não devem ser
+verificadas para todas as funções mensuráveis. Verificaremos abaixo que elas valem para uma classe bastante 
+grande de funções, primeiro verificaremos que valem para funções mensuráveis positivas(Teorema de Tonneli), e mais geralmente
+para funções em $L^1(\mu\times \nu)$(Teorema de Fubini).
 \end{proof}
 
 
+
+\begin{teorema}[Tonelli]\label{Tonelli}
+Sejam $(X, \mathscr{X}, \mu)$ e $(Y, \mathscr{Y}, \nu)$
+ espaços de medida com $\mu$ e $\nu$ sigma finitas. Considere na sigma álgebra
+ produto $\mathscr{X}\times \mathscr{Y}$ a medida produto $\mu\times \nu$ e $f$ uma função $\mathscr{X}\times \mathscr{Y}$-mensurável \textbf{não negativa} definida em $X\times Y$. Nestas condições valem (\ref{Fubini1}) e (\ref{Fubini2}). 
+\end{teorema}
+
+
+\begin{proof}
+O Roteiro da demonstração é o padrão, vamos mostrar primeiro que o teorema vale para funções $1_E,~E\in \mathscr{X}\times \mathscr{Y}$. Para isso vamos calcular separadamente cada lado das expressões (\ref{Fubini1}) e (\ref{Fubini2}) e ver que eles coincidem.
+\begin{equation}
+\int_{X\times Y} 1_E d(\mu\times \nu)=\mu\times \nu( E)=\int_X \nu_x(E) d\mu(x)
+\end{equation}
+Por outro lado note que para cada $x\in X$ fixado $1_E(x,\cdot)=1_{E_x}(\cdot)$, e além disto está função é $\mathscr{Y}$-mensurável por (\ref{Prod. 1}),  portanto temos que 
+\begin{equation}
+\int_X(\int_Y 1_E(x,y) d\nu)d\mu= \int_X \nu_x(E) d\mu(x)
+\end{equation}
+concluindo que vale (\ref{Fubini1}). De modo análogo verificamos que vale (\ref{Fubini2}). Da linearidade da integral e do exposto acima 
+concluimos que o teorema também vale para funções simples (que são funções mensuráveis!). O proximo passo é aproximar $f$ por uma sequência
+não decrescente de funções simples. Usando o Teorema de convergência monótona verificamos que  (\ref{Fubini1}) e (\ref{Fubini2}) valem para $f$.
+\end{proof}
+
+
+
+
+\begin{corolario}[Fubini]
+ejam $(X, \mathscr{X}, \mu)$ e $(Y, \mathscr{Y}, \nu)$
+ espaços de medida com $\mu$ e $\nu$ sigma finitas. Considere na sigma álgebra
+ produto $\mathscr{X}\times \mathscr{Y}$ a medida produto $\mu\times \nu$ e $f$ uma função $\mathscr{X}\times \mathscr{Y}$-mensurável tal que 
+ $|f|$ seja integrável.  Nestas condições valem (\ref{Fubini1}) e (\ref{Fubini2}). 
+\end{corolario}
+
+\begin{proof}
+Como $|f|$ é integrável, temos pelo Teorema (\ref{Tonelli}) que 
+\begin{eqnarray}\label{Fubini 2}
+\int_X(\int_Y |f|(x,y) d\nu)d\mu=\int_{X\times Y}|f|(x,y) d(\mu\times \nu)<\infty.
+\end{eqnarray}
+segue  a função $\varphi:X\to \mathbb{R}$ definida por $\varphi(x)=\int_Y |f|(x,y) d\nu$ sastisfaz 
+$\varphi(x)<\infty$ para $x$-$\mu$ qtp.  Denote por $A_0$ o conjunto dos $x\in X$ tais que $\varphi(x)<\infty$. Então temos que 
+$\mu(X\setminus A_0)=0
+$ e para $x\in A_0$ vale  
+\begin{equation}
+\int_Y f(x,y) d\nu=\int_{Y}f^{+}(x,y)d\nu-\int_Y f^{-}(x,y)d\nu
+\end{equation}
+sendo assim temos que 
+\begin{eqnarray*}
+\int_X (\int_Y f(x,y)d\nu)d\mu&=&\int_{A_0}(\int_Y f(x,y)d\nu)d\mu+\underbrace{\int_{X\setminus A_0}\int_Y f(x,y)d\nu)d\mu}_{=0}
+\\
+&
+=
+&
+\int_{A_0}(\int_{Y}f^{+}(x,y)d\nu)d\mu-\int_{A_0}(\int_{Y}f^{-}(x,y)d\nu)d\mu
+\\[3mm]
+&
+=
+&
+\int_{X}(\int_{Y}f^{+}(x,y)d\nu)d\mu-\int_{X}(\int_{Y}f^{-}(x,y)d\nu)d\mu
+\\[3mm]
+&
+=
+&
+\int_{X\times Y}f^{+}(x,y)d(\mu\times \nu)-\int_{X\times Y}f^{-}(x,y)d(\mu\times \nu)
+\\[3mm]
+&
+=
+&
+\int_{X\times Y}f(x,y) d(\mu\times \nu).
+\end{eqnarray*}
+onde, da antepenúltima para a útima linha usamos o Teorema de Tonelli.
+\end{proof}
+
+
+\subsection{Contraexemplos}
+
+
+\noindent\emph{\textbf{Contra exemplo 1:}} Vamos mostrar que não se pode tirar do Teorema de Fubini a hipótese de $|f|$ ser integrável. Para isso considere uma sequência $(\delta_n)\subset [0,1]$ com $\delta_0=0$, $\delta_0<\delta_1<\cdots \delta_n<\cdots $ e $\delta_n\to 1$. Seja $(g_n)$ uma sequência de funções contínuas positivas definidas em $[0,1]$ onde cada $g_n$ tem suporte em $(\delta_n,\delta_{n+1})$ e tais que 
+$\int_{0}^{1}g_n(t)dt=1$. Defina então $f:[0,1]\times [0,1]\to \mathbb{R}$ pondo 
+$$
+f(x,y)=\sum_{n=1}^{\infty}[(g_n(x)-g_{n-1}(x)]g_n(y)
+$$
+note que $f$ está bem definida, de fato, para cada par $(x,y)$ no máximo um dos termos da série que define $f$ é não nulo. Também não temos problemas quanto à mensurabilidade de $f$. Veja, 
+$$
+\int_{0}^1(\int_{0}^{1}f(x,y)dy)dx
+$$
