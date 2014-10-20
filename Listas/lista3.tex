@@ -291,33 +291,152 @@ Seja $n\in\mathbb{N}$ fixado.
 Considere produto cartesiano $\Omega_n=\{-1,1\}^n$, 
 $\mathcal{F}_n=\mathcal{P}(\Omega)$.
 
-\begin{itemize}
+	\begin{itemize}
 
-\item[i)]
-Mostre que  
-$\kappa_n = \prod_{i=1}^n \kappa$, 
-onde $\kappa$ é a medida de contagem em $\{-1,1\}$, 
-é a medida de contagem em $\Omega_n$.
+		\item[i)]
+		Mostre que  
+		$\kappa_n = \prod_{i=1}^n \kappa$, 
+		onde $\kappa$ é a medida de contagem em $\{-1,1\}$, 
+		é a medida de contagem em $\Omega_n$.
+		
+		
+		\item[ii)]
+		Defina a função 
+		\[
+			H_n(\omega)
+			\equiv
+			H_n(\omega_1,\ldots,\omega_n)
+			= 
+			-\sum_{i=1}^{n-1} \omega_i\omega_{i+1}
+		\]
+		Calcule
+		\[
+			Z_n(\beta)
+			=
+			\int_{\Omega_n} 
+			e^{-\beta H_n(\omega)}\, 
+			d\kappa_n(\omega).
+			\]
+		Dica. Use o Teorema de Fubini.		
+		\end{itemize}
 
 
-\item[ii)]
-Defina a função 
+
+
+
+\item 
+Fixe $n\in\mathbb{N}$ e $\beta>0$. Sejam 
+$\Omega_n$, $\mathcal{F}_n$ e $Z_n(\beta)$,
+como definidos no exercício anterior. 
+Mostre que $\mu_{n,\beta}:\mathcal{F}_n\to\mathbb{R}$
+definida para cada $A\in \mathcal{F}_n$ por 
 \[
-	H_n(\omega)
-	\equiv
-	H_n(\omega_1,\ldots,\omega_n)
-	= 
-	-\sum_{i=1}^{n-1} \omega_i\omega_{i+1}
+	\mu_{n,\beta}(A)
+	=	
+	\frac{1}{Z_{n}(\beta)}
+	\int_{\Omega_n} 
+	1_{A}(\omega)
+	e^{-\beta H_n(\omega)}\, 
+	d\kappa_n(\omega)
 \]
-Calcule
-\[
-	Z_n(\beta)
-	=
-	\int_{\Omega} 
-	e^{-\beta H_n(\omega_1,\ldots,\omega_n)}\, 
-	d\kappa(\omega_1)\ldots d\kappa(\omega_n).
+define uma medida de probabilidade.
+
+
+
+
+
+
+
+
+
+
+
+\item Sejam $n$ um inteiro positivo e $\beta>0$ fixados.
+Considere o espaço de probabilidade 
+$(\Omega_n,\mathcal{F}_n,\mu_{n,\beta})$
+definido nos dois exercícios anteriores.
+Seja $\{X_i,i=1,\ldots,n\}$ uma coleção 
+de v.a.'s definidas neste espaço de probabilidade por 
+$X_i(\omega)=\omega_i$.
+Mostre para qualquer $i\in \{1,\ldots,n\}$ que
+	\[
+		\mathbb{E}[X_i] 
+		\equiv
+		\int_{\Omega_n} X_i(\omega)
+		\, d\mu_{n,\beta}(\omega)
+		=	 
+		0.
 	\]
+
+
+
+
+
+
+
+
+
+\item (Percolação em dimensão 1.)
+Considere o grafo $G=(V,E)$, 
+onde $V=\mathbb{Z}$ e $E=\{ i,j\in\mathbb{Z}: |i-j|=1\}$.
+Seja $\Omega=\{0,1\}^{E}$.
+Para cada $e\in E$ defina $X_e(\omega)=\omega_e$.
+Mostre que para cada $p\in [0,1]$ fixado, 
+existe um medida de probabilidade 
+$\P_p$ definida em $\F=\sigma(\{X_{e},e\in E\})$
+tal que para todo $e\in E$ 
+temos que $\P(\{X_e=1\})=p=1-\P(\{X_e=0\})$
+e além do mais as v.a's $\{X_e\}_{e\in E}$ são independentes
+no espaço de probabilidade $(\Omega,\F,\P_p)$.
+
+
+
+
+
+
+\item
+Sejam $G=(V,E)$ e  $(\Omega,\F,\P_p)$ o grafo e o espaço de probabilidade 
+definido no exercício anterior, respectivamente.
+Dados dois vértices $x,y\in V$ dizemos que 
+$\gamma = \{e_1,\ldots,e_n\}$ é um caminho 
+conectando $x$ a $y$ se 
+\begin{itemize}
+\item
+$e_i\in E, \forall i=1,\ldots n$;
+\item 
+$e_i\neq e_j$ se $i\neq j$;
+\item
+$e_1=\{x,x_1\}$ e $e_n=\{x_{n-1},y\}$.
 \end{itemize}
+Dada uma configuração $\omega\in\Omega$
+dizemos que um caminho $\gamma=\{e_1,\ldots,e_n\}$
+é um caminho aberto em $\omega$, se 
+$X_{e_1}(\omega),X_{e_2}(\omega),\ldots,X_{e_n}(\omega)=1$.
+Denote por 
+$
+\{x \longleftrightarrow y\}
+=
+\{\omega\in\Omega: \exists\ \gamma\ \text{caminho aberto em}\ \omega\ 
+\text{conectando}\ x \ \text{a}\ y\}.
+$
+Mostre que $\{x \longleftrightarrow y\}\in \F$ e
+calcule $\P_p(\{x \longleftrightarrow y\})$.
+
+
+
+
+
+
+
+
+
+
+\item
+Sejam $G=(V,E)$ e  $(\Omega,\F,\P_p)$ o grafo e o espaço de probabilidade 
+definido no exercício anterior, respectivamente.
+
+
+
 
 
 \end{enumerate}
