@@ -1,0 +1,323 @@
+\chapter*{Lista 3}
+\addcontentsline{toc}{chapter}{Lista 3}
+\chaptermark{}
+
+
+% Inicio da Lista de Exercícios 
+\begin{enumerate}[leftmargin=*]
+
+
+\item 
+Suponha que $X$ e $Y$ são duas v.a.'s independentes
+tendo distribuição $\mathbb{P}_X$ e $\mathbb{P}_{Y}$,
+respectivamente. Prove que a distribuição de $X+Y$ 
+é dada pela convolução $\mathbb{P}_X*\mathbb{P}_Y$
+definida por
+\[
+	\mathbb{P}_X*\mathbb{P}_Y(B)
+	=
+	\int_{\mathbb{R}} \mathbb{P}_X(B-x)d\mathbb{P}_Y(x),
+\]
+onde $B\in\mathscr{B}(\mathbb{R})$ e 
+$B-x=\{b-x\in\mathbb{R}; b\in B\}$.
+
+
+
+
+
+
+
+
+
+
+\item 
+Seja $X_1,X_2,\ldots, X_n$ uma coleção de v.a.'s iid.
+definidas em um espaço de probabilidade $(\Omega,\F,\P)$.
+Suponha que estas variáveis aleatórias tenha distribuição 
+comum $Q$.
+%
+%
+%
+	\begin{itemize}
+	\item[i)]
+	denote por $m$ a medida de Lebesgue em $\mathbb{R}$ e
+	suponha que a derivada de Radon-Nykodin 
+		\[
+			\frac{dQ}{dm}(x) = \lambda e^{-\lambda x}1_{[0,\infty)}(x).
+		\]
+	para algum $\lambda>0$. Mostre que $X_1+\ldots+X_n$ 
+	tem distribuição determinada pela medida
+	de probabilidade $Q^{*n}$ definida em $\mathscr{B}(\mathbb{R})$
+	por 
+	\[
+		Q^{*n}(B) = 
+		\int_{B} \lambda^n \frac{x^{n-1}}{(n-1)!}e^{-\lambda x}
+		1_{[0,\infty)}(x)\, dm(x).
+	\]
+	(OBS: A distribuição $Q^{*n}$ determinada acima é conhecida como distribuição 
+	Gama de parâmetros $n,\lambda$.)
+	
+	\item[ii)] 
+	Sejam $\mu\in \mathbb{R}$  e $\sigma^2>0$. 
+	Suponha que  
+		\[
+			\frac{dQ}{dm}(x) = \frac{1}{\sqrt{2\pi \sigma^2}}
+			\exp\left( -\frac{(x-\mu)^2}{\sigma^2} \right).
+		\]	
+	Mostre que $X_1+\ldots+X_n$ tem distribuição dada por 
+		\[
+			Q^{*n}(B) = 
+			\int_{B}\frac{1}{\sqrt{2\pi n\sigma^2}}
+			\exp\left( -\frac{(x-n\mu)^2}{n\sigma^2} \right)
+			\, dm(x).
+		\]
+	(OBS: A distribuição determinada por $Q$ neste item é conhecida como distribuição 
+	Gaussiana ou Normal com parâmetros $\mu$ e $\sigma^2$, notação $N(\mu,\sigma^2)$.
+	Note que a distribuição determinada por $Q^{*n}$ é também uma Normal com 
+	parâmetros $n\mu$ e $n\sigma^2$.)
+	
+	
+	\item[iii)] 	
+	Suponha que $X$ seja uma v.a. com distribuição $N(0,1)$.
+	Encontre a distribuição de $X^2$ e calcule $Q*Q$.
+	Dica: $ \int_{0}^{1} u^{-1/2}(1-u)^{-1/2}\, du= \pi $
+	\end{itemize}
+
+
+
+
+	
+
+
+
+
+
+\item Seja $(\Omega,\F,\P)$ um espaço de probabilidade.
+Inicialmente mostre que para todo $p>0$ e $x\geq 0$ temos 
+	\[
+		x^p = p \int_{0}^{x} y^{p-1} \, dy. 	
+	\]
+Em seguida, usando o resultado acima e o Teorema de Tonelli 
+mostre que para qualquer v.a. $X$ temos 	 
+	\[
+		\mathbb{E}|X|^p 
+		= 
+		p\int_{0}^{\infty} y^{p-1} \P(\{|X|>y\})\, dy.
+	\]
+(OBS: Em alguns casos a igualdade acima pode 
+significar simplesmente $+\infty=+\infty$.)
+
+
+
+
+
+
+
+
+
+\item
+Suponha que $X_1,X_2,\ldots$ seja uma sequência de v.a.'s  
+cada uma tendo distribuição $Q=\mathbb{P}\circ X_n^{-1}$.
+	\begin{itemize}
+		\item[i)] 
+		Mostre que se $\mathbb{E}[|X_1|]<\infty$
+		então $\P(\limsup \{X_n>n\})=0$.
+		Dica. Use o exercício anterior e o Lema de Borel-Cantelli.
+		
+		\item[ii)] 
+		Assuma que a sequência de v.a.'s $\{X_n\}$ é independente e
+		que $\mathbb{E}[|X_n|]=+\infty$, para todo $n\in\mathbb{N}$.
+		Mostre que $\P(\limsup \{X_n>n\})=1$. 
+	\end{itemize}
+
+
+
+
+
+\item
+Sejam $(\Omega,\F,\P)$ e $(\mathbb{R}^n,\mathscr{B}(\mathbb{R}^n),\mu)$
+espaços de probabilidade.
+Suponha que a aplicação $T:\Omega\to\mathbb{R}^n$ seja  
+Borel mensurável, isto é, $T^{-1}(B)\in \F$, para todo 
+$B\in \mathscr{B}(\mathbb{R}^n)$.
+Seja $\mathscr{A}\subset \mathscr{B}(\mathbb{R}^n)$ uma 
+sub-$\sigma$-álgebra. Defina 
+$
+\mathcal{E}= 
+\{E\in \mathcal{F}: 
+E=T^{-1}(A)\ \text{para algum}\ A\in\mathscr{A}\}.
+$
+Mostre que 
+%
+%
+	\begin{itemize}
+		\item[i)]
+		para qualquer $A\in \mathscr{A}$ que 
+		\[
+		\P(T^{-1}A|\mathcal{E})(\omega)
+		=
+		\mu(A|\mathscr{A})(T(\omega)),
+		\quad \P-\text{quase certamente}. 
+		\]	
+		
+		\item[ii)]
+		Considere $n=2$ e seja $\mu$ a distribuição de 
+		um vetor aleatório $(X,Y)$ definido em $(\Omega,\F,\P)$.
+		Suponha que $(X,Y)$ tem densidade $f$, isto é, 
+		para todo Boreliano $A\in\ \mathscr{B}(\mathbb{R}^2)$
+		temos que
+		\[
+		\P((X,Y)\in A) = \mu(A) = \int_{A}f(x,y) \, dxdy. 	
+		\]
+		Mostre para todo $B\in\mathscr{B}(\mathbb{R})$
+		que é válida a seguinte igualdade $\P$-quase certamente
+		\[
+			\P(Y\in B|X)(\omega) 
+			= 
+			\frac{\int_{B}f(X(\omega),y)\, dy }
+			{\int_{\mathbb{R}} f(X(\omega),y)\, dy }.
+		\]
+	\end{itemize}
+
+
+
+\item 
+Suponha que $\mu$ e $\nu_x$ são medidas de probabilidade 
+na reta. Para qualquer qualquer Boreliano 
+da reta $B$ fixado, suponha que  $x\mapsto \nu_x(B)$ é uma função 
+borel mensurável. 
+%
+%
+	\begin{itemize}
+		\item[i)]
+		Mostre que 
+		\[
+			\eta(E) =\int_{\mathbb{R}} \nu_x(\{y\in\mathbb{R}: (x,y)\in E\} )
+					\, d\mu(x).
+		\] 
+		define uma medida de probabilidade em 
+		$(\mathbb{R}^2,\mathscr{B}(\mathbb{R}^2))$
+		
+		\item[ii)]
+		Suponha que o vetor $(X,Y)$ tenha distribuição $\eta$.
+		Mostre que $\nu_{X}$ é uma versão da distribuição 
+		condicional de $Y$ dado $X$. 
+	\end{itemize}
+
+
+
+\item Mostre que se $X$ e $Y$ são duas v.a. independentes
+então $\mathbb{E}[X|Y]=\mathbb{E}[X]$ e conclua que 
+$\mathbb{E}[XY]=\mathbb{E}[X]\mathbb{E}[Y]$.
+
+
+
+
+
+
+
+
+
+\item Sejam $(\Omega,\F,\P)$ um espaço de probabilidade e 
+$\mathscr{B}$ uma sub-$\sigma$-álgebra de $\F$.
+Prove que para quaisquer variáveis aleatórias 
+limitadas $X$ e $Y$ que 
+	\[
+	\mathbb{E}[Y\cdot \mathbb{E}[X|\mathscr{B}]]
+	=
+	\mathbb{E}[X\cdot \mathbb{E}[Y|\mathscr{B}]].
+	\]
+
+
+
+
+
+
+
+\item 
+Suponha que $X$ e $Z$ são v.a. independentes com
+distribuição normal. Seja $Y=X+bZ$, isto é, 
+$X$ com adição de um termo de ``ruído'' independente $bZ$.
+Calcule $\mathbb{E}[X|\sigma(Y)]$. 
+
+
+\item
+Seja $k$ um inteiro positivo e 
+$\Omega=\{0,1,2,\ldots,k-1\}^{\mathbb{N}}$. 
+Seja $\mathcal{F}$ a $\sigma$-álgebra gerada 
+pelas v.a.'s $\{X_n\}$, onde para 
+cada $n\in\mathbb{N}$ e $\omega=(\omega_1,\omega_2,\ldots)$ 
+a v.a. $X_n$ é definida por $X_n(\omega)=\omega_n$. 
+Sejam $\nu$ uma medida de probabilidade definida no conjunto das partes
+de $\{0,1,2,\ldots,k-1\}$ e $\P = \prod_{i\in\mathbb{N}}\nu$ 
+a medida produto dada pelo Teorema da Extensão de Kolmogorov.
+Considere a aplicação $\sigma:\Omega\to\Omega$ 
+dada pelo ``shift'' para esquerda, isto é, 
+	\[
+		\sigma(\omega_1,\omega_2,\omega_3,\ldots)
+		=
+		(\omega_2,\omega_3,\omega_4,\ldots).
+	\] 
+Mostre que $\P$ é invariante pelo ``shift'', isto é, 
+para todo $E\in\mathcal{F}$ temos que 
+	\[
+	\P(\sigma^{-1}(E)) = \P(E).
+	\] 
+
+
+
+
+
+
+
+
+
+
+
+\item
+Seja $\Omega=\{-1,1\}$, $\mathcal{F}=\mathcal{P}(\Omega)$ e 
+$\kappa:\mathcal{F}\to \mathbb{R}$ 
+a medida de contagem em $\Omega$.
+Mostre que para toda constante $m\in\mathbb{R}$ que
+\[
+	\int_{\Omega} e^{m\omega}\, d\kappa(\omega)
+	=
+	2\cosh(m).
+\]
+
+
+\item 
+Seja $n\in\mathbb{N}$ fixado. 
+Considere produto cartesiano $\Omega_n=\{-1,1\}^n$, 
+$\mathcal{F}_n=\mathcal{P}(\Omega)$.
+
+\begin{itemize}
+
+\item[i)]
+Mostre que  
+$\kappa_n = \prod_{i=1}^n \kappa$, 
+onde $\kappa$ é a medida de contagem em $\{-1,1\}$, 
+é a medida de contagem em $\Omega_n$.
+
+
+\item[ii)]
+Defina a função 
+\[
+	H_n(\omega)
+	\equiv
+	H_n(\omega_1,\ldots,\omega_n)
+	= 
+	-\sum_{i=1}^{n-1} \omega_i\omega_{i+1}
+\]
+Calcule
+\[
+	Z_n(\beta)
+	=
+	\int_{\Omega} 
+	e^{-\beta H_n(\omega_1,\ldots,\omega_n)}\, 
+	d\kappa(\omega_1)\ldots d\kappa(\omega_n).
+	\]
+\end{itemize}
+
+
+\end{enumerate}
