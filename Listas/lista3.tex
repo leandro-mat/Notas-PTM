@@ -280,7 +280,7 @@ $\kappa:\mathcal{F}\to \mathbb{R}$
 a medida de contagem em $\Omega$.
 Mostre que para toda constante $m\in\mathbb{R}$ que
 \[
-	\int_{\Omega} e^{m\omega}\, d\kappa(\omega)
+	\int_{\{-1,1\}} e^{m\omega}\, d\kappa(\omega)
 	=
 	2\cosh(m).
 \]
@@ -434,9 +434,44 @@ calcule $\P_p(\{x \longleftrightarrow y\})$.
 \item
 Sejam $G=(V,E)$ e  $(\Omega,\F,\P_p)$ o grafo e o espaço de probabilidade 
 definido no exercício anterior, respectivamente.
+Para cada $x\in V$ e $\omega\in \Omega$ 
+defina a componente conexa aberta de $x$ em $\omega$ por 
+\[
+C_{\omega}(x) \equiv 
+\{y\in V: 
+\exists\ \gamma \ \text{caminho aberto em}\ \omega \ \text{ligando}\
+x\ \text{a}\ y\}.
+\]
+Mostre que 
+\begin{itemize}
+\item[i)] para cada $x\in V$ fixado que 
+$\omega\mapsto \#C_{\omega}(x)$ é uma 
+v.a. a valores em $\overline{\mathbb{R}}$;
+
+\item[ii)]
+o conjunto 
+$
+\{x \longleftrightarrow \infty\} 
+\equiv 
+\{\omega\in\Omega: \#C_{\omega}(x)=+\infty\}\in \F
+$;
 
 
+\item[iii)] generalize o exercício sobre invariância por translação da medida 
+produto de $\mathbb{N}$ para $\mathbb{Z}$ e em seguida, mostre que 
+$
+\P_p(\{x \longleftrightarrow \infty\})
+=
+\P_p(\{0 \longleftrightarrow \infty\});
+$
 
+  
+\item[iv)] para cada $p\in [0,1]$ 
+calcule $\theta(p)\equiv\P_p(\{0 \longleftrightarrow \infty\})$.
+Dica: use Borel-Cantelli.
 
-
+\item[v)]
+se $p\neq 1$, para todo $x\in V$ mostre que 
+$\#C_{\omega}(x)<\infty$, $\P_p$-q.c.. 
+\end{itemize}
 \end{enumerate}
