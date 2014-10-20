@@ -33,20 +33,20 @@ modo análogo, para cada $y$ fixo, a função $f(\cdot, y)$ é $\mathscr{X}$-men
 
 
 Os conjunto $E_x$, e $E_y$ são chamados as secções de $E$ determinadas por $x$ e 
-por $y$ respectivamente. Do mesmo modo as funções $f(x, \cdot)$ e $f(\cdot, y)$ 
+por $y$, respectivamente. Do mesmo modo as funções $f(x, \cdot)$ e $f(\cdot, y)$ 
 são chamadas as secções de $f$ determinadas por $x$ e por $y$ respectivamente.
 \medskip
 
 \begin{proof}
  \emph{Item (a):} Fixe $x$ e considere o mapa $T_x:Y\to X\times Y$ dado por $T_x(y)=(x,y)$.
  Note que se $E=A\times B\in \mathscr{X}\times \mathscr{Y}$
-é um retângulo então $T_{y}^{-1}E=B~\textnormal{ou}~\varnothing$ 
+é um retângulo então $T_{x}^{-1}E=B~\textnormal{ou}~\varnothing$ 
 dependendo apenas se 
 $A$ contém ou não o ponto $x$.  De qualquer modo $T_x^{-1}E\in \mathscr{Y}$.
 \medskip
 
 \noindent \emph{Item (b)}:  Neste item o primeiro passo é  mostrar 
-que $T_x$ é $\mathscr{Y}$-$\mathscr{X}\times \mathscr{Y}$ 
+que $T_x$ é $\mathscr{Y}$ 
 mensurável. 
 \medskip
 
@@ -67,9 +67,9 @@ $C$ é uma sigma álgebra.
 Por outro lado mostramos acima que $\mathcal{C}$ contém a
  classe $\mathscr{R}$ dos retângulos mensuráveis. Sendo assim $\mathcal{C}$ contém a 
  sigma-álgebra gerada por $\mathscr{R}$ que para nossa sorte é $\mathscr{X}\times \mathscr{Y}$ 
- provando que $T_x$ é $\mathscr{Y}$-$\mathscr{X}\times \mathscr{Y}$ 
-mensurável.  Agora, como $f$ é $\mathscr{X}\times \mathscr{Y}$-$\mathscr{B}(\mathbb{R})$ mensurável 
- segue que a composição $f\circ T_x$ é $\mathscr{Y}$-$\mathscr{B}(\mathbb{R})$ mensurável.
+ provando que $T_x$ é $\mathscr{Y}$ 
+mensurável.  Agora, como $f$ é $\mathscr{X}\times \mathscr{Y}$ mensurável 
+ segue que a composição $f\circ T_x$ é $\mathscr{Y}$ mensurável.
 
 \end{proof}
 
@@ -98,15 +98,15 @@ A classe $\mathscr{L}$ coincide com $\mathscr{X}\times \mathscr{Y}$.
 \end{proposicao}
 \begin{proof}
 Começamos por mostrar que $\mathscr{L}$ é um $\lambda$-sistema. De fato, temos que
-$\nu_x(X\times Y)=\nu(Y)=1$ para todo $x\in X$ portanto
- a função $X\ni x\mapsto \nu_x(X\times Y)\in [0,\infty)$ é a função constante
-igual a $1$, que como sabemos é mensurável.
+$\nu_x(X\times Y)=\nu(Y) < \infty$ para todo $x\in X$ e, portanto
+ a função $X\ni x\mapsto \nu_x(X\times Y)\in [0,\infty)$ é claramente mensurável.
   Agora note que $\nu_x(E^c)=\nu(E^c_x)=\nu((E_x)^c)=1-\nu(E_x).$
  Assim, se $X\ni x\mapsto \nu_x(E)\in [0, \infty)$  é mensurável temos que 
  $X\ni x\mapsto \nu_x(E^c)=1-\nu_x(E)\in [0, \infty)$ é mensurável, sendo pois 
  a diferença de duas funções mensuráveis.
-  Sejam $E_1, E_2, \ldots E_n, \ldots$ em $\mathscr{L}.$ E suficiente 
-  considerarmos o caso em que os $E_n^{'s}$ são disjuntos. Note que $E_x=(\bigcup E_n)_x=\bigcup (E_n)_x$. Assim temos que 
+  Sejam $E_1, E_2, \ldots E_n, \ldots$ conjuntos em $\mathscr{L}.$ É suficiente 
+  considerarmos o caso em que os $E_n^{'s}$ são disjuntos.
+  Note que $E_x=(\bigcup E_n)_x=\bigcup (E_n)_x$. Assim temos que 
   $$
   \nu_x(E)=\nu(E_x)=\nu(\bigcup (E_n)_x)=\sum_{n\geq 1}\nu_x(E_n).
   $$
@@ -115,7 +115,8 @@ igual a $1$, que como sabemos é mensurável.
   $$
  X\ni x\mapsto \nu_x(E)=\sum_{n\geq 1}\nu_x(E_n)\in [0,\infty),
  $$ 
- sendo pois o limite de uma sequência de funções mensuráveis, também é mensurável. Isto conclui que $\mathscr{L}$ é um $\lambda$-sistema.
+ pois a medida $\nu$ é $\sigma$-finita. Como esse mapa é o 
+limite de uma sequência de funções mensuráveis, ele também será mensurável. Isto conclui que $\mathscr{L}$ é um $\lambda$-sistema.
  
  Para finalizar veja  que $\mathscr{L}$ contém os retângulos mensuráveis $\mathscr{R}$, com efeito se $E=A\times B\in \mathscr{R}$ então o mapa $x\mapsto \nu(E_x)$ pode ser escrito como $1_A(x)\nu(B)$ que é claramente mensurável. Sendo assim temos pelo Teorema $\pi$-$\lambda$ que $\mathscr{X}\times \mathscr{Y}= \sigma(\mathscr{R})\subset \mathscr{L}\subset \mathscr{X}\times \mathscr{Y}$ concluindo a demonstração.
 \end{proof}
@@ -172,9 +173,17 @@ $$
 \pi_2(E^c)
 \end{array}
 $$
-portanto $E^c\in \mathscr{L}$.  Finalmente sejam $E_1, \ldots, E_n, \ldots $ em $\mathscr{L}$, vamos mostrar que $E=\bigcup E_n\in \mathscr{L}.$ É suficiente considerar o caso em que os $E_n^{'s}$ são disjuntos. Para cada $n$ considere os conjunto $\bigcup_{j=1}^nE_n$, é claro que   $\bigcup_{j=1}^nE_n\nearrow E.$ Note também que para cada $n$ a função $x\mapsto \nu_x(E_n)$ é uma função não negativa. Sendo assim a temos que  $f_n=\sum_{j=1}^n\nu_{(\cdot)}(E_j)=\nu_x(\bigcup_{j=1}^{n}E_j)$ e $g_n=\sum_{j=1}^n\mu_{(\cdot)}(E_j)=\mu_y(\bigcup_{j=1}^{n}E_j)$ são  uma famílias não decrescentes de funções não negativas. Portanto segue do teorema da convergência monótona
-que  $\bigcup_{j=1}^nE_n$
-
+portanto $E^c\in \mathscr{L}$.  
+Finalmente sejam $E_1, \ldots, E_n, \ldots $ em $\mathscr{L}$, vamos
+mostrar que $E=\bigcup E_n\in \mathscr{L}.$ É suficiente considerar
+o caso em que os $E_n^{'s}$ são disjuntos. Para cada $n$ considere os
+conjunto $\bigcup_{j=1}^nE_n$, é claro que   $\bigcup_{j=1}^nE_n\nearrow E.$ Note
+também que para cada $n$ a função $x\mapsto \nu_x(E_n)$ é uma função não negativa.
+Sendo assim a temos que  $f_n=\sum_{j=1}^n\nu_{(\cdot)}(E_j)=\nu_x(\bigcup_{j=1}^{n}E_j)$
+e $g_n=\sum_{j=1}^n\mu_{(\cdot)}(E_j)=\mu_y(\bigcup_{j=1}^{n}E_j)$ são
+uma famílias não decrescentes de funções não negativas.
+Portanto segue do teorema da convergência monótona
+que
 $$
 \begin{array}{rcl}
 \pi_1(E)&=&\displaystyle\lim_{n\to \infty}\pi_1(\bigcup_{j=1}^{n}E_j)
@@ -223,7 +232,7 @@ $X\ni x\mapsto \nu_x(E)\in [0, \infty)$ é mensurável.
  $x\mapsto \nu_n(E_x)$ é mensurável. Como $\nu(E_x)=\sum_{n\geq 1}\nu_n(E_x)$ temos que 
  $x\mapsto \nu_x(E)$ é mensurável. De modo análogo mostra-se que $y\mapsto \mu_y(E)$ é mensurável.
 
-Agora defina a classe $\mathscr{L}$ dos elementos de $E$ de $\mathscr{X}\times \mathscr{Y}$ tais que 
+Agora defina a classe $\mathscr{L}$ dos elementos $E$ de $\mathscr{X}\times \mathscr{Y}$ tais que 
 o mapa $x\mapsto \nu_x(E)$ é mensurável.
 
 \noindent \emph{Afirmação 2:} A classe $\mathscr{L}$ coincide com $\mathscr{X}\times \mathscr{Y}$.
@@ -252,8 +261,8 @@ retângulos mensuráveis.
  \end{equation}
 É claro, pois a vida não é uma poesia, que as expressões (\ref{Fubini1}) e (\ref{Fubini2}) não devem ser
 verificadas para todas as funções mensuráveis. Verificaremos abaixo que elas valem para uma classe bastante 
-grande de funções, primeiro verificaremos que valem para funções mensuráveis positivas(Teorema de Tonneli), e mais geralmente
-para funções em $L^1(\mu\times \nu)$(Teorema de Fubini).
+grande de funções, primeiro verificaremos que valem para funções mensuráveis positivas (Teorema de Tonneli),
+e mais geralmente para funções em $L^1(\mu\times \nu)$ (Teorema de Fubini).
 \end{proof}
 
 
@@ -283,10 +292,10 @@ não decrescente de funções simples. Usando o Teorema de convergência monóto
 
 
 \begin{corolario}[Fubini]
-ejam $(X, \mathscr{X}, \mu)$ e $(Y, \mathscr{Y}, \nu)$
- espaços de medida com $\mu$ e $\nu$ sigma finitas. Considere na sigma álgebra
- produto $\mathscr{X}\times \mathscr{Y}$ a medida produto $\mu\times \nu$ e $f$ uma função $\mathscr{X}\times \mathscr{Y}$-mensurável tal que 
- $|f|$ seja integrável.  Nestas condições valem (\ref{Fubini1}) e (\ref{Fubini2}). 
+Sejam $(X, \mathscr{X}, \mu)$ e $(Y, \mathscr{Y}, \nu)$
+espaços de medida com $\mu$ e $\nu$ sigma finitas. Considere na sigma álgebra
+produto $\mathscr{X}\times \mathscr{Y}$ a medida produto $\mu\times \nu$ e $f$ uma função $\mathscr{X}\times \mathscr{Y}$-mensurável tal que 
+$|f|$ seja integrável. Nestas condições valem (\ref{Fubini1}) e (\ref{Fubini2}). 
 \end{corolario}
 
 \begin{proof}
@@ -294,7 +303,7 @@ Como $|f|$ é integrável, temos pelo Teorema (\ref{Tonelli}) que
 \begin{eqnarray}\label{Fubini 2}
 \int_X(\int_Y |f|(x,y) d\nu)d\mu=\int_{X\times Y}|f|(x,y) d(\mu\times \nu)<\infty.
 \end{eqnarray}
-segue  a função $\varphi:X\to \mathbb{R}$ definida por $\varphi(x)=\int_Y |f|(x,y) d\nu$ sastisfaz 
+Observe que a função $\varphi:X\to \mathbb{R}$ definida por $\varphi(x)=\int_Y |f|(x,y) d\nu$ sastisfaz 
 $\varphi(x)<\infty$ para $x$-$\mu$ qtp.  Denote por $A_0$ o conjunto dos $x\in X$ tais que $\varphi(x)<\infty$. Então temos que 
 $\mu(X\setminus A_0)=0
 $ e para $x\in A_0$ vale  
