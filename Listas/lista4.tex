@@ -1,0 +1,333 @@
+\chapter*{Lista 4}
+\addcontentsline{toc}{chapter}{Lista 4}
+\chaptermark{}
+
+
+% Inicio da Lista de Exercícios 
+\begin{enumerate}[leftmargin=*]
+
+
+\item 
+Uma função $\varphi :\mathbb{R}\to\mathbb{C}$
+é chamada {\it definida positiva} se para todo
+$n=1,2,\ldots,$ e toda $n$-úpla $(c_1,\ldots,c_n)$
+de números complexos temos
+\[
+	\sum_{k=1}^{n}\sum_{j=1}^{n}
+	\varphi(t_j-t_k)c_j\overline{c}_k
+	\geq 0,
+	\quad
+	\forall \ (t_1,\ldots,t_n)\in\mathbb{R}^n.
+\]
+Mostre que toda função característica é definida positiva.  
+
+
+\item
+Sejam $X$ e $Y$ v.a. com mesma distribuição. 
+Mostre que: 
+	\begin{itemize}
+	\item[a)]
+	se $X$ e $Y$ são independentes, então $X-Y$ tem
+	distribuição simétrica em torno de zero;
+	
+	\item[b)]
+	se $X$ e $Y$ assumem apenas dois valores, então 
+	$X-Y$ tem distribuição simétrica em torno de zero.
+	\end{itemize}
+
+
+
+\item 
+Sejam $\{X_n\}_{n\in\mathbb{N}}$ e $\{Y_n\}_{n\in\mathbb{N}}$
+duas sequências independentes tais que  
+$X_n \overset{\mathscr{D}}{\rightarrow} N(0,1)$ 
+e
+$Y_n \overset{\mathscr{D}}{\rightarrow} N(0,1)$.
+Mostre que $X_n+Y_n \overset{\mathscr{D}}{\rightarrow} N(0,2)$.
+
+
+\item Mostre que é possível uma sequência de funções 
+de distribuição convergir em todo ponto sem o limite 
+ser uma função distribuição.
+(Dica: considere a v.a. constante $X_n\equiv n$)
+
+
+
+\item Prove que se $F_n \to F$ fracamente e $F$ 
+é contínua, então $F_n$ converge uniformemente para
+$F$ em toda reta. 
+
+
+
+
+
+\item Suponha que 
+$X_n \overset{\mathscr{D}}{\rightarrow} N(0,1)$ 
+e $\{a_n\}_{n\in\mathbb{N}}$ é uma sequência 
+de números reais tal que $a_n\to a$. 
+Mostre que 
+$X_n+a_n \overset{\mathscr{D}}{\rightarrow} N(a,1)$ 
+
+
+
+
+\item 
+Sejam $X_1,X_2,\ldots$ v.a.'s tendo distribuição 
+simétrica em torno de zero, isto é, 
+$\mathbb{P}(0\leq X_n\leq t) 
+= 
+\mathbb{P}(-t\leq X_n\leq 0)
+, \forall \ n\in\mathbb{N}$.
+Mostre que se 
+$X_n \overset{\mathscr{D}}{\rightarrow} X$
+
+
+
+
+\item Sejam $X_1,X_2,\ldots$ v.a.'s iid tais que 
+$X_n\sim U[0,\theta]$ (uniforme no intervalo $[0,\theta]$),
+onde $\theta>0$. Mostre que 
+\[
+	Y_n
+	=
+	\sqrt{n}
+	\left[ 
+		\log\left(
+		2\frac{X_1+\ldots+X_n}{n} - \log\theta 
+		\right)
+	\right]
+\]
+converge em distribuição para $N(0,1/3)$.
+
+
+
+
+\item 
+Sejam $X_1,X_2,\ldots$ v.a.'s iid, com 
+$\mathbb{E}[X_1]=0$ e $\mathbb{E}[X_1^2]=2$.
+Encontre o limite em distribuição das seguintes
+sequências:
+\begin{itemize}
+	\item[a)] 
+	$
+	Y_n 
+	= 
+	\sqrt{n} 
+	\displaystyle\ \frac{X_1+\ldots+X_n}{X_1^2+\ldots X_n^2};
+	$
+	
+	
+	\item[b)]
+	$
+	Z_n 
+	= 
+	\displaystyle 
+	\frac{X_1+\ldots+X_n}{\sqrt{X_1^2+\ldots X_n^2}}.
+	$
+\end{itemize}
+
+
+
+
+\item
+Sejam $X_1,X_2,\ldots$ v.a.'s iid tais que 
+$\mathbb{E}[X_1]=0$ e $\text{Var}(X_1)=\sigma^2$,
+onde $0<\sigma^2<+\infty$. Sejam $Y_1,Y_2,\ldots$
+v.a.'s iid tais que $\mathbb{E}[X_1]=\mu$, $\mu\in\mathbb{R}$.
+Prove que 
+\[
+	\frac{Y_1+\ldots+Y_n}{n}
+	+
+	\frac{X_1+\ldots+X_n}{\sqrt{n}}
+	\overset{\mathscr{D}}{\rightarrow}
+	N(\mu,\sigma^2).
+\] 
+
+
+
+
+\item Sejam $X_1,X_2,\ldots$ uma sequência de v.a.'s independentes
+e $X$ uma v.a. discreta com $\mathbb{P}(X=n)=p_n,\ n\geq 1$.
+Seja $F_n$ a distribuição de $X_n$ e $\varphi_n$
+sua função característica. Mostre usando a esperança condicional 
+que a v.a. 
+\[
+	Y= \sum_{n=1}^{\infty} 1_{\{X=n\}}X_n
+\]  
+tem função característica dada por $\varphi = \sum_{n\geq 1}p_n\varphi_n$.
+
+
+
+
+
+
+\item 
+Suponha que $\{(X_n,Y_n)\}_{n\in\mathbb{N}}$ 
+seja uma sequência de vetores aleatórios tomando 
+valores em $\mathbb{R}^2$ que converge em distribuição 
+para $(X,Y)$. Mostre que 
+$X_n+Y_n \overset{\mathscr{D}}{\rightarrow} X+Y$.
+
+
+
+\item 
+Sejam $(\Omega,\F,\P)$ um espaço de probabilidade 
+e $(M,d)$ um espaço métrico. 
+Para cada $n\in\mathbb{N}$ seja $X_n:\Omega\to M$ uma 
+aplicação aleatória, mensurável segundo as $\sigma$-álgebras
+$\F$ e $\mathscr{B}(M)$.  
+\begin{itemize}
+	\item[a)] Mostre que $X_n$ converge em probabilidade
+	para uma v.a. constante $c$ quase certamente se, e somente se,
+	a sequência de medidas probabilidade $Q_n\equiv \P\circ X_n^{-1}$
+	converge fracamente para a medida de probabilidade 
+	$\delta_c:\mathscr{B}(M)\to [0,1]$, definida para cada 
+	mensurável $E\in\mathscr{B}(M)$ por 
+	\[
+		\delta_c(E) 
+		=
+		\begin{cases}
+		1,&\text{se}\ c\in E;
+		\\
+		0,&\text{caso contrário.}
+		\end{cases}
+	\] 
+	[Convergência em probabilidade neste contexto significa 
+	que para todo $\varepsilon>0$ dado, 
+	temos $\P(d(X_n,c)>\varepsilon)\to 0$, quando $n\to\infty$. 
+	]
+	
+	
+	\item[b)]
+	Mostre que se $\{X_n\}_{n\in\mathbb{N}}$ é uma
+	sequência de v.a.'s em $(\Omega,\F,\P)$ que converge em probabilidade 
+	para $X$, 
+	então $\P\circ X_n^{-1}$ converge fracamente para $\P\circ X$.
+	
+	
+\end{itemize}
+
+
+
+
+
+
+	\item
+	Sejam $v_1,\ldots,v_n\in \mathbb{R}^n$ tais que 
+	$\|v_i\|=1$, 
+	onde 
+	$\|\cdot\|$ denota a norma euclidiana em $\mathbb{R}^n$.
+	\begin{itemize}
+	\item[a)]
+	Mostre que existem $\varepsilon_1,\ldots,\varepsilon_n\in\{-1,1\}$
+	tais que
+	\[ 
+		\|\varepsilon_1 v_1 +\ldots+\varepsilon_n v_n\|\leq \sqrt{n}
+	\] 
+	
+	\item[b)] 
+	Mostre que também existem $\delta_1,\ldots,\delta_n\in\{-1,1\}$
+	tais que
+	\[
+		\sqrt{n} \leq \|\delta_1 v_1 +\ldots+\delta_n v_n\|
+	\]
+	(Dica: Calcule a esperança da v.a. $X=\|X_1v_1+\ldots+X_n v_n\|^2$, 
+	onde as v.a.'s $X_i$ são independentes e uniformemente distribuídas 
+	em $\{-1,1\}$)
+	\end{itemize}
+	
+
+
+
+
+
+\item 
+Seja $\mu:\mathscr{B}(\mathbb{R})\to[0,1]$ uma medida de probabilidade
+e $\varphi$ a função característica associada a $\mu$.
+Suponha que 
+\[
+	\int_{\mathbb{R}} |x|^n d\mu(x)<\infty.
+\]
+para algum $n\in\mathbb{N}$.
+Mostre que $\varphi$ tem derivadas contínuas até ordem $n$ 
+e além do mais que 
+\[
+\varphi^{(n)}(t)
+=
+\int_{\mathbb{R}} (ix)^n \ e^{itx}\ \ d\mu(x).
+\]
+
+
+
+
+
+
+
+\item Use o exercício anterior e a expansão em série de 
+Taylor de $\exp(-t^2/2)$ para mostrar que se 
+$X\sim N(0,1)$ então 
+\[
+	\mathbb{E}[X^{2n}]
+	=
+	\frac{(2n)!}{2^n n!}
+	=
+	(2n-1)(2n-3)\cdot\ldots\cdot 3\cdot 1
+	\equiv 
+	(2n-1)!!
+\] 
+
+
+
+
+
+
+
+\item (Cotas do tipo Chernoff)  Seja $\{X_i,\ i=1,\ldots, n\}$ uma coleção  
+de v.a.'s mutuamente independentes tais que 
+$\P(X_i=1)=\P(X_i=-1)=1/2$.
+Denote por $S_n= X_1+\ldots +X_n$. Mostre que
+para todo $a>0$ temos 
+\[
+	\P(\{S_n>a\})< e^{-\frac{a^2}{2n}}
+\]
+(Dica: Observe que para todo $\lambda>0$ temos 
+$$
+\P(\{S_n>a\})=\P(\{\exp(\lambda S_n)>\exp(\lambda a)\}) 
+$$
+aplique a desigualdade de Markov e use que 
+$\cosh^n(\lambda)\leq \exp(\lambda^2 n/2).$
+)
+
+
+\item Usando as ideias do exercício anterior 
+mostre que se $X\sim N(0,1)$ então 
+\[
+	\P(X>a)\leq \exp\left(-\frac{a^2}{2}\right).
+\]
+Note que esta cota é semelhante aquela que
+podemos obter no limite quando $a\to \infty$, 
+usando explicitamente a forma
+da densidade da normal como mostrado abaixo 
+\[
+\P(X>a) 
+= 
+\frac{1}{\sqrt{2\pi}}
+\int_{a}^{\infty} e^{-t^2/2}\, dt
+\sim 
+\frac{1}{\sqrt{2\pi a}}
+\exp\left(-\frac{a^2}{2}\right)
+\]
+
+
+\begin{center}
+{\red CONTINUA ...}
+\end{center}
+
+
+
+
+
+\end{enumerate}
+
+
+
