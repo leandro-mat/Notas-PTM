@@ -110,7 +110,7 @@ $
 = 
 \displaystyle\bigcap_{i \in I}{{A_i}^c}
 $.
-
+\vspace*{0.3cm}
 \item
 $
 \left( \displaystyle\bigcap_{i \in I}{A_i} \right)^c 
@@ -138,6 +138,7 @@ B \cap \left( \displaystyle\bigcup_{i \in I}{A_i} \right)
 \displaystyle\bigcup_{i \in I}{(B\cap A_i)} 
 $.
 %
+\vspace*{0.3cm}
 \item
 $
 B \cup \left( \displaystyle\bigcap_{i \in I}{A_i} \right) 
@@ -157,8 +158,7 @@ $.
 \begin{definicao}[Função Indicadora]\label{def-funcao-indicadora}
 	Seja $A \subseteq \Omega$. 
 	A função indicadora \index{Função!Indicadora} 
-	de $A$ é denotada por $1_A: \Omega \to \R$ e definida 
-	como segue
+	de $A$ é a função $1_A: \Omega \to \R$ definida por 
 	\[
 		1_A(w) =
 			\begin{cases}
@@ -196,34 +196,44 @@ $.
 
 \section{Limite de Conjuntos}
 
-Seja $\{A_n\}$ uma sequência de subconjuntos de $\Omega$.
-A partir desta sequência podemos definir outros 4 novos conjuntos
-como segue:
-\begin{enumerate}
-\item[$\blacklozenge$] 
-	$\inf \limits_{k\geqslant n} A_k 
+Nesta seção queremos introduzir uma noção de 
+convergência de conjuntos. 
+A definição de convergência que vamos dar
+abaixo é baseada em algumas ideias da noção 
+de limite de uma sequência de números reais. 
+Esta ideia consiste
+em definir limites superior e inferior de uma
+sequência de conjuntos e dizer que uma sequência 
+de conjuntos converge para um determinado conjunto
+se os limites superior e inferior coincidem.
+De maneira mais precisa, 
+seja $\{A_n\}_{n\in\mathbb{N}}$ uma sequência 
+arbitrária de subconjuntos de $\Omega$ 
+e para cada $n\in\mathbb{N}$ fixado considere
+os seguintes conjuntos: 
+\[
+\inf \limits_{k\geqslant n} A_k 
 	\equiv 
-	\displaystyle\bigcap_{k=n}^{\infty}{A_k}$.
-
-\item[$\blacklozenge$] 
-	$\sup \limits_{k\geqslant n} A_k 
+	\displaystyle\bigcap_{k=n}^{\infty}{A_k}
+\qquad\text{e}\qquad
+\sup \limits_{k\geqslant n} A_k 
 	\equiv 
-	\displaystyle\bigcup_{k=n}^{\infty}{A_k}$.
-
-\item[$\blacklozenge$] 
-	$\liminf \limits_{n \to \infty} A_n 
+	\displaystyle\bigcup_{k=n}^{\infty}{A_k}.
+\]
+Os conjuntos limite inferior e superior da sequência 
+$\{A_n\}_{n\in\mathbb{N}}$ são definidos, respectivamente,
+por
+\[
+	\liminf \limits_{n \to \infty} A_n 
 	\equiv 
 	\displaystyle\bigcup_ {n\geqslant 1} 
 		\left(\displaystyle\bigcap_{k=n}^{\infty}{A_k} \right)
-	$.
-
-\item[$\blacklozenge$] 
-	$\limsup \limits_{n \to \infty} A_n 
+\qquad\text{e}\qquad
+	\limsup \limits_{n \to \infty} A_n 
 	\equiv 
 	\displaystyle\bigcap_ {n\geqslant 1} 
-		\left(\displaystyle\bigcup_{k=n}^{\infty}{A_k} \right)
-	$.
-\end{enumerate}
+		\left(\displaystyle\bigcup_{k=n}^{\infty}{A_k} \right).
+\]
 
 
 
@@ -231,55 +241,66 @@ como segue:
 
 
 \begin{definicao}[Limite de uma Sequência de Conjuntos]
-	Se uma sequência de conjuntos $B_n \subseteq \Omega$ é tal que 
+	Seja $\{A_n\}_{n\in\mathbb{N} }$  uma sequência de conjuntos.
+	Se existe um conjunto $A$ tal que 
 	\[
-		\liminf \limits_{n \to \infty} B_n 
+		\liminf \limits_{n \to \infty} A_n 
 		= 
-		B
+		A
 		=
-		\limsup \limits_{n \to \infty} B_n, 
+		\limsup \limits_{n \to \infty} A_n, 
 	\]	
-	então dizemos que existe $\lim \limits_{n \to \infty} B_n = B$.
+	então dizemos que a sequência de conjuntos 
+	$\{A_n\}_{n\in\mathbb{N}}$ tem limite $A$  
+	e usamos a seguinte notação para indicar este fato 
+	$\lim \limits_{n \to \infty} A_n = A$.
 \end{definicao}
 
 
 
-
-\begin{observacao}
-Com um resultado sobre limite de sequências monótonas de conjuntos, 
-mostraremos mais a frente que
-		 \[
-		 	\liminf \limits_{n\to \infty}A_n 
-			=
-			\lim \limits_{n\to \infty}\left(\inf \limits_{k\geqslant n}A_k \right).
-		 \]
-\end{observacao}
-
-
-
-
-
-
+Abaixo apresentamos um lema que caracteriza os 
+conceito de limite inferior e superior em 
+termos de funções tomando valores no 
+conjunto dos números reais. Esta caracterização 
+é também muito útil para que possamos interpretar
+de maneira intuitiva ambos conjuntos.  
 
 
 \begin{lema}
-Seja $\{A_n\}$ uma sequência de subconjuntos de $\Omega$.
+Seja $\{A_n\}_{n\in\mathbb{N}}$ uma sequência de subconjuntos de $\Omega$.
+Então as seguintes igualdades são válidas:
 \begin{enumerate}
 \item 
 $\displaystyle\limsup_{n\to\infty} A_n 
 = 
-\{ w \in \Omega;\ \sum_{n \geqslant 1} 1_{A_n}(w)= \infty \}$.
+\left\{ 
+w \in \Omega: \ \sum_{n \geqslant 1} 1_{A_n}(w)= \infty 
+\right\}
+$.
 
-\item  \ \\[-0.4cm] \hspace*{-0.35cm} % Arrumar esta gambiarra no futuro
-$
-\begin{array}{rl}
-\displaystyle\liminf_{n\to\infty} A_n 
-&= \{ w \in \Omega;\ w \in A_n \text{ para todo $n$ excepto uma quantidade finita} \} \\
-&= \{w \in \Omega;\ \sum_{n\geqslant 1} 1_{A_n^c}(w) < \infty \} \\[0.2cm]
-&= \{w \in \Omega;\ w \in A_n, \forall n \geqslant n_0(w) \}. 
-\end{array} 
-$
+\vspace*{0.3cm}
 
+
+\item  
+$
+\begin{aligned}[t]
+\liminf_{n\to\infty} A_n 
+&=
+	\{ w \in \Omega:
+		\ w \in A_n\ \mathrm{para\ todo}\ n\ \mathrm{exceto\ uma\ quantidade\ finita} 
+	\} 
+\\
+&= 
+	\left\{w \in \Omega:
+		\ \sum_{n\geqslant 1} 1_{A_n^c}(w) < \infty 
+	\right\} 
+\\[0.2cm]
+&= 
+	\{w \in \Omega:
+		\ w \in A_n, \forall n \geqslant n_0(w) 
+	\}. 
+\end{aligned} 
+$
 \end{enumerate}
 \end{lema}
 
@@ -424,6 +445,15 @@ e usar as Leis de De Morgan.
 
 
 
+\begin{exercicio}
+Com um resultado sobre limite de sequências monótonas de conjuntos, 
+mostraremos mais a frente que
+		 \[
+		 	\liminf \limits_{n\to \infty}A_n 
+			=
+			\lim \limits_{n\to \infty}\left(\inf \limits_{k\geqslant n}A_k \right).
+		 \]
+\end{exercicio}
 
 
 
