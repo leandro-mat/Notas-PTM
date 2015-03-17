@@ -266,16 +266,25 @@ conjunto dos números reais. Esta caracterização
 de maneira intuitiva ambos conjuntos.  
 
 
-\begin{lema}
+\begin{lema}\label{lema-caracterizacao-limsup-liminf}
 Seja $\{A_n\}_{n\in\mathbb{N}}$ uma sequência de subconjuntos de $\Omega$.
 Então as seguintes igualdades são válidas:
 \begin{enumerate}
 \item 
-$\displaystyle\limsup_{n\to\infty} A_n 
-= 
+$
+\begin{aligned}[t]
+\displaystyle
+\limsup_{n\to\infty} A_n 
+&=
+	\{ w \in \Omega:
+		\ w \in A_n\ \mathrm{para\ infinitos\ valores\ de}\ n
+	\} 
+\\
+&= 
 \left\{ 
 w \in \Omega: \ \sum_{n \geqslant 1} 1_{A_n}(w)= \infty 
-\right\}
+\right\}.
+\end{aligned}
 $.
 
 \vspace*{0.3cm}
@@ -307,8 +316,10 @@ $
 \begin{proof}
 Prova do item $1$. Suponha que $w \in \limsup A_n$, então 
 $w \in \cup_{k \geq n} A_k,
-\forall n \in \N$, logo existe $k_n \geqslant n$ tal que $w \in A_{k_n}$. 
-Assim
+\forall n \in \N$, logo existe 
+$k_n(\omega)\equiv k_n \geqslant n$ tal que $w \in A_{k_n}$. 
+Portanto $w$ pertence a infinitos $A_n$'s e além do mais temos 
+que 
 %
 	\[
 		\sum \limits_{n \geqslant 1} 1_{A_n}(w) 
@@ -320,18 +331,20 @@ Assim
 %
 Reciprocamente, 
 se 
-$ w \in \{ w \in \Omega;\ \sum_{n \geqslant 1} 1_{A_n}(w)= \infty \}$, 
-então para infinitos valores de $k$ temos que $w \in A_k$. 
-Portanto $w \in \limsup A_n$.
+$ w_0 \in \{ w \in \Omega;\ \sum_{n \geqslant 1} 1_{A_n}(w)= \infty \}$, 
+então para infinitos valores de $k$ temos que $w_0 \in A_k$. 
+Logo  $w_0 \in \cup_{k\geq n} A_k$ para todo $n\in\mathbb{N}$.
+De onde podemos concluir que 
+$w_0 \in \cap_{n\in\mathbb{N}}\cup_{k\geq n} A_k=\limsup A_n$.
 
-A prova do item $2$ segue diretamente do item $1$. 
+A prova do item $2$ é feita de maneira análoga a do item $1$. 
 \end{proof}
 
 
 
-\begin{exercicio} 
-Seja $\{A_n\}$ uma sequência de subconjuntos de $\Omega$.
-Mostre que as seguintes igualdades são verdadeiras:
+\begin{exercicio}\label{exercicio-continencia-liminf-limsup} 
+Seja $\{A_n\}_{n\in\mathbb{N}}$ uma sequência de subconjuntos de $\Omega$.
+Mostre que 
 %
 \begin{enumerate}
 \item $\liminf A_n \subseteq \limsup A_n$.
@@ -345,18 +358,19 @@ Mostre que as seguintes igualdades são verdadeiras:
 
 
 
-\begin{observacao} Este comentário pode ser omitido 
-por leitores que nunca fizeram um curso introdutório 
-de Probabilidade.
+\begin{observacao} 
+{\bf Para leitores que já fizeram um curso introdutório 
+de Probabilidade.}
 Seja $\{X_n,\ n\geqslant 0\}$ uma sequência de v.a.'s.
-Uma das maneiras de mostrar que $X_n \to X$ q.c. 
-é provar que   
+Uma das maneiras de mostrar que $X_n \to X$ quase certamente
+(q.c.) consiste em provar, para todo $\epsilon>0$, que 
 \[
-	\mathbb{P}( |X_n-X| > \epsilon \ \text{infinitas vezes} )=0,
+	\mathbb{P}( |X_n-X| > \epsilon \ \text{infinitas vezes} )=0.
 \] 
-em outras palavras, 
-se denotamos por $A_n= \{ |X_n-X|> \epsilon\}$ 
-então basta provar que $\mathbb{P} (\limsup A_n )=0$.
+Pelo item 1 do Lema \ref{lema-caracterizacao-limsup-liminf} 
+a igualdade acima é verdadeira se, e somente se, temos que
+$\mathbb{P} (\limsup A_n )=0$, onde
+$A_n=\{|X_n-X|>\epsilon\}$.
 Voltaremos a este critério posteriormente e apresentaremos
 sua prova no momento apropriado.
 \end{observacao}
@@ -368,13 +382,15 @@ sua prova no momento apropriado.
 
 
 \begin{definicao}[Sequências Monótonas de Conjuntos]
-Seja $\{A_n\}$ é uma sequência de conjuntos de $\Omega$. 
-Dizemos que $\{A_n\}$ é monótona não-decrescente 
-se $A_1 \subseteq A_2 \subseteq \ldots$.
+Seja $\{A_n\}_{n\in\mathbb{N}}$ é uma sequência de 
+subconjuntos de $\Omega$. 
+Dizemos que $\{A_n\}_{n\in\mathbb{N}}$ é uma sequência 
+monótona não-decrescente 
+se $A_n \subseteq A_{n+1}$ para todo $n\in\mathbb{N}$.
 Analogamente definimos sequência não-crescente.
 Usaremos as notações $A_n \nearrow$ ou $A_n \uparrow$ 
 (analogamente $A_n\searrow$ ou $A_n \downarrow$)
-para indicar que $A_n$ é uma sequência 
+para indicar que $\{A_n\}_{n\in\mathbb{N}}$ é uma sequência 
 não-decrescente (não-crescente).
 \end{definicao}
 
@@ -385,15 +401,15 @@ não-decrescente (não-crescente).
 
 
 \begin{proposicao}
- Suponha que $\{A_n\}$ é uma sequência monótona.
+ Seja $\{A_n\}_{n\in\mathbb{N}}$ é uma sequência monótona.
  \begin{enumerate}
- \item Se $A_n \nearrow$ então 
- 	$\exists \lim \limits_{n \to \infty} A_n
+ \item Se $A_n \nearrow$ então existe
+ 	$ \lim \limits_{n \to \infty} A_n
  	= 
  	\displaystyle\bigcup_{n\geqslant 1} {A_n}$.
  	
- \item Se $A_n \searrow$ então 
- 	$\exists \lim \limits_{n \to \infty} A_n
+ \item Se $A_n \searrow$ então existe 
+ 	$ \lim \limits_{n \to \infty} A_n
  	= 
  	\displaystyle\bigcap_{n\geqslant 1} {A_n}$.
  \end{enumerate}
@@ -401,8 +417,8 @@ não-decrescente (não-crescente).
 
 
 \begin{proof}
-Vamos provar inicialmente o item 1. 
-Neste caso queremos mostrar que 
+Vamos provar inicialmente o item 1,
+isto é, 
 %
 \[
 	\liminf_{n\to\infty} A_n
@@ -412,17 +428,19 @@ Neste caso queremos mostrar que
 	\displaystyle\bigcup_{n\geqslant 1} {A_n}.
 \] 
 %
-Já que $A_j \subseteq A_{j+1}$
-então $\cap_{k\geqslant n} {A_k}=A_n$.
-Assim segue da definição que 
+Por hipótese temos $A_j \subseteq A_{j+1}$ e 
+portanto podemos afirmar que $\cap_{k\geqslant n} {A_k}=A_n$.
+Assim segue da definição de limite inferior que 
 \[
 \liminf_{n\to\infty} A_n 
 = 
 \bigcup_{n\geqslant 1} {A_n}.
 \]
-Usando a definição de $\limsup$ e que a interseção de 
-uma sequência de conjuntos
-está contida em qualquer elemento da sequência temos 
+Usando a definição de limite superior, observando que 
+a interseção de uma sequência arbitrária de conjuntos
+está contida em qualquer elemento da sequência, 
+a igualdade obtida acima e o item 1 do 
+Exercício \ref{exercicio-continencia-liminf-limsup} temos que
 \[
 	\limsup_{n\to\infty} A_n 
 	=
@@ -435,6 +453,7 @@ está contida em qualquer elemento da sequência temos
 	\subseteq 
 	\limsup_{n\to\infty} A_n.
 \]
+
 Para provar o item 2 basta proceder de maneira análoga feita acima 
 e usar as Leis de De Morgan.
 \end{proof}
@@ -446,12 +465,20 @@ e usar as Leis de De Morgan.
 
 
 \begin{exercicio}
-Com um resultado sobre limite de sequências monótonas de conjuntos, 
-mostraremos mais a frente que
+Seja $\{A_n\}_{n\in\mathbb{N}}$ uma sequência de conjuntos. 
+Usando a proposição acima prove que
 		 \[
 		 	\liminf \limits_{n\to \infty}A_n 
 			=
-			\lim \limits_{n\to \infty}\left(\inf \limits_{k\geqslant n}A_k \right).
+			\lim \limits_{n\to \infty}
+			\left(\inf \limits_{k\geqslant n}A_k \right)
+%
+			\qquad\text{e}\qquad
+%
+		 	\limsup \limits_{n\to \infty}A_n 			
+			=
+			\lim_{n\to\infty}
+			\left( \sup \limits_{k\geqslant n} A_k \right).
 		 \]
 \end{exercicio}
 
@@ -463,35 +490,57 @@ mostraremos mais a frente que
 \section{Relações de ``Dualidade''}
 
 Nesta seção deixamos como exercício para o leitor a prova de
-seis relações 
-entre a $\limsup,\ \liminf$ de conjuntos e de suas respectivas 
-funções indicadoras; bem como algumas relações ligadas as operações
+seis relações entre os limites superior e inferior de conjuntos 
+e de suas respectivas funções indicadoras; 
+bem como algumas relações ligadas as operações
 básicas de conjuntos. Estas relações explicam por si só a escolha 
 do título desta seção. 
 
 \begin{exercicio}
-Sejam $\{A_n\}$ uma sequência de subconjuntos de um espaço $\Omega$, 
-$A$ e $B$ dois subconjuntos arbitrários de $\Omega$. Mostre que 
+Sejam $\{A_n\}_{n\in\mathbb{N}}$ uma sequência de 
+conjuntos, $A$ e $B$ dois conjuntos arbitrários. Mostre que 
 \begin{enumerate}
 \item 
-$1_{\inf_{k\geqslant n} A_k} = \inf \limits_{k\geqslant n} 1_{A_k}$.
+$
+1_{\inf_{k\geqslant n} A_k} 
+= 
+\inf \limits_{k\geqslant n} (1_{A_k})
+$.
 
 \item
-$1_{\sup_{k\geqslant n} A_k} = \sup \limits_{k\geqslant n} 1_{A_k}$.
+$
+1_{\sup_{k\geqslant n} A_k} 
+= 
+\sup \limits_{k\geqslant n} (1_{A_k})
+$.
 
 \item
-$1_{\cup_{n\geqslant 1} A_n} 
+$
+1_{\cup_{n=1}^{\infty} A_n} 
 \leqslant 
-\sum \limits_{n \geqslant 1} 1_{A_n}$.
+\sum \limits_{n=1}^{\infty} 1_{A_n}
+$.
 
 \item
-$1_{\limsup A_n} = \limsup 1_{A_n}$.
+$
+1_{\limsup A_n} 
+= 
+\limsup (1_{A_n})
+$.
 
 \item
-$1_{\liminf A_n} = \liminf 1_{A_n}$.
+$
+1_{\liminf A_n} 
+= 
+\liminf (1_{A_n})
+$.
 
 \item
-$ 1_{A \triangle B} = 1_A + 1_B (\text{mod 2})$.
+$ 
+1_{A \triangle B} 
+= 
+1_A + 1_B \ (\mathrm{mod}\ 2)
+$.
 \end{enumerate}
 \end{exercicio}
 
