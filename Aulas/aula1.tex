@@ -5,8 +5,8 @@
 \section{Teoria Básica de Conjuntos}
 
 Nesta seção são introduzidos alguns fatos básicos da teoria
-conjuntos. O ponto de vista adotado aqui é o da "teoria ingênua
-de conjuntos" e não temos objetivos de discutí-la do ponto 
+conjuntos. O ponto de vista adotado aqui é o da 
+``teoria ingênua de conjuntos'' e não temos objetivos de discutí-la do ponto 
 vista axiomático.
 
 
@@ -16,7 +16,7 @@ consideradas com relação a este espaço.
 A coleção de todos os subconjuntos de $\Omega$ será 
 denotada por $\mathcal{P}(\Omega)\equiv \{A: A\subset \Omega\}$ e 
 será chamado de conjunto das partes de $\Omega$.
-Em geral, usaremos as letras maiúsculas $A,B$ e etc. para denotar
+Em geral, usaremos as letras maiúsculas $A,B$ e etc$\ldots$ para denotar
 um subconjunto arbitrário de $\Omega$. Quando quisermos nos referir
 a uma coleção de subconjuntos de $\Omega$ usaremos letras maiúsculas 
 caligráficas como $\mathcal{A}, \mathcal{B}$ e etc. Finalmente,
@@ -25,53 +25,62 @@ para denotar um ponto do espaço $\Omega$.
 
 
 
-O complementar de um conjunto $A$ será 
-denotado por $A^{c}= \{w \in \Omega; w \notin A\}$. 
-Se $I$ é um conjunto de índices arbitrários e 
-para cada $i\in I$ temos que $A_i\subset \Omega$ então 
-a interseção e união dos conjuntos $A_i$'s sobre a coleção
-$I$ são dados, respectivamente, por 
-\begin{enumerate}
-	\item[]  $\displaystyle\bigcap_{t \in T}{A_t}
-							= 
-						\{ w \in \Omega;\ w \in A_t,\ \forall t \in T\}$.
-	\item[]  $\displaystyle\bigcup_{t \in T}{A_t}
-							= 
-						\{ w \in \Omega;\ w \in A_t,\ \text{para algum}\ t \in T \}$.
-\end{enumerate}
+O complementar de um conjunto $A$ ou simplesmente complemento de $A$ 
+será denotado por $A^{c}\equiv \{w \in \Omega; w \notin A\}$. 
+Se $T$ é um conjunto de índices arbitrários e 
+para cada $t\in T$ temos que $A_t\subset \Omega$ então 
+a interseção e união dos conjuntos $A_t$'s sobre a coleção
+$T$ são dados, respectivamente, por 
+\[ 
+\bigcap_{t \in T}{A_t}
+= 
+\{ w \in \Omega:\  \ w \in A_t,\ \forall t \in T\}.
+\]
+e
+\[
+\bigcup_{t \in T}{A_t}
+= 
+\{ w \in \Omega:\ w \in A_t,\ \text{para algum}\ t \in T \}.
+\]
 %
 %
 %
 Se $A \cap B = \emptyset$, dizemos que $A$ e $B$ são disjuntos.
-Dizemos que uma sequência de conjuntos 
-$A_1, A_2,\ldots$ é mutuamente disjunta (ou dois a dois disjunta) 
-se $A_i \cap A_j = \emptyset$ sempre que $i \neq j$. 
-Quando $A_1,A_2,\ldots $ for uma sequência mutuamente disjunta, 
-vamos usar a notação abaixo para denotar a união dos conjuntos $A_n$'s
+De maneira mais geral, uma família de conjuntos 
+$\{A_t\}_{t\in T}$ é dita mutuamente disjunta (ou dois a dois disjunta) 
+se $A_i \cap A_j = \emptyset$ para todo $i,j\in T$ com $i\neq j$. 
+Por questão de simplicidade vamos usar 
+a notação 
 \[
-	\displaystyle\bigcup_{n \geqslant 1}{A_n} = \sum_{n \geqslant 1} A_n.	
+	\bigsqcup_{t \in T} A_t
 \]
+para indicar a união de uma 
+família $\{A_t\}_{t\in T}$ de conjuntos
+mutuamente disjunta.
 
+\bigskip
 \noindent
-\textbf{Outras Notações:} Quando for conveniente 
-usaremos as seguintes notações e convenções:
-\begin{enumerate}
-\item[$\blacklozenge$] 
-$AB\equiv A \cap B$.
+\textbf{Observação}. 
+Alguns autores usam simplesmente a notação $AB$ 
+para indicar a interseção $A\cap B$. 
+\bigskip
 
-\item[$\blacklozenge$] 
-$A \setminus B \equiv A \cap B^c$.
 
-\item[$\blacklozenge$] 
-Diferença Simétrica 
+Vamos usar as notações $A \setminus B$ ou $A-B$
+para denotar o conjunto diferença entre $A$ e $B$,
+que é definido por $A\setminus B\equiv  A \cap B^c$.
+É importante observar que em geral, 
+$A - B \neq B - A$.
+Outra operação, entre conjuntos, que vamos 
+considerar com frequência é 
+a diferença simétrica entre dois conjuntos $A$ e $B$. 
+Esta operação é definida por 
 $A\triangle B = (A \setminus B) \cup (B\setminus A).$
-
-\item[$\blacklozenge$] 
-$\emptyset^c = \Omega$.
-
-\item[$\blacklozenge$] 
-$\Omega^c = \emptyset$.
-\end{enumerate}
+Segue da comutatividade da união, 
+que a diferença simétrica é uma operação comutativa,
+isto é,  $A\triangle B = B\triangle A$.
+Por último, vamos convencionar que 
+$\emptyset^c = \Omega$ e $\Omega^c = \emptyset$.
 
 
 
