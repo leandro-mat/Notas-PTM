@@ -57,6 +57,21 @@ em aditividade finita (tomando $A_n=\emptyset$ para $n\geq m$, para algum $m\in\
 \end{exercicio}
 
 
+
+\begin{exercicio}[Monotonicidade da Medida]
+\label{exercicio-monotonicidade-medida}
+	Seja $\Omega$ um conjunto não vazio e 
+	$A\subset B$ elementos de uma álgebra 
+	$\mathcal{A}$ de suconjuntos de $\Omega$.
+	Mostre que se $\mu:\mathcal{A}\to [0,+\infty]$ é 
+	uma medida então
+	\[
+		\mu(A)\leq \mu(B).
+	\] 
+\end{exercicio}
+
+
+
 \begin{definicao}[Medida de Probabilidade]
 Seja $\mathcal{F}$ uma $\sigma$-álgebra de conjuntos de um espaço $\Omega$ e 
 $P:\mathcal{F}\to [0,\infty]$ uma medida tal que $P(\Omega)=1$.
@@ -84,7 +99,8 @@ $$
 		\leq \sum_{n=1}^{\infty} \mu(A_n),
 $$
 na última desigualdade usamos que $B_n\subset A_n$ para todo $n\in\mathbb{N}$
-e monotonicidade de $\mu$. 
+e monotonicidade de $\mu$, veja o 
+Exercício \ref{exercicio-monotonicidade-medida}. 
 
 
 \begin{proposicao}[Continuidade da Medida]
@@ -105,52 +121,15 @@ $$
 \end{itemize}
 \end{proposicao}
 \begin{proof}
-A prova desta proposição é deixada como exercício para o leitor.
+A prova é deixada como exercício para o leitor.
 \end{proof}
 
 
-\medskip
-Seja $\mu$ uma medida em uma $\sigma$-álgebra $\mathcal{F}$.
-A $\sigma$-álgebra $\mathcal{F}$ é dita $\mu$-{\bf completa} 
-\index{$\sigma$-álgebra!$\mu$-completa}
-se para todo $N\in \mathcal{F}$ e para todo $A\subset N$, 
-com $\mu(N)=0$ temos $A\in \mathcal{F}$.
-Em outras palavras, $\mathcal{F}$ é $\mu$-completa 
-se os subconjuntos dos conjuntos de medida $\mu$ zero
-pertecem a $\sigma$-álgebra $\mathcal{F}$.
-Neste caso dizemos também que $\mu$ é completa.
-Dada qualquer medida $\mu$ definida sobre uma 
-$\sigma$-álgebra $\mathcal{F}$ é fácil verificar que 
-a coleção 
-$$
-\overline{\mathcal{F}}
-=
-\{ 	
-	C=A\cup B: A\in\mathcal{F}, B\subset N\ \text{para algum}\ N\in\mathcal{F}\ \text{com}\ \mu(N)=0	
-\}
-$$
-é uma $\sigma$-álgebra $\overline{\mu}$ completa, onde $\overline{\mu}(A\cup B):=\mu(A)$.
-Observe que $\overline{\mu}$ está bem definida e 
-que $\overline{\mu}$ é uma medida definida em $\overline{\mathcal{F}}$ que estende $\mu$.
-Esta extensão de $\mu$ é chamada de \index{Completamento! de uma medida} 
-{\it completamento}
-de $\mu$.
 
 
+\bigskip
 
-
-
-Passamos agora para o estudo de um dos teoremas básicos mais importantes 
-na Teoria da Medida. 
-Uma das conclusões mais importantes deste teorema, conhecido na literatura como 
-Teorema de Extensão de Carathéodory, 
-é que qualquer medida $\mu$ definida sobre uma álgebra
-$\mathcal{A}$ sempre pode ser estendida 
-a uma medida $\overline{\mu}$, 
-definida sobre a
-$\sigma$-álgebra gerada por $\mathcal{A}$, que 
-é simplesmente a ``interseção'' de todas as $\sigma$-álgebras 
-contendo $\mathcal{A}$, veja os dois exercícios abaixo.
+ 
 
 \begin{exercicio}
 	Sejam $I$ um conjunto arbitrário de índices e 
@@ -173,47 +152,34 @@ contendo $\mathcal{A}$, veja os dois exercícios abaixo.
 	\sigma\text{-álgebra}}}
 	 \!\!\!\!\!\!\!\!\! \mathcal{F}
 	$$
-	é uma $\sigma$-álgebra. Esta $\sigma$-álgebra é conhecida como a 
-	$\sigma$-álgebra
-	gerada pela coleção $\mathcal{A}$. Em um certo sentido, esta é a ``menor'' 
-	$\sigma$-álgebra contendo a coleção $\mathcal{A}$.
+	é uma $\sigma$-álgebra e além do mais é a ``menor'' 
+	$\sigma$-álgebra contendo $\mathcal{A}$ no sentido da inclusão. 
+	Esta $\sigma$-álgebra é conhecida como a 
+	$\sigma$-álgebra gerada pela coleção $\mathcal{A}$. 
 \end{exercicio}
 
-
+\begin{exercicio}
+	Mostre que, em geral, a união de $\sigma$-álgebras 
+	não é uma $\sigma$-álgebra.
+\end{exercicio}
 
 \section{O Teorema de Dynkin}
 
 \begin{definicao} 
     Dada uma coleção $\mathcal{C} $ de subconjuntos de $\Omega$, a menor
-    $\sigma$-álgebra que contém todos os eventos de $\mathcal{C}$ é chamada
+    $\sigma$-álgebra que contém todos os elementos de $\mathcal{C}$ é chamada
     de \textbf{$\sigma$-álgebra gerada por $\mathcal{C}$} e será
     denotada por $\sigma(\mathcal{C})$.
 \end{definicao} 
-A existência desta $\sigma$-álgebra é garantida pela afirmação 
+A existência da $\sigma$-álgebra da definição acima 
+é garantida pela afirmação 
 contida no Exercício \ref{exercicio-sigma-alg-gerada}.
 	    
 	    
 	    
 	    
-	    
-    \begin{exercicio}\label{exer-sigma-gerada-contida-todas}
-        Seja $\mathcal{C}$ uma coleção de subconjuntos de $\Omega$ e $\mathcal{F}$
-        uma $\sigma$-álgebra de $\Omega$ tal que $\mathcal{C} \subset \mathcal{F}$.
-        Mostre que  $\sigma(\mathcal{C}) \subset \mathcal{F}$.
-    \end{exercicio}
-
+	   
     
-    Observamos que o exercício acima não vale para a união de $\sigma$-álgebras. 
-    Dada uma coleção de $\sigma$-álgebras, digamos $\mathcal{F}_{i}, i \in I$,
-    consideramos a $\sigma$-álgebra mais grossa contendo todas as $\sigma$-álgebras 
-    $\mathcal{F}_{i}$, isto é, 
-    $\vee_{\lambda \in \Lambda} \mathcal{F}_{\lambda} = 
-    \sigma (\cup_{\lambda \in \Lambda} \mathcal{F}_\lambda)$. 
-    
-    É muito comum trabalhar com $\sigma$-álgebras 
-    $\mathcal{F}= \sigma(\mathcal{C})$ em que $\mathcal{C}$ é uma 
-    coleção fechada para a interseção finita. Esta observação motiva 
-    a seguinte definição:
     
 \begin{definicao}[$\pi$-sistema]\label{def-pi-sistema}
    Uma coleção $\mathcal{C} $ fechada para interseções finitas é 
@@ -225,7 +191,46 @@ contida no Exercício \ref{exercicio-sigma-alg-gerada}.
 	forma $(a,b)$ com $a<b$ é um $\pi$-sistema.
 \end{exemplo}
  
-    
+
+Outro exemplo importante de $\pi$-sistema é obtido 
+considerando a coleção de todos os cilindros finito
+dimensionais de um produto cartesiano
+infinito de cópias de $\mathbb{R}$.
+De maneira mais precisa, considere o espaço 
+\[
+\Omega 
+= 
+{\mathbb{R}}^{\mathbb{N}}
+=
+\mathbb{R}\times\mathbb{R}\times\ldots 
+\equiv
+\{(x_1,x_2,\ldots): x_i\in\mathbb{R} \}.
+\]
+Um subconjunto $F\subset \Omega$ é
+chamado de um cilindro finito dimensional 
+se existe uma quantidade finita de subconjuntos
+$A_1,\ldots A_n\subset \mathbb{R}$ tal que 
+$
+F 
+= 
+A_1\times\ldots\times A_n\times \mathbb{R}\times\mathbb{R}\times\ldots$.
+Observe que alguns $A_i$'s podem ser iguais a $\mathbb{R}$ e que 
+em geral o índice $n$ depende de $F$.
+Para ver que a coleção dos cilindros é de fato um 
+$\pi$-sistema consideramos dois cilindros arbitrários
+$F_1=A_1\times\ldots\times A_n\times \mathbb{R}\times\mathbb{R}\times\ldots$
+e 
+$F_2=B_1\times\ldots\times B_m\times \mathbb{R}\times\mathbb{R}\times\ldots$.
+Sem perda de generalidade, podemos assumir que $n\leq m$.
+Desta forma temos que a interseção dos cilindros $F_1$ e $F_2$ é dada por 
+\[
+F_1\cap F_2 
+= 
+(A_1\cap B_1)\times\ldots\times (A_n\cap B_n)\times B_{n+1}\times\ldots\times B_m
+\times \mathbb{R}\times\mathbb{R}\times\ldots
+\]
+que é também um cilindro o que mostra que a coleção dos cilindros é
+de fato um $\pi$-sistema.
 \begin{definicao}
  \index{$\lambda$-sistema}
     Um $\lambda$-sistema é uma coleção $\mathcal{L}$ de subconjuntos
@@ -254,14 +259,12 @@ contida no Exercício \ref{exercicio-sigma-alg-gerada}.
     Seja $ \mathcal{L}(\mathcal{C}) = \cap_{i\in I} \mathcal{L}_i $, 
     onde $I$ indexa a coleção de todos os $\lambda$-sistemas 
     contendo $\mathcal{C}$. 
-    Para provar o teorema, vamos demonstrar que 
+    Para provar o teorema, basta mostrar que 
     $\mathcal{L}(\mathcal{C} )$ é um $\pi$-sistema e também 
-    um $\lambda$-sistema.
-    Assim segue do Exercício \ref{pi-lamda-sigma} que 
-    $ \mathcal{L}(\mathcal{C})$ é uma $\sigma$-álgebra.  
-    Para obter a conclusão do teorema basta usar 
-    o Exercício \ref{exer-sigma-gerada-contida-todas} 
-    que neste caso afirma que
+    um $\lambda$-sistema, pois do Exercício \ref{pi-lamda-sigma} 
+    podemos concluir que $ \mathcal{L}(\mathcal{C})$ 
+    é uma $\sigma$-álgebra (contendo $\mathcal{C} $ )
+    e portanto que
     $\sigma(\mathcal{C}) \subset \mathcal{L}(\mathcal{C})\subset \mathcal{L}$.
     
     Vamos mostrar primeiramente que $\mathcal{L}(\mathcal{C})$ é um um  
@@ -271,47 +274,61 @@ contida no Exercício \ref{exercicio-sigma-alg-gerada}.
     $\emptyset \in \mathcal{L}_i$, pois $\emptyset = \Omega^c \in \mathcal{L}_i$. 
     Logo $\emptyset\in \mathcal{L}(\mathcal{C})$.
     De maneira análoga para qualquer $A \in \mathcal{L}(\mathcal{C})$, temos que 
-    $A \in \mathcal{L}_i$ para todo $i\in I$, de onde segue que
+    $A^c \in \mathcal{L}_i$ para todo $i\in I$, de onde segue que
     $A^c \in \mathcal{L}(\mathcal{C})$.
     Considere agora uma sequência dois a dois disjunta de subconjuntos de 
     $\mathcal{L}(\mathcal{C})$, digamos $\{A_n\}$. 
     Para cada $n\ge 1$, temos que $A_n \in\mathcal{L}_i$ para todo $i\in I$ 
     o que implica que $\cup_{n=1}^{\infty} A_n \in \mathcal{L}_i$ para todo $i\in I$ 
-    e portanto $\cup_{n=1}^{\infty} A_n \in  \mathcal{L}(\mathcal{C})$ e temos provado
-    que $\mathcal{L}(\mathcal{C})$ é um $\lambda$-sistema. 
+    e portanto $\cup_{n=1}^{\infty} A_n \in  \mathcal{L}(\mathcal{C})$ 
+    o que concluí a prova de que
+    $\mathcal{L}(\mathcal{C})$ é um $\lambda$-sistema. 
     
-    Vamos mostrar agora que $ \mathcal{L}(\mathcal{C})$ é um $\pi$-sistema. 
-    Fixado
-    $A \in  \mathcal{L}(\mathcal{C})$ defina a seguinte coleção:  
+    Agora vamos mostrar que $ \mathcal{L}(\mathcal{C})$ é um $\pi$-sistema. 
+    Para fazer isto vamos precisar de algumas famílias de conjuntos especiais.  
+    Estas famílias são dadas da seguinte forma: para cada 
+    $A \in  \mathcal{L}(\mathcal{C})$ seja  
     $\mathcal{L}_A := \{ B \subset \Omega : A \cap B \in  \mathcal{L}(\mathcal{C})\}$. 
     \\
-    \noindent{\bf Afirmação-1}. Se $ \mathcal{L}(\mathcal{C}) \subset  \mathcal{L}_A$, para todo o 
-    $A \in  \mathcal{L}(\mathcal{C})$ então $\mathcal{L}(\mathcal{C})$ é um $\pi$-sistema.
-
-	Para ver que a Afirmação-1 é verdadeira, basta notar que fixados 
+    \noindent{\bf Afirmação}. 
+    Se $ \mathcal{L}(\mathcal{C}) \subset  \mathcal{L}_A$, 
+    para todo $A \in  \mathcal{L}(\mathcal{C})$ 
+    então $\mathcal{L}(\mathcal{C})$ é um $\pi$-sistema.
+	De fato, dados 
 	$A,B\in\mathcal{L}(\mathcal{C})$ temos por hipótese que
-	$\mathcal{L}(\mathcal{C}) \subset  \mathcal{L}_B$ e portanto 
-	$A\in\mathcal{L}_B$. Segue agora da definição de $\mathcal{L}_B$ que
+	$\mathcal{L}(\mathcal{C}) \subset  \mathcal{L}_B$ logo 
+	$A\in\mathcal{L}_B$. Da definição de $\mathcal{L}_B$ temos que
 	$A\cap B\in \mathcal{L}(\mathcal{C})$ e portanto a afirmação está provada.
 	
     
     
-    Vamos mostrar agora que $ \mathcal{L}(\mathcal{C}) \subset  \mathcal{L}_A$, para todo o 
+    Resta mostrar que $ \mathcal{L}(\mathcal{C}) \subset  \mathcal{L}_A$, para todo o 
     $A \in  \mathcal{L}(\mathcal{C})$.
-    Primeiro observamos que repetindo os argumentos dados acima podemos ver facilmente que 
-    $\mathcal{L} _A$ é um $\lambda$-sistema. 
-    Em particular, se 
-    $A \in \mathcal{C}$, então $A \cap B \in \mathcal{C}$ para todo o $B \in\mathcal{C}$,
-    pois $\mathcal{C}$ é fechado para a interseção finita e assim temos que 
-    $\mathcal{C} \subset\mathcal{L}_A$ o que  
-    implica imediatamente que $\mathcal{L}(\mathcal{C}) \subset \mathcal{L}_A $ 
-    e a prova do teorema está finalmente completa.         
+    Primeiro observamos que os argumentos dados acima podem ser usados
+    de maneira análoga para mostrar que $\mathcal{L} _A$ é um $\lambda$-sistema
+    para qualquer $A\in\mathcal{L}(\mathcal{C})$. 
+    Já que $\mathcal{C}$ é um $\pi$-sistema temos
+    para qualquer par $A,B \in \mathcal{C}$ 
+    que $A \cap B \in \mathcal{C} \subset \mathcal{L}(\mathcal{C})$
+    e portanto podemos concluir que $\mathcal{C} \subset\mathcal{L}_B$ 
+    e consequentemente temos por definição que
+    $\mathcal{L}(\mathcal{C}) \subset \mathcal{L}_B $.
+    Esta última continência implica que $A\cap B\in\mathcal{L}(\mathcal{C})$
+    para todo $B\in\mathcal{C}$ e $A\in\mathcal{L}(\mathcal{C})$.
+    Agora fixamos um conjunto arbitrário $A\in\mathcal{L}(\mathcal{C})$.
+    Pela afirmação anterior podemos garantir que 
+    $\mathcal{C}\subset \mathcal{L}_{A}$. 
+    Logo $\mathcal{L}(\mathcal{C}) \subset \mathcal{L}_A$
+    para qualquer que seja $A\in\mathcal{L}(\mathcal{C})$. 
 \end{proof}
 
 
 \begin{corolario}[Unicidade]
-    Sejam $P_1$, $P_2$ duas medidas de probabilidade tais que $P_1(C)=P_2(C)$ para todos os
-    eventos $C$ de um $\pi$-sistema $\mathcal{C}$, então, temos que $P_1=P_2$ em
+    Sejam $P_1$, $P_2$ duas medidas de probabilidade 
+    definidas em uma $\sigma$-álgebra $\mathcal{F}$ contendo um 
+    $\pi$-sistema $\mathcal{C}$.
+    Se $P_1(C)=P_2(C)$ para todo evento 
+    $C\in\mathcal{C}$, então, temos que $P_1=P_2$ em
     $\sigma(\mathcal{C})$.
 \end{corolario}
 
@@ -324,19 +341,16 @@ contida no Exercício \ref{exercicio-sigma-alg-gerada}.
 \section{O Teorema da Extensão de Carathéodory}
 
 
-A família de todos os subconjuntos de um conjunto $\Omega$ será 
-denotada por $\mathcal{P}(\Omega)$. Esta família também é conhecida como 
-conjunto das partes de $\Omega$. Observamos que $\mathcal{P}(\Omega)$ é uma 
-$\sigma$-álgebra.
-Em determinadas situações, quando estamos trabalhando com uma medida $\mu$, 
-podemos nos livrar de várias dificuldades técnicas se esta medida esta definida
-em $\mathcal{P}(\Omega)$. Acontece que na maioria das situações mais 
+Em determinadas situações, quando estamos trabalhando 
+com uma medida $\mu$ sobre $\Omega$ podemos nos livrar de várias 
+dificuldades técnicas se esta medida esta definida
+em todo $\mathcal{P}(\Omega)$. Acontece que na maioria das situações mais 
 interessantes, isto nem sempre ocorre. Entretanto é possível definir um outro objeto 
-matemático, chamado {\it medida exterior}, que está sempre definida na 
+matemático, chamado {\it medida exterior}, que está sempre definido na 
 $\sigma$-álgebra das partes.
 Uma medida exterior tem a vantagem de estar sempre 
 definida no conjunto das partes, mas por outro lado, em geral, 
-ela não é uma função $\sigma$-aditividade. 
+ela não é uma função $\sigma$-aditiva. 
 Mas como veremos a abaixo as medidas exteriores são objetos muito 
 úteis na construção de medidas sobre um determinado conjunto $\Omega$.
 
@@ -377,12 +391,13 @@ $\mu^{*}$, dada abaixo, para se convencer que nem sempre $\mu^{*}$
 \begin{proposicao}\label{prop-med-ext}
 Seja $\mathcal{A}$ uma coleção arbitrária de subconjuntos de $\Omega$ satisfazendo
 apenas que $\emptyset,\Omega\in \mathcal{A}$. Seja $\mu:\mathcal{A}\to [0,\infty]$,
-uma função arbitrária, satisfazendo apenas que $\mu(\emptyset)=0$.
+uma função arbitrária, tal que $\mu(\emptyset)=0$.
 Para todo $A\subset \Omega$, defina
 \begin{equation}\label{def-medida-exterior}
 \mu^{*}(A)= 
 \inf \left\{
-	\sum_{n}\mu(F_n): F_n\in \mathcal{A} \ \forall n,\ \ A\subset \cup_{n} F_n
+	\sum_{n}\mu(F_n): F_n\in \mathcal{A} \ \forall n\ \mathrm{e}
+	\ \ A\subset \cup_{n} F_n
 \right\}.
 \end{equation}
 Então $\mu^{*}$ é uma medida exterior em $\Omega$.
@@ -434,8 +449,35 @@ $$
 	dizemos que $\mu$ é uma medida $\sigma$-finita.
 \end{definicao} 
  
-Precisamos apenas de mais uma definição para podermos apresentar o enunciado
-preciso do Teorema da Extensão de Carathéodory.
+Precisamos de mais duas definições para podermos 
+apresentar de forma precisa o enunciado
+do Teorema da Extensão de Carathéodory.
+Seja $\mu$ uma medida em uma $\sigma$-álgebra $\mathcal{F}$.
+A $\sigma$-álgebra $\mathcal{F}$ é dita $\mu$-{\bf completa} 
+\index{$\sigma$-álgebra!$\mu$-completa}
+se para todo $N\in \mathcal{F}$ e para todo $A\subset N$, 
+com $\mu(N)=0$ temos $A\in \mathcal{F}$.
+Em outras palavras, $\mathcal{F}$ é $\mu$-completa 
+se os subconjuntos dos conjuntos de medida $\mu$ zero
+pertecem a $\sigma$-álgebra $\mathcal{F}$.
+Neste caso dizemos também que $\mu$ é completa.
+Dada qualquer medida $\mu$ definida sobre uma 
+$\sigma$-álgebra $\mathcal{F}$ é fácil verificar que 
+a coleção 
+$$
+\overline{\mathcal{F}}
+=
+\{ 	
+	C=A\cup B: A\in\mathcal{F}, B\subset N\ \text{para algum}\ N\in\mathcal{F}\ \text{com}\ \mu(N)=0	
+\}
+$$
+é uma $\sigma$-álgebra $\overline{\mu}$ completa, onde $\overline{\mu}(A\cup B):=\mu(A)$.
+Observe que $\overline{\mu}$ está bem definida e 
+que $\overline{\mu}$ é uma medida definida em $\overline{\mathcal{F}}$ que estende $\mu$.
+Esta extensão de $\mu$ é chamada de \index{Completamento! de uma medida} 
+{\it completamento}
+de $\mu$.
+
 
 
 
@@ -448,7 +490,7 @@ dizemos que $A\subset \Omega$ é $\mu^{*}$-mensurável se a condição abaixo é
 \qquad
 \text{ para todo } \ E\subset\Omega.
 \end{equation}
-A condição acima é conhecida como {\it Condição de Carathéodory}\index{Condição!de Carathéodory}.
+Esta condição é conhecida como {\it Condição de Carathéodory}\index{Condição!de Carathéodory}.
 \end{definicao}
 
 
