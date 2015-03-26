@@ -6,7 +6,308 @@
 
 
 
-\section*{Medida de Lebesgue}
+
+
+\section{Medida de Lebesgue em $(0,1]$}
+
+
+Nesta seção vamos mostrar como construir 
+a medida de Lebesgue no 
+intervalo semi-aberto $(0,1]$ via o Teorema 
+da Extensão de Carathéodory. 
+Para isto 
+vamos considerar a coleção de 
+subconjuntos do intervalo $(0,1]$ dada por 
+\[
+\mathcal{A}
+=
+\left\{ 
+A\subset (0,1]:\ 
+\begin{array}{c}
+A\
+\text{é uma união finita de intervalos disjuntos}
+\\
+\text{da forma}\ (a,b]
+\ \text{com}\ 0\leq a<b\leq 1
+\end{array}
+\right\}
+\cup
+\{\emptyset\}.
+\]
+Afirmamos que $\mathcal{A}$ é uma álgebra de subconjuntos 
+de $(0,1]$.
+Para provar a afirmação observamos 
+primeiro que ambos conjuntos $\emptyset$ e $(0,1]$ pertencem
+a $\mathcal{A}$.  
+Seja $A=(a_1,b_1]\cup\ldots (a_n,b_n]\in\mathcal{A}$. 
+Sem perda de generalidade, podemos assumir que 
+$a_1\leq \ldots \leq a_n$.
+Por questão de conveniência 
+para $b_i=a_{i+1}$
+vamos convencionar que $(b_i,a_{i+1}]=\emptyset$. 
+Já que $A\in\mathcal{A}$ 
+temos que os $n$ intervalos que formam o conjunto 
+$A$ são mutuamente disjuntos, logo
+$
+A^c=(0,a_1]\cup(b_1,a_2]
+\cup\ldots\cup (b_{n-1},a_n]\cup (a_n,1] 
+\in\mathcal{A}.
+$
+Se $B=(c_1,d_1]\cup\ldots (c_m,d_m]\in\mathcal{A}$
+temos pelas propriedades de elementares de conjuntos
+que 
+\[
+A\cap B
+=
+\bigcup_{i=1}^n \bigcup_{j=1}^{m}
+\Big( (a_i,b_i]\cap (c_j,d_j] \Big)
+=
+\bigcup_{i=1}^n \bigcup_{j=1}^{m}
+\Big( (\min\{a_i,c_j\},\min\{b_i,d_j\}] \Big).
+\]
+Como a coleção de intervalos aparecendo acima é
+mutuamente disjunta segue que $A\cap B\in \mathcal{A}$
+e assim encerramos a prova de que $\mathcal{A}$ 
+é uma álgebra de subconjuntos de $(0,1]$.
+
+Embora, a coleção $\mathcal{A}$ seja uma álgebra
+ela não é $\sigma$-álgebra, para ver isto basta 
+observar que a coleção $\mathcal{A}$ não possui 
+nenhum dos conjuntos unitários $\{c\}\subset (0,1]$
+que são obtidos, por exemplo, como uma interseção 
+enumerável de subconjuntos de $\mathcal{A}$ da seguinte maneira
+$\cap_{n>c^{-1}} (c-1/n,c]$.
+A álgebra $\mathcal{A}$ também não contém conjuntos que 
+são uniões enumeráveis de intervalos que não pode ser 
+expressa como uma união finita de intervalos disjuntos.
+
+
+Considere a função de conjuntos 
+$\mathrm{Leb}:\mathcal{A}\to [0,+\infty]$ definida por 
+\[
+\mathrm{Leb}
+\left(
+	\bigcup_{i=1}^n (a_i,b_i]
+\right) 
+= 
+\sum_{i=1}^{n} (b_i-a_i).
+\]
+
+
+\begin{teorema}\label{teo-leb-sigma-aditiva-algebra}
+Sejam $I=(a,b]$ e $I_k=(a_k,b_k]$ 
+uma sequência arbitrária de intervalos 
+todos contidos em $(0,1]$.
+\begin{itemize}
+	\item[1)] 
+	Se $\cup_{k}I_k\subset I$ e 
+	$I_k$'s são disjuntos, 
+	então $\sum_{k}\mathrm{Leb}(I_k)\leq \mathrm{Leb}(I)$.
+	
+	\item[2)]
+	Se $I\subset \cup_k I_k$ (os $I_k$'s não necessariamente disjuntos),
+	então temos que $\mathrm{Leb}(I)\leq \sum_{k}\mathrm{Leb}(I_k)$.
+	
+	\item[3)]
+	Se $I=\cup_k I_k$ e $I_k$'s são disjuntos, então 
+	$\mathrm{Leb}(I)= \sum_{k}\mathrm{Leb}(I_k)$.
+\end{itemize}
+\end{teorema}
+
+
+
+\begin{proof}
+Evidentemente 3) segue de 1) e 2).
+Vamos provar 1). Primeiro vamos 
+estabelecer este fato para o caso 
+em que $\cup_{k} I_k$ é uma união finita. 
+A prova deste caso será feita por indução 
+no número de intervalos.
+Para o caso $n=1$ o resultado é óbvio. 
+Suponha que 1) vale para união de $n$ intervalos
+disjuntos contida em $I$. Sem perda de generalidade 
+podemos supor que 
+$I_1=(a_1,b_1],\ldots I_n=(a_n,b_n], I_{n+1}=(a_{n+1},b_{n+1}]$
+são tais que $a_1,\ldots, a_n <a_{n+1}$. 
+Já que todos $I_k$'s estão contidos em $(a,b]$
+temos que 
+$\cup_{k=1}^n (a_k,b_k]\subset (a,a_{n+1}]$.
+Pela hipótese de indução temos que
+\[
+\sum_{k=1}^n (b_k-a_k)
+\equiv
+\sum_{k=1}^n \mathrm{Leb}(I_k)
+\leq
+\mathrm{Leb}((a,a_{n+1}])
+\equiv
+a_{n+1}-a.
+\] 
+Usando a definição de $\mathrm{Leb}$ e a desigualdade 
+acima obtemos
+\begin{align*}
+\mathrm{Leb}(I_{n+1})
++ 
+{\textstyle \sum_{k=1}^n \mathrm{Leb}(I_k)}
+&\leq
+(b_{n+1}-a_{n+1})+(a_{n+1}-a)
+\\
+&=
+b_{n+1}-a
+\\
+&\leq
+b-a
+\\
+&=
+\mathrm{Leb}(I).
+\end{align*}
+
+No caso em que a união em 1) é infinita basta aplicar o 
+resultado acima para cada subcoleção finita obtendo 
+$\sum_{k=1}^n \mathrm{Leb}(I_k)\leq b-a$ para todo $n\in\mathbb{N}$.
+Já que a cota superior é uniforme em $n$ segue que 
+$\sum_{k=1}^{\infty} \mathrm{Leb}(I_k)\leq b-a$.
+
+
+
+Passamos agora para a prova do item 2). 
+Por questão de simplicidade vamos dividir a 
+prova em dois casos. Primeiro consideramos 
+que a união em 2) é finita.
+Vamos novamente argumentar por indução. 
+Suponha que o resultado seja válido para
+uma coleção de $n$ intervalos e assuma que 
+$(a,b]\subset \cup_{k=1}^{n+1} (a_k,b_k]$.
+Sem perda de generalidade podemos 
+supor que $b\in (a_{n+1},b_{n+1}]$, 
+isto é, $a_{n+1}<b\leq b_{n+1}$.
+Se $a_{n+1}<a$ o resultado é óbvio.
+Caso contrário temos $(a,a_{n+1}]\subset \cup_{k=1}^n (a_k,b_k]$.
+Pela hipótese de indução segue que
+\[
+a_{n+1}-a
+\equiv
+\mathrm{Leb}((a,a_{n+1}])
+\leq
+\sum_{k=1}^n \mathrm{Leb}((a_k,b_k])
+\equiv
+\sum_{k=1}^n (b_k-a_k).
+\]
+Somando $b_{n+1}-a_{n+1}$ em ambos termos
+da desigualdade acima e lembrando que 
+$b\leq b_{n+1}$ ficamos com 
+\[
+\mathrm{Leb}(I)\equiv 
+b-a
+\leq
+b_{n+1}-a
+\leq  
+\sum_{k=1}^{n+1} (b_k-a_k)
+\equiv
+\sum_{k=1}^{n+1} \mathrm{Leb}((a_k,b_k]).
+\]
+e portanto o item 2) está provado 
+para coleções finitas. Vamos agora analisar o caso de coleções
+infinitas. Suponha que $(a,b]\subset \cup_{k=1}^{\infty}(a_k,b_k]$.
+Dado $\varepsilon>0$ tal que $0<\varepsilon<b-a$ temos que 
+\[
+[a+\varepsilon,\ b]
+\subset 
+\bigcup_{k=1}^{\infty} \left( a_k,\ b_{k}+\frac{\varepsilon}{2^k}\right).
+\]
+Já que $[a+\varepsilon,\ b]$ é um compacto existe uma subcobertura
+finita da cobertura por abertos dada acima.
+Desta forma para algum $n\in\mathbb{N}$ podemos afirmar que 
+\[
+[a+\varepsilon,\ b]
+\subset 
+\bigcup_{k=1}^{n} \left( a_k,\ b_{k}+\frac{\varepsilon}{2^k}\right).
+\]
+Deste fato podemos concluir imediatamente que 
+\[
+(a+\varepsilon,\ b]
+\subset 
+\bigcup_{k=1}^{n} \left( a_k,\ b_{k}+\frac{\varepsilon}{2^k}\right].
+\]
+Usando agora o resultado provado acima para o caso finito 
+podemos afirmar que
+\[
+b-(a+\varepsilon)
+\leq 
+\sum_{k=1}^n 
+\Big(b_k+\frac{\varepsilon}{2^k} -a_k\Big)
+\leq
+\sum_{k=1}^{\infty} (b_k-a_k)+\varepsilon.
+\]
+Como $\varepsilon$ é arbitrário ficamos com
+\[
+\mathrm{Leb}(I)
+\leq
+\sum_{k=1}^{\infty} \mathrm{Leb}(I_k). 
+\qedhere
+\]
+\end{proof}
+
+
+Com os Teoremas 
+\ref{teo-leb-sigma-aditiva-algebra}
+e
+\ref{teorema-caratheodory}
+em mãos
+podemos apresentar finalmente a  medida de Lebesgue
+em $(0,1]$.
+Pois bem, dado $A\subset (0,1]$ 
+definimos a medida exterior de $A$ como
+em \eqref{def-medida-exterior}, ou seja,
+$$
+\tn{Leb}^{*}(A)=\inf 
+	\left\{
+		\sum_{j=1}^\infty \mathrm{Leb}(I_j):
+		\ A\subset \bigcup_{j=1}^\infty I_j,
+		\ \text{com}\ I_j\in \mathcal{A}\ \ \forall  j\in\mathbb{N}
+	\right\}.
+$$
+
+Pelo Teorema \ref{teo-leb-sigma-aditiva-algebra} 
+temos que $\mathrm{Leb}:\mathcal{A}\to [0,\infty]$
+é uma medida na álgebra $\mathcal{A}$.
+Pelo item 2) do Teorema de Carathéodory podemos
+afirmar que  $\sigma(\mathcal{A})\subset \mathcal{M}$,
+onde $\mathcal{M}$ é a coleção dos conjuntos 
+mensuráveis com respeito a 
+medida exterior $\mathrm{Leb}^*$,
+além do mais o teorema afirma que $\mathrm{Leb}^*\big|_{\mathcal{M}}$
+é uma medida e que para todo intervalo $I=(a,b]\in\mathcal{A}$ 
+que $\mathrm{Leb}^*(I)=\mathrm{Leb}(I)=b-a$.
+
+A $\sigma$-álgebra $\sigma(\mathcal{A})$ é a $\sigma$-álgebra
+gerada pela coleção dos intervalos abertos contidos em $(0,1]$
+chamada normalmente de $\sigma$-álgebra de Borel de $(0,1]$.
+Já a $\sigma$-álgebra $\mathcal{M}$ é conhecida
+como a $\sigma$-álgebra de Lebesgue de $(0,1]$.
+Uma pergunta natural neste momento é como se relacionam 
+as $sigma$-álgebras de Borel e Lebesgue. Vamos mostrar 
+mais a frente que 
+\[
+\sigma(\mathcal{A})
+\subsetneq 
+\mathcal{M}
+\subsetneq 
+\mathcal{P}((0,1]).
+\]
+A prova que a primeira continência é estrita 
+será dada mostrando que a $\sigma$-álgebra 
+de Borel $\sigma(\mathcal{A})$ 
+tem a cardinalidade de $\mathbb{R}$ 
+enquanto que a $\sigma$-álgebra de Lebesgue 
+$\mathcal{M}$ tem a cardinalidade das 
+partes de $\mathbb{R}$.
+Para provar que a segunda continência é estrita
+vamos usar o famoso exemplo de Giuseppe Vitali
+de 1905, que permanece até nos dias de hoje 
+sendo o exemplo mais simples.
+
+Como $\mathrm{Leb}$ é uma medida $\sigma$-finita 
+
 
 
 Queremos construir em $\mathbb{R}$ uma medida que 

@@ -413,7 +413,7 @@ Logo segue da definição de ínfimo que $\mu^{*}(A)\leq \mu^{*}(B)$.
 Resta agora verificar que $\mu^{*}$ satisfaz a propriedade 3) de medida exterior.
 Seja $A_n$ ($n=1,2,\ldots$) uma coleção enumerável de subconjuntos de $\Omega$
 e $A=\cup_n A_n$. Se para algum índice $n$ temos $\mu^{*}(A_n)=\infty$,
-então segue da monotonicidade $\mu$ que $\mu^{*}(A)=\infty$, e portanto 
+então segue da monotonicidade de $\mu$ que $\mu^{*}(A)=\infty$, e portanto 
 3) é válida neste caso. Vamos assumir então que $\mu^{*}(A_n)<\infty$ 
 para todo $n$. Fixe $\varepsilon>0$ arbitrário. Para cada $n$ existe
 uma sequência $F_{n,k}$ ($k=1,2,\ldots$) em $\mathcal{A}$ tal que 
@@ -490,7 +490,8 @@ dizemos que $A\subset \Omega$ é $\mu^{*}$-mensurável se a condição abaixo é
 \qquad
 \text{ para todo } \ E\subset\Omega.
 \end{equation}
-Esta condição é conhecida como {\it Condição de Carathéodory}\index{Condição!de Carathéodory}.
+Esta condição é conhecida 
+como {\it Condição de Carathéodory}\index{Condição!de Carathéodory}.
 \end{definicao}
 
 
@@ -521,9 +522,10 @@ Prova do item 1). Mostraremos primeiro que $\mathcal{M}$ é uma álgebra.
 Em primeiro lugar observamos que $A=\emptyset$ satisfaz 
 a condição de Carathéodory. Também é imediato verificar que se $A$ 
 satisfaz a condição de Carathéodory, então $A^c$ também satisfaz esta condição. 
-Pela subaditividade da medida exterior ( propriedade 3 da Definição \ref{definicao-medida-exterior}), 
-para verificar a condição de Carathéodory basta mostrar que 
-
+Pela subaditividade da medida exterior 
+( propriedade 3 da Definição \ref{definicao-medida-exterior}), 
+temos que a condição de Carathéodory é satisfeita sempre que
+%
 \begin{equation}\label{reducao-condicao-caratheodory}
 \mu^*(E\cap A)+\mu^*(E\cap A^c)\leq \mu^*(E),
 \qquad
@@ -532,11 +534,17 @@ para verificar a condição de Carathéodory basta mostrar que
 Vamos mostrar que $\mathcal{M}$ é fechado com respeito a interseções finitas. 
 Para quaisquer $A,B\in\mathcal{M}$, temos
 \begin{align*}
-\mu^*(E) &= \mu^*(E\cap B) + \mu^*(E\cap B^c) \qquad 
+\mu^*(E) 
+&= 
+\mu^*(E\cap B) + \mu^*(E\cap B^c) \qquad 
 \\
-=& \mu^*(E\cap B\cap A)+\mu^*(E\cap B\cap A^c) + \mu^*(E\cap B^c\cap A)+ \mu^*(E\cap B^c\cap A^c)
+&= 
+\mu^*(E\cap B\cap A)+\mu^*(E\cap B\cap A^c) 
++ 
+\mu^*(E\cap B^c\cap A)+ \mu^*(E\cap B^c\cap A^c)
 \\
-\geq & \mu^*(E\cap(B\cap A))+\mu^*(E\cap(B\cap A)^c),
+&\geq  
+\mu^*(E\cap(B\cap A))+\mu^*(E\cap(B\cap A)^c),
 \end{align*}
 onde na última desigualdade, usamos que 
 $(B\cap A)^c=B^c\cup A^c = (B^c\cap A) \cup (B^c\cap A^c) \cup (B\cap A^c)$
@@ -547,9 +555,9 @@ podemos concluir que $\mathcal{M}$ é fechada para uniões finitas.
 E portanto concluímos a prova que $\mathcal{M}$ é uma álgebra.
 
 Próximo passo é provar que $\mathcal{M}$ é uma $\sigma$-álgebra e
-que $\mu^*$ é $\sigma$-aditiva. 
-Seja $B_n$ ($n=1,2,\ldots$) uma sequência de conjuntos dois a 
-dois disjuntos em $\mathcal{M}$. 
+que $\mu^*$ é $\sigma$-aditiva sobre $\mathcal{M}$. 
+Seja $B_n$ ($n=1,2,\ldots$) uma sequência em $\mathcal{M}$
+de conjuntos dois a dois disjuntos. 
 Defina $C_m = \cup_{n=1}^m B_n$ ($m=1,2,\ldots$).
 Vamos mostrar por indução em $m$ que 
 
@@ -713,15 +721,17 @@ $\Omega\in\mathcal{C}$.
 Seja $B_m$ ($m=1,2,\ldots$) uma sequência de conjuntos em 
 $\mathcal{C}$ dois a dois disjuntos. Segue da $\sigma$-aditividade
 de $\mu^*$ e $\nu$ que 
-$$
+\begin{multline*}
 \nu\left( A_n \cap \big(\cup_{m=1}^{\infty}B_m\big) \right)
 =
 \sum_{m=1}^{\infty} \nu\left( A_n \cap B_m \right)
 =
 \sum_{m=1}^{\infty} \mu^*\left( A_n \cap B_m \right)
+\\
 =
 \mu^*\left( A_n \cap \big(\cup_{m=1}^{\infty}B_m\big) \right).
-$$
+\end{multline*}
+
 O que encerra a prova de que $\mathcal{C}$ é um $\lambda$-sistema.
 Como $\mathcal{C}$ é um $\lambda$-sistema que contém o $\pi$-sistema
 $\mathcal{A}$ segue do Teorema $\pi-\lambda$ de Dynkin que 
