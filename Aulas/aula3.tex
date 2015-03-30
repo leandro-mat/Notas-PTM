@@ -278,6 +278,8 @@ medida exterior $\mathrm{Leb}^*$,
 além do mais o teorema afirma que $\mathrm{Leb}^*\big|_{\mathcal{M}}$
 é uma medida e que para todo intervalo $I=(a,b]\in\mathcal{A}$ 
 que $\mathrm{Leb}^*(I)=\mathrm{Leb}(I)=b-a$.
+Esta medida é conhecida como a {\bf Medida de Lebesgue} 
+em $(0,1]$ e será denotada por $\lambda$.
 
 A $\sigma$-álgebra $\sigma(\mathcal{A})$ é a $\sigma$-álgebra
 gerada pela coleção dos intervalos abertos contidos em $(0,1]$
@@ -307,6 +309,21 @@ de 1905, que permanece até nos dias de hoje
 sendo o exemplo mais simples.
 
 
+\begin{teorema}
+	Seja $\lambda:\mathcal{M}\to [0,+\infty]$ a medida de Lebesgue em $(0,1]$
+	e suponha que $\nu:\mathcal{M}\to [0,+\infty]$ seja uma medida satisfazendo 
+	$\nu\big|_{\mathcal{A}} = \lambda\big|_{\mathcal{A}}$.
+	Então $\nu(E) = \lambda(E)$ para todo conjunto $E\in \mathcal{M}$. 
+\end{teorema}
+
+\begin{observacao}
+	No teorema acima, se desejamos mostrar apenas 
+	$\nu\big|_{\sigma(\mathcal{A})} = \lambda\big|_{\sigma(\mathcal{A})}$
+	basta aplicar o item 3) do Teorema da Extensão de Carathéodory. 
+	Porém para estender a conclusão a 
+	todos os conjuntos Lebesgue mensuráveis, como afirmado no enunciado,
+	é necessário um pouco mais de trabalho.	
+\end{observacao}
 
 
 
@@ -317,8 +334,84 @@ sendo o exemplo mais simples.
 
 
 
+\section{Medida de Lebesgue em $\mathbb{R}$}
 
 
+Existem várias maneira equivalentes de se definir a medida 
+de Lebesgue em $\mathbb{R}$.
+Para exercitar as técnicas apresentadas na seção anterior
+vamos mostrar como fazer esta construção a partir da extensão 
+de uma medida definida em uma álgebra de conjuntos de $\mathbb{R}$.
+Na verdade esta seção apresenta apenas um roteiro para 
+esta construção com grande parte dos detalhes sendo deixados 
+como exercício.
+
+Considere a seguinte coleção de subconjuntos de $\mathbb{R}$
+\[
+\mathcal{A}
+=
+\left\{ 
+A\subset \mathbb{R}:\ 
+\begin{array}{l}
+A\
+\text{é uma união finita de intervalos disjuntos}
+\\
+\text{dos seguintes tipos:}
+\\
+I)\phantom{II} \ \ (a,b]
+\ \text{com}\ -\infty< a<b< +\infty;
+\\
+II)\phantom{I} \ \ (a,+\infty) \ \text{com}\  a\in\mathbb{R};
+\\
+III) \ \ (-\infty,a]  \ \text{com}\  a\in\mathbb{R};
+\end{array}
+\right\}
+\cup
+\{\mathbb{R},\emptyset\}.
+\]
+
+
+
+\begin{exercicio}
+	Mostre que a coleção $\mathcal{A}$ definida acima é uma 
+	álgebra de conjuntos de $\mathbb{R}$.
+\end{exercicio}
+
+Defina a função de conjuntos $\textrm{Leb}:\mathcal{A}\to[0,+\infty]$ 
+da seguinte maneira:
+
+\[
+\textrm{Leb}(A)
+=
+\begin{cases}
+\displaystyle
+\sum_{i=1}^n (b_i-a_i),
+	&
+	\begin{array}{l}
+	\text{se} \ A=\bigsqcup_{j=1}^n I_j, \ 
+	\text{onde}\  I_j\equiv (a_j,b_j]
+	\\
+	\text{com}\ -\infty< a_j<b_j< +\infty \ \forall j=1,\ldots,n;
+	\end{array}
+\\[0.8cm]
++\infty,
+	& 
+\begin{array}{l}
+	\text{se} \ A=\bigsqcup_{j=1}^n I_j\ \text{e existe} \ 1\leq q\leq n 
+	\\
+	\ \text{tal que}\ I_q\ \text{é do tipo} \ II\ \text{ou}\ III.
+\end{array}
+\end{cases}
+\]
+
+
+
+\begin{exercicio}
+	Mostre que a função $\mathrm{Leb}:\mathcal{A}\to [0,+\infty]$ como
+	definida acima é uma medida na álgebra $\mathcal{A}$.
+\end{exercicio}
+
+\noindent{\bf Dica.} Generalize o Teorema \ref{teo-leb-sigma-aditiva-algebra}.
 
 
 
