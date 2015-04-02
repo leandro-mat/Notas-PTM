@@ -73,7 +73,7 @@ de borel de $\overline{\R}$ e denotada por $\mathscr{B}(\overline{\R})$.
 Nesta subseção vamos considerar funções que
 saem de um espaço mensurável $(\Omega,\F)$ e tomam 
 valores em $\mathbb{R}$. O caso mais geral, onde
-as funções assumem valores em $\overline{R}$ será
+as funções assumem valores em $\overline{\mathbb{R}}$ será
 tratado na subseção seguinte.
 
 
@@ -89,7 +89,7 @@ se para todo número real $\alpha$ temos que
 O próximo lema fornece três maneira alternativas de
 definir funções mensuráveis. 
 
-\begin{lema}
+\begin{lema}\label{lema-equiv-mensuravel-borel}
 As seguintes afirmações são equivalentes para uma função 
 $f:\Omega\to\R$.
 \begin{enumerate}
@@ -131,6 +131,37 @@ $f:\Omega\to\R$.
 
 
 
+
+
+
+\begin{exercicio}
+Seja $f:\Omega\to\mathbb{R}$ uma função definida
+em um espaço mensurável $(\Omega,\F)$.
+Mostre que $f$ é uma função $\F$-mensurável
+se, e somente se, a coleção 
+\[
+f^{-1}(\mathscr{B}(\mathbb{R}))
+\equiv
+\{
+f^{-1}(B):\ B\ \mathrm{\acute{e} \ um\ boreliano\ de}\ \mathbb{R}
+\}.
+\]
+é uma sub-$\sigma$-álgebra de $\F$.
+\end{exercicio}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{exemplo}\label{exemplo-func-const.mensuravel}
 	Toda função constante $f:\Omega\to\R$ é mensurável.
 	De fato, se $f(\omega)=c$ para todo $\omega\in\Omega$ 
@@ -147,7 +178,7 @@ $f:\Omega\to\R$.
 \begin{exemplo}
 	Seja $(\Omega,\F)$ um espaço mensurável. 
 	Se $E\in\F$ então a função $1_E:\Omega\to\R$, a função indicadora de $E$,
-	é mensurável.
+	é mensurável e vice-versa.
 	Para ver que a afirmação é verdadeira basta notar que 
 	$\{\omega\in\Omega: 1_{E}(\omega)>\alpha \}$ é igual $\Omega, E$
 	ou $\emptyset$.
@@ -174,13 +205,13 @@ $f:\Omega\to\R$.
 	Para qualquer $\alpha\in\R$, 
 	temos que $\{x\in\R: f(x)<\alpha\}$ ou é uma semi-reta
 	da forma $(-\infty,a)$ ou $(-\infty,a]$ ou $\R$ ou $\emptyset$.
-	E portanto todo função monótona não-crescente é borel 
+	Portanto toda função monótona não-decrescente é borel 
 	mensurável, isto é, $\mathscr{B}(\R)$-mensurável.
 \end{exemplo}
 
 
 Vamos mostrar na sequência que algumas operações algébricas
-entre funções mensuráveis fornece também um função mensurável.
+entre funções mensuráveis fornece também uma função mensurável.
 
 \begin{lema}\label{lema-operacoes-alg-com-func-mensuraveis}
 	Sejam $(\Omega,\F)$ um espaço de medida e 
@@ -312,7 +343,7 @@ A prova deste lema é consequência direta das seguintes identidades:
 Até o momento trabalhamos com o conceito de mensurabilidade em 
 $\R$. Como frequentemente iremos trabalhar com sequências de 
 funções e estaremos interessados em tomar, supremos, ínfimos,
-limites e etc. é tecnicamente conveniente trabalhar com o 
+limites e etc... é tecnicamente conveniente trabalhar com o 
 conjunto $\overline{\R}$. Esta é a razão de introduzirmos 
 na seção seguinte o conceito de mensurabilidade de uma função 
 tomando valores na reta estendida. 
@@ -366,12 +397,12 @@ tomando valores em $\overline{\R}$.
 
 \begin{lema}\label{lema-truncamento-func-mensuravel-eh-mensuravel}
 	Seja $(\Omega,\F)$ um espaço de medida. 
-	Uma função $f:\Omega\to\overline{R}$ é 
+	Uma função $f:\Omega\to\overline{\mathbb{R}}$ é 
 	mensurável se, e somente se, os conjuntos 
 	\[
 	A=\{ \omega\in\Omega: f(\omega)=+\infty \}
 	\quad
-	\text
+	\mathrm{e}
 	\quad
 	B=\{ \omega\in\Omega: f(\omega)=-\infty \}	
 	\]
@@ -551,7 +582,7 @@ Já que
 	\left\{ \sup_{m\geq n} f_{m}(\omega) \right\}
 	\]
 basta aplicar duas vezes consecutivas o resultado que acabamos 
-para concluir que ambas $f^*$ e $F^*$ são $\F$-mensuráveis.
+de provar para concluir que ambas $f^*$ e $F^*$ são $\F$-mensuráveis.
 \end{proof}
 
 
@@ -636,7 +667,7 @@ Analogamente definimos sequências monótonas não-crescentes.
 
 \begin{definicao}[Função Simples]
 Seja $(\Omega,\F)$ um espaço mensurável. 
-Uma função $f:\Omega\to\overline{R}$ é dita 
+Uma função $f:\Omega\to\overline{\mathbb{R}}$ é dita 
 simples se assume no máximo uma quantidade
 finita de valores, isto é, $\# f(\Omega)<\infty$.
 
@@ -649,16 +680,18 @@ limite pontual de funções em $M(\Omega,\F)$ é uma função em
 $M(\Omega,\F)$.
 Assumindo apenas que $f$ é não-negativa e mensurável
 mostramos no próximo lema um fato ainda mais
-forte. Sob tais condições vamos ver que  
+forte. Sob estas condições vamos ver que  
 $f$ é limite pontual de alguma sequência 
-monótona não-decrescente $f_n$ em $M(\Omega,\F)$,
+monótona não-decrescente de funções 
+simples $f_n$ em $M(\Omega,\F)$,
 além do mais a demostração fornece uma maneira de construir
 tal sequência.
 
 \begin{teorema}\label{teo:aproximacao-monotona-por-func-simples}
 	Seja $(\Omega,\F)$ um espaço de medida. 
 	Se $f:\Omega\to [0,+\infty]$
-	é mensurável, existe uma sequência de funções 
+	é uma função mensurável, 
+	existe uma sequência de funções 
 	simples $f_n:\Omega\to[0,\infty]$ tal que
 	para todo $\omega\in\Omega$ temos
 	$0\leq f_1(\omega)\leq f_2(\omega)\leq \ldots\leq f(\omega)$ 
@@ -690,7 +723,7 @@ forma:
 Estes $n2^n$ intervalos 
 junto com o intervalo $[n,+\infty]$ formam uma partição 
 de $[0,+\infty]$. 
-
+%
 Esta partição induz uma partição em $\Omega$
 que é determinada pelas pré-imagens destes conjuntos 
 por $f$, isto é, para $k\in\mathbb{N}$ satisfazendo 

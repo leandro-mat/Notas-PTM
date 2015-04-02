@@ -565,16 +565,16 @@ Considere a seguinte coleção
 		\{ A\subset\R: \xi_F(A) \in \mathscr{B}((0,1])\}.
 	\]
 Afirmamos que $\mathscr{C}$ contém qualquer intervalo finito da forma
-$(a,b]\subset \R$. De fato, segue dos item 3 e 4 
+$(a,b]\subset \R$. De fato, segue dos itens 3 e 4 
 da Proposição \ref{prop-propriedades-G} que 
 para todo $x\in (0,1)$ satisfazendo 
-$a<G(x)$ temos $F(a)<x$ e se $G(x)\leq b$ então 
+$a<G(x)$ temos $F(a)<x$ e por outro lado, se $G(x)\leq b$ temos 
 $x\leq F(b)$. Da definição de $\xi_{F}(A)$ e 
 das duas observações anteriores temos que
 %
 %
 \begin{align*}
-	\xi_F(A) 
+	\xi_F((a,b]) 
 	&= 
 	\{ x\in (0,1]: G(x) \in (a,b] \}
 	\\
@@ -587,7 +587,7 @@ das duas observações anteriores temos que
 	&=
 	(F(a),F(b)].
 \end{align*}
-Como o lado direito da igualdade pertence a $\mathscr{B}((0,1])$
+Como o lado direito acima pertence a $\mathscr{B}((0,1])$
 segue que todo intervalo finito $(a,b]\in \mathscr{C}$.
 Em outras palavras, a coleção $\mathscr{C}$ 
 contém o $\pi$-sistema $\mathcal{G}=\{ (a,b]: a,b\in\R\}$.
@@ -645,7 +645,8 @@ Para cada $A\in \mathscr{B}(\R)$ definimos
 	\]
 onde $\lambda$ é a medida de Lebesgue em $(0,1]$.
 É simples verificar que $\P_F$ é de fato uma medida
-de probabilidade e que sua distribuição é dada por
+de probabilidade sobre $\mathbb{R}$ 
+e que a função distribuição que ela induz é dada por
 %
 \begin{align*}
 	\P_F((-\infty,x]) 
