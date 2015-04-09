@@ -5,7 +5,8 @@
 
 \begin{definicao}[Variável Aleatória]\label{def-var-aleatoria}
 Seja $(\Omega,\F)$ um espaço de medida e $\Lambda\in\F$.
-Uma função $X:\Lambda\to\overline{\R}$ tal que para todo 
+Uma variável aleatória $X$ em $(\Omega,\mathcal{F})$ (v.a.) é 
+uma função $X:\Lambda\to\overline{\R}$ tal que para todo 
 $B\in\mathscr{B}(\overline{\R})$ temos 
 	\[
 		\{\omega \in\Lambda: X(\omega)\in B\} 
@@ -17,8 +18,8 @@ com $F\in\F$.
 \end{definicao}
 
 \begin{observacao}
-Esta definição nesta generalidade é necessária por razões
-lógicas em algumas aplicações, mas para a discussão das
+A definição nesta generalidade é necessária por razões
+técnicas em algumas aplicações, mas para a discussão das
 propriedades básicas de variáveis aleatórias, podemos 
 supor que $\Lambda =\Omega$.
 \end{observacao}
@@ -36,9 +37,9 @@ usar a notação
 	\[
 		\P(X\in B) \equiv \P(\{\omega\in\Omega: X(\omega)\in B\}).
 	\]
-Vamos usar a abreviação v.a. para nos referir a uma variável aleatória
-e ao invés de escrever $X:\Omega\to \overline{\R}$ é uma 
-v.a., vamos escrever simplesmente $X$ é uma v.a..
+Vamos usar a abreviação v.a. para nos referir a uma variável aleatória,
+assim ao invés de escrever $X:\Omega\to \overline{\R}$ é uma 
+variável aleatória, vamos escrever simplesmente $X$ é uma v.a..
 Quando $X(\Omega)\subset \R$ vamos dizer que $X$ é uma 
 v.a. real.
 
@@ -294,13 +295,13 @@ temos mostrado neste momento que as coleções
 $\sigma(\mathcal{C}_1)$ e $\mathcal{C}_2$ 
 são independentes.
 
-Agora fixamos $A_1\in \sigma(\mathcal{C}_1)$ e
-de maneira análoga definimos 
+Agora fixamos $A_1\in \sigma(\mathcal{C}_1)$.
+De maneira análoga definimos 
 	\[
 	\mathcal{K}=
 	\{ A\in \F: \P(A\cap A_1) = \P(A)\P(A_1)\}
 	\]
-e verificamos que está coleção é um $\lambda$-sistema.
+e podemos verificar que está coleção é um $\lambda$-sistema.
 Como vimos acima, $\sigma(\mathcal{C}_1)$ e $\mathcal{C}_2$ 
 são independentes logo $\mathcal{C}_2 \subset \mathcal{K}$.
 Usando novamente o Teorema de Dynkin completamos a prova
@@ -347,8 +348,24 @@ são independentes.
 
 Nesta seção apresentamos um dos conceitos mais 
 importantes deste curso que é o de v.a.'s independentes.
-Também apresentamos nesta seção alguns critérios para
+Também são apresentados nesta seção alguns critérios para
 independência de v.a.'s.
+
+\begin{definicao}[$\sigma$-álgebra Induzida por uma v.a.]
+Sejam $(\Omega,\F)$ 
+um espaço de mensurável e $X$ uma v.a. definida $\Omega$.
+A $\sigma$-álgebra induzida por $X$, 
+notação, $\sigma(X)$ é definida como sendo a 
+sub-$\sigma$-álgebra de $\F$ dada por 
+\[
+	\sigma(X)
+	:= 
+	\{
+		X^{-1}(B): B\in\mathscr{B}(\overline{\mathbb{R}})
+	\}.
+\]
+\end{definicao}
+
 
 
 \begin{definicao}[Variáveis Aleatórias Independentes]
@@ -365,8 +382,9 @@ $\{\sigma(X_t)\}_{t\in T}$ é independente.
 Segundo nossa definição uma coleção de v.a.'s é 
 independente se as $\sigma$-álgebras induzidas por
 elas são independentes. Um caso particular interessante
-é dado pela função indicadora de um evento. Neste 
-caso, temos para todo evento $A$ que 
+deste conceito é dado por uma coleção 
+de funções indicadoras de determinados eventos. 
+Primeiro observe, para qualquer evento $A$, que 
 	\[
 		\sigma(1_{A})=\{\emptyset, A,A^c,\Omega\}.
 	\]
@@ -422,7 +440,8 @@ um $\pi$-sistema e que
 $\sigma(\mathcal{C}_j)=\sigma(X_j)$.
 Observe que a condição 
 \eqref{eq-teo-fatorizacao-funcao-distribuicao}
-diz que $\mathcal{C}_j$ é uma coleção de eventos
+é equivalente a dizer que 
+$\{\mathcal{C}_j\}_{j\in J}$ é uma coleção de eventos
 independentes e portanto segue do 
 Teorema \ref{teo-criterio-basico-independencia}
 que as $\sigma$-álgebras 
@@ -439,12 +458,13 @@ são independentes.
 	em um espaço de probabilidade $(\Omega,\F,\P)$ é
 	independente se, e somente se, 
 		\[
+			\P \left(\, \bigcap_{j=1}^n \{X_j\leq x_j\} \right)
+			\equiv
 			\P(X_1\leq x_1,\ldots, X_n\leq x_n)
 			=
 			\prod_{i=1}^n \P(X_i\leq x_i)
-			\qquad
-			\forall\ (x_1,\ldots,x_n)\in\R^n.
 		\]
+para todo $(x_1,\ldots,x_n)\in\R^n$.
 \end{corolario}
 
 
@@ -458,8 +478,8 @@ Dizemos que uma v.a. $X$ é discreta se $X(\Omega)$
 
 
 \begin{corolario}\label{cor-criterio-independencia-v.a.-discreta}
-Seja $(\Omega,\F,\P)$ um espaço de probabilidade.
-Suponha que $X_1,\ldots,X_n$ seja uma coleção de 
+Sejam $(\Omega,\F,\P)$ um espaço de probabilidade
+e $X_1,\ldots,X_n$ uma coleção de 
 v.a.'s {\bf discretas} com conjunto imagem comum igual 
 a $\mathcal{R}\subset \R$. Sob estas condições 
 a coleção $X_1,\ldots,X_n$ é independente 
@@ -646,7 +666,8 @@ temos
 			F\left(\frac{k-1}{2^n}\right)
 		\right).
 	\end{align*}
- Usando novamente que $F$ é uma função distribuição podemos
+ Usando novamente que $F$ é uma função distribuição 
+ e contínua podemos
  afirmar que $F$ é uniformemente contínua em $\R$, daí dado 
  $\varepsilon>0$ para todo $n\geq n_0(\varepsilon)$ temos que 
 	\[
@@ -670,24 +691,31 @@ o lema está provado.
 Considere uma sequência $\{X_n\}$ de v.a.'s iid 
 com distribuição contínua $F$ em um espaço de probabilidade
 $(\Omega,\F,\P)$. 
-Dizemos que há um ``empate'' entre estas v.a.'s  se
-para algum $\omega\in\Omega$ temos que
+Dizemos que há um ``empate'' entre estas v.a.'s  em 
+$\omega\in\Omega$ se temos que
 $X_i(\omega)=X_j(\omega)$ para todo $i,j\in\N$.
 Vamos usar a notação simplificada 
 	\[
 		\{ \text{Empate} \}
 		=
-		\bigcup_{i\neq j} \{X_i=X_j\}	
+		\bigcup_{i\neq j} \{X_i=X_j\}.
 	\]
-Pelo lema anterior temos que
+Usando o lema anterior e a subaditividade de $\mathbb{P}$ 
+podemos ver imediatamente que
 $\P(\{\text{Empate}\})=0$.
-Vamos dizer que $X_n$ é um recorde (entre $X_1,\ldots,X_{n-1}$)
+Fixado $\omega\in\Omega$ vamos dizer 
+que $X_n(\omega)$ 
+é um recorde (entre $X_1(\omega),\ldots,X_{n-1}(\omega)$)
 se 
 	\[ 
-	X_n>\max\{X_1,\ldots,X_{n-1}\}.
+	X_n(\omega)>\max\{X_1(\omega),\ldots,X_{n-1}(\omega)\}.
 	\]
-Para simplificar a notação vamos denotar por 
-$A_n = \{X_n \ \text{é um recorde}\ \}$.
+Para facilitar vamos denotar 
+o evento 
+\[
+\{\omega\in\Omega: X_n(\omega)>\max\{X_1(\omega),\ldots,X_{n-1}(\omega)\} \} 
+\]
+por $\{X_n \ \text{é um recorde}\ \}$ ou simplesmente $A_n$.
 O Teorema de Renyi entre outras coisas afirma que
 os eventos $\{A_n\}$ são independentes e também que 
 	\[
@@ -695,8 +723,8 @@ os eventos $\{A_n\}$ são independentes e também que
 		\qquad 
 		\forall\ j\geq 2.
 	\]
-Isto é na verdade um caso particular de ``{\it ranks}''
-relativos de $X_n$ que é v.a.'s definida da seguinte maneira:
+De maneira mais geral, podemos definir o ranque
+relativo de $X_n$ que é v.a. dada por
 	\[
 		R_n = \sum_{i=1}^n 1_{\{X_j\geq X_n\}}.
 	\]
