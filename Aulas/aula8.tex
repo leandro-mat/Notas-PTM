@@ -911,7 +911,7 @@ Observamos que
 	\subset 
 	\mathcal{F}_{\infty}.
 \end{equation}
-Em particular, $E\in \mathcal{F}_n,\ \forall n\in\N$.
+Em particular, $E\in \mathcal{F}_n',\ \forall n\in\N$.
 Já que a sequência $\{X_n\}$ é independente temos que
 as $\sigma$-álgebras $\mathcal{F}_n$ e $\mathcal{F}_n'$
 são claramente independentes e assim $E$ é independente
@@ -993,3 +993,196 @@ seção  junto com o Lema \ref{lema-sigma-algebras-quase-triviais}.
 
 
 
+
+
+
+
+\section{A medida Produto em $\{0,1,2,\ldots,s\}^{\mathbb{N}}$}
+
+Seja $s\geq 1$ um número natural fixado. 
+Denote por $S=\{0,1,2,\ldots,s\}$, 
+o conjunto dos primeiros $s+1$ inteiros não negativos 
+e seja $\Omega = S^{\mathbb{N}}$, isto é,
+o produto cartesiano de infinitas cópias de $S$. 
+Este produto cartesiano pode ser definido 
+de várias formas. Por simplicidade vamos 
+adotar nesta seção a seguinte definição 
+\[
+S^{\mathbb{N}}
+\equiv 
+\{
+	(\omega_1,\omega_2,\ldots)
+	:\omega_i\in S\ \forall \ i\in \mathbb{N}
+\}.
+\]
+Note que podemos pensar em $\Omega$ como 
+o conjunto de todas as sequências tomando 
+valores em $S$. O conjunto $\Omega$ é 
+muitas vezes chamado na literatura de 
+espaço simbólico.
+
+Será de grande utilidade considerar algumas
+funções de ``projeção''. 
+Tais funções são definidas de maneira mais precisa
+da seguinte forma: para cada inteiro $n\geq 1$
+\[
+	\pi_n: S^{\mathbb{N}}\to S
+	\ \ \
+	\text{é definida por}\ \ \
+	\pi_n\big( (\omega_1,\omega_2,\ldots)  \big)
+	=
+	\omega_n.
+\]
+As aplicações $\pi_n$'s são chamadas de 
+{\bf funções coordenadas} ou {\bf projeções naturais}.
+De maneira usual denotamos por $S^n$ o produto cartesiano
+de $n$ cópias de $S$, isto é, $S^n=S\times S\times\ldots \times S$.
+
+Um cilindro $n$-dimensional em $\Omega=S^{\mathbb{N}}$ é um conjunto 
+$\mathcal{C}$ da forma 
+\[
+\mathcal{C}
+=
+\{
+\omega\in \Omega:
+(\pi_1(\omega),\ldots,\pi_n(\omega)) \in H
+\},
+\ \ 
+\text{onde}\ \ H\subset S^n.
+\]
+Note que $\mathcal{C}$ é um conjunto não-vazio 
+se $H$ é não vazio.
+Um conjunto $\mathcal{C}$ é chamado de 
+um cilindro finito dimensional se $\mathcal{C}$
+é um cilindro $n$-dimensional para algum $n\in\mathbb{N}$. 
+
+
+\begin{lema}
+A coleção $\mathscr{C}_0$ de todos os cilindros finito dimensionais de 
+$\Omega = S^{\mathbb{N}}$ é uma álgebra de conjuntos.
+\end{lema}
+
+\begin{proof}
+Para ver que $\Omega$ e $\emptyset$ pertencem a 
+$\mathscr{C}_0$ basta observar que 
+\[
+\Omega 
+= 
+\{\omega\in \Omega: \pi_1(\omega)\in S\}
+\in
+\mathscr{C}_0
+%
+\quad
+\text{e}
+\quad
+%
+\emptyset
+=
+\{\omega\in \Omega: \pi_1(\omega)\in \emptyset\}
+\in
+\mathscr{C}_0.
+\]
+%
+Seja $\mathcal{C}\in \mathscr{C}_0$ um cilindro finito dimensional
+da forma 
+$$
+\mathcal{C}
+=
+\{
+\omega\in \Omega:
+(\pi_1(\omega), \ldots,\pi_n(\omega)) \in H
+\},
+$$
+onde
+$H\subset S^n$ para algum $n\in\mathbb{N}$.
+Vamos mostrar que $\Omega\setminus \mathcal{C}\in \mathscr{C}_0$.
+De fato, temos que 
+$$
+\Omega\setminus \mathcal{C}
+=
+\{
+\omega\in \Omega:
+(\pi_1(\omega), \ldots,\pi_n(\omega)) \in S^n\setminus H
+\}.
+$$
+Resta mostrar que a coleção $\mathscr{C}_0$ é fechada 
+para uniões finitas. Para fazer isto é suficiente mostrar
+que dados quaisquer dois cilindros finito dimensionais 
+$\mathcal{C},\mathcal{D}\in\mathscr{C}_0$ temos que 
+$\mathcal{C}\cup \mathcal{D}\in\mathscr{C}_0$.
+Suponha que $\mathcal{C}$ é um cilindro $n$-dimensional
+da forma 
+$
+\mathcal{C}
+=
+\{\omega\in \Omega: (\pi_1(\omega),\ldots,\pi_n(\omega))\in H\},
+$
+onde $H\subset S^n$
+e $\mathcal{D}$ é um cilindro $m$-dimensional
+da forma 
+$
+\mathcal{D}
+=
+\{\omega\in \Omega: (\pi_1(\omega),\ldots,\pi_m(\omega))\in J\},
+$
+onde $J\subset S^m$.
+Sem perda de generalidade, podemos assumir que $m\leq n$.
+Vamos considerar primeiro o caso $m=n$. Neste caso 
+temos que 
+\[
+\mathcal{C}\cup\mathcal{D}
+=
+\{\omega\in \Omega: (\pi_1(\omega),\ldots,\pi_n(\omega))\in G\cup J\}.
+\] 
+Caso $m<n$, podemos olhar para o cilindro $\mathcal{D}$
+como um cilindro $n$-dimensional, pois 
+\[
+\mathcal{D}
+=
+\mathcal{D}'
+\equiv 
+\{
+\omega\in \Omega: 
+(\pi_1(\omega),\ldots,\pi_m(\omega),\ldots,\pi_n(\omega))
+\in J\times S^{n-m}
+\}.
+\] 
+Usando a igualdade acima e o caso anterior segue que 
+$\mathcal{C}\cup\mathcal{D}\in\mathscr{C}_0$. 
+\end{proof}
+
+
+
+\begin{definicao}
+Sejam $s\geq 1$ um inteiro positivo fixado, $S=\{0,1,2,\ldots,s\}$ 
+e $\Omega=S^{\mathbb{N}}$. A $\sigma$-álgebra gerada pela coleção
+dos cilindros finito dimensionais $\F =\sigma(\mathscr{C}_0)$ 
+é chamada de $\sigma$-álgebra gerada pelos cilindros.
+\end{definicao}
+
+Em seguida, vamos mostrar como construir diversas medidas 
+de probabilidade definidas em 
+$(\Omega,\F)\equiv (S^{\mathbb{N}},\sigma(\mathscr{C}_0))$ 
+tendo várias
+propriedades interessantes. A ideia é definir estas medidas
+inicialmente na coleção dos cilindros finito dimensionais 
+e em seguida usar o Teorema da Extensão de Carathéodory.
+
+\begin{proposicao}
+Sejam $s\geq 1$ inteiro positivo fixado,
+$\mathscr{C}_0$ a coleção dos cilindros finito 
+dimensionais de $\Omega=S^{\mathbb{N}}$
+e $(p_1,\ldots,p_s)\in [0,1]^s$ tais que 
+$p_1+\ldots +p_s=1$. 
+Para cada $\mathcal{C}\in\mathscr{C}_0$
+da forma 
+$
+\mathcal{C}
+=
+\{
+\omega\in \Omega:
+(\pi_1(\omega), \ldots,\pi_n(\omega)) \in H
+\},
+$
+onde $H\subset S^n$ defina 
+\end{proposicao}
