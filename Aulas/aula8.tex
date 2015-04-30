@@ -1168,13 +1168,17 @@ propriedades interessantes. A ideia é definir estas medidas
 inicialmente na coleção dos cilindros finito dimensionais 
 e em seguida usar o Teorema da Extensão de Carathéodory.
 
+
+
+
+
 \begin{proposicao}
 Sejam $s\geq 1$ inteiro positivo fixado,
 $\mathscr{C}_0$ a coleção dos cilindros finito 
 dimensionais de $\Omega=S^{\mathbb{N}}$
-e $(p_1,\ldots,p_s)\in [0,1]^s$ tais que 
+e fixe $(p_1,\ldots,p_s)\in [0,1]^s$ tal que 
 $p_1+\ldots +p_s=1$. 
-Para cada $\mathcal{C}\in\mathscr{C}_0$
+Se para cada $\mathcal{C}\in\mathscr{C}_0$
 da forma 
 $
 \mathcal{C}
@@ -1184,5 +1188,237 @@ $
 (\pi_1(\omega), \ldots,\pi_n(\omega)) \in H
 \},
 $
-onde $H\subset S^n$ defina 
+onde $H\subset S^n$ definimos
+\[
+\widetilde{\mathbb{P}}(\mathcal{C}) 
+=
+\sum_{(u_1,\ldots,u_s)\in H} 
+p_{u_1}\cdot p_{u_2}\cdot\ldots\cdot p_{u_s},
+\]
+então $\widetilde{\mathbb{P}}:\mathscr{C}_0\to [0,1]$ é uma função 
+de conjuntos bem definida e além do mais para qualquer coleção
+finita $\mathcal{C}_1,\ldots,\mathcal{C}_n\in\mathscr{C}_0$
+de cilindros dois a dois disjuntos temos que 
+\begin{equation}\label{prop-finitamente-aditiva-med-prod-SN}
+\widetilde{\mathbb{P}}(\mathcal{C}_1\cup\ldots\cup \mathcal{C}_n)
+=
+\sum_{j=1}^n \widetilde{\mathbb{P}}(\mathcal{C}_j).
+\end{equation}
 \end{proposicao}
+
+
+
+\begin{proof}
+Já que um elemento em $\mathscr{C}_0$ pode admitir infinitas 
+representações distintas, temos que mostrar primeiro que 
+$\widetilde{\mathbb{P}}$ esta bem definida, isto é, seu valor é independente
+da escolha da representação de um cilindro. 
+Para verificar que esta afirmação é verdadeira 
+seja $\mathcal{C}\in\mathscr{C}_0$ e sejam 
+$
+\mathcal{C}
+=
+\{
+\omega\in \Omega:
+(\pi_1(\omega), \ldots,\pi_n(\omega)) \in H
+\},
+$
+onde $H\subset S^n$ e 
+$
+\mathcal{C}'
+=
+\{
+\omega\in \Omega:
+(\pi_1(\omega), \ldots,\pi_m(\omega)) \in H'
+\},
+$
+onde $H'\subset S^m$ duas representações 
+deste cilindro. 
+Podemos assumir por simetria que $m\leq n$.
+No caso $m=n$, note que teremos $ H=H'$ e claramente
+$
+\widetilde{\mathbb{P}}(\mathcal{C})
+=
+\widetilde{\mathbb{P}}(\mathcal{C}')
+$.
+Vamos supor que $m<n$. Neste caso, para qualquer $\omega\in\mathcal{C}'$
+não existe nenhuma restrição para os
+valores $\pi_{m+1}(\omega),\ldots,\pi_n(\omega)$
+desta forma podemos verificar que 
+$
+\mathcal{C}' 
+= 
+\{
+\omega\in \Omega:
+(\pi_1(\omega), \ldots,\pi_m(\omega),\ldots,\pi_n(\omega)) 
+\in H'\times S^{n-m} 
+\},
+$
+donde segue (como no caso $m=n$) que $H'\times S^{n-m} = H$.
+Portanto temos que 
+\begin{align*}
+\widetilde{\mathbb{P}}(C)
+&=
+\sum_{(u_1,\ldots,u_n)\in H} 
+p_{u_1}\cdot p_{u_2}\cdot\ldots\cdot p_{u_n}
+\\[0.3cm]
+&=
+\sum_{(u_1,\ldots,u_m,\ldots,u_n)\in H'\times S^{n-m}} 
+p_{u_1}\cdot p_{u_2}\cdot\ldots\cdot p_{u_m}\cdot\ldots\cdot p_{u_n}
+\\[0.3cm]
+&=
+\sum_{(u_1,\ldots,u_m)\in H'}
+p_{u_1}\cdot p_{u_2}\cdot\ldots\cdot p_{u_m}
+\sum_{(u_{m+1},\ldots,u_n)\in S^{n-m}} 
+p_{u_{m+1}}\cdot\ldots\cdot p_{u_n}
+\\[0.3cm]
+&=
+\sum_{(u_1,\ldots,u_m)\in H'}
+p_{u_1}\cdot p_{u_2}\cdot\ldots\cdot p_{u_m}
+\prod_{i=m+1}^n
+\left( 
+	\sum_{u_{i}\in S} p_{u_{i}}
+\right)
+\\[0.3cm]
+&=
+\sum_{(u_1,\ldots,u_m)\in H'}
+p_{u_1}\cdot p_{u_2}\cdot\ldots\cdot p_{u_m}
+\\[0.3cm]
+&=
+\widetilde{\mathbb{P}}(\mathcal{C}').
+\end{align*}
+
+
+Sejam $\mathcal{C}_1$ e $\mathcal{C}_2$ cilindros 
+disjuntos. Suponha que $\mathcal{C}_1$ é 
+um cilindro $n_1$-dimensional da forma
+$
+\mathcal{C}_1 
+=
+\{
+\omega\in \Omega:
+(\pi_1(\omega), \ldots,\pi_{n_1}(\omega)) 
+\in H_1 
+\},
+$
+onde $H_1\subset S^{n_1}$ e analogamente
+$\mathcal{C}_2$ é um cilindro $n_2$-dimensional
+da forma
+$
+\mathcal{C}_2 
+=
+\{
+\omega\in \Omega:
+(\pi_1(\omega), \ldots,\pi_{n_2}(\omega)) 
+\in H_2 
+\}.
+$
+Suponha por simetria que $n_1\leq n_2$. 
+Vamos analisar primeiramente o caso $n_1=n_2$.
+Neste caso já que $\mathcal{C}_1\cap\mathcal{C}_2=\emptyset$ 
+segue que $H_1\cap H_2=\emptyset$ e também
+(como vimos no lema acima) 
+$
+\mathcal{C}_1\cup \mathcal{C}_2
+=
+\{
+\omega\in \Omega:
+(\pi_1(\omega), \ldots,\pi_{n_1}(\omega)) 
+\in H_1\cup H_2 
+\},
+$
+logo 
+\begin{align*}
+\widetilde{\mathbb{P}}(\mathcal{C}_1\cup \mathcal{C}_2)
+&=
+\sum_{(u_1,\ldots,u_{n_1})\in H_1\cup H_2} 
+p_{u_1}\cdot p_{u_2}\cdot\ldots\cdot p_{u_{n_1}}
+\\[0.3cm]
+&=
+\sum_{(u_1,\ldots,u_{n_1})\in H_1} 
+p_{u_1}\cdot p_{u_2}\cdot\ldots\cdot p_{u_{n_1}}
++
+\sum_{(u_1,\ldots,u_{n_1})\in H_2} 
+p_{u_1}\cdot p_{u_2}\cdot\ldots\cdot p_{u_{n_1}}
+\\[0.3cm]
+&=
+\widetilde{\mathbb{P}}(\mathcal{C}_1)
++
+\widetilde{\mathbb{P}}(\mathcal{C}_2).
+\end{align*}
+No caso $n_1<n_2$ usamos a representação $n_2$-dimensional
+de $\mathcal{C}_1$ dada por 
+$
+\mathcal{C}_1
+=
+\{
+\omega\in \Omega:
+(\pi_1(\omega), \ldots,\pi_{n_1}(\omega),\ldots,\pi_{n_2}(\omega)) 
+\in H_1\times S^{n_2-n_1} 
+\}
+$
+e procedemos como no caso anterior. Para concluir que 
+\eqref{prop-finitamente-aditiva-med-prod-SN}
+é válida, basta proceder uma indução formal.
+\end{proof}
+
+
+\begin{lema}\label{lema-medida-fin-adit-implica-sigma-fin-adit}
+Seja $\widetilde{\mathbb{P}}:\mathscr{C}_0\to [0,1]$
+é uma função de conjuntos satisfazendo 
+\eqref{prop-finitamente-aditiva-med-prod-SN}.
+Suponha que para qualquer sequência 
+$\{\mathcal{C}_n\}_{n\in\mathbb{N}}$ de elementos de 
+$\mathscr{C}_0$ tal que $\mathcal{C}_n\downarrow \emptyset$
+temos que $\widetilde{\mathbb{P}}(\mathcal{C}_n)\downarrow 0$.
+Então $\widetilde{\mathbb{P}}$ é uma medida sobre a 
+álgebra $\mathscr{C}_0$.
+\end{lema}
+
+\begin{proof}
+É suficiente provar que 
+$\widetilde{\mathbb{P}}$ é contavelmente aditiva.
+Seja $\{\mathcal{D}_n\}_{n\in\mathbb{N}}$
+uma coleção dois a dois disjunta de elementos 
+de $\mathscr{C}_0$ 
+e suponha que 
+$\mathcal{D}=\cup_{n\in\mathbb{N}}\mathcal{D}_n\in\mathscr{C}_0$.
+Para cada $n\in\mathbb{N}$ defina  
+$\mathcal{E}_n\equiv \mathcal{D}\setminus \cup_{k\leq n}\mathcal{D}_k$.
+Observe que $\{\mathcal{E}_n\}_{n\in\mathbb{N}}$ é uma sequência de 
+conjuntos em $\mathscr{C}_0$ tal que $\mathcal{E}_n\downarrow \emptyset$.
+Usando a propriedade \eqref{prop-finitamente-aditiva-med-prod-SN}
+e a hipótese do lema temos que 
+$
+\widetilde{\mathbb{P}}(\mathcal{D})
+- 
+\sum_{k=1}^n\widetilde{\mathbb{P}}(\mathcal{D}_k)
+=
+\widetilde{\mathbb{P}}(\mathcal{E}_n)
+\to 0
+$ 
+e portanto concluímos que 
+$
+\widetilde{\mathbb{P}}(\mathcal{D})
+=
+\sum_{k=1}^{\infty}\widetilde{\mathbb{P}}(\mathcal{D}_k).
+$
+\end{proof}
+
+
+
+
+O lema a seguir pode ser obtido como uma consequência 
+do Teorema da Tychonof e da propriedade de interseção 
+de conjuntos compactos. A prova apresentada abaixo é 
+independente destes conceitos topológicos, elementar 
+e baseada simplesmente em um processo 
+de diagonal de Cantor.
+
+\begin{lema}
+Sejam $S=\{0,1,2,\ldots,s\}$ um subconjunto finito de $\mathbb{Z}$,  
+$\{\mathcal{C}_n\}_{n\in\mathbb{N}}$ uma sequência 
+de cilindros finito dimensionais não-vazios em $S^{\mathbb{N}}$
+tal que $\mathcal{C}_n\downarrow \mathcal{C}$, então 
+$\mathcal{C}$ é não-vazio.
+\end{lema}

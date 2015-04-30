@@ -127,7 +127,7 @@ Para o caso $n=1$ o resultado é óbvio.
 Suponha que 1) vale para união de $n$ intervalos
 disjuntos contida em $I$. Sem perda de generalidade 
 podemos supor que 
-$I_1=(a_1,b_1],\ldots I_n=(a_n,b_n], I_{n+1}=(a_{n+1},b_{n+1}]$
+$I_1=(a_1,b_1],\ldots, I_n=(a_n,b_n], I_{n+1}=(a_{n+1},b_{n+1}]$
 são tais que $a_1,\ldots, a_n <a_{n+1}$. 
 Já que todos $I_k$'s estão contidos em $(a,b]$
 temos que 
@@ -258,14 +258,14 @@ em $(0,1]$.
 Pois bem, dado $A\subset (0,1]$ 
 definimos a medida exterior de $A$ como
 em \eqref{def-medida-exterior}, ou seja,
-$$
+\[
 \tn{Leb}^{*}(A)=\inf 
 	\left\{
 		\sum_{j=1}^\infty \mathrm{Leb}(I_j):
 		\ A\subset \bigcup_{j=1}^\infty I_j,
 		\ \text{com}\ I_j\in \mathcal{A}\ \ \forall  j\in\mathbb{N}
 	\right\}.
-$$
+\]
 
 Pelo Teorema \ref{teo-leb-sigma-aditiva-algebra} 
 temos que $\mathrm{Leb}:\mathcal{A}\to [0,\infty]$
@@ -347,7 +347,7 @@ esta construção com grande parte dos detalhes sendo deixados
 como exercício.
 
 Considere a seguinte coleção de subconjuntos de $\mathbb{R}$
-\[
+\begin{equation}\label{algebra-conjuntos-R}
 \mathcal{A}
 =
 \left\{ 
@@ -368,7 +368,7 @@ III) \ \ (-\infty,a]  \ \text{com}\  a\in\mathbb{R};
 \right\}
 \cup
 \{\mathbb{R},\emptyset\}.
-\]
+\end{equation}
 
 
 
@@ -410,8 +410,44 @@ da seguinte maneira:
 	Mostre que a função $\mathrm{Leb}:\mathcal{A}\to [0,+\infty]$ como
 	definida acima é uma medida na álgebra $\mathcal{A}$.
 \end{exercicio}
-
+\vspace*{-0.3cm}
 \noindent{\bf Dica.} Generalize o Teorema \ref{teo-leb-sigma-aditiva-algebra}.
+\bigskip
+
+Para finalizar a construção da medida de Lebesgue em 
+$\mathbb{R}$, consideramos a medida exterior 
+$\mathrm{Leb}^*:\mathcal{P}(\mathbb{R})\to [0,+\infty]$ 
+definida como na Proposição \ref{prop-med-ext}.
+Temos pelo item $1)$ do 
+Teorema da Extensão de Carathéodory 
+que a medida exterior $\mathrm{Leb}^*$ restrita a coleção $\mathcal{M}$
+de todos os subconjuntos de $\mathbb{R}$ que são
+$\mathrm{Leb}^*$-mensuráveis é de fato uma medida. 
+Esta medida é chamada de {\bf medida de Lebesgue} sobre $\mathbb{R}$ e será denotada
+simplesmente por $\lambda$. A $\sigma$-álgebra $\mathcal{M}$ é 
+chamada de $\sigma$-álgebra de Lebesgue de $\mathbb{R}$.
+ Utilizando o item $2)$ do 
+Teorema da Extensão de Carathéodory podemos concluir também 
+para quaisquer $a,b\in \mathbb{R}$ que 
+\[
+\lambda(\{a\})=0,
+\quad
+\lambda([a,b])=b-a,
+\quad
+\lambda\big((-\infty,a]\big)=+\infty
+\quad
+\text{e}
+\quad 
+\lambda\big([a,+\infty)\big)=+\infty.
+\]
+
+Observamos que ao longo do texto vamos utilizar
+com mais frequência a restrição da 
+medida de Lebesgue $\lambda$ à $\sigma(\mathcal{A})$
+que é a $\sigma$-álgebra de Borel de $\mathbb{R}$ e
+por simplicidade (e tradição)
+vamos chamar esta restrição também de medida de Lebesgue
+sobre $\mathbb{R}$.
 
 
 
@@ -419,3 +455,218 @@ da seguinte maneira:
 
 
 
+
+\section[A Invariância por Translação da Medida de Lebesgue em $\mathbb{R}$]
+{A Invariância por Translação da Medida de\\ Lebesgue em $\mathbb{R}$}
+
+
+Seja $x\in\mathbb{R}$ fixado. Definimos a 
+translação por $x$ de subconjunto $A\subset \mathbb{R}$ 
+como sendo o conjunto 
+\[
+x\oplus A \equiv \{x+a\in \mathbb{R}: a\in A\}.
+\]
+O objetivo desta seção é provar que a medida de 
+Lebesgue é invariante por translações, isto é, 
+para quaisquer $x\in\mathbb{R}$ e $A\in\mathcal{M}$ fixados,
+temos que $\lambda(A)=\lambda(x\oplus A)$.
+Uma maneira interessante e que fornece uma 
+perspectiva mais geral da afirmação feita acima
+é considerar o conjunto $A$ como a {\bf imagem inversa} do 
+conjunto $x\oplus A$ pela aplicação $T:\mathbb{R}\to\mathbb{R}$ 
+dada por $T(y)=y-x$.
+Neste contexto a igualdade 
+$\lambda(A)=\lambda(x\oplus A)$ 
+se expressa da seguinte forma 
+$\lambda(A)=\lambda(T^{-1}(A))$. 
+
+
+Uma pergunta natural sobre esta última maneira de expressar
+a invariância translacional é: porque escrever
+esta equação usando a imagem inversa ao invés de 
+escrevê-la usando a imagem direta 
+da função inversa de $T$ (o que parece ser mais simples). 
+A resposta é que desta
+maneira podemos definir o conceito de 
+medida invariante para aplicações que não são 
+inversíveis e que podem ser apenas mensuráveis.
+De fato, dada qualquer aplicação $T:\mathbb{R}\to\mathbb{R}$
+Borel mensurável a função de conjuntos definida 
+sobre $\mathscr{B}(\mathbb{R})$ 
+($\sigma$-álgebra de Borel de $\mathbb{R}$) por
+\[
+A\mapsto \lambda(T^{-1}(A))
+\]
+define sempre uma medida sobre os borelianos. 
+Por causa desta observação podemos
+definir que $\lambda$ (ou qualquer outra medida em $\mathbb{R}$)
+é invariante por $T$ se a medida definida acima coincide 
+com a medida $\lambda$. 
+
+
+Antes de provar a invariância por translações  
+da medida de Lebesgue vamos provar um fato 
+relacionado que se refere  
+a invariância por translações da medida exterior 
+$\mathrm{Leb}^*$. 
+
+\begin{teorema}
+[Invariância por Translações de $\mathrm{Leb}^*$]
+Para qualquer $x\in\mathbb{R}$ fixado e 
+$E\in \mathcal{P}(\mathbb{R})$ temos que 
+\[
+\mathrm{Leb}^*(x\oplus E) 
+=
+\mathrm{Leb}^*(E).
+\]
+\end{teorema}
+
+\begin{proof}
+Seja $\bigcup_{j=1}^\infty I_j$ uma cobertura de $E$, 
+onde cada $I_j\in\mathcal{A}$ e $\mathcal{A}$ é a álgebra 
+de conjuntos de $\mathbb{R}$ 
+definida em \eqref{algebra-conjuntos-R}. 
+É fácil ver que  $\bigcup_{j=1}^\infty (x\oplus I_j)$
+é uma cobertura de $x\oplus E$ e além do mais que 
+$(x\oplus I_j) \in \mathcal{A}$. 
+\begin{exercicio}
+Mostre que as duas afirmações feitas acima são verdadeiras
+e que 
+$
+\mathrm{Leb}(x\oplus I_j)
+=
+\mathrm{Leb}(I_j).
+$
+\end{exercicio}
+Usando a definição da medida exterior
+$\mathrm{Leb}^*$ em seguida, o exercício acima 
+obtemos a seguinte estimativa 
+\begin{align*}
+\mathrm{Leb}^{*}(x\oplus E)
+&\leq
+\inf 
+	\left\{
+		\sum_{j=1}^\infty \mathrm{Leb}(x\oplus I_j):
+		\ x\oplus E\subset \bigcup_{j=1}^\infty (x\oplus I_j)
+	\right\}
+\\
+&=
+\inf 
+	\left\{
+		\sum_{j=1}^\infty \mathrm{Leb}(I_j):
+		\ E\subset \bigcup_{j=1}^\infty I_j
+	\right\}
+\\
+&=
+\mathrm{Leb}^{*}(E).
+\end{align*}
+Já que toda cobertura $\{R_j\}_{j\in\mathbb{N}}$ de $x\oplus E$
+pode ser obtida por translação de uma cobertura 
+$\{I_j\}_{j\in\mathbb{N}}$ de $E$, obtemos de maneira 
+semelhante a que fizemos acima a cota 
+$\mathrm{Leb}^{*}(E)\leq \mathrm{Leb}^{*}(x\oplus E)$ e
+finalmente que  
+$\mathrm{Leb}^{*}(E)=\mathrm{Leb}^{*}(x\oplus E)$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+\begin{teorema}
+[Invariância por Translações da Medida de Lebesgue]
+Sejam $E$ um conjunto Lebesgue mensurável e $x\in\mathbb{R}$
+fixados. Então $x\oplus E$ é Lebesgue mensurável e além do 
+mais temos que 
+\[
+\lambda(x\oplus E)= \lambda(E).
+\]
+\end{teorema}
+
+\begin{proof}
+Pelo teorema anterior é suficiente mostrar que 
+para todo conjunto Lebesgue mensurável $E$ temos 
+que $x\oplus E$ é Lebesgue mensurável.
+\begin{exercicio}
+Sejam $A,B\subset \mathbb{R}$ subconjuntos arbitrários
+e $x\in\mathbb{R}$ fixado. Mostre que as seguintes igualdades
+são válidas
+\[
+(x\oplus A)\cap B 
+= 
+x\oplus 
+\Big(A\cap \big((-x)\oplus B\big)\Big)
+\quad\text{e}\quad
+(x\oplus A^c) = (x\oplus A)^c.
+\]
+\end{exercicio}
+Do teorema anterior e da primeira igualdade do exercício 
+acima, para quaisquer que sejam $A,B\subset \mathbb{R}$ 
+e $x\in\mathbb{R}$ fixados temos a seguinte igualdade  
+\begin{equation}\label{eq-aux-invariancia-med-lebesgue}
+\mathrm{Leb}^*\big((x\oplus A)\cap B\big)
+= 
+\mathrm{Leb}^*
+\Big(A\cap \big((-x)\oplus B\big)\Big).
+\end{equation}
+Já que estamos assumindo que $E$ 
+é um conjunto Lebesgue mensurável, então 
+podemos afirmar que 
+\[
+\mathrm{Leb}^*\big((-x)\oplus A\big)
+=
+\mathrm{Leb}^*\Big( \big((-x)\oplus A\big) \cap E\Big)
++
+\mathrm{Leb}^*\Big( \big((-x)\oplus A\big) \cap E^c\Big)
+\]
+Aplicando a identidade 
+\eqref{eq-aux-invariancia-med-lebesgue} nas duas parcelas
+do lado direito da igualdade acima, ficamos com 
+\[
+\mathrm{Leb}^*\big((-x)\oplus A\big)
+=
+\mathrm{Leb}^*\Big( \big(x\oplus E\big) \cap A\Big)
++
+\mathrm{Leb}^*\Big( \big(x\oplus E^c\big) \cap A\Big)
+\]
+Usando a invariância por translações da medida exterior 
+$\mathrm{Leb}^*$ e a segunda igualdade do exercício,
+na segunda parcela acima, ficamos com 
+\[
+\mathrm{Leb}^*(A)
+=
+\mathrm{Leb}^*\big((-x)\oplus A\big)
+=
+\mathrm{Leb}^*\Big( \big(x\oplus E\big) \cap A\Big)
++
+\mathrm{Leb}^*\Big( \big(x\oplus E\big)^c \cap A\Big).
+\]
+Como $A\subset \mathbb{R}$ é arbitrário segue da igualdade acima que 
+$x\oplus E$ é Lebesgue mensurável.
+\end{proof}
+
+
+
+
+
+
+
+\begin{exercicio}
+Sejam $x\in\mathbb{R}$ e $B$ um boreliano da reta fixados.
+Mostre que $x\oplus B$ é um boreliano.
+Em seguida, usando que 
+$
+	\mathrm{Leb}(A)=\mathrm{Leb}(x\oplus A),
+$
+para todo $A$ elemento da 
+álgebra $\mathcal{A}$ definida em \eqref{algebra-conjuntos-R}
+e o Teorema $\pi-\lambda$ de Dynkin,
+mostre que $\lambda\big|_{\mathscr{B}(\mathbb{R})}$
+é invariante por translações. 
+
+\end{exercicio}
