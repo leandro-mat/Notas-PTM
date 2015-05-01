@@ -321,6 +321,18 @@ acima que a prova está concluída.
 
 
 
+
+
+
+
+
+
+\section{Caracterização de $\sigma(X_1,\ldots,X_n)$}
+
+
+
+
+
 \begin{teorema}
 Sejam $(\Omega,\F,\P)$ um espaço de probabilidade
 e $X_1,\ldots,X_n$ variáveis aleatórias {\bf simples}. Então
@@ -477,7 +489,8 @@ Prova do item a).
 A coleção $\mathcal{C}$ de todos os subconjuntos 
 de $\Omega$ da forma 
 $\{(X_1,\ldots,X_n)\in E\}$, onde $E\in\mathscr{B}(\R^n)$
-é uma $\sigma$-álgebra. 
+é uma $\sigma$-álgebra. A prova deste fato é análoga a dada 
+na prova do item a) do teorema anterior.  
 Pela Proposição \ref{prop-caracterizacao-vetor-aleatorio}
 temos que a aplicação $\omega\mapsto (X_1(\omega),\ldots,X_n(\omega))$
 é mensurável segundo a $\sigma$-álgebra $\sigma(X_1,\ldots,X_n)$.
@@ -491,9 +504,9 @@ item a) está provado.
 Prova do item b).
 Se $Y=f(X_1,\ldots,X_n)$ então $Y=f\circ \mathbf{X}$,
 onde $\mathbf{X}(\omega)=(X_1(\omega),\ldots,X_n(\omega))$.
-Logo para todo $B\in\mathscr{B}(\R)$ temos que 
+Desta forma para todo $B\in\mathscr{B}(\R)$ temos que 
 $Y^{-1}(B)= \mathbf{X}^{-1}(f^{-1}(B))= \mathbf{X}^{-1}(E)$
-que pelo item a) implica que $Y$ 
+que pelo item a) implica imediatamente que a v.a. $Y$ 
 é $\sigma(X_1,\ldots,X_n)$-mensurável.
 
 
@@ -903,7 +916,7 @@ Como $\mathcal{F}_n\subset \mathcal{F}_{n+1}$ temos que
 	\mathcal{F}_{\infty}
 	\equiv
 	\sigma(X_1,X_2,\ldots)
-	=
+	\equiv
 	\sigma\left( \bigcup_{n\in\N} \sigma(X_n) \right)
 	=
 	\sigma\left( \bigcup_{n\in\N} \mathcal{F}_n \right).
@@ -1070,7 +1083,7 @@ $\Omega = S^{\mathbb{N}}$ é uma álgebra de conjuntos.
 \begin{proof}
 Para ver que $\Omega$ e $\emptyset$ pertencem a 
 $\mathscr{C}_0$ basta observar que 
-\[
+$
 \Omega 
 = 
 \{\omega\in \Omega: \pi_1(\omega)\in S\}
@@ -1086,30 +1099,30 @@ $\mathscr{C}_0$ basta observar que
 \{\omega\in \Omega: \pi_1(\omega)\in \emptyset\}
 \in
 \mathscr{C}_0.
-\]
+$
 %
 Seja $\mathcal{C}\in \mathscr{C}_0$ um cilindro finito dimensional
 da forma 
-$$
+$
 \mathcal{C}
 =
 \{
 \omega\in \Omega:
 (\pi_1(\omega), \ldots,\pi_n(\omega)) \in H
 \},
-$$
+$
 onde
 $H\subset S^n$ para algum $n\in\mathbb{N}$.
 Vamos mostrar que $\Omega\setminus \mathcal{C}\in \mathscr{C}_0$.
 De fato, temos que 
-$$
+$
 \Omega\setminus \mathcal{C}
 =
 \{
 \omega\in \Omega:
 (\pi_1(\omega), \ldots,\pi_n(\omega)) \in S^n\setminus H
 \}.
-$$
+$
 Resta mostrar que a coleção $\mathscr{C}_0$ é fechada 
 para uniões finitas. Para fazer isto é suficiente mostrar
 que dados quaisquer dois cilindros finito dimensionais 
@@ -1134,14 +1147,14 @@ onde $J\subset S^m$.
 Sem perda de generalidade, podemos assumir que $m\leq n$.
 Vamos considerar primeiro o caso $m=n$. Neste caso 
 temos que 
-\[
+$
 \mathcal{C}\cup\mathcal{D}
 =
 \{\omega\in \Omega: (\pi_1(\omega),\ldots,\pi_n(\omega))\in G\cup J\}.
-\] 
+$ 
 Caso $m<n$, podemos olhar para o cilindro $\mathcal{D}$
 como um cilindro $n$-dimensional, pois 
-\[
+$
 \mathcal{D}
 =
 \mathcal{D}'
@@ -1151,7 +1164,7 @@ como um cilindro $n$-dimensional, pois
 (\pi_1(\omega),\ldots,\pi_m(\omega),\ldots,\pi_n(\omega))
 \in J\times S^{n-m}
 \}.
-\] 
+$ 
 Usando a igualdade acima e o caso anterior segue que 
 $\mathcal{C}\cup\mathcal{D}\in\mathscr{C}_0$. 
 \end{proof}
@@ -1181,7 +1194,8 @@ e em seguida usar o Teorema da Extensão de Carathéodory.
 Sejam $s\geq 1$ inteiro positivo fixado,
 $\mathscr{C}_0$ a coleção dos cilindros finito 
 dimensionais de $\Omega=S^{\mathbb{N}}$
-e fixe $(p_1,\ldots,p_s)\in [0,1]^s$ tal que 
+e fixe um vetor de probabilidades, i.e., 
+$(p_1,\ldots,p_s)\in [0,1]^s$ tal que 
 $p_1+\ldots +p_s=1$. 
 Se para cada $\mathcal{C}\in\mathscr{C}_0$
 da forma 
