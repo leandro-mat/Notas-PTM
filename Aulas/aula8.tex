@@ -1429,9 +1429,9 @@ $
 
 O lema a seguir pode ser obtido como uma consequência 
 do Teorema da Tychonof e da propriedade de interseção 
-de conjuntos compactos. A prova apresentada abaixo é 
-independente destes conceitos topológicos, elementar 
-e baseada simplesmente em um processo 
+de conjuntos compactos. A prova apresentada abaixo é
+um pouco mais elementar e independente destes conceitos 
+topológicos e baseada simplesmente em um processo 
 de diagonal de Cantor.
 
 \begin{lema}
@@ -1441,3 +1441,142 @@ de cilindros finito dimensionais não-vazios em $S^{\mathbb{N}}$
 tal que $\mathcal{C}_n\downarrow \mathcal{C}$, então 
 $\mathcal{C}$ é não-vazio.
 \end{lema}
+
+
+\begin{proof}
+Suponha que $\mathcal{C}_j$ é um cilindro $d_j$ dimensional
+da forma 
+\[
+\mathcal{C}_j
+=
+\{
+\omega\in\Omega: 
+\big(\pi_1(\omega),\ldots,\pi_{d_j}(\omega)\big)\in H_j,
+\ \text{onde}\ H_j\subset S^{d_j}
+\}.
+\]
+Já que estamos assumindo que todos os cilindros da coleção 
+$\{\mathcal{C}_n\}_{n\in\mathbb{N}}$ são não-vazios, 
+podemos para cada $n\in\mathbb{N}$ escolher um ponto 
+$\omega_n\in\mathcal{C}_n$. Escrevendo em linha as coordenadas
+dos pontos $\omega_n$'s temos 
+\[
+\begin{array}{ccccc}
+\pi_1(\omega_1) & \pi_1(\omega_2) & \pi_1(\omega_3) & \ldots &  \\ 
+\pi_2(\omega_1) & \pi_2(\omega_2) & \pi_1(\omega_3) & \ldots &  \\ 
+\pi_3(\omega_1) & \pi_2(\omega_2) & \pi_1(\omega_3) & \ldots &  \\ 
+\vdots & \vdots & \vdots &  & 
+\end{array} 
+\]
+Agora procedemos com uma pequena modificação do método 
+diagonal de Cantor. Já que $S$ é um conjunto finito, algum
+elemento $u_1\in S$ aparece infinitas vezes na primeira linha.
+Seja $n_{1,k}$ uma sequência crescente infinita de índices 
+tal que $\pi_1(\omega_{n_{1,k}})=u_1$ para todo $k\in \mathbb{N}$.
+Utilizando o mesmo raciocínio podemos garantir a existência de 
+uma sequência infinita crescente $\{n_{2,k}\}_{k\in\mathbb{N}}$
+contida em $\{n_{1,k}\}_{k\in\mathbb{N}}$ e um elemento $u_2\in S$
+tais que $\pi_2(\omega_{n_{2,k}})=u_2$. Procedendo uma indução formal
+podemos garantir que para todo $r\in\mathbb{N}$ existe uma sequência
+$\{n_{r,k}\}_{k\in\mathbb{N}}$ e $u_r\in S$ tais que 
+$
+\{n_{1,k}\}_{k\in\mathbb{N}}
+\supset
+\{n_{2,k}\}_{k\in\mathbb{N}}
+\supset
+\ldots
+\supset
+\{n_{r-1,k}\}_{k\in\mathbb{N}}
+\supset
+\ldots
+\supset 
+\{n_{r,k}\}_{k\in\mathbb{N}}
+$
+e $\pi_r(\omega_{n_{r,k}}) = u_r$
+para todo $k\in \mathbb{N}$.
+Desta forma temos 
+para todo $1\leq r\leq k$ que $\pi_r(\omega_{n_{k,k}})=u_r$.
+Portanto temos 
+\[
+\big( 
+	\pi_1(\omega_{n_{k,k}}),
+	\pi_2(\omega_{n_{k,k}}),
+	\ldots,
+	\pi_r(\omega_{n_{k,k}})   
+\big)
+=
+(u_1,u_2,\ldots,u_r),
+\quad
+\text{para}\
+r\leq k.
+\]
+Considere o ponto $\omega\in\Omega$ dado por
+$\omega=(u_1,u_2,\ldots)$. Vamos mostrar que 
+o ponto 
+$\delta=(u_1,u_2,\ldots) \in \mathcal{C}_j$
+para todo $j\in\mathbb{N}$.
+Lembramos que por hipótese temos a seguinte
+sequência de continências:
+$
+\ldots
+\subset
+\mathcal{C}_n
+\subset 
+\mathcal{C}_{n-1}
+\subset
+\ldots
+\subset 
+\mathcal{C}_1.
+$
+Portanto para todo $k\in\mathbb{N}$ temos 
+por definição que
+$\omega_{n_{k,k}}
+\in 
+\mathcal{C}_{n_{k,k}}\subset \ldots \subset \mathcal{C}_1.
+$
+Tomando $k\geq d_1$ 
+temos por definição de $\mathcal{C}_1$ que 
+\[
+\begin{array}{c}
+\big(
+\pi_1( \omega_{n_{k,k} } ),
+\pi_2( \omega_{n_{k,k} } ),
+\ldots,
+\pi_{d_1}( \omega_{n_{k,k} } )
+\big)
+\in H_1
+\quad
+\Longrightarrow
+\quad
+(u_1,\ldots,u_{d_1}) \in H_1.
+\end{array}
+\]
+Já que 
+$
+(\pi_1(\delta),\ldots,\pi_{d_1}(\delta))
+=
+(u_1,\ldots,u_{d_1})
+$
+podemos concluir que 
+$\delta
+\in 
+\{
+\omega\in\Omega: 
+\big(\pi_1(\omega),\ldots,\pi_{d_j}(\omega)\big)\in H_1,
+\ \text{onde}\ H_1\subset S^{d_1}
+\}
+\equiv 
+\mathcal{C}_1
+$.
+Analogamente podemos provar que $\delta\in\mathcal{C}_j$
+para todo $j\geq 1$ e daí segue que $\mathcal{C}\neq \emptyset$.
+\end{proof}
+
+
+
+
+
+
+
+
+
