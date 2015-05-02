@@ -1190,7 +1190,7 @@ e em seguida usar o Teorema da Extensão de Carathéodory.
 
 
 
-\begin{proposicao}
+\begin{proposicao}\label{prop-def-pre-med-prod-SN}
 Sejam $s\geq 1$ inteiro positivo fixado,
 $\mathscr{C}_0$ a coleção dos cilindros finito 
 dimensionais de $\Omega=S^{\mathbb{N}}$
@@ -1577,13 +1577,13 @@ para todo $j\geq 1$ e daí segue que $\mathcal{C}\neq \emptyset$.
 
 
 
-\begin{teorema}
+\begin{teorema}\label{teo-extensao-pre-med-prod}
 Seja $\mathscr{C}_0$ a álgebra dos cilindros 
 finito dimensionais de $S^{\mathbb{N}}$. 
 Toda medida $\widetilde{\mathbb{P}}:\mathscr{C}_0\to [0,1]$ 
 finitamente aditiva 
 (satisfazendo \eqref{prop-finitamente-aditiva-med-prod-SN}) 
-é de fato $\sigma$-aditiva sobre $\mathcal{C}_0$.
+é de fato $\sigma$-aditiva sobre $\mathscr{C}_0$.
 \end{teorema}
 
 
@@ -1608,4 +1608,73 @@ Lema \ref{lema-medida-fin-adit-implica-sigma-fin-adit}
 são válidas e portanto podemos concluir que 
 $\widetilde{\mathbb{P}}$ é uma medida sobre $\mathscr{C}_0$.
 \end{proof}
+
+
+
+
+\begin{teorema}[Existência de Medidas Produto em $S^{\mathbb{N}}$]
+\label{teo-exist-med-prod-cartesiano-enumeravel}
+Sejam $s\geq 1$ inteiro positivo fixado,
+$S=\{0,1,2,\ldots,s\}$, 
+$\mathscr{C}_0$ a coleção dos cilindros finito 
+dimensionais de $\Omega=S^{\mathbb{N}}$.
+Para qualquer $(p_1,\ldots,p_s)\in [0,1]^s$ 
+tal que $p_1+\ldots +p_s=1$
+(vetor de probabilidades) fixado, 
+existe uma única medida de probabilidade 
+$\mathbb{P}:\sigma(\mathscr{C}_0)\to [0,1]$
+tal que para todo $\mathcal{C}\in\mathscr{C}_0$
+da forma 
+$
+\mathcal{C}
+=
+\{
+\omega\in \Omega:
+(\pi_1(\omega), \ldots,\pi_n(\omega)) \in H
+\},
+$
+onde $H\subset S^n$,  temos
+\[
+\mathbb{P}(\mathcal{C}) 
+=
+\sum_{(u_1,\ldots,u_s)\in H} 
+p_{u_1}\cdot p_{u_2}\cdot\ldots\cdot p_{u_s},
+\]
+\end{teorema}
+
+
+
+\begin{proof}
+Pela Proposição \ref{prop-def-pre-med-prod-SN} podemos 
+definir uma função de conjuntos $\widetilde{\mathbb{P}}$ 
+aditiva, definida sobre $\mathscr{C}_0$ tal que a imagem do cilindro 
+$
+\mathcal{C}
+=
+\{
+\omega\in \Omega:
+(\pi_1(\omega), \ldots,\pi_n(\omega)) \in H
+\},
+$
+onde $H\subset S^n$, é dada por 
+\[
+\widetilde{\mathbb{P}}(\mathcal{C}) 
+=
+\sum_{(u_1,\ldots,u_s)\in H} 
+p_{u_1}\cdot p_{u_2}\cdot\ldots\cdot p_{u_s}.
+\]
+Pelo Teorema \ref{teo-extensao-pre-med-prod}
+temos que $\widetilde{\mathbb{P}}$ é de fato 
+uma medida $\sigma$-aditiva sobre $\mathscr{C}_0$.
+Invocando o Teorema da Extensão de Carathéodory 
+podemos estender $\widetilde{\mathbb{P}}$ a uma 
+medida $\mathbb{P}$ definida sobre $\sigma(\mathscr{C}_0)$ 
+de forma que 
+$
+\mathbb{P}\big|_{\mathscr{C}_0} = \widetilde{\mathbb{P}}
+$ 
+o que encerra a prova do teorema.
+\end{proof}
+
+
 
