@@ -1434,7 +1434,7 @@ um pouco mais elementar e independente destes conceitos
 topológicos e baseada simplesmente em um processo 
 de diagonal de Cantor.
 
-\begin{lema}
+\begin{lema}\label{lema-seq-encaixada-cilin-nao-vazios}
 Sejam $S=\{0,1,2,\ldots,s\}$ um subconjunto finito de $\mathbb{Z}$,  
 $\{\mathcal{C}_n\}_{n\in\mathbb{N}}$ uma sequência 
 de cilindros finito dimensionais não-vazios em $S^{\mathbb{N}}$
@@ -1577,6 +1577,35 @@ para todo $j\geq 1$ e daí segue que $\mathcal{C}\neq \emptyset$.
 
 
 
+\begin{teorema}
+Seja $\mathscr{C}_0$ a álgebra dos cilindros 
+finito dimensionais de $S^{\mathbb{N}}$. 
+Toda medida $\widetilde{\mathbb{P}}:\mathscr{C}_0\to [0,1]$ 
+finitamente aditiva 
+(satisfazendo \eqref{prop-finitamente-aditiva-med-prod-SN}) 
+é de fato $\sigma$-aditiva sobre $\mathcal{C}_0$.
+\end{teorema}
 
 
+\begin{proof}
+Para provar este teorema basta mostrar que são válidas
+as hipóteses do 
+Lema \ref{lema-medida-fin-adit-implica-sigma-fin-adit}.
+Seja $\{\mathcal{C}_j\}_{j\in\mathbb{N}}$ uma sequência de
+cilindros em $\mathscr{C}_0$ 
+tal que $\mathcal{C}_j\downarrow \emptyset$.
+Usando o Lema \ref{lema-seq-encaixada-cilin-nao-vazios}
+podemos concluir que a sequência 
+$\{\mathcal{C}_j\}_{j\in\mathbb{N}}$ não pode 
+ser composta apenas de cilindros não-vazios.
+Logo existe algum $n_0\in\mathbb{N}$ tal que 
+$\mathcal{C}_{n_0}=\emptyset$. Mas como a sequência
+de cilindros é decrescente então temos obrigatoriamente que
+$\mathcal{C}_j=\emptyset$ para todo $j\geq n_0$ e portanto
+$\widetilde{\mathbb{P}}(C_j)\downarrow 0$.  
+Deste fato segue que as hipóteses do 
+Lema \ref{lema-medida-fin-adit-implica-sigma-fin-adit}
+são válidas e portanto podemos concluir que 
+$\widetilde{\mathbb{P}}$ é uma medida sobre $\mathscr{C}_0$.
+\end{proof}
 
