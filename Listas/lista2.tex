@@ -809,7 +809,7 @@ $R(k,k)$.
 		onde cada aresta de $E_n$ é colorida aleatoriamente
 		de azul ou vermelho com igual probabilidade.
 		
-		\item[b)] Para qualquer conjunto $R$ possuindo $k$ ($k\leq n$)
+		\item[c)] Para qualquer conjunto $R$ possuindo $k$ ($k\leq n$)
 		vértices em $K_n$, 
 		seja $A_R$ o evento o subgrafo de $K_n$ induzido 
 		por $R$ é monocromático, isto é, todas as arestas
@@ -819,26 +819,26 @@ $R(k,k)$.
 				\P(A_R) = \frac{1}{2^{\binom{k}{2}-1  }}
 			\]
 		
-		\item[c)] Mostre que a probabilidade de pelo menos um 
+		\item[d)] Mostre que a probabilidade de pelo menos um 
 		evento do tipo $A_R$ ocorrer é no máximo 
 			\[
-				\binom{n}{k}\frac{1}{2^{\binom{n}{k}-1  }}.
+				\binom{n}{k}\frac{1}{2^{\binom{k}{2}-1  }}.
 			\]
 			
-		\item[d)] Mostre que se $n$ e $k$ satisfazem
+		\item[e)] Mostre que se $n$ e $k$ satisfazem
 			\[
-				\binom{n}{k}\frac{1}{2^{\binom{n}{k}-1  }} < 1
+				\binom{n}{k}\frac{1}{2^{\binom{k}{2}-1  }} < 1
 			\]
 		então $R(k,k)> n$.
 		
-		\item[e)] Mostre que se $n=\lfloor 2^{k/2} \rfloor$ então
+		\item[f)] Mostre que se $n=\lfloor 2^{k/2} \rfloor$ então
 			\[
-				\binom{n}{k}\frac{1}{2^{\binom{n}{k}-1  }} < 1.
+				\binom{n}{k}\frac{1}{2^{\binom{k}{2}-1  }} < 1.
 			\]
 		Conclua que $R(k,k)> \lfloor 2^{k/2} \rfloor $ para todo 
 		$k\geq 3$.		
 		
-		\item[f)] Leia. É fácil mostrar que $R(3,3)=6$. 
+		\item[g)] Leia. É fácil mostrar que $R(3,3)=6$. 
 		O valor de $R(4,4)=18$ foi determinado apenas em 1979 
 		por 	Evans, Pulham e Sheehan. 
 		O valor de $R(k,k)$ para $k\geq 5$ não é conhecido ainda.
