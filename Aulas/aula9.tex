@@ -60,7 +60,7 @@ forma \eqref{eq-funcao-simples-F-mensuravel}.
 Entretanto existe uma maneira de
 representar tais funções que será nossa preferida 
 e que é chamada de
-\emph{representação padrão}
+{\bf \emph{representação padrão}}
 \index{Representação Padrão de Funções Simples} de $f$, 
 que é caracterizada do seguinte modo: 
 em \eqref{eq-funcao-simples-F-mensuravel} 
@@ -75,7 +75,7 @@ que $E\subsetneq \Omega$, sua representação padrão
 %
 \begin{exercicio}
 Mostre que a representação padrão de uma função 
-simples $f:\Omega\to\R$ é única.
+simples $f:\Omega\to\overline{\R}$ é única.
 \end{exercicio}
 %
 %
@@ -84,7 +84,7 @@ simples $f:\Omega\to\R$ é única.
 \begin{definicao}[Integral de Funções Simples não-negativas]
 \label{def-integral-funcao-simples-positiva}
 Sejam $(\Omega,\F,\mu)$ um espaço de medida e 
-$\varphi:\Omega\to [0,+\infty)$ uma função simples cuja representação 
+$\varphi:\Omega\to [0,+\infty]$ uma função simples cuja representação 
 padrão é dada por $\varphi = \sum_{j=1}^n a_j1_{E_j}$.
 Definimos a integral de $\varphi$ com respeito a $\mu$ 
 sendo o número real estendido 
@@ -99,8 +99,11 @@ Na definição acima deve ser lembrada nossa convenção
 que $0\cdot(+\infty)=0$. Portanto a integral da 
 função identicamente nula é zero independentemente do 
 espaço $\Omega$ ter medida finita ou não. 
+
 Devemos observar que a integral de qualquer função 
-simples não-negativa está bem definida em $\overline{\R}$.
+simples \textbf{não-negativa} está bem definida em $\overline{\R}$.
+
+
 Passamos agora à prova de alguma propriedades 
 básicas desta integral.
 
@@ -137,7 +140,7 @@ então
 	\item[c)] A aplicação $\lambda:\F\to\overline{\R}$
 	dada por 
 		\(\displaystyle
-			\lambda(E) = \int_{\Omega} \varphi 1_{E}\, d\mu
+			\lambda(E) = \int_{\Omega} 1_{E}\cdot \varphi\, d\mu
 		\)
 	é uma medida em $\F$.
 \end{itemize}
@@ -149,18 +152,18 @@ então
 Prova do item a). Se $c=0$ então $c\varphi$ é a função 
 identicamente nula e portanto a igualdade é válida. 
 Se $c>0$ e $\varphi\in M^{+}(\Omega,\F)$ tem 
-representação padrão 
+representação padrão dada por
 	\[
 		\varphi  
 		=
 		\sum_{j=1}^n a_j 1_{E_j} 
 	\]
-então $c\varphi\in M^{+}(\Omega,\F)$ e tem 
+então temos que $c\varphi\in M^{+}(\Omega,\F)$ tem 
 representação padrão dada por 
 	\[
 		c\varphi  
 		=
-		\sum_{j=1}^n ca_j 1_{E_j} 
+		\sum_{j=1}^n ca_j 1_{E_j}. 
 	\]
 Portanto temos que 
 	\[
@@ -175,7 +178,7 @@ Portanto temos que
 
 
 
-Prova do item b). Suponha que $\varphi$ e $\psi$ têm as 
+Prova do item b). Suponha que $\varphi$ e $\psi$ tenham as 
 seguintes representações padrões
 	\[
 		\varphi  
@@ -188,18 +191,17 @@ seguintes representações padrões
 		=
 		\sum_{k=1}^m b_k 1_{F_k}.
 	\]
-Daí temos a seguinte representação para a soma 
-destas funções 
+Usando as representações padrão dadas acima,
+temos que a soma destas duas funções é dada por
 	\[
 		\varphi+\psi
 		=
-		\sum_{j=1}^n\sum_{k=1}^m (a_j+b_k) 1_{E_jF_k}.
+		\sum_{j=1}^n\sum_{k=1}^m (a_j+b_k) 1_{E_j\cap F_k}.
 	\]
-Apesar da coleção $\{E_j\cap F_k\}$ ser disjunta 
-quando $j=1,\ldots,n$ e $k=1,\ldots,m$ a representação
-acima não é necessariamente a 
-representação padrão de $\varphi+\psi$ 
-pois não é garantido que $E_j\cap F_k\neq \emptyset$ 
+Apesar da coleção $\{E_j\cap F_k\}$, com $j=1,\ldots,n$ e $k=1,\ldots,m$, 
+ser disjunta, não é sempre possível garantir que a representação
+acima é a representação padrão de $\varphi+\psi$.
+Pois, não é garantido que $E_j\cap F_k\neq \emptyset$ 
 e nem que a coleção $\{a_j+b_k\}$ seja uma coleção de
 números reais distintos. Para obter a representação 
 padrão procedemos da seguinte maneira. 
@@ -210,17 +212,18 @@ Para cada $h=1,\ldots, p$ defina
 	\[
 		G_h
 		=
-		\bigcup_{ \substack {j,k : E_j\cap E_k\neq \emptyset \\a_j+b_k=c_h}  }
-		E_j\cap E_k.
+		\bigcup_{ \substack {j,k : E_j\cap F_k\neq \emptyset \\a_j+b_k=c_h}  }
+		E_j\cap F_k.
 	\] 
-Assim temos que 
+Já que $\mu$ é uma medida e a coleção $\{E_j\cap F_k\}$ é mutuamente disjunta
+temos que
 	\begin{equation}\label{eq-aux1-linearidade-integral-func-simples-positiva}
 		\mu(G_h)
 		=
-		\sum_{ \substack {j,k : E_j\cap E_k\neq \emptyset \\a_j+b_k=c_h}  }
-		\mu(E_j\cap E_k).
+		\sum_{ \substack {j,k : E_j\cap F_k\neq \emptyset \\a_j+b_k=c_h}  }
+		\mu(E_j\cap F_k).
 	\end{equation} 
-Já que a representação padrão de $\varphi+\psi$ é dada por 
+Afirmamos que a representação padrão de $\varphi+\psi$ é dada por 
 	\[
 		\varphi+\psi = \sum_{h=1}^p c_h 1_{G_h}.
 	\]
@@ -235,39 +238,39 @@ temos que
 &=
 \sum_{h=1}^p 
 	c_h 
-	\sum_{ \substack {j,k : E_j\cap E_k\neq \emptyset \\a_j+b_k=c_h}  }
-		\mu(E_j\cap E_k)
+	\sum_{ \substack {j,k : E_j\cap F_k\neq \emptyset \\a_j+b_k=c_h}  }
+		\mu(E_j\cap F_k)
 \\
 &=
 \sum_{h=1}^p  \ \ 
-	\sum_{ \substack {j,k : E_j\cap E_k\neq \emptyset \\a_j+b_k=c_h}  }
-		c_h\mu(E_j\cap E_k)
+	\sum_{ \substack {j,k : E_j\cap F_k\neq \emptyset \\a_j+b_k=c_h}  }
+		c_h\mu(E_j\cap F_k)
 \\
 &=
 \sum_{h=1}^p \ \  
-	\sum_{ \substack {j,k : E_j\cap E_k\neq \emptyset \\a_j+b_k=c_h}  }
-		(a_j+b_k)\mu(E_j\cap E_k)
+	\sum_{ \substack {j,k : E_j\cap F_k\neq \emptyset \\a_j+b_k=c_h}  }
+		(a_j+b_k)\mu(E_j\cap F_k)
 \\
 &=
 	\sum_{j=1}^n \   
 	\sum_{k=1}^m
-		(a_j+b_k)\mu(E_j\cap E_k)
+		(a_j+b_k)\mu(E_j\cap F_k)
 \\
 &=
 	\sum_{j=1}^n \   
 	\sum_{k=1}^m
-		a_j\mu(E_j\cap E_k)
+		a_j\mu(E_j\cap F_k)
 	+
 	\sum_{j=1}^n \   
 	\sum_{k=1}^m
-		b_k\mu(E_j\cap E_k)
+		b_k\mu(E_j\cap F_k)
 \\
 &=
 	\sum_{j=1}^n 
 		a_j\mu(E_j)
 	+
 	\sum_{k=1}^m
-		b_k\mu(E_k)
+		b_k\mu(F_k)
 \\
 &=
 \int_{\Omega} \varphi\, d\mu 
@@ -277,7 +280,7 @@ temos que
 
 Prova do item c). Usando os itens a), b) e a representação
 \[
-	\varphi 1_{E} 
+	1_{E}\cdot \varphi  
 	=
 	\sum_{j=1}^n a_j 1_{E_j\cap E}
 \]
@@ -285,7 +288,7 @@ temos que
 	\[
 		\lambda(E)
 		=
-		\int_{\Omega}\varphi 1_{E}\, d\mu
+		\int_{\Omega}1_{E} \cdot \varphi \, d\mu
 		=
 		\sum_{j=1}^n a_j \int_{\Omega}1_{E_j\cap E} \, d\mu
 		=
@@ -314,17 +317,20 @@ com respeito a medida $\mu$ é definida pela seguinte número real estendido
 	\[
 		\int_{\Omega} f\, d\mu
 		=
-		\sup_{ \substack{ 	\varphi \in M^{+}(\Omega,\F)
-							\\
-							\varphi\ \text{simples}
-							\\ 
-							0\leq\varphi(\omega)\leq f(\omega)
-							,\ \forall \omega\in\Omega }  } 
-		\ 
+		\sup\left\{ 
 		\int_{\Omega} \varphi \, d\mu
+		:
+		\begin{array}{c}
+		\varphi \in M^{+}(\Omega,\F),\ 
+		\varphi\ \text{simples}\ \text{e}
+		\\
+		0\leq\varphi(\omega)\leq f(\omega)
+		,\ \forall \omega\in\Omega 
+		\end{array}
+		\right\}. 
 	\]
 \end{definicao}
-
+\bigskip
 
 
 
@@ -380,7 +386,7 @@ Seja $(\Omega,\F,\mu)$ um espaço de medida.
 
 \begin{proof}
 Prova do item a). 
-Já que $f\leq g$ para todo função simples $\varphi$ 
+Como $f\leq g$ para toda função simples $\varphi$ 
 tal que $0\leq \varphi\leq f$ temos que $0\leq \varphi\leq g$.
 Assim segue das propriedades do supremo e da definição de 
 integral que o item a) é verdadeiro.
