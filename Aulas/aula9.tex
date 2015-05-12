@@ -553,7 +553,7 @@ $f(\omega)=+\infty$ se reduz a provar que
 Note que lado esquerdo da igualdade acima assume apenas 
 os valores: zero ou $+\infty$, pois esta integral é dada por
 $\mu(\{f=+\infty\})\cdot (+\infty)$. Já o limite que aparece na
-igualdade acima satisfaz para qualquer $k\geq 1$ a seguinte 
+igualdade acima satisfaz para qualquer $k\geq 1$, a seguinte 
 desigualdade:
 \begin{align*}
 \lim_{n\to\infty}
@@ -602,10 +602,12 @@ dos casos analisados, foi assumido que ambos os lados da igualdade
 		=
 		\lim_{n\to\infty} \int_{\Omega} f_n\, d\mu.
 \]
-sejam finitos. O que usamos na verdade é que a 
-sequência de número reais estendidos 
+eram finitos. O que usamos, principalmente no caso 
+em que $f(\omega)<+\infty$ para todo $\omega\in\Omega$,
+foi na verdade que a 
+sequência de número reais estendido 
 $\{\int_{\Omega} f_n\, d\mu\}$ é uma sequência 
-monótona não-decrescente de números reais estendidos
+monótona não-decrescente de números reais estendido
 e que a mesma sempre tem limite em $\overline{\R}$ 
 que pode eventualmente não pertencer a $\R$.
 \end{observacao}
@@ -708,7 +710,7 @@ funções em $M^+(\Omega,\F)$. Então
 	\[
 		\int_{\Omega}\left( \liminf_{n\to\infty} f_n\right) \, d\mu
 		\leq
-		\liminf_{n\to\infty} \int_{\Omega}f_n\, d\mu
+		\liminf_{n\to\infty} \int_{\Omega}f_n\, d\mu.
 	\]
 \end{lema}
 
@@ -1021,8 +1023,9 @@ função mensurável não-negativa em $M^{+}(\Omega,\F)$
 com respeito a uma medida $\mu$ definida sobre $\F$ 
 e permitimos que este valor fosse $+\infty$.
 Nesta seção vamos discutir o conceito de integral
-de funções que podem tomar ambos valores reais
-positivos e negativos. Aqui é mais conveniente 
+de funções que podem tomar valores reais
+positivos e negativos. Neste contexto 
+é mais conveniente 
 exigir que os valores tanto das funções quanto 
 da integrais sejam números reais.
 
