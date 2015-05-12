@@ -3,22 +3,29 @@
 
 \section{A Integral de Funções em $M^{+}(\Omega,\F)$}
 
-A principal diferença entre a integral de Riemann e a integral
-de Lebesgue é que na integral de Riemann é feita uma 
-partição do dominío da função, enquanto que na construção da
- integral de Lebesgue é feita uma partição da imagem da função.
-Esse novo  "aproach" permite construir um conceito de integral muito
-mais geral e com propriedades muito mais fortes  que a integral de Riemman, 
-como veremos. Também discutiremos quando esses dois conceitos 
-de integral coincidem.
+A principal diferença filosófica entre as integrais de Riemann e 
+Lebesgue é que na construção da integral de Riemann 
+fazemos uma partição do dominío da função, enquanto que na construção da
+integral de Lebesgue é feita uma partição do conjunto imagem.
+Esse nova abordagem permite construir um conceito de integral em espaços
+muito mais gerais do que podíamos fazer e com 
+a integral de Riemann e ainda por cima tendo a vantegem 
+de que esta integral tem propriedades muito mais fortes 
+que a integral de Riemman. 
+
+Vamos ver nesta seção a construção desta integral 
+e mais a frente, que a integral própria 
+de Riemann coincide com a integral de Lebesgue, fazendo
+desta última (em alguns casos) uma extensão da integral 
+de Riemann.
 
 O objeto que desempenha um papel fundamental na 
 construção da integral de Lebesgue é a função simples
-cuja definição é dada abaixo 2
+cuja definição recordamos abaixo:
 %
 %
 \begin{definicao}\label{def-funcao-simples}
-Uma função $f:\Omega\to\R$ é dita uma função simples
+Uma função $f:\Omega\to\overline{\R}$ é dita uma função simples
 se sua imagem $f(\Omega)$ possui apenas um número
 finito de elementos.
 \end{definicao}
@@ -28,16 +35,16 @@ finito de elementos.
 %
 \begin{observacao}
 Lembramos que quando estamos trabalhando com 
-espaços de probabilidade podemos chamar uma
+espaços de probabilidade frequentemente chamamos uma
 função simples de v.a. discreta.
 \end{observacao}
 
 
-\begin{observacao}
-Quando for dito $f\in M^{+}(\Omega,\F)$
-e que tal função é uma função simples, 
-estamos assumindo que $f$ toma valores apenas em $\R$.
-\end{observacao}
+\begin{definicao}
+Seja $(\Omega,\F)$ um espaço mensurável. 
+O conjunto de todas as funções $f:\Omega\to\overline{\R}$ 
+mensuráveis e positiva é denotado por $M^{+}(\Omega,\F)$.
+\end{definicao}
 
 
 Uma função real  mensurável simples 
@@ -49,15 +56,21 @@ f=\sum_{j=1}^{n}a_j 1_{E_j}
 onde $1_{E_j}$ é a função característica de um conjunto $E_j\in \mathcal{F}$. 
 Não é difícil ver que existem várias maneiras de 
 escrever uma mesma função simples na 
-forma eqref{eq-funcao-simples-F-mensuravel}. 
+forma \eqref{eq-funcao-simples-F-mensuravel}. 
 Entretanto existe uma maneira de
 representar tais funções que será nossa preferida 
-e será chamada de
+e que é chamada de
 \emph{representação padrão}
 \index{Representação Padrão de Funções Simples} de $f$, 
 que é caracterizada do seguinte modo: 
-os $a_j$'s devem ser distintos e os $E_j$'s devem ser disjuntos, 
+em \eqref{eq-funcao-simples-F-mensuravel} 
+todos os $a_j$'s devem ser distintos e os $E_j$'s devem ser disjuntos, 
 não vazios e tais que $\bigcup_{j=1}^nE_j=\Omega$. 
+Observe que na representação padrão pode ser necessário
+considerar $a_j=0$. Por exemplo, no caso da função 
+$f = 1_{E}$, onde $E$ é um conjunto $\F$-mensurável tal
+que $E\subsetneq \Omega$, sua representação padrão 
+é $f=1_{E} + 0\cdot 1_{E^c}$.
 %
 %
 \begin{exercicio}
