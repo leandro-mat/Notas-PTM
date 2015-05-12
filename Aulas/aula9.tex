@@ -34,7 +34,7 @@ finito de elementos.
 %
 %
 \begin{observacao}
-Lembramos que quando estamos trabalhando com 
+Quando estamos trabalhando com 
 espaços de probabilidade frequentemente chamamos uma
 função simples de v.a. discreta.
 \end{observacao}
@@ -47,7 +47,7 @@ mensuráveis e positiva é denotado por $M^{+}(\Omega,\F)$.
 \end{definicao}
 
 
-Uma função real  mensurável simples 
+Toda função  
 $f\in M^{+}(\Omega,\mathcal{F})$ 
 pode ser escrita na forma 
 \begin{equation}\label{eq-funcao-simples-F-mensuravel}
@@ -422,7 +422,7 @@ Seja $\{f_n\}$ uma sequência monótona
 não decrescente em 
 $M^{+}(\Omega,\F)$, isto é, 
 para todo $n\in\N$ temos $0\leq f_n\leq f_{n+1}$.
-Se $f_n$ converge para uma função$f$,
+Se $f_n$ converge para uma função $f$,
 então temos que  $f\in M^{+}(\Omega,\F)$ e
 além do mais
 	\[
@@ -435,6 +435,8 @@ além do mais
 
 
 \begin{proof}
+Vamos supor inicialmente que $f(\omega)<+\infty$,
+para todo $\omega\in\Omega$. 
 Já que $f_n\in M^{+}(\Omega,\F)$ e $f=\lim f_n\geq 0$
 segue do Corolário \ref{cor-lim-mensuravel-eh-mensuravel} 
 que $f\in M^{+}(\Omega,\F)$.
@@ -484,7 +486,7 @@ Para tal $\varepsilon>0$
 segue da desigualdade anterior e da convergência de $f_n$
 para $f$ que existe $N_0\in\N$
 (que pode depender de $\omega$) tal que   
-se $n\geq N_0$ temos 
+se $n\geq N_0$ então  
 $\alpha\varphi(\omega)< f(\omega)-\varepsilon < f_n(\omega)$, 
 logo $\omega\in A_n$. Pelo lema anterior temos que 
 	\begin{equation}\label{eq-aux1-TCM}
@@ -521,25 +523,80 @@ $0\leq \varphi\leq f$, podemos concluir que
 \[
 		\int_{\Omega} f\, d\mu
 		=
-		\sup_{ \substack{ 	\varphi \in M^{+}(\Omega,\F)
-							\\
-							\varphi\ \text{simples}
-							\\ 
-							0\leq\varphi(\omega)\leq f(\omega)
-							,\ \forall \omega\in\Omega }  } 
-		\ 
+		\sup\left\{ 
 		\int_{\Omega} \varphi \, d\mu
+		:
+		\begin{array}{c}
+		\varphi \in M^{+}(\Omega,\F),\ 
+		\varphi\ \text{simples}\ \text{e}
+		\\
+		0\leq\varphi(\omega)\leq f(\omega)
+		,\ \forall \omega\in\Omega 
+		\end{array}
+		\right\}
 		\leq
 		\lim_{n\to\infty} \int_{\Omega} f_n\, d\mu.
 \]
 Esta desigualdade junto com \eqref{des-aux1-TCM}
-encerra a prova do teorema.
+encerra a prova do teorema para o caso em 
+que $f(\omega)<+\infty$.
+
+O caso em que existe pelo menos um $\omega\in\Omega$ tal que 
+$f(\omega)=+\infty$ se reduz a provar que 
+\begin{equation}
+\label{eq-igualdade-aux-TCM}
+\int_{\Omega} 1_{\{f=+\infty\}}\cdot f\, d\mu
+=
+\lim_{n\to\infty}
+\int_{\Omega} 1_{\{f=+\infty\}}\cdot f_n\, d\mu.
+\end{equation}
+Note que lado esquerdo da igualdade acima assume apenas 
+os valores: zero ou $+\infty$, pois esta integral é dada por
+$\mu(\{f=+\infty\})\cdot (+\infty)$. Já o limite que aparece na
+igualdade acima satisfaz para qualquer $k\geq 1$ a seguinte 
+desigualdade:
+\begin{align*}
+\lim_{n\to\infty}
+\int_{\Omega} 1_{\{f=+\infty\}}\cdot f_n\, d\mu
+&\geq 
+\liminf_{n\to\infty}
+\int_{\Omega} 1_{\{f=+\infty\}}\cdot 1_{\{f_n\geq k\}}\cdot f_n\, d\mu
+\\
+&\geq 
+k\cdot
+\liminf_{n\to\infty}
+\int_{\Omega} 1_{\{f=+\infty\}}\cdot 1_{\{f_n\geq k\}}\, d\mu
+\\
+&\geq 
+k\cdot
+\liminf_{n\to\infty}
+\mu\big( \{f=+\infty\}\cap \{f_n\geq k\} \big)
+\\
+&\geq 
+k\cdot
+\mu\Big(\liminf_{n\to\infty} (\{f=+\infty\}\cap \{f_n\geq k\}) \Big)
+\\
+&= 
+k\cdot
+\mu(\{f=+\infty\}),
+\end{align*}
+onde na penúltima desigualdade usamos o 
+Lema de Fatou para funções indicadoras 
+(Lema \ref{lema-fatou-indicadoras}).
+Se $\mu(\{f=+\infty\})>0$
+a igualdade \eqref{eq-igualdade-aux-TCM} é 
+imediata das desigualdades acima, já que são 
+válidas para todo $k\in\mathbb{N}$.
+Caso $\mu(\{f=+\infty\})=0$, basta observar
+que $f_n\leq +\infty$ e usar a monotonicidade
+da integral para ver que o lado 
+direito de \eqref{eq-igualdade-aux-TCM} é zero.
 \end{proof}
 
 
 \begin{observacao}
-No Teorema da Convergência Monótona não foi 
-assumido que ambos os lados da igualdade 
+Na prova do Teorema da Convergência Monótona, em nenhum 
+dos casos analisados, foi assumido que ambos os lados da igualdade 
 \[
 		\int_{\Omega} f\, d\mu
 		=
@@ -609,7 +666,7 @@ são válidas as seguintes igualdades
 
 
 Prova do item b). Sejam 
-$\{\varphi_n\}$ e $\{psi_n\}$ sequências
+$\{\varphi_n\}$ e $\{\psi_n\}$ sequências
 monótonas não-decrescentes de funções simples em 
 $M^{+}(\Omega,\F)$ que convergem para $f$ e $g$,
 respectivamente. Claramente temos que 
@@ -636,7 +693,7 @@ e do Teorema da Convergência Monótona que
 O próximo resultado é uma consequência do Teorema 
 da Convergência Monótona e é um resultado muito 
 importante para lidarmos com integrais de sequências
-de funções que não não monótonas.
+de funções não-negativas que não são monótonas.
 
 
 
