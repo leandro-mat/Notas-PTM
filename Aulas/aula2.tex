@@ -336,8 +336,36 @@ de fato um $\pi$-sistema.
     Observe que $\mathcal{L}  = \{A \subset \Omega: A\in\mathcal{F}\ 
     \text{e}\ P_1(A) = P_2(A)\}$  é um $\lambda$-sistema. 
     Por hipótese $\mathcal{L}$ contém o $\pi$-sistema $\mathcal{C}$, daí
-    segue do Teorema $\pi-\lambda$ de Dynkin que $\sigma(\mathcal{C}) \subset \mathcal{L}$.
+    segue do Teorema $\pi-\lambda$ de Dynkin que $\sigma(\mathcal{C}) \subset 
+    \mathcal{L}$.
 \end{proof}
+
+\begin{exemplo} \label{exemplo-extensão=nao-unica}
+	Note que, de fato, não podemos estender o corolário acima para medidas em geral.
+	Considere $\Omega = \mathbb{R}$ e o  $\pi$-sistema 
+	\[
+	    \mathcal{C} = \{\emptyset\}\cup\{(a,b] : a,b \in \mathbb{R}, a<b\}
+	\]
+	(verifique que $\mathcal{C}$ é, de fato, um $\pi$-sistema), seja $\mathcal{B}$
+	a $\sigma$-álgebra dada por $\mathcal{B}=\sigma(\mathcal{C})$. Considere 
+	$\nu$ a medida da contagem em $\mathcal{B}$, isto é, para $A \in \mathcal{B}$ 
+	defina
+	\[
+	    \nu(A) = 
+	    \begin{cases}
+	        \#A, & \text{se $A$ é finito} \\
+	        \infty, & \text{ caso contrário}
+        \end{cases}
+	\]	
+	defina $\mu = 2 \nu$. Note que para todo $A \in \mathcal{C}$,temos duas 
+	possibilidades: $A$ é vazio ou infinito, em ambos os casos, $\nu(A) = \mu(A)$.
+	Mas para $a \in \mathbb{R}$, temos 
+	\[
+	    \{a\} = \bigcap_{n=1}^\infty \left(a-\frac{1}{n},a\right]\in \mathcal{B},
+	\]
+	entretanto $\mu(\{a\}) = 2 \neq 1 = \nu(\{a\})$. Portanto $\nu \neq \mu$ em
+	$\mathcal{B}$.
+\end{exemplo}
 
 \section{O Teorema da Extensão de Carathéodory}
 
@@ -754,3 +782,36 @@ temos que
 	   =& \mu^*(A).
 \end{align*}
 \end{proof}
+
+\begin{exemplo}
+    Novamente, note que não podemos retirar a hipótese de $\sigma$-finitude
+    para garantir a a unicidade da extensão. De modo análogo ao Exemplo 
+    \ref{exemplo-extensão=nao-unica}, considere $\Omega = \mathbb{R}$, e as seguintes
+    coleções
+    \[
+	    \mathcal{I} =\{(a,b] : a,b \in \mathbb{R}, a<b\},
+	\]
+	\[
+	    \mathcal{A} =\left\{\emptyset\right\} \bigcup
+	    \left\{\bigcup_{k=1}^n I_k : n \in \mathbb{N}, 
+	    I_k \in \mathcal{I}, k = 1, \dots, n\right\}.
+	\]
+    Note (e prove que) $\mathcal{A}$ é uma álgebra, agora considere $\lambda$ a 
+    função de conjuntos definida em $\mathcal{A}$ definida como 
+    \[
+        \lambda(A)= \begin{cases}
+                        0, & \text{ se } A = \emptyset \\
+                        \infty, & \text { caso o contrário.}    
+                    \end{cases}
+    \]
+    É fácil ver que $\lambda$ é de fato uma medida em $\mathcal{A}$ e que
+    $\sigma(\mathcal{A}) = \mathcal{B}=\sigma(\mathcal{C})$,
+    onde $\mathcal{C}$ é como no Exemplo \ref{exemplo-extensão=nao-unica}. Assim,
+    tomando $\mu$ e $\nu$ também como no Exemplo \ref{exemplo-extensão=nao-unica}
+    temos que $\mu\mid_{\mathcal{A}}=\nu\mid_{\mathcal{A}}=\lambda$, ou seja, $\lambda$
+    é estendido de maneira não única de $\mathcal{A}$ para $\sigma(\mathcal{A})$.
+    Isso ocorre pois $\mathbb{R}= \bigcup_{n =1}^{\infty} A_n$ implica que existe 
+    $k \in \mathbb{N}$ tal que $A_k$ é não-vazio, logo $\lambda(A_k)= \infty$ e 
+    portanto $\Omega$ não é $\sigma$-finito com relação a $\lambda$.
+    
+\end{exemplo}
