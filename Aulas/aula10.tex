@@ -94,51 +94,113 @@ são chamadas as seções de $f$ determinadas por $x$ e por $y$ respectivamente.
 
 
 
-\section{Medidas Produto}
+\section{Medida Produto}
 Sejam $(X, \mathscr{X}, \mu)$ e $(Y, \mathscr{Y}, \nu)$
- espaços de medida. A nossa  vontade é encontrar uma medida $\pi$ definida 
- em $\mathscr{X}\times \mathscr{Y}$ tal que se $E=A\times B$ seja um retângulo mensurável 
- tenhamos que $\pi(E)=\mu(A)\nu(B)$. A seguir vamos ver que quando 
- $ \mu$ e $\nu$ são sigma finitas a \emph{medida produto} não só existe como é única.
- \medskip
+espaços de medida. 
+O objetivo nesta seção é definir uma medida $\pi$ no produto cartesiano 
+$\mathscr{X}\times \mathscr{Y}$ tal que para todo 
+retângulo mensurável $E=A\times B$ temos que 
+$\pi(E)=\mu(A)\nu(B)$. 
+A seguir vamos ver que se 
+$ \mu$ e $\nu$ são medidas $\sigma$-finitas então 
+existe uma única medida com a propriedade mencionada acima, 
+que será chamada de \emph{medida produto} e além do mais 
+ela é a única medida em $\mathscr{X}\times\mathscr{Y}$ 
+com tal propriedade.
+\medskip
  
 
 Sejam $(X, \mathscr{X}, \mu)$ e $(Y, \mathscr{Y}, \nu)$
- espaços de medida com $\mu$ e $\nu$ finitas. 
- Temos pela proposição (\ref{Prod. 1}) que dado
-  $E\in \mathscr{X}\times \mathscr{Y}$ as funções 
-  $X\ni x\mapsto \nu(E_x)\in [0, \infty)$ e
-   $Y\ni y\mapsto \mu(E_y)\in [0, \infty)$ estão bem definidas.
-Denote por $\mathscr{L}$ a classe dos $E\in \mathscr{X}\times \mathscr{Y}$
-para os quais as funções acima são $\mathscr{X}$ e $\mathscr{Y}$ mensuráveis 
+espaços de medida com $\mu$ e $\nu$ finitas. 
+Segue  da Proposição (\ref{Prod. 1}) que dado
+$E\in \mathscr{X}\times \mathscr{Y}$ a função 
+$x\mapsto \nu([y:(x,y)\in E])$ está bem definida 
+para todo $x\in X$ e assume valores no intervalo $[0, \infty)$.
+Analogamente para todo $y\in Y$ temos que a 
+aplicação $y\mapsto \mu([x:(x,y)\in E])$ 
+está bem definida e também toma valores em $[0, \infty)$.
+Seja $\mathscr{L}$ a coleção de todos os subconjuntos 
+$E\in \mathscr{X}\times \mathscr{Y}$
+para os quais as funções acima são $\mathscr{X}$ e $\mathscr{Y}$-mensuráveis,
 respectivamente.
 
 \begin{proposicao}\label{Mens. Prod}
-A classe $\mathscr{L}$ coincide com $\mathscr{X}\times \mathscr{Y}$.
+A coleção $\mathscr{L}$, definida no parágrafo acima, 
+coincide com a $\sigma$-álgebra  $\mathscr{X}\times \mathscr{Y}$.
 \end{proposicao}
 \begin{proof}
-Começamos por mostrar que $\mathscr{L}$ é um $\lambda$-sistema. De fato, temos que
-$\nu_x(X\times Y)=\nu(Y) < \infty$ para todo $x\in X$ e, portanto
- a função $X\ni x\mapsto \nu_x(X\times Y)\in [0,\infty)$ é claramente mensurável.
-  Agora note que $\nu_x(E^c)=\nu(E^c_x)=\nu((E_x)^c)=1-\nu(E_x).$
- Assim, se $X\ni x\mapsto \nu_x(E)\in [0, \infty)$  é mensurável temos que 
- $X\ni x\mapsto \nu_x(E^c)=1-\nu_x(E)\in [0, \infty)$ é mensurável, sendo pois 
- a diferença de duas funções mensuráveis.
-  Sejam $E_1, E_2, \ldots E_n, \ldots$ conjuntos em $\mathscr{L}.$ É suficiente 
-  considerarmos o caso em que os $E_n^{'s}$ são disjuntos.
-  Note que $E_x=(\bigcup E_n)_x=\bigcup (E_n)_x$. Assim temos que 
-  $$
-  \nu_x(E)=\nu(E_x)=\nu(\bigcup (E_n)_x)=\sum_{n\geq 1}\nu_x(E_n).
-  $$
-  Como, por hipótese, para cada $n$, o mapa $X\ni x\mapsto \nu_x(E_n)\in [0,\infty)$ é mensurável, segue que 
-  o mapa 
-  $$
- X\ni x\mapsto \nu_x(E)=\sum_{n\geq 1}\nu_x(E_n)\in [0,\infty),
- $$ 
- pois a medida $\nu$ é $\sigma$-finita. Como esse mapa é o 
-limite de uma sequência de funções mensuráveis, ele também será mensurável. Isto conclui que $\mathscr{L}$ é um $\lambda$-sistema.
+Vamos mostrar inicialmente que $\mathscr{L}$ 
+é um $\lambda$-sistema. 
+Primeiro vamos mostrar que $E=X\times Y\in \mathscr{L}$.
+Para verificar que a afirmação é verdadeira 
+basta observar que $\nu([y:(x,y)\in X\times Y])=\nu(Y) < \infty$, 
+para todo $x\in X$. Já que a função 
+$x\mapsto \nu([y:(x,y)\in X\times Y])\equiv \nu(Y)$ 
+é constante ela é claramente $\mathscr{X}$-mensurável.
+
+Vamos mostrar agora que a coleção $\mathscr{L}$ é fechada 
+para complementação. Seja $E\in \mathscr{L}$.
+Usando propriedades elementares de medida 
+podemos afirmar que 
+\[ 
+\nu( [y:(x,y)\in E^c] )=\nu(Y)-\nu([y:(x,y)\in E).
+\]
+Já que o lado direito da igualdade acima 
+define uma função mensurável com 
+respeito a $\mathscr{X}$ pois,  
+qualquer função constante é $\mathscr{X}$-mensurável
+e $\nu([y:(x,y)\in E)$ é $\mathscr{X}$-mensurável por hipótese,
+segue que $x\to \nu( [y:(x,y)\in E^c] )$ é $\mathscr{X}$-mensurável. 
+Este fato mostra que $\mathscr{L}$ é uma coleção fechada para complementação.
+
+Vamos mostrar agora que se $\{ E_n \}_{n\in\mathbb{N}}$ 
+é uma sequência infinita de conjuntos mutuamente disjuntos em $\mathscr{L}$,
+então $\cup_{n\geq 1} E_n\in \mathscr{L}$. 
+Para provar este fato primeiro observamos que 
+$
+[y:(x,y)\in \cup_{n\geq 1}E_n ] 
+= 
+\cup_{n \geq 1}  
+[y:(x,y)\in E_n ]
+$, sendo a sequência de conjuntos que aparece no lado direito
+desta igualdade mutuamente disjunta.  
+Daí segue da $\sigma$-aditividade de $\nu$ que
+\[
+\nu \big( [y:(x,y)\in \cup_{n\geq 1}E_n ] \big)
+= 
+\sum_{n \geq 1}  
+\nu ([y:(x,y)\in E_n ])
+\]
+Por hipótese temos que, para cada $n\geq 1$, 
+a aplicação $x\mapsto \nu ([y:(x,y)\in E_n ])$ 
+é $\mathscr{X}$-mensurável. 
+Assim segue do Lema \ref{inf-sup-func-mensuraval-eh-mensuravel} 
+(olhando para a séria acima, como limite da sequência das somas parciais) 
+que $x\mapsto \nu \big( [y:(x,y)\in \cup_{n\geq 1}E_n ] \big)$ é 
+$\mathscr{X}$-mensurável. 
+Este fato encerra a prova de que $\mathscr{L}$ é um $\lambda$-sistema.
  
- Para finalizar veja  que $\mathscr{L}$ contém os retângulos mensuráveis $\mathscr{R}$, com efeito se $E=A\times B\in \mathscr{R}$ então o mapa $x\mapsto \nu(E_x)$ pode ser escrito como $1_A(x)\nu(B)$ que é claramente mensurável. Sendo assim temos pelo Teorema $\pi$-$\lambda$ que $\mathscr{X}\times \mathscr{Y}= \sigma(\mathscr{R})\subset \mathscr{L}\subset \mathscr{X}\times \mathscr{Y}$ concluindo a demonstração.
+Agora vamos provar que $\mathscr{L}$ contém o $\pi$-sistema 
+dos retângulos mensuráveis $\mathscr{R}$. 
+De fato, se $E=A\times B\in \mathscr{R}$ 
+vimos na prova da Proposição \ref{Prod. 1} que 
+\[
+[y:(x,y)\in A\times B ]
+=
+\begin{cases}
+\emptyset,&\ \text{se}\ x\notin A;
+\\
+B,&\ \text{se}\ x\in A. 
+\end{cases}
+\] 
+Desta igualdade segue que
+$\nu([y:(x,y)\in A\times B ]) = 1_A(x)\nu(B)$ 
+e desta forma a função $x\mapsto \nu([y:(x,y)\in A\times B ])$ 
+é $\mathscr{X}$-mensurável, para qualquer $A\times B\in\mathscr{R}$
+mostrando que este $\pi$-sistema está contido em $\mathscr{L}$. 
+
+Pelo Teorema $\pi$-$\lambda$ de Dynkin 
+temos finalmente que $\mathscr{X}\times \mathscr{Y}= \sigma(\mathscr{R})\subset \mathscr{L}\subset \mathscr{X}\times \mathscr{Y}$ concluindo a demonstração.
 \end{proof}
 \medskip
 
