@@ -99,7 +99,7 @@ Sejam $(X, \mathscr{X}, \mu)$ e $(Y, \mathscr{Y}, \nu)$
 espaços de medida. 
 O objetivo nesta seção é definir uma medida $\pi$ no produto cartesiano 
 $\mathscr{X}\times \mathscr{Y}$ tal que para todo 
-retângulo mensurável $E=A\times B$ temos que 
+retângulo mensurável $E=A\times B$ temos  
 $\pi(E)=\mu(A)\nu(B)$. 
 A seguir vamos ver que se 
 $ \mu$ e $\nu$ são medidas $\sigma$-finitas então 
@@ -202,22 +202,50 @@ mostrando que este $\pi$-sistema está contido em $\mathscr{L}$.
 Pelo Teorema $\pi$-$\lambda$ de Dynkin 
 temos finalmente que $\mathscr{X}\times \mathscr{Y}= \sigma(\mathscr{R})\subset \mathscr{L}\subset \mathscr{X}\times \mathscr{Y}$ concluindo a demonstração.
 \end{proof}
-\medskip
 
 
-Passemos à construção da medida produto. Comecemos definindo funções de conjunto $\pi_1$ e $\pi_2$ como segue
+\bigskip
+
+
+\subsubsection{Contrução da Medida Produto - Caso de Medidas Finitas}
+Vamos apresentar a seguir a construção da medida produto no caso 
+em que ambos espaços $(X,\mathscr{X},\mu)$ e $(Y,\mathscr{Y},\nu)$
+são espaços de medida finita. 
+Primeiro observamos que a mensurabilidade 
+garantida pela Proposição \ref{Prod. 1},
+junto com a não-negatividade das funções
+$x\mapsto \nu([y:(x,y)\in E ])$ e $y\mapsto \mu([x:(x,y)\in E ])$
+nos permite definir as seguintes 
+funções de conjunto $\pi_1$ e $\pi_2$, como segue
 \begin{equation}\label{M.Prod. 1}
-\pi_1(E)=\int_X \nu_x(E) d\mu(x),~~~~~E \in \mathscr{X}\times \mathscr{Y}
+\pi_1(E)=\int_X \nu([y:(x,y)\in E ])\, d\mu(x),~~~~~E \in \mathscr{X}\times \mathscr{Y}
 \end{equation}
 e 
 \begin{equation}\label{M. Prod. 2}
-\pi_2(E)=\int_Y \mu_y(E)d\nu(y),~~~~~E \in \mathscr{X}\times \mathscr{Y}
+\pi_2(E)=\int_Y \mu([x:(x,y)\in E ])\, d\nu(y),~~~~~E \in \mathscr{X}\times \mathscr{Y}.
 \end{equation}
-é fácil ver que tanto $\pi_1$ quanto $\pi_2$ são medidas finitas em $\mathscr{X}\times \mathscr{Y}$. Agora note que se $E=A\times B\in\mathscr{X}\times \mathscr{Y}$  é um retângulo mensurável então temos que  $\nu_x(E)=1_A(x)\nu(B)$ e $\mu_y(E)=1_B\mu(A)$, de modo que 
+
+Como estamos assumindo que 
+$(X,\mathscr{X},\mu)$ e $(Y,\mathscr{Y},\nu)$
+são espaços de medida finita é imediato verificar 
+que tanto $\pi_1$ quanto $\pi_2$ 
+são funções de conjunto finitas em $\mathscr{X}\times \mathscr{Y}$.
+
+Afirmamos que $\pi_1$ e $\pi_2$ definem medidas sobre 
+$(X\times Y,\mathscr{X}\times\mathscr{Y})$. 
+Vamos apresentar apenas a prova de que $\pi_1$ é uma medida,
+já que a prova deste fato para $\pi_2$
+é completamente análoga.
+
+Para o caso especial em que $E=A\times B\in\mathscr{X}\times \mathscr{Y}$  
+é um retângulo mensurável, 
+temos que  $\nu([y:(x,y)\in E ])=1_A(x)\nu(B)$ 
+e 
+$\mu([x:(x,y)\in E ])=1_B(y)\mu(A)$, e desta forma temos 
 \begin{equation}
-\pi_1(A\times B)=\mu(A)\nu(B)=\pi_2(A\times B)
+\pi_1(A\times B)=\mu(A)\nu(B)=\pi_2(A\times B).
 \end{equation}
-de modo que as medidas $\pi_1$ e $\pi_2$ coincidem no $\pi$-sistema $\mathscr{R}$.  Denote por $\mathscr{L}$ a classe dos elementos $E$ de 
+Desta forma as funções $\pi_1$ e $\pi_2$ coincidem no $\pi$-sistema $\mathscr{R}$.  Denote por $\mathscr{L}$ a classe dos elementos $E$ de 
 $\mathscr{X}\times \mathscr{Y}$  para os quais $\pi_1(E)=\pi_2(E)$.
 
 \begin{proposicao}
