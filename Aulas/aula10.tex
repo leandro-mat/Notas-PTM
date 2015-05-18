@@ -3,75 +3,95 @@
 
 \section{Espaço Produto}
 
-Sejam $(X, \mathscr{X})$ e $(Y, \mathscr{Y})$ espaços mensuráveis. 
-Uma vez que sabemos que produto cartesiano de sigma-álgebras não 
-constitui uma sigma álgebra, a sigma álgebra mais natural a ser 
-considerada em $X\times Y$ passa a ser a sigma álgebra gerada pelos
-\emph{retângulos mensuráveis}, a saber, a classe $\mathscr{R}=\{
-A\times B;~~A\in \mathscr{X}, B\in \mathscr{Y}\}.$ Chamamos a 
-sigma-álgebra gerada por $\mathscr{R}$ de sigma-álgebra produto e 
-a denotamos por $\mathscr{X}\times \mathscr{Y}$.
+Considere $(X, \mathscr{X})$ e $(Y, \mathscr{Y})$ espaços mensuráveis. 
+Já que o produto cartesiano de $\sigma$-álgebras não 
+é necessariamente uma $\sigma$-álgebra, 
+a construção mais simples que nos resta é 
+considerar em $X\times Y$ a $\sigma$-álgebra gerada pelos
+{\it retângulos mensuráveis}, isto é, a $\sigma$-álgebra gerada
+pela coleção 
+$\mathscr{R}=\{ A\times B:\ A\in \mathscr{X}, B\in \mathscr{Y}\}.$ 
+A $\sigma$-álgebra gerada por $\mathscr{R}$ 
+é conhecida como $\sigma$-álgebra produto e 
+usamos a seguinte notação $\mathscr{X}\times \mathscr{Y}$
+para nos referirmos a esta $\sigma$-álgebra.
 
 
 
 \begin{proposicao}\label{Prod. 1}
 Sejam $(X, \mathscr{X})$ e $(Y, \mathscr{Y})$ espaços mensuráveis e 
 $\mathscr{X}\times \mathscr{Y}$ a sigma-álgebra produto em $X\times Y$.
-Então as seguintes afirmações são verdade:
+Então as seguintes afirmações são verdadeiras:
 \begin{itemize}
-\item[(a)] Se $E\in \mathscr{X}\times \mathscr{Y}$ então, para cada $x$ fixado,
- o conjunto $E_x=\{y: (x,y)\in E\}$ pertence a $\mathscr{Y}$. De modo análogo 
-, fixado y,  o conjunto $E_y=\{x: (x,y)\in E\}$ pertence a $\mathscr{X}$.
+\item[a)] Se $E\in \mathscr{X}\times \mathscr{Y}$ então, para cada $x\in X$ fixado,
+o conjunto $[y: (x,y)\in E]:=\{y\in Y: (x,y)\in E\}$ é $\mathscr{Y}$-mensurável. 
+De modo análogo, fixado $y\in Y$, 
+o conjunto $[x:(x,y)\in E]:=\{x\in X: (x,y)\in E\}$ 
+é $\mathscr{X}$-mensurável.
 
 
 
-\item[(b)] Se $f$ é uma função $\mathscr{X}\times \mathscr{Y}$ mensurável 
-então, para cada $x$ fixado, a função $f(x, \cdot)$ é $\mathscr{Y}$-mensurável. De 
-modo análogo, para cada $y$ fixo, a função $f(\cdot, y)$ é $\mathscr{X}$-mensurável
+\item[b)] Se $f:X\times Y\to \mathbb{R}$ é uma função $\mathscr{X}\times \mathscr{Y}$ mensurável 
+então, para cada $x\in X$ fixado, a função $y\mapsto f(x,y)$ é $\mathscr{Y}$-mensurável. De 
+modo análogo, para cada $y\in Y$ fixo, a função $x\mapsto f(x,y)$ é $\mathscr{X}$-mensurável.
 \end{itemize}
 \end{proposicao}
 
 
-Os conjunto $E_x$, e $E_y$ são chamados as secções de $E$ determinadas por $x$ e 
-por $y$, respectivamente. Do mesmo modo as funções $f(x, \cdot)$ e $f(\cdot, y)$ 
-são chamadas as secções de $f$ determinadas por $x$ e por $y$ respectivamente.
-\medskip
-
 \begin{proof}
- \emph{Item (a):} Fixe $x$ e considere o mapa $T_x:Y\to X\times Y$ dado por $T_x(y)=(x,y)$.
- Note que se $E=A\times B\in \mathscr{X}\times \mathscr{Y}$
-é um retângulo então $T_{x}^{-1}E=B~\textnormal{ou}~\varnothing$ 
+\emph{Prova do item a)}. Fixe $x\in X$ e considere a aplicação  
+$T_x:Y\to X\times Y$ dada por $T_x(y)=(x,y)$.
+Note que se $E=A\times B\in \mathscr{X}\times \mathscr{Y}$
+é um retângulo mensurável então $T_{x}^{-1}E=B~\textnormal{ou}~\varnothing$ 
 dependendo apenas se 
-$A$ contém ou não o ponto $x$.  De qualquer modo $T_x^{-1}E\in \mathscr{Y}$.
-\medskip
+$A$ contém ou não o ponto $x$.  
+\begin{figure}
+\centering
+\includegraphics[scale=0.3]{Figuras/fig-medida-produto-aula10}
+\caption{}
+\label{medida-produto-1}
+\end{figure}
 
-\noindent \emph{Item (b)}:  Neste item o primeiro passo é  mostrar 
-que $T_x$ é $\mathscr{Y}$ 
-mensurável. 
-\medskip
+\newpage
+De qualquer forma 
+em ambas situações temos que $T_x^{-1}E\in \mathscr{Y}$.
+Para mostrar que a afirmação também é válida para um conjunto 
+$E$ arbitrário de $\mathscr{X}\times \mathscr{Y}$, 
+basta notar que $[y: (x,y)\in E] = T^{-1}_{x}(E)$ e 
+usar o seguinte exercício
+\begin{exercicio}
+	Sejam $(\Omega',\mathcal{F}')$ e $(\Omega,\mathcal{F})$
+	dois espaços mensuráveis e $T:\Omega'\to\Omega$ uma função. 
+	Suponha que $\mathcal{F}= \sigma(\mathscr{R})$
+	para alguma coleção $\mathscr{R}$ de subconjuntos de $\Omega$.
+	Se para todo $R\in \mathscr{R}$ temos $T^{-1}(R)\in \mathcal{F}'$
+	então $T^{-1}(E)\in \mathcal{F}'$ para todo $E\in \mathcal{F}$.
+\end{exercicio}
+%
+A prova de que $[x: (x,y)\in E]$ é $\mathscr{X}$-mensurável é feita de 
+forma completamente análoga considerando a aplicação 
+$T_y:X\to X\times Y$, dada por $T_y(x)=(x,y)$.
 
-\noindent \emph{Afirmação:} A classe
- $\mathcal{C}=\{E\in \mathscr{X}\times \mathscr{Y};~~T_x^{-1}E\in \mathscr{Y} \}$ 
- é uma sigma-álgebra.
-\medskip 
- 
-\noindent É claro que a classe  $\mathcal{C}$ é
- não vazia pois $X\times Y\in \mathcal{C}$. 
- Se $E\in \mathcal{C}$ então 
-$T_x^{-1}(X\times Y\setminus E)=Y\setminus T_x^{-1}E\in \mathscr{Y}.$  
-Se $E_1, \ldots, E_n, \ldots \in \mathcal{C}$ entã
-o $T_x^{-1}(\bigcup E_n)=\bigcup T_x^{-1}E_n\in \mathscr{Y}$. Portanto 
-$C$ é uma sigma álgebra.
-\medskip
-
-Por outro lado mostramos acima que $\mathcal{C}$ contém a
- classe $\mathscr{R}$ dos retângulos mensuráveis. Sendo assim $\mathcal{C}$ contém a 
- sigma-álgebra gerada por $\mathscr{R}$ que para nossa sorte é $\mathscr{X}\times \mathscr{Y}$ 
- provando que $T_x$ é $\mathscr{Y}$ 
-mensurável.  Agora, como $f$ é $\mathscr{X}\times \mathscr{Y}$ mensurável 
- segue que a composição $f\circ T_x$ é $\mathscr{Y}$ mensurável.
-
+\bigskip
+\noindent \emph{Prova do item b)}.  
+Fixado $x\in X$ podemos observar que a aplicação $y\mapsto f(x,y)$
+é dada por $f\circ T_{x}$, onde $T_x:Y\to X\times Y$ é a aplicação 
+definida na prova do item a). Já que $f$ é $\mathscr{X}\times\mathscr{Y}$-mensurável
+temos do item a) para qualquer boreliano $B\in \mathscr{B}(\mathbb{R})$ que 
+$(f\circ T_x)^{-1}(B)= T^{-1}_x(f^{-1}(B)) \in \mathscr{Y}$.
+Mostrando que $y\mapsto f(x,y)$ é $\mathscr{Y}$-mensurável para qualquer 
+$x\in X$ fixado. A prova de que $x\mapsto f(x,y)$ é $\mathscr{X}$-mensurável 
+para qualquer $y\in Y$ fixado é feita de maneira análoga.
 \end{proof}
+
+
+\begin{observacao}
+Os conjunto $[y: (x,y)\in E]$ e $[x: (x,y)\in E]$ 
+são chamados de seções de $E$ determinadas por $x$ e 
+por $y$, respectivamente. Do mesmo modo as funções $f(x, \cdot)$ e $f(\cdot, y)$ 
+são chamadas as seções de $f$ determinadas por $x$ e por $y$ respectivamente.
+\end{observacao}
+
 
 
 \section{Medidas Produto}
