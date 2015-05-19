@@ -237,89 +237,65 @@ Vamos apresentar apenas a prova de que $\pi_1$ é uma medida,
 já que a prova deste fato para $\pi_2$
 é completamente análoga.
 
+
+É fácil ver que $\pi_1(\emptyset)=0$ e que $\pi_1(E)\geq 0$ 
+para todo $E\in \mathscr{X}\times\mathscr{Y}$. Para provar
+que $\pi_1$ é $\sigma$-aditiva, considere  
+$\{E_n\}_{n\geq 1}$ uma sequência em $\mathscr{X}\times\mathscr{Y}$
+de conjuntos mutuamente disjuntos.
+Usando que $\nu$ é uma medida em $Y$ temos que 
+\[
+\nu([y:(x,y)\in \cup_{j=1}^n E_j ])
+=
+\sum_{j=1}^n \nu([y:(x,y)\in E_j ])
+:=\varphi_n(x).
+\]
+Pela continuidade da medida $\nu$ podemos afimar que 
+$\varphi_n(x) \to \nu([y:(x,y)\in \cup_{j\geq 1} E_j ])$,
+para todo $x\in X$. Já que $\{\varphi_n\}_{n\in\mathbb{N}}$ é 
+uma sequência de funções monótona, $\mathscr{X}$-mensuráveis 
+e não-negativas segue do Teorema da Convergência
+Monótona que 
+\begin{align*}
+\pi_1(\cup_{j\geq 1} E_j)
+&=
+\int_X \nu([y:(x,y)\in \cup_{j\geq 1} E_j ])\, d\mu(x)
+\\
+&=
+\int_X \lim_{n\to\infty} \varphi_n(x)\, d\mu(x)
+\\
+&=
+\lim_{n\to\infty}\int_X \varphi_n(x)\, d\mu(x)
+\\
+&=
+\lim_{n\to\infty}\int_X \sum_{j=1}^n \nu([y:(x,y)\in E_j ])\, d\mu(x)
+\\
+&=
+\lim_{n\to\infty}\sum_{j=1}^n\int_X \nu([y:(x,y)\in E_j ])\, d\mu(x)
+\\
+&=
+\lim_{n\to\infty}\sum_{j=1}^n \pi_1(E_j)
+\\
+&=
+\sum_{j=1}^{\infty} \pi_1(E_j).
+\end{align*}
+
+
+
 Para o caso especial em que $E=A\times B\in\mathscr{X}\times \mathscr{Y}$  
 é um retângulo mensurável, 
 temos que  $\nu([y:(x,y)\in E ])=1_A(x)\nu(B)$ 
 e 
 $\mu([x:(x,y)\in E ])=1_B(y)\mu(A)$, e desta forma temos 
-\begin{equation}
+\[ 
 \pi_1(A\times B)=\mu(A)\nu(B)=\pi_2(A\times B).
-\end{equation}
-Desta forma as funções $\pi_1$ e $\pi_2$ coincidem no $\pi$-sistema $\mathscr{R}$.  Denote por $\mathscr{L}$ a classe dos elementos $E$ de 
-$\mathscr{X}\times \mathscr{Y}$  para os quais $\pi_1(E)=\pi_2(E)$.
-
-\begin{proposicao}
-A classe $\mathscr{L}$ coincide com $\mathscr{X}\times \mathscr{Y}$
-\end{proposicao}
+\]
+Assim as medidas $\pi_1$ e $\pi_2$ coincidem no $\pi$-sistema $\mathscr{R}$.  
+Pelo Corolário \ref{cor-uni-medidas-teo-pi-lambda} segue que $\pi_1 = \pi_2$
+em $\sigma(\mathscr{R})=\mathscr{X}\times\mathscr{Y}$. 
 
 
-\begin{proof}
-Seja $E=X\times Y$, então $\nu_x(E)=1_X(x)\nu(Y)=1_X(x)$ e $\mu_y(E)=1_Y(y)\mu(X)=1_Y(y)$. Portanto 
-$$
-\pi_1(X\times Y)=1=\pi_2(X\times Y)
-$$
-donde $X\times Y\in \mathscr{L}$. Seja $E\in \mathscr{L}$, então temos que
-$$
-\begin{array}{rcl}
-\pi_1(E^c)&=&\displaystyle\int_X \nu_x(E^c)d\mu(x)
-=
-\int_X (1-\nu_x(E))d\mu(x)
-\\[5mm]
-&
-=
-&
-\displaystyle 1-\int_X\nu_x(E) d\mu (x)
-=
-1-\int_Y \mu_y(E)d\nu(y)
-\\[5mm]
-&
-=
-&
-1-\pi_2(E)
-\\[5mm]
-&
-=
-&
-\pi_2(E^c)
-\end{array}
-$$
-portanto $E^c\in \mathscr{L}$.  
-Finalmente sejam $E_1, \ldots, E_n, \ldots $ em $\mathscr{L}$, vamos
-mostrar que $E=\bigcup E_n\in \mathscr{L}.$ É suficiente considerar
-o caso em que os $E_n^{'s}$ são disjuntos. Para cada $n$ considere os
-conjunto $\bigcup_{j=1}^nE_n$, é claro que   $\bigcup_{j=1}^nE_n\nearrow E.$ Note
-também que para cada $n$ a função $x\mapsto \nu_x(E_n)$ é uma função não negativa.
-Sendo assim a temos que  $f_n=\sum_{j=1}^n\nu_{(\cdot)}(E_j)=\nu_x(\bigcup_{j=1}^{n}E_j)$
-e $g_n=\sum_{j=1}^n\mu_{(\cdot)}(E_j)=\mu_y(\bigcup_{j=1}^{n}E_j)$ são
-uma famílias não decrescentes de funções não negativas.
-Portanto segue do teorema da convergência monótona
-que
-$$
-\begin{array}{rcl}
-\pi_1(E)&=&\displaystyle\lim_{n\to \infty}\pi_1(\bigcup_{j=1}^{n}E_j)
-=
-\lim_{n\to \infty}\int_X \nu_x(\bigcup_{j=1}^{n}E_j))d\mu(x)
-\\[5mm]
-&
-=
-&
-\displaystyle \lim_{n\to \infty}\int_X (\sum_{j=1}^n\nu_x(E_j)) d\mu(x)
-=
-\lim_{n\to \infty}\int_Y(\sum_{j=1}^{n}\mu_y(E_j)d\nu(y)
-\\[5mm]
-&
-=
-&
-\displaystyle\lim_{n\to \infty} \int_Y \mu_y(\bigcup_{j=1}^{n}E_j)d\nu(y)
-\\
-&=&
-\pi_2(E)
-\end{array}
-$$
-concluindo que $E\in \mathscr{L}$. Portanto $\mathscr{L}$ é um $\lambda$-sistema 
-que contém o $\pi$-sistema $\mathscr{R}$, logo $\mathscr{X}\times \mathscr{Y}=\sigma(\mathscr{R})\subset \mathscr{L}\subset \mathscr{X}\times \mathscr{Y}.$
-
-\end{proof}
+\subsubsection{Construção da Medida Produto - Caso de Medidas $\sigma$-finitas}
 
 \begin{corolario}
 As medidas definidas em (\ref{M.Prod. 1}) e (\ref{M. Prod. 2}) estão bem definidas e  coincidem mesmo que as medidas 
