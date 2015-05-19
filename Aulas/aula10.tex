@@ -352,12 +352,12 @@ e vimos que ambas medidas coincidem em
 $\mathscr{X}\times \mathscr{Y}$.
 A ideia é mostrar que existem os seguintes limites:
 \[
-\lim_{n\to\infty}
-\left( \lim_{m\to\infty} \pi_1^{m,n}(E) \right)
+\lim_{m\to\infty}
+\left( \lim_{n\to\infty} \pi_1^{m,n}(E) \right)
 :=\pi_1(E)
 \quad\text{e}\quad
-\lim_{m\to\infty}
-\left( \lim_{n\to\infty} \pi_2^{m,n}(E) \right)
+\lim_{n\to\infty}
+\left( \lim_{m\to\infty} \pi_2^{m,n}(E) \right)
 :=\pi_2(E),
 \]
 onde $\pi_1$ e $\pi_2$ são medidas $\sigma$-finitas 
@@ -375,7 +375,7 @@ Procedendo como na seção anterior podemos ver que
 para qualquer $E\in\mathscr{X}\times\mathscr{Y}$
 a aplicação $x\mapsto \nu_n([y:(x,y)\in E ])$ 
 define uma função $\mathscr{X}$-mensurável para 
-cada $n\in\mathbb{N}$. Vamos denotar esta aplicação 
+cada $n\in\mathbb{N}$, vamos denotar esta aplicação 
 por $\varphi_n$. Note que 
 \begin{align*}
 \varphi_n(x):=
@@ -395,7 +395,95 @@ por $\varphi_n$. Note que
 &=
 \varphi_{n+1}(x).
 \end{align*}
-Usando os mesmos argumentos da seção
+Já que $\cup_{n\geq 1} B_n= Y$ segue da continuidade da probabilidade 
+que $\varphi_n(x)\uparrow \nu([y:(x,y)\in E])$, para todo 
+$x\in X$. Fixado $m\in\mathbb{N}$ 
+segue do Teorema da Convergência Monótona que 
+o seguinte limite existe 
+\begin{align*}
+\lim_{n\to\infty}\pi_1^{m,n}(E)
+&=
+\lim_{n\to\infty}
+\int_X \nu_n([y:(x,y)\in E ])\, d\mu_m(x)
+\\
+&=
+\int_X \lim_{n\to\infty} \nu_n([y:(x,y)\in E\cap X\times B_{n} ])\, d\mu_m(x)
+\\
+&=
+\int_X \nu([y:(x,y)\in E ])\, d\mu_m(x)
+\end{align*}
+
+É fácil ver para qualquer função $\mathscr{X}$-mensurável $g:X\to [0,+\infty]$ que 
+\[
+\int_X g \,d\mu_n = \int_{A_m} g\, d\mu.
+\]
+Usando este fato na igualdade obtida acima, conjuntamente 
+com o Teorema da Convergência Monótona concluímos que
+existe o seguinte limite 
+\begin{align*}
+\lim_{m\to\infty} \lim_{n\to\infty}\pi_1^{m,n}(E)
+&=
+\lim_{m\to\infty}\int_X \nu([y:(x,y)\in E ])\, d\mu_m(x)
+\\
+&=
+\lim_{m\to\infty}\int_{X\cap A_m} \nu([y:(x,y)\in E ])\, d\mu(x)
+\\
+&=
+\int_{X} \nu([y:(x,y)\in E ])\, d\mu(x).
+\end{align*}
+De forma análoga temos que 
+\begin{align*}
+\lim_{n\to\infty} \lim_{m\to\infty}\pi_2^{m,n}(E)
+&=
+\int_{Y} \mu([x:(x,y)\in E ])\, d\nu(x).
+\end{align*}
+Da seção anterior segue que $\pi_1^{m,n}(E)= \pi_2^{m,n}(E)$. Portanto
+resta mostrar apenas que 
+\begin{equation}\label{igualdade-pi1mn-pi2mn}
+\lim_{m\to\infty}\lim_{n\to\infty} \pi_1^{m,n}(E)
+=
+\lim_{n\to\infty}\lim_{m\to\infty} \pi_1^{m,n}(E).
+\end{equation}
+O lado esquerdo da última igualdade foi avaliado logo acima. 
+Para verificar que a última igualdade é válida basta aplicar duas vezes o
+Teorema da Convergência Monótona como segue
+\begin{align*}
+\lim_{n\to\infty}\lim_{m\to\infty} \pi_1^{m,n}(E)
+&=
+\lim_{n\to\infty}\lim_{m\to\infty}
+\int_X \nu_n([y:(x,y)\in E ])\, d\mu_m(x)
+\\
+&=
+\lim_{n\to\infty}\lim_{m\to\infty}
+\int_{X\cap A_m} \nu_n([y:(x,y)\in E ])\, d\mu(x)
+\\
+&=
+\lim_{n\to\infty}
+\int_{X} \nu_n([y:(x,y)\in E ])\, d\mu(x)
+\\
+&=
+\int_{X} \nu([y:(x,y)\in E ])\, d\mu(x).
+\end{align*} 
+
+Usando a igualdade \eqref{igualdade-pi1mn-pi2mn} e os valores 
+calculados destes limites segue que 
+\begin{align*}
+\int_{X} \nu([y:(x,y)\in E ])\, d\mu(x)
+&=
+\lim_{m\to\infty} \lim_{n\to\infty}\pi_1^{m,n}(E)
+\\
+&=
+\lim_{n\to\infty} \lim_{m\to\infty}\pi_2^{m,n}(E)
+\\
+&=
+\int_{Y} \mu([x:(x,y)\in E ])\, d\nu(x).
+\end{align*}
+
+
+
+
+
+
 
 
 
