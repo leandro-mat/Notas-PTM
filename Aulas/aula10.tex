@@ -45,14 +45,15 @@ Note que se $E=A\times B\in \mathscr{X}\times \mathscr{Y}$
 é um retângulo mensurável então $T_{x}^{-1}E=B~\textnormal{ou}~\varnothing$ 
 dependendo apenas se 
 $A$ contém ou não o ponto $x$.  
+
 \begin{figure}
 \centering
-\includegraphics[scale=0.3]{Figuras/fig-medida-produto-aula10}
+\vspace*{-0.7cm}
+\includegraphics[scale=0.33]{Figuras/fig-medida-produto-aula10}
 \caption{}
 \label{medida-produto-1}
 \end{figure}
 
-\newpage
 De qualquer forma 
 em ambas situações temos que $T_x^{-1}E\in \mathscr{Y}$.
 Para mostrar que a afirmação também é válida para um conjunto 
@@ -143,7 +144,7 @@ para complementação. Seja $E\in \mathscr{L}$.
 Usando propriedades elementares de medida 
 podemos afirmar que 
 \[ 
-\nu( [y:(x,y)\in E^c] )=\nu(Y)-\nu([y:(x,y)\in E).
+\nu( [y:(x,y)\in E^c] )=\nu(Y)-\nu([y:(x,y)\in E]).
 \]
 Já que o lado direito da igualdade acima 
 define uma função mensurável com 
@@ -291,11 +292,112 @@ $\mu([x:(x,y)\in E ])=1_B(y)\mu(A)$, e desta forma temos
 \pi_1(A\times B)=\mu(A)\nu(B)=\pi_2(A\times B).
 \]
 Assim as medidas $\pi_1$ e $\pi_2$ coincidem no $\pi$-sistema $\mathscr{R}$.  
-Pelo Corolário \ref{cor-uni-medidas-teo-pi-lambda} segue que $\pi_1 = \pi_2$
-em $\sigma(\mathscr{R})=\mathscr{X}\times\mathscr{Y}$. 
+A menos de uma 
+normalização por um fator de $\mu(X)\nu(Y)$, podemos supor que
+ambas $\pi_1$ e $\pi_2$ são medidas de probabilidade e 
+aplicar o Corolário \ref{cor-uni-medidas-teo-pi-lambda} que garante
+a igualde $\pi_1 = \pi_2$ em $\sigma(\mathscr{R})=\mathscr{X}\times\mathscr{Y}$. 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \subsubsection{Construção da Medida Produto - Caso de Medidas $\sigma$-finitas}
+
+
+Próximo passo é generalizar a construção feita
+acima para o caso que ambos espaços 
+$(X,\mathscr{X},\mu)$ e $(Y,\mathscr{Y},\nu)$
+são espaços de medida $\sigma$-finitos.
+
+Como estamos assumindo que os espaços 
+$(X,\mathscr{X},\mu)$ e $(Y,\mathscr{Y},\nu)$
+são $\sigma$-finitos, sabemos 
+que existem sequências $\{A_m\}_{m\in\mathbb{N}}$
+e $\{B_n\}_{n\in\mathbb{N} }$ em $\mathscr{X}$ e $\mathscr{Y}$, respectivamente 
+tais que $\cup_{m\geq 1} A_m=X$ e 
+$\cup_{m\geq 1} B_n = Y$ e além do mais $\mu(A_m)<\infty$
+e $\nu(B_n)<\infty$ para todo $m,n\in\mathbb{N}$.
+Sem perda de generalidade, podemos supor que ambas sequências
+são crescentes, i.e., $A_{m}\subset A_{m+1}$ e
+$B_{n}\subset B_{n+1}$. 
+Defina para cada $m,n\in\mathbb{N}$ as seguintes 
+medidas $\mu_m(A)=\mu(A\cap A_m)$ e 
+$\nu_n(B)=\nu_n(B\cap B_n)$.
+
+Pelos resultados da seção anterior podemos definir em
+$(X\times Y,\mathscr{X}\times\mathscr{Y})$ as seguintes
+medidas
+\begin{equation}\label{M.Prod.1mn}
+\pi_1^{m,n}(E)
+=
+\int_X \nu_n([y:(x,y)\in E ])\, d\mu_m(x),~~~~~E \in \mathscr{X}\times \mathscr{Y}
+\end{equation}
+e 
+\begin{equation}\label{M. Prod.2mn}
+\pi_2^{m.n}(E)
+=
+\int_Y \mu_m([x:(x,y)\in E ])\, d\nu_n(y),~~~~~E \in \mathscr{X}\times \mathscr{Y}
+\end{equation}
+e vimos que ambas medidas coincidem em 
+$\mathscr{X}\times \mathscr{Y}$.
+A ideia é mostrar que existem os seguintes limites:
+\[
+\lim_{n\to\infty}
+\left( \lim_{m\to\infty} \pi_1^{m,n}(E) \right)
+:=\pi_1(E)
+\quad\text{e}\quad
+\lim_{m\to\infty}
+\left( \lim_{n\to\infty} \pi_2^{m,n}(E) \right)
+:=\pi_2(E),
+\]
+onde $\pi_1$ e $\pi_2$ são medidas $\sigma$-finitas 
+com $\pi_1=\pi_2$ em $\mathscr{X}\times\mathscr{Y}$.
+
+Vamos apresentar o argumento da existência do primeiro limite
+acima. Sejam $m,n\in\mathbb{N}$ fixado. Por definição temos 
+que 
+\begin{align*}
+\pi_1^{m,n}(A)
+&=
+\int_X \nu_n([y:(x,y)\in E ])\, d\mu_m(x)
+\end{align*}
+Procedendo como na seção anterior podemos ver que 
+para qualquer $E\in\mathscr{X}\times\mathscr{Y}$
+a aplicação $x\mapsto \nu_n([y:(x,y)\in E ])$ 
+define uma função $\mathscr{X}$-mensurável para 
+cada $n\in\mathbb{N}$. Vamos denotar esta aplicação 
+por $\varphi_n$. Note que 
+\begin{align*}
+\varphi_n(x):=
+\nu_n([y:(x,y)\in E ])
+&=
+\nu([y:(x,y)\in E ]\cap B_n)
+\\
+&=
+\nu([y:(x,y)\in E \cap X\times B_n])
+\\
+&\leq 
+\nu([y:(x,y)\in E \cap X\times B_{n+1}])
+\\
+&= 
+\nu([y:(x,y)\in E]\cap B_{n+1})
+\\
+&=
+\varphi_{n+1}(x).
+\end{align*}
+Usando os mesmos argumentos da seção
+
+
 
 \begin{corolario}
 As medidas definidas em (\ref{M.Prod. 1}) e (\ref{M. Prod. 2}) estão bem definidas e  coincidem mesmo que as medidas 
