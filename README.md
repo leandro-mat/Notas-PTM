@@ -1,6 +1,10 @@
 Notas-PTM
 =========
 
+<a href = "https://github.com/leandro-mat/Notas-PTM/raw/master/notas.pdf">
+Baixe aqui</a> o arquivo com as notas de aula em formato PDF.
+
+
 Neste repositório encontra-se os rascunhos das notas de aula do curso de Probabilidade e Teoria da Medida.
 Rode PDFLaTex no arquivo notas.tex para compilar o texto. Cada aula é adicionada em um arquivo separado
 que deve ser colocado na pasta Aulas. Use a pasta de Figuras caso queira inserir alguma figura no texto
