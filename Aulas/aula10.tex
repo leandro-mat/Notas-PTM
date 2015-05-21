@@ -572,17 +572,50 @@ uma função $\mathscr{X}\times \mathscr{Y}$-mensurável
 
 
 \begin{proof}
-O Roteiro da demonstração é o padrão, vamos mostrar primeiro que o teorema vale para funções $1_E,~E\in \mathscr{X}\times \mathscr{Y}$. Para isso vamos calcular separadamente cada lado das expressões (\ref{Fubini1}) e (\ref{Fubini2}) e ver que eles coincidem.
+Vamos mostrar primeiro que o teorema é válido para funções da forma 
+$1_E,~E\in \mathscr{X}\times \mathscr{Y}$. 
+Para isso vamos calcular separadamente os lados direito e esquerdo de
+(\ref{Fubini1}) e (\ref{Fubini2}) e mostrar que eles coincidem.
+O lado esquerdo de (\ref{Fubini1}) foi obtido na seção anterior 
+e é dado por
 \begin{equation}
-\int_{X\times Y} 1_E d(\mu\times \nu)=\mu\times \nu( E)=\int_X \nu_x(E) d\mu(x)
+\int_{X\times Y} 1_E\, d\pi 
+=
+\mu\times \nu( E)
+=
+\int_X \nu([y:(x,y)\in E]) d\mu(x).
 \end{equation}
-Por outro lado note que para cada $x\in X$ fixado $1_E(x,\cdot)=1_{E_x}(\cdot)$, e além disto está função é $\mathscr{Y}$-mensurável por (\ref{Prod. 1}),  portanto temos que 
+Por outro lado, note que para cada $x\in X$ fixado 
+\[ 
+1_E(x,\cdot) 
+=
+1_{[y:(x,y)\in E]}(\cdot)
+\]
+e além disto segue da Proposição \ref{Prod. 1} 
+que esta função é $\mathscr{Y}$-mensurável. 
+Temos diretamente da definição da integral de Lebesgue que
 \begin{equation}
-\int_X(\int_Y 1_E(x,y) d\nu)d\mu= \int_X \nu_x(E) d\mu(x)
+\int_X
+\left[ \int_Y 1_E(x,y)\, d\nu(y)\right] d\mu(x)
+= 
+\int_X \nu([y:(x,y)\in E]) d\mu(x)
 \end{equation}
-concluindo que vale (\ref{Fubini1}). De modo análogo verificamos que vale (\ref{Fubini2}). Da linearidade da integral e do exposto acima 
-concluimos que o teorema também vale para funções simples (que são funções mensuráveis!). O proximo passo é aproximar $f$ por uma sequência
-não decrescente de funções simples. Usando o Teorema de convergência monótona verificamos que  (\ref{Fubini1}) e (\ref{Fubini2}) valem para $f$.
+e portanto (\ref{Fubini1}) está provada. 
+De modo análogo verificamos que vale (\ref{Fubini2}). 
+
+Da linearidade da integral e do exposto acima 
+concluímos que as igualdades (\ref{Fubini1}) e (\ref{Fubini2})  
+também são válidas para quaisquer funções simples desde que 
+sejam $\mathscr{X}\times\mathscr{Y}$-mensuráveis. 
+O próximo passo é ``aproximar'' $f$ por uma sequência
+monótona não-decrescente de funções simples. 
+Já que estamos assumindo que $f$ é não-negativa, 
+esta aproximação pode ser feita 
+via o Teorema \eqref{teo:aproximacao-monotona-por-func-simples}.
+Por último, usamos o Teorema de Convergência Monótona 
+para verificar que (\ref{Fubini1}) e (\ref{Fubini2}) 
+valem para qualquer função $f$ $\mathscr{X}\times\mathscr{Y}$-mensurável
+não-negativa.
 \end{proof}
 
 
