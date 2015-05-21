@@ -530,25 +530,44 @@ Sejam $(X, \mathscr{X}, \mu)$ e $(Y, \mathscr{Y}, \nu)$
 espaços de medida com $\mu$ e $\nu$ medidas $\sigma$-finitas. 
 Considere  na $\sigma$-álgebra
 produto $\mathscr{X}\times \mathscr{Y}$ 
-a medida produto $\mu\times \nu$ e $f$ uma função $\mathscr{X}\times \mathscr{Y}$-mensurável. Nosso sonho 
-é verificar que valem expressões do tipo 
+a medida produto $\pi = \mu\times \nu$ e 
+$f:X\times Y\to \overline{\mathbb{R}}$ 
+uma função $\mathscr{X}\times \mathscr{Y}$-mensurável. 
+O objetivo nesta seção é encontrar condições suficientes  
+sobre a função $f$ que garantam a validade
+das seguintes igualdades:
 \begin{equation}\label{Fubini1}
-\int_{X\times Y}f(x,y) d(\mu\times\nu)= \int_X(\int_Yf(x,y) d\nu)d\mu
+\int_{X\times Y}f d\pi
+= 
+\int_X\left[ \int_Y f(x,y) d\nu(y)\right] d\mu(x)
 \end{equation}
+e
 \begin{equation}\label{Fubini2}
-\int_{X\times Y}f(x,y) d(\mu\times \nu)=\int_Y(\int_Xf(x,y) d\mu)d\nu.
+\int_{X\times Y}f\, d\pi
+=
+\int_Y\left[\int_Xf(x,y) d\mu(x)\right] d\nu(y).
 \end{equation}
-É claro, pois a vida não é uma poesia, que as expressões (\ref{Fubini1}) e (\ref{Fubini2}) não devem ser
-verificadas para todas as funções mensuráveis. Verificaremos abaixo que elas valem para uma classe bastante 
-grande de funções, primeiro verificaremos que valem para funções mensuráveis positivas (Teorema de Tonneli),
-e mais geralmente para funções em $L^1(\mu\times \nu)$ (Teorema de Fubini).
+Seria desejável que as expressões (\ref{Fubini1}) e (\ref{Fubini2}) 
+fossem válidas para todas as funções $\mathscr{X}\times\mathscr{Y}$
+mensuráveis. Em geral, isto não será verdadeiro. Mas 
+podemos provar a validade destas igualdades se adicionamos
+à hipotese de $\mathscr{X}\times \mathscr{Y}$-mensurabilidade a 
+condição de $f$ ser não-negativa. 
+Este resultado é conhecido na literatura como Teorema de Tonneli. 
+Se permitimos que $f$ tome valores positivos e negativos é possível  
+garantir a validade de (\ref{Fubini1}) e (\ref{Fubini2}) 
+assumindo a integrabilidade de $f$. Este resultado é o conhecido 
+como Teorema de Fubini.
 
 
 
 \begin{teorema}[Tonelli]\label{Tonelli}
 Sejam $(X, \mathscr{X}, \mu)$ e $(Y, \mathscr{Y}, \nu)$
- espaços de medida com $\mu$ e $\nu$ sigma finitas. Considere na sigma álgebra
- produto $\mathscr{X}\times \mathscr{Y}$ a medida produto $\mu\times \nu$ e $f$ uma função $\mathscr{X}\times \mathscr{Y}$-mensurável \textbf{não negativa} definida em $X\times Y$. Nestas condições valem (\ref{Fubini1}) e (\ref{Fubini2}). 
+espaços de medida com $\mu$ e $\nu$ $\sigma$-finitas. 
+Considere na $\sigma$-álgebra produto $\mathscr{X}\times \mathscr{Y}$ 
+a medida produto $\pi = \mu\times \nu$ e seja $f:X\times Y\to \overline{\mathbb{R}}$ 
+uma função $\mathscr{X}\times \mathscr{Y}$-mensurável 
+\textbf{não-negativa}. Nestas condições valem (\ref{Fubini1}) e (\ref{Fubini2}). 
 \end{teorema}
 
 
