@@ -481,53 +481,56 @@ calculados destes limites segue que
 
 
 
+Desta forma podemos definir uma medida 
+$\pi:\mathscr{X}\times\mathscr{Y}\to [0,\infty]$ 
+tal que para qualquer conjunto $E\in \mathscr{X}\times\mathscr{Y}$ 
+temos 
+\[
+\pi(E) := \pi_1(E) = \pi_2(E)
+\] 
+e além do mais 
+\[
+	\int_{X} \nu([y:(x,y)\in E ])\, d\mu(x)
+	=
+	\pi_1(E)
+	=
+	\pi_2(E)
+	=
+	\int_{Y} \mu([x:(x,y)\in E ])\, d\nu(x).
+\]
+A medida $\pi$ possui a seguinte propriedade.
+Para qualquer retângulo mensurável 
+$A\times B\in \mathscr{X}\times\mathscr{Y}$ temos que 
+\[
+\pi(A\times B)=\mu(A)\nu(B).
+\]
+Uma vez que $\{A_m\times B_m: m\in \mathbb{N}\}$ é uma cobertura 
+de $X\times Y$ segue da propriedade acima que 
+$\pi$ é uma medida $\sigma$-finita. 
+Para verificar que $\pi$ é a única medida com esta propriedade
+basta notar que qualquer medida $\lambda$ satisfazendo 
+$\lambda(A\times B)=\mu(A)\nu(B)$ necessariamente
+coincide com $\pi$ na álgebra dos retângulos mensuráveis 
+$\mathscr{R}$. Logo ambas, pelo Teorema de Carathéodory,
+admitem extensão única a 
+$\sigma(\mathscr{R})=\mathscr{X}\times\mathscr{Y}$ 
+e portanto temos que $\pi=\lambda$.  
+
+A medida $\pi$ é chamada de \textbf{medida produto} e normalmente
+usamos a notação $\pi = \mu\times\nu$ para indicar esta medida.
 
 
 
 
 
 
-\begin{corolario}
-As medidas definidas em (\ref{M.Prod. 1}) e (\ref{M. Prod. 2}) estão bem definidas e  coincidem mesmo que as medidas 
-$\mu$ e $\nu$ sejam apenas $\sigma$-fintas.
-\end{corolario}
-
-\begin{proof}
-Sejam $\{A_n\}$ e $\{B_n\}$ decomposição de $X$ e $Y$ respectivamente em subconjuntos 
-disjuntos de medida finita. Para cada $n,m$ defina as medidas $\mu_n$ e $\nu_m$ 
-em  $\mathscr{X}$ e $ \mathscr{Y}$ respectivamente  pondo  $\mu_n(A)=\mu(A\cap A_n)$ e 
-$\nu_m(B)=\nu(B\cap B_m)$. 
-\medskip
-
-\noindent \emph{Afirmação 1:} Seja $E=A\times B\in \mathscr{X}\times \mathscr{Y}$ um retângulo mensurável, temos que o mapa 
-$X\ni x\mapsto \nu_x(E)\in [0, \infty)$ é mensurável.
-\medskip
-
-
- De fato, temos para cada $n$ que  $\nu_n(E_x)=\nu(E_x\cap B_n)=1_A(x)  \nu(B\cap B_n)$, logo 
- $x\mapsto \nu_n(E_x)$ é mensurável. Como $\nu(E_x)=\sum_{n\geq 1}\nu_n(E_x)$ temos que 
- $x\mapsto \nu_x(E)$ é mensurável. De modo análogo mostra-se que $y\mapsto \mu_y(E)$ é mensurável.
-
-Agora defina a classe $\mathscr{L}$ dos elementos $E$ de $\mathscr{X}\times \mathscr{Y}$ tais que 
-o mapa $x\mapsto \nu_x(E)$ é mensurável.
-
-\noindent \emph{Afirmação 2:} A classe $\mathscr{L}$ coincide com $\mathscr{X}\times \mathscr{Y}$.
-\medskip
-
-A demonstração consiste em mostrar que $\mathscr{L}$ é um $\lambda$-sistema que contém o $\pi$-sistema dos 
-retângulos mensuráveis.
- O fato de $\mathscr{L}$ conter os retângulos 
- mensuráveis é o conteúdo da afirmação anterior.
- Para provar que $\mathscr{L}$ é um $\lambda$-sistema basta procedermos como na proposição (\ref{Mens. Prod}).
-  Tem-se uma afirmação análoga para o mapa $x\mapsto \mu_y(E)$. 
-  
-  Temos então que tanto $\pi_1$ quando $\pi_2$ estão bem definidas. Para ver que $\pi_1$ e $\pi_2$ coincidem 
-{\red continua}
 
 \section{Teorema de Fubini}  
  Sejam $(X, \mathscr{X}, \mu)$ e $(Y, \mathscr{Y}, \nu)$
- espaços de medida com $\mu$ e $\nu$ sigma finitas. Considere na sigma álgebra
- produto $\mathscr{X}\times \mathscr{Y}$ a medida produto $\mu\times \nu$ e $f$ uma função $\mathscr{X}\times \mathscr{Y}$-mensurável. Nosso sonho 
+ espaços de medida com $\mu$ e $\nu$ medidas $\sigma$-finitas. 
+ Considere  na $\sigma$-álgebra
+ produto $\mathscr{X}\times \mathscr{Y}$ 
+ a medida produto $\mu\times \nu$ e $f$ uma função $\mathscr{X}\times \mathscr{Y}$-mensurável. Nosso sonho 
  é verificar que valem expressões do tipo 
  \begin{equation}\label{Fubini1}
  \int_{X\times Y}f(x,y) d(\mu\times\nu)= \int_X(\int_Yf(x,y) d\nu)d\mu
@@ -539,7 +542,6 @@ retângulos mensuráveis.
 verificadas para todas as funções mensuráveis. Verificaremos abaixo que elas valem para uma classe bastante 
 grande de funções, primeiro verificaremos que valem para funções mensuráveis positivas (Teorema de Tonneli),
 e mais geralmente para funções em $L^1(\mu\times \nu)$ (Teorema de Fubini).
-\end{proof}
 
 
 
