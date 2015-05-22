@@ -816,3 +816,43 @@ e pela definição de $f$ temos
 = 
 \int_{0}^1 \left[ \int_{0}^{1}|f(x,y)|\, dy\right] dx = +\infty.
 \]
+
+
+
+
+
+
+\bigskip 
+\noindent\textbf{Contra-exemplo 2.} 
+Neste contraexemplo, vamos mostrar que não podemos 
+remover também a hipótese de $\sigma$-finitude 
+das medidas no Teorema de Fubini e
+Tonelli.
+
+Sejam $X=Y=[0,1]$, $\mathscr{X}=\mathscr{Y}=\mathscr{B}([0,1])$,
+$\lambda$ medida de Lebesgue em $[0,1]$
+e $\mu$ medida da contagem em $[0,1]$.
+Considere a função 
+\[
+	f(x,y)
+	=
+	\begin{cases}
+	1,&\text{se}\ x=y;
+	\\
+	0,&\text{caso contrário}.
+	\end{cases}
+\]
+Então para todo $y\in [0,1]$ temos 
+$\int_0^1 f(x,y)\, d\lambda(x)=0$.
+Por outro lado, para todo $x\in [0,1]$ temos que
+$\int_0^1 f(x,y)\, d\mu(y)=\mu(\{y\})=1$.
+Portanto teremos 
+\[
+\int_{[0,1]}\left[ \int_{[0,1]} f(x,y)\, d\mu(y) \right]d\lambda(x)
+=
+1
+\neq
+0
+=
+\int_{[0,1]}\left[ \int_{[0,1]} f(x,y)\, d\lambda(x) \right]d\mu(y).
+\]
