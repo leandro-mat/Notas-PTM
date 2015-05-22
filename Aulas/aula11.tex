@@ -1,8 +1,72 @@
 \chapter[Aula 11]{Teorema da Existência de Kolmogorov}
 \chaptermark{}
 
+\section[Teorema de Kolmogorov para Produtos Cartesianos Enumeráveis]
+{Teorema de Kolmogorov para Produtos\\ Cartesianos Enumeráveis}
+
 Na Aula \ref{Lei-Zero-Um-Kolmogorov-Enumeravel}
 apresentamos a prova do Teorema da Existência 
 de Kolmogorov em uma de suas versões mais simples.
 Isto foi feito na seção chamada 
-{\it A Medida Produto em $\{0,1,\ldots,n\}^{\mathbb{N}}$}
+{\it A Medida Produto em $\{0,1,\ldots,n\}^{\mathbb{N}}$}.
+Nesta seção vamos mostrar como estender a construção 
+apresentada na seção mencionada acima, para o espaço
+$\mathbb{R}^{\mathbb{N}}$. O produto cartesiano infinito 
+$\mathbb{R}^{\mathbb{N}}$ pode ser pensado como o espaço
+de todas as sequências de números reais $(x_1,x_2,\ldots)$
+ou equivalentemente como o espaço 
+$\{f:\mathbb{N}\to\mathbb{R}: f\ \text{é uma função} \}$.
+É muito comum também denotar este espaço por 
+$
+\mathbb{R}\times\mathbb{R}
+\times\ldots\times\mathbb{R}\times\ldots
+\equiv 
+\mathbb{R}^{\mathbb{N}}
+$.
+
+Para cada $n\in\mathbb{N}$ e $E\in\mathscr{B}(\mathbb{R}^n)$
+fixados consideramos o seguinte subconjunto 
+$
+E\times\mathbb{R}\times\mathbb{R}\times\ldots 
+\subseteq 
+\mathbb{R}^{\mathbb{N}}.
+$
+A coleção de todos os conjuntos 
+desta forma é chamada de coleção dos conjuntos cilíndricos
+de $\mathbb{R}^{\mathbb{N}}$. A $\sigma$-álgebra gerada
+pelo conjuntos cilíndricos será chamada de $\sigma$-álgebra
+produto de $\mathbb{R}^{\mathbb{N}}$ e será denotada por 
+$\mathscr{B}\big(\mathbb{R}^{\mathbb{N}}\big)$.
+
+
+\begin{teorema}
+Seja $\{\mathbb{P}_n\}_{n\in\mathbb{N}}$ 
+uma família de medidas de probabilidade, 
+tal que para cada $n\in\mathbb{N}$ a
+medida de probabilidade $\mathbb{P}_n$ é uma medida definida 
+sobre $\mathscr{B}(\mathbb{R}^{n})$. 
+Suponha que a família $\{\mathbb{P}_n\}_{n\in\mathbb{N}}$  
+satisfaz as 
+\textbf{condições de consistência de Kolmogorov}, i.e.,
+\[
+\mathbb{P}_{n+k}(E\times\mathbb{R}^k)
+=
+\mathbb{P}_n(E)
+\quad
+\begin{array}{c}
+\text{para todo}\ n,k\in\mathbb{N}\ \text{e}\ 
+\text{todo boreliano}\ E\subseteq \mathbb{R}^n.
+\end{array}
+\]
+Então existe uma única medida de probabilidade 
+$\mathbb{P}$ definida sobre 
+$\mathscr{B}\big(\mathbb{R}^{\mathbb{N}}\big)$
+tal que para qualquer que seja $n\geq 1$ e 
+$E\in \mathscr{B}(\mathbb{R}^{n})$ temos 
+a seguinte igualdade 
+\[
+\mathbb{P}(E\times\mathbb{R}\times\mathbb{R}\times\ldots)
+=
+\mathbb{P}_n(E).
+\]
+\end{teorema}
