@@ -39,6 +39,115 @@ produto de $\mathbb{R}^{\mathbb{N}}$ e será denotada por
 $\mathscr{B}\big(\mathbb{R}^{\mathbb{N}}\big)$.
 
 
+\subsubsection{Interseção de Cilindros Encaixantes 
+em $\mathbb{R}^{\mathbb{N}}$.}
+
+Um dos ingredientes chaves na prova do Teorema 
+de Kolmogorov é um fato bastante técnico que 
+garante que a interseção de uma sequência 
+decrescente de cilindros de $\mathbb{R}^{\mathbb{N}}$
+é não-vazia. Enunciamos este resultado de maneira precisa
+abaixo.
+
+\begin{teorema}
+Para cada $n\in\mathbb{N}$ seja $C_n$ um conjunto 
+compacto não-vazio de $\mathbb{R}^n$.
+Suponha que estes conjuntos satisfaçam as seguintes
+condições: para cada $n\in\mathbb{N}$, 
+$(x_1,\ldots,x_n,x_{n+1})\in C_{n+1}$
+implica $(x_1,\ldots,x_n)\in C_{n}$.
+Então existe uma sequência 
+$(x_1,x_2,\ldots)\in\mathbb{R}^{\mathbb{N}}$ tal 
+que $(x_1,\ldots,x_n)\in C_n$ para todo $n\in\mathbb{N}$.
+\end{teorema}
+
+\begin{proof}
+Fixados dois números naturais $m$ e $n$ satisfazendo 
+$1\leq m\leq n$ defina a projeção
+$\pi^{n}_{m}:\mathbb{R}^n\to\mathbb{R}^m$ por 
+$\pi^{n}_{m}(x_1,\ldots,x_m,\ldots,x_n)=(x_1,\ldots,x_m)$.
+Já que $\pi^{n}_{m}$ é uma aplicação contínua e 
+$C_n$ é um compacto não-vazio (por hipótese) podemos concluir que 
+$\pi^{n}_{m}(C_n)$ é um subconjunto compacto não-vazio 
+de $\mathbb{R}^m$.
+
+Afirmamos que para cada $m\in\mathbb{N}$ fixado, 
+a coleção de subconjuntos compactos 
+de $\mathbb{R}^m$ dada por 
+$\{\pi^{k}_{m}(C_k): k\geq m\}$, determina uma 
+sequência decrescente de compactos de $\mathbb{R}^m$,
+isto é,
+\[
+\ldots \subseteq 
+\pi^{m+2}_{m}(C_{m+2})\subseteq
+\pi^{m+1}_{m}(C_{m+1})\subseteq \pi_{m}^m(C_m).
+\]
+Vamos provar a afirmação. Fixe naturais $m,n$ tais que 
+$m\leq n$ e tome um ponto qualquer 
+$x =(x_1,\ldots,x_{n+1})\in C_{n+1}$. Por hipótese 
+podemos afirmar que $x'=(x_1,\ldots,x_n)\in C_n$. 
+Logo 
+$
+\pi^{n+1}_{m}(x)
+=(x_1,\ldots,x_m)
+=\pi^{n}_{m}(x')
+\subseteq \pi^{n}_{m}(C_n)
+$.
+Portanto todo ponto de $\pi^{n+1}_{m}(C_{n+1})$ pertence 
+a $\pi^{n}_{m}(C_n)$ e isto prova a afirmação.
+
+Pelo Teorema de Cantor 
+a sequência de subconjuntos compactos encaixantes 
+da reta dada por 
+\[
+\ldots \subseteq 
+\pi_{1}^{3}(C_3)
+\subseteq
+\pi^{2}_{1}(C_2)
+\subseteq 
+\pi^{1}_{1}(C_1) 
+=
+C_1
+\]
+tem interseção não vazia.
+Seja $x_1$ um ponto arbitrário nesta interseção.
+Por construção $x_1\in \pi_{1}^{n}(C_n)$ 
+para todo $n\geq 1$. Pela definição da projeção
+$\pi_{1}^{n}$ sabemos que     
+existe pelo menos um ponto 
+$(y_2,\ldots,y_{n})\in \mathbb{R}^{n-1}$ 
+tal que $(x_1,y_2,\ldots,y_{n})\in C_n$.
+Esta observação mostra que o conjunto 
+$C_n(x_1)
+\equiv 
+\{ 
+(y_2,\ldots,y_{n})\in\mathbb{R}^{n-1}
+: (x_1,y_2,\ldots,y_{n})\in C_n
+\}$ 
+é não vazio.
+Note que 
+$
+C_{n}(x_1) 
+= 
+(\pi_{n}^{1})^{-1}(x_1)\cap C_n.
+$
+Já que o conjunto unitário $\{x_1\}$ é fechado
+segue da continuidade de $\pi_{n}^{1}$ 
+que o conjunto 
+$C_{n}(x_1)=(\pi_{n}^{1})^{-1}(x_1)\cap C_n$ é a interseção
+de um fechado com um compacto e portanto $C_{n}(x_1)$
+é compacto.
+Além do mais $C_2(x_1), C_3(x_1),\ldots$
+satisfaz a mesma condição que satisfaz a 
+sequência original $C_1,C_2,\ldots$, isto é, 
+se 
+\end{proof}
+
+
+
+
+\subsubsection{O Teorema de Existência de Kolmogorov - Caso Enumerável}
+
 \begin{teorema}
 Seja $\{\mathbb{P}_n\}_{n\in\mathbb{N}}$ 
 uma família de medidas de probabilidade, 
