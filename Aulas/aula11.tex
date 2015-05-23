@@ -39,8 +39,86 @@ $;
 \item 
 $\mu(K)<+\infty$ para todo $K$ compacto em $\Omega$.
 \end{enumerate}
-
 \end{definicao}
+
+
+No que segue mostramos que toda medida de Borel finita
+definida sobre $\mathbb{R}^n$ é regular. 
+Na verdade esta afirmação pode ser provada em
+um contexto um pouco mais geral, onde consideramos medidas
+definidas sobre espaços métricos completos
+com a $\sigma$-álgebra e topologias adequados.  
+
+\begin{teorema}\label{teo-regularidade-med-borel}
+Se $\mu$ é uma medida de Borel sobre $\mathscr{B}(\mathbb{R}^n)$
+tal que $\mu(\mathbb{R}^n)<+\infty$ então $\mu$ é regular.
+\end{teorema}
+
+
+
+\begin{proof}
+Considere a seguinte coleção 
+\[
+\mathscr{C}:=
+\{
+E\subset \mathbb{R}^n: \ 
+\text{as condições 1-3 da Definição 
+\ref{def-regularidade-medida-borel} são satisfeitas }
+\}.
+\]
+Vamos mostrar que $\mathscr{C}$ é uma $\sigma$-álgebra
+e também que $\mathscr{C}$ contém a coleção de todos os 
+abertos de $\mathbb{R}^n$ o que nos permite concluir que
+$\mathscr{B}(\mathbb{R}^n)\subseteq \mathscr{C}$.
+
+
+Começamos provando que $\mathscr{C}$ é uma $\sigma$-álgebra.
+Claramente $\emptyset\in\mathscr{C}$. 
+Seja $\{E_n\}_{n\in\mathbb{N}}$ uma coleção de subconjuntos de
+$\mathscr{C}$. Vamos mostrar que $E=\cup_{n\geq 1} E_n\in \mathscr{C}$.
+Fixe $\varepsilon>0$. Usando que $\mu$ é uma medida finita 
+e a definição de regularidade, 
+para cada $n\in\mathbb{N}$, podemos encontrar um aberto 
+$A_n$, com $E_n\subseteq A_n$ e um compacto $K_n$, com
+$K_n\subseteq E_n$ tais que
+\[
+\mu(A_n-K_n) < \frac{\varepsilon}{2^n}.
+\] 
+
+A sequência $F_n = \cup_{m=1}^n E_m$ é uma sequência
+crescente tal que $\cup_{n\geq 1}F_n =E$, portanto
+segue da continuidade da medida $\mu$ que
+\[
+\lim_{n\to\infty} \mu\left(F_n \right)
+=
+\lim_{n\to\infty} \mu\left(\bigcup_{m=1}^n E_m \right)
+=
+\mu(E).
+\]
+Já que $\mu(E)<+\infty$ existe $N\in\mathbb{N}$ tal que 
+$\mu(E)-\mu(E_1\cup E_2\cup\ldots\cup E_N)<\varepsilon$.
+Seja $K=K_1\cup K_2\cup\ldots\cup K_N$. Pela definição de 
+$\{K_n\}_{n\in\mathbb{N}}$ temos que $K$ é um conjunto compacto de $\mathbb{R}^n$
+e também que $K\subseteq E$. Usando propriedades das operações 
+de conjuntos e a $\sigma$-aditividade de $\mu$ temos que 
+\[
+\mu\left(\bigcup_{m=1}^N A_m - \bigcup_{m=1}^n K_m \right)
+\leq
+\mu\left(\bigcup_{m=1}^N (A_m - K_m)  \right)
+\leq
+\sum_{m=1}^N \frac{\varepsilon}{2^m}
+<
+\varepsilon.
+\]
+\end{proof}
+
+
+
+
+
+
+
+
 
 
 
