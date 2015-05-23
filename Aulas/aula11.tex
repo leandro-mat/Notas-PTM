@@ -77,11 +77,11 @@ de $\mathbb{R}^m$ dada por
 $\{\pi^{k}_{m}(C_k): k\geq m\}$, determina uma 
 sequência decrescente de compactos de $\mathbb{R}^m$,
 isto é,
-\[
+\begin{equation}\label{continencia-pikm-Cm}
 \ldots \subseteq 
 \pi^{m+2}_{m}(C_{m+2})\subseteq
 \pi^{m+1}_{m}(C_{m+1})\subseteq \pi_{m}^m(C_m).
-\]
+\end{equation}
 Vamos provar a afirmação. Fixe naturais $m,n$ tais que 
 $m\leq n$ e tome um ponto qualquer 
 $x =(x_1,\ldots,x_{n+1})\in C_{n+1}$. Por hipótese 
@@ -99,7 +99,8 @@ a $\pi^{n}_{m}(C_n)$ e isto prova a afirmação.
 Pelo Teorema de Cantor 
 a sequência de subconjuntos compactos encaixantes 
 da reta dada por 
-\[
+\begin{equation}
+\label{continencia2-pikm-Cm}
 \ldots \subseteq 
 \pi_{1}^{3}(C_3)
 \subseteq
@@ -108,7 +109,7 @@ da reta dada por
 \pi^{1}_{1}(C_1) 
 =
 C_1
-\]
+\end{equation}
 tem interseção não vazia.
 Seja $x_1$ um ponto arbitrário nesta interseção.
 Por construção $x_1\in \pi_{1}^{n}(C_n)$ 
@@ -140,10 +141,35 @@ de um fechado com um compacto e portanto $C_{n}(x_1)$
 Além do mais $C_2(x_1), C_3(x_1),\ldots$
 satisfaz a mesma condição que satisfaz a 
 sequência original $C_1,C_2,\ldots$, isto é, 
-se 
+para todo $(y_2,\ldots,y_{n+1})\in C_{n+1}(x_1)$
+temos que $(y_2,\ldots,y_n)\in C_{n}(x_1)$.
+De fato, se $(y_2,\ldots,y_{n+1})\in C_{n+1}(x_1)$
+segue da definição de $C_{n+1}(x_1)$ que 
+$(x_1,y_2,\ldots,y_{n+1})\in C_{n+2}$. 
+De \eqref{continencia-pikm-Cm} segue que 
+$(x_1,y_2,\ldots,y_n)\in C_n$ 
+logo $(y_2,\ldots,y_{n})\in C_{n}(x_1)$.
+Já que $\{C_n(x_1)\}_{n\geq 2}$ possui a propriedade
+de $\{C_n\}_{n\geq 1}$ usada para provar 
+a continência \eqref{continencia2-pikm-Cm}, 
+então podemos garantir que \eqref{continencia2-pikm-Cm}
+é também verdadeira para a sequência $\{C_n(x_1)\}_{n\geq 2}$
+no lugar de $\{C_n\}_{n\geq 1}$. 
+Segue desta sequência de continências,
+da compacidade dos elementos da sequência 
+$\{C_n(x_1)\}_{n\geq 2}$ e 
+do Teorema de Cantor que existe pelo menos 
+um ponto $x_2\in\mathbb{R}$ tal que $(x_1,x_2)\in \pi^{n}_2(C_n)$
+para todo $n\geq 2$. Procedendo uma indução formal é fácil 
+ver que podemos definir uma sequência $x_1,x_2,x_3\ldots$ 
+tal que para todo $1\leq m\leq n$ temos 
+$(x_1,x_2,\ldots,x_m)\in \pi^{n}_{m}(C_n)$.
+Em particular, $(x_1,x_2,\ldots,x_n)\in \pi^{n}_{n}(C_n)=C_n$
+para todo $n\geq 1$.
 \end{proof}
 
-
+\subsubsection{Regularidade das Medidas Definidas 
+sobre $\mathscr{B}(\mathbb{R})$.}
 
 
 \subsubsection{O Teorema de Existência de Kolmogorov - Caso Enumerável}
