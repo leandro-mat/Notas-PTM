@@ -8,9 +8,12 @@ em $\mathscr{B}(\mathbb{R})$.}
 
 Seja $(\Omega,\tau)$ um espaço topológico e 
 $\mathscr{B}(\tau)$ a $\sigma$-álgebra gerada
-pela topologia $\tau$. Nesta seção vamos estar
-bastante interessados no caso em que $\Omega=\mathbb{R}^n$
-e $\tau$ é a topologia usual do espaço Euclideano $n$-dimensional. 
+pela topologia $\tau$, em outras palavras
+a $\sigma$-álgebra gerada pelos conjuntos abertos.  
+Nesta seção vamos estar
+interessados no caso especial em que $\Omega=\mathbb{R}^n$
+e $\tau$ é a topologia usual do espaço Euclideano $n$-dimensional,
+isto é, a topologia induzida pela norma Euclideana. 
 Neste caso teremos $\mathscr{B}(\tau)=\mathscr{B}(\mathbb{R}^n)$.
 
 \begin{definicao}[Medidas de Borel Regular]\label{def-regularidade-medida-borel}
@@ -216,7 +219,9 @@ temos que o conjunto
 F_n = 
 \left\{
 x\in E: d(E^c,x)\geq \frac{1}{n}
-\right\}
+\right\},
+\ \text{onde}\ 
+d(E^c,x) = \inf\{\|y-x\|: y\in E^c\}
 \]
 é um um fechado de $\mathbb{R}^n$. 
 Note que $F_n\subset F_{n+1}$ e 
