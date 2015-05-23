@@ -96,13 +96,18 @@ segue da continuidade da medida $\mu$ que
 \mu(E).
 \]
 Já que $\mu(E)<+\infty$ existe $N\in\mathbb{N}$ tal que 
-$\mu(E)-\mu(E_1\cup E_2\cup\ldots\cup E_N)<\varepsilon$.
+\[ 
+\mu(E)-\mu(F_N)<\varepsilon.
+\]
 Seja $K=K_1\cup K_2\cup\ldots\cup K_N$. Pela definição de 
 $\{K_n\}_{n\in\mathbb{N}}$ temos que $K$ é um conjunto compacto de $\mathbb{R}^n$
 e também que $K\subseteq E$. Usando propriedades das operações 
-de conjuntos e a $\sigma$-aditividade de $\mu$ temos que 
+de conjuntos, a $\sigma$-aditividade de $\mu$ e a definição de $A_n$ e $K_n$
+temos que 
 \[
-\mu\left(\bigcup_{m=1}^N A_m - \bigcup_{m=1}^n K_m \right)
+\mu\left(F_N - K \right)
+\leq
+\mu\left(\bigcup_{m=1}^N (E_m - K_m)  \right)
 \leq
 \mu\left(\bigcup_{m=1}^N (A_m - K_m)  \right)
 \leq
@@ -110,6 +115,133 @@ de conjuntos e a $\sigma$-aditividade de $\mu$ temos que
 <
 \varepsilon.
 \]
+Usando as duas estimativas em destaque acima podemos 
+verificar que   
+\begin{align*}
+\mu(E)-\mu(K)
+=
+\mu(E)-\mu(F_N)+\mu(F_N)-\mu(K)
+<
+2\varepsilon.
+\end{align*}
+Já que $K\subset E$, a desigualdade acima que mostra
+a condição 2 da Definição \ref{def-regularidade-medida-borel}
+é satisfeita para $E$. Como $\mu$ é uma medida finita sobre
+$\mathbb{R}^n$ segue que $E$ satisfaz 
+a condição 3 da Definição \ref{def-regularidade-medida-borel}.
+
+
+
+Vamos verificar que a condição 2 também satisfeita. 
+Para isto defina $A=\cup _{n\geq 1}A_n$. O conjunto $A$
+é aberto, $A$ contém $E$ e além do mais pela definição de $A_n$
+e $K_n$ temos a seguinte desigualdade 
+\[
+\mu(A)-\mu(E)
+\leq 
+\sum_{n=1}^{\infty} \mu(A_n-E_n)
+\leq 
+\sum_{n=1}^{\infty} \mu(A_n-K_n)
+<
+\varepsilon,
+\]
+o que implica que a condição 2 é satisfeita. Portanto 
+podemos concluir que $E \in \mathscr{C}$.
+
+Vamos verificar agora que $\mathscr{C}$ é fechada para 
+complementação. Sejam $E\in\mathscr{C}$ e $\varepsilon>0$.
+Então existe um compacto $K$ e um aberto $U$ tais que 
+$K\subseteq E\subseteq A$ com $\mu(A-K)<\varepsilon$. Tomando 
+complementares temos $A^c\subseteq E^c\subseteq K^c$.
+Note que $K^c-A^c=A-K$ e portanto 
+$\mu(K^c-A^c)=\mu(A-K)<\varepsilon$.
+Claramente $K^c$ é um aberto de $\mathbb{R}^n$ e portanto
+podemos concluir da estimativa acima que 
+$\mu(K^c)-\mu(E^c)=\mu(K^c-E^c)<\mu(K^c-A^c)<\varepsilon$
+e assim que a condição 1 da 
+Definição \ref{def-regularidade-medida-borel}
+é satisfeita para $E^c$.
+
+Por outro lado não é possível afirmar que 
+o conjunto $A^c$ seja compacto, embora 
+seja fechado. Para corrigir este problema 
+observamos que $\mathbb{R}^n$ pode ser escrito 
+como união de uma sequencia crescente de bolas fechadas, 
+$\{\overline{B(0,n)}\}_{n\in\mathbb{N}}$ que são compactos. 
+Portanto temos da continuidade da medida $\mu$ que 
+$\mu( \overline{B(0,n)} )\to \mu(\mathbb{R}^n)$, 
+quando $n\to\infty$. Logo dado $\varepsilon >0$
+existe $N\in\mathbb{N}$ tal que 
+$\mu(\mathbb{R}^n)-\mu( \overline{B(0,N)} ) <\varepsilon$.
+Definimos $\widetilde{K} =A^c\cap \overline{B(0,N)}$.
+Já que  $\widetilde{K}$ é dado como interseção de um 
+fechado com um compacto segue que $\widetilde{K}$ é 
+compacto. Além do mais temos que 
+$\widetilde{K}\subseteq A^c$.
+Já que o conjunto $A^c-\widetilde{K}$ 
+está contido no complementar de $\overline{B(0,N)}$
+temos que $\mu(A^c-\widetilde{K})<\varepsilon$.
+No parágrafo anterior já havíamos observado que 
+$A^c\subseteq E^c\subseteq K^c$ e 
+$\mu(K^c-A^c)=\mu(A-K)<\varepsilon$.
+Portanto podemos concluir que $\mu(E^c-A^c)<\varepsilon$ e 
+\[ 
+\mu(E^c)-\mu(\widetilde{K})
+=
+\mu(E^c-\widetilde{K})
+=
+\mu(E^c-A^c)
++
+\mu(A^c-\widetilde{K})
+<
+2\varepsilon.
+\]
+Como a desigualdade acima implica na condição 2 
+da Definição \ref{def-regularidade-medida-borel}
+para $E^c$ segue que $\mathscr{C}$ é fechada 
+para complementação e isto completa a prova de 
+que $\mathscr{C}$ é uma $\sigma$-álgebra.
+
+Vamos mostrar que todo aberto $E\subset \mathbb{R}^n$ 
+pertence a coleção $\mathscr{C}$. Claramente 
+a condição 3 da Definição \ref{def-regularidade-medida-borel}
+é satisfeita pois, $\mu$ é finita. A condição 1
+da Definição \ref{def-regularidade-medida-borel} 
+também é satisfeita pois, podemos 
+tomar $A=E$. Resta mostrar que a condição 2 
+da Definição \ref{def-regularidade-medida-borel} 
+é satisfeita. Já que $E$ é aberto, para cada $n\in\mathbb{N}$ 
+temos que o conjunto 
+\[
+F_n = 
+\left\{
+x\in E: d(E^c,x)\geq \frac{1}{n}
+\right\}
+\]
+é um um fechado de $\mathbb{R}^n$. 
+Note que $F_n\subset F_{n+1}$ e 
+também que $\cup_{n\geq 1} F_n =E$. Pela continuidade
+de $\mu$ podemos afirmar que $\mu(F_n) \uparrow \mu(E)$. 
+Se fosse possível garantir que $F_n$ é compacto 
+para todo $n\in\mathbb{N}$ então teríamos provado 
+a condição 2. 
+Isto é de fato verdadeiro quando $E$ é um conjunto limitado.
+Para o caso geral, tomamos $K_n = F_n\cap \overline{B(0,n)}$.
+Note que $K_n$ é compacto para todo $n\in\mathbb{N}$ e também 
+que $K_n\subset K_{n+1}$ e  $\cup_{n\geq 1} K_n = E$. 
+Assim segue da continuidade de $\mu$ que 
+$\mu(K_n)\uparrow \mu(E)$ e portanto 
+a condição 2 da Definição \ref{def-regularidade-medida-borel}
+se verifica para todo $E$ aberto. 
+Isto conclui a prova de que todo aberto de $\mathbb{R}^n$
+pertence a $\mathscr{C}$. 
+
+
+Como $\mathscr{C}$ é uma 
+$\sigma$-álgebra que contém os abertos, segue que 
+$\mathscr{C}$ contém $\mathscr{B}(\mathbb{R}^n)$ e isto 
+completa a prova que toda medida de Borel finita em $\mathbb{R}^n$
+é regular.   
 \end{proof}
 
 
