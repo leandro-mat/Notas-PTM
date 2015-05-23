@@ -1,6 +1,50 @@
 \chapter[Aula 11]{Teorema da Existência de Kolmogorov}
 \chaptermark{}
 
+
+
+\section{Regularidade de Medidas Definidas 
+em $\mathscr{B}(\mathbb{R})$.}
+
+Seja $(\Omega,\tau)$ um espaço topológico e 
+$\mathscr{B}(\tau)$ a $\sigma$-álgebra gerada
+pela topologia $\tau$. Nesta seção vamos estar
+bastante interessados no caso em que $\Omega=\mathbb{R}^n$
+e $\tau$ é a topologia usual do espaço Euclideano $n$-dimensional. 
+Neste caso teremos $\mathscr{B}(\tau)=\mathscr{B}(\mathbb{R}^n)$.
+
+\begin{definicao}[Medidas de Borel Regular]\label{def-regularidade-medida-borel}
+Seja $(\Omega,\tau)$ um espaço topológico. 
+Uma medida de Borel em $\Omega$ é uma medida
+definida sobre a $\sigma$-álgebra de Borel de $\Omega$, i.e.,  
+$\mu:\mathscr{B}(\tau)\to [0,+\infty]$.
+Uma medida de Borel $\mu$ em $\Omega$ é dita
+{\bf regular} quando satisfaz as seguintes condições
+para todo $E\in \mathscr{B}(\tau)$: 
+\begin{enumerate}
+\item  
+$
+\mu(E) 
+= 
+\inf \{\mu(A): E\subseteq A,\ \text{com}\ A\ \text{aberto em}\ \Omega  \}
+$;
+
+\item
+$
+\mu(E) 
+= 
+\sup \{\mu(K): K\subseteq E,\ \text{com}\ K\ \text{compacto em}\ \Omega  \}
+$;
+
+\item 
+$\mu(K)<+\infty$ para todo $K$ compacto em $\Omega$.
+\end{enumerate}
+
+\end{definicao}
+
+
+
+
 \section[Teorema de Kolmogorov para Produtos Cartesianos Enumeráveis]
 {Teorema de Kolmogorov para Produtos\\ Cartesianos Enumeráveis}
 
@@ -168,8 +212,6 @@ Em particular, $(x_1,x_2,\ldots,x_n)\in \pi^{n}_{n}(C_n)=C_n$
 para todo $n\geq 1$.
 \end{proof}
 
-\subsubsection{Regularidade das Medidas Definidas 
-sobre $\mathscr{B}(\mathbb{R})$.}
 
 
 \subsubsection{O Teorema de Existência de Kolmogorov - Caso Enumerável}
