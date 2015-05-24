@@ -580,7 +580,8 @@ $\cap_{n\geq 1}E_n \neq \emptyset$.
 
 Já que estamos assumindo que 
 $E_1,E_2,\ldots $ a existência de 
-real  $\alpha= \lim_{n\to\infty}\mathbb{P}'(E_n)$
+real positivo $\alpha$ tal que 
+ $\alpha= \lim_{n\to\infty}\mathbb{P}'(E_n)$
 está garantida pela monotonicidade de $\mathbb{P}'$.
 
 A menos de repetição e renumeração de alguns conjuntos 
@@ -618,4 +619,37 @@ temos que
 <
 \frac{\alpha}{2}.
 \]
+Já que $\mathbb{P}'(E_n)\geq \alpha$ segue da desigualdade 
+acima que $\mathbb{P}'(C_n)\geq \alpha/2$.
+
+Os conjuntos cilíndricos $C_n\in\mathcal{F}_n$ e portanto 
+podem ser escritos da seguinte forma
+$C_n= C'_n\times\mathbb{R}\times\mathbb{R}\times\ldots$ e 
+além do mais, temos que 
+\[
+C'_n 
+= 
+(K'_1\times\mathbb{R}^{n-1})
+\cap 
+(K'_2\times\mathbb{R}^{n-2})
+\cap
+\ldots
+\cap
+K'_n
+\]
+é um subconjunto compacto não vazio de $\mathbb{R}^n$
+pois sua medida 
+$\mathbb{P}_{n}(C'_n)=\mathbb{P}'(C_n)\geq \alpha/2>0.$
+Note que as inclusões $\ldots\subseteq C_3\subseteq C_2\subseteq C_1$
+implicam que se $(y_1,\ldots,y_{n+1})\in C'_{n+1}$ 
+então $(y_1,\ldots,y_{n})\in C'_n$. 
+Também temos que $C'_n\subseteq E'_n$ pois, $C'_n\subseteq K'_n$.
+Com estes fatos estabelecidos 
+temos provado que todas as hipóteses do 
+Teorema \ref{teo-intersecao-cilindros-teo-kolmogorov}
+são satisfeitas e assim podemos afirmar que existe 
+$(x_1,x_2,\ldots)\in\mathbb{R}^{\mathbb{N}}$ tal que 
+$(x_1,\ldots,x_n)\in C'_n$ para cada $n\geq 1$.
+Desta forma segue que $x\in E_n, \forall\ n\in\mathbb{N}$
+o que permite concluir que $\cap_{n\geq 1} E_n\neq \emptyset$.
 \end{proof}
