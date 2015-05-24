@@ -542,8 +542,80 @@ garante que $\mathbb{P}'$ está bem definida.
 A ideia da prova é primeiro mostrar que $\mathbb{P}'$ é uma medida na álgebra 
 $\cup_{n\geq 1}\mathcal{F}_n$. Em seguida, aplicar o 
 Teorema de Extensão de Carathéodory para estender $\mathbb{P}'$
-a toda $\sigma$-álgebra produto, de forma que coincida com 
-$\mathbb{P}'$ nos conjuntos cilíndricos.
+a toda $\sigma$-álgebra produto, de forma que esta 
+extensão coincida com $\mathbb{P}'$ 
+nos conjuntos cilíndricos.
+
+Primeiro observamos que $\mathbb{P}'(\emptyset)=0$ 
+e que $\mathbb{P}'(\mathbb{R}^{\mathbb{N}})=1$.
+Observamos que $\mathbb{P}'$ é finitamente aditiva.
+De fato, para quaisquer $E,F\in \cup_{n\geq 1}\mathcal{F}_n$ 
+existe $k\in\mathbb{N}$ tal que $E,F\in \mathcal{F}_{k}$
+e portanto $E$ e $F$ são da forma 
+\[
+E= E'\times\mathbb{R}\times\mathbb{R}\times\ldots
+F= F'\times\mathbb{R}\times\mathbb{R}\times\ldots
+\]
+para alguns $E',F'\in\mathscr{B}(\mathbb{R}^k)$.
+Supondo que $E$ e $F$ são disjuntos, podemos concluir que
+$E'$ e $F'$ são disjuntos e portanto 
+\[
+\mathbb{P}'(E\cup F)
+=
+\mathbb{P}_{k}(E'\cup F')
+=
+\mathbb{P}_{k}(E')+\mathbb{P}_{k}(F')
+=
+\mathbb{P}'(E)+\mathbb{P}'(F).
+\]
+
+Já que $\mathbb{P}'$ é finitamente aditiva, para provar 
+que esta medida é $\sigma$-aditiva na álgebra 
+$\cup_{n\geq 1}\mathcal{F}_n$ é suficiente mostrar que 
+se $E_1,E_2,\ldots $ forma uma sequência decrescente de 
+conjuntos cilíndricos com 
+$\lim_{n\to\infty}\mathbb{P}'(E_n)>0$ então 
+$\cap_{n\geq 1}E_n \neq \emptyset$.
 
 
+Já que estamos assumindo que 
+$E_1,E_2,\ldots $ a existência de 
+real  $\alpha= \lim_{n\to\infty}\mathbb{P}'(E_n)$
+está garantida pela monotonicidade de $\mathbb{P}'$.
+
+A menos de repetição e renumeração de alguns conjuntos 
+cilíndricos na coleção $E_1,E_2,\ldots $ 
+podemos sem perda de generalidade assumir que 
+$E_n\in\mathcal{F}_n$, isto é, 
+$E_n=E_n'\times\mathbb{R}\times\mathbb{R}\times\ldots$,
+para algum Boreliano $E_n'$. 
+A condição $E_{n+1}\subseteq E_{n}$ implica que se
+$(y_1,\ldots, y_n,y_{n+1})\in E'_{n+1}$ então 
+$(y_1,\ldots, y_n)\in E'_{n}$. 
+Por monotonicidade temos que 
+\[
+\mathbb{P}'(E_n) = \mathbb{P}_{n}(E'_n)\geq \alpha.
+\]
+Já que $\mathbb{P}_n$ são medidas de probabilidade em 
+$\mathscr{B}(\mathbb{R}^n)$ segue do 
+Teorema \ref{teo-regularidade-med-borel} que existe
+um conjunto compacto $K'_n\subset E'_n$, tal que 
+$\mathbb{P}_{n}(E'_n-K_n)<\alpha 2^{-n-1}$.
+Defina $K_n = K'_n\times \mathbb{R}\times\mathbb{R}\times\ldots$
+e seja $C_n = K_1\cap K_2\cap\ldots\cap K_n$. Para todo $n\geq 1$ 
+temos que $C_n\in \cup_{n\geq 1}\mathcal{F}_n$,  
+\[
+\ldots\subseteq C_3\subseteq C_2\subseteq C_1
+\]
+e usando a monotonicidade da sequência $\{E_n\}_{n\in\mathbb{N}}$ 
+temos que 
+\[
+\mathbb{P}'(E_n-C_n)
+=
+\mathbb{P}'\left( \bigcap_{k=1}^n E_k- \bigcap_{k=1}^n K_k \right)
+\leq
+\sum_{k=1}^{n} \mathbb{P}_{k}(E'_k-K'_k)
+<
+\frac{\alpha}{2}.
+\]
 \end{proof}
