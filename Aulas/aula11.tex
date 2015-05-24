@@ -284,12 +284,14 @@ $
 $.
 
 Para cada $n\in\mathbb{N}$ e $E\in\mathscr{B}(\mathbb{R}^n)$
-fixados consideramos o seguinte subconjunto 
+fixados considere o seguinte subconjunto 
 $
 E\times\mathbb{R}\times\mathbb{R}\times\ldots 
 \subseteq 
 \mathbb{R}^{\mathbb{N}}.
 $
+Os conjuntos desta forma serão chamados de
+conjuntos cilíndricos ou cilindros finito dimensionais.
 A coleção de todos os conjuntos 
 desta forma é chamada de coleção dos conjuntos cilíndricos
 de $\mathbb{R}^{\mathbb{N}}$. A $\sigma$-álgebra gerada
@@ -297,6 +299,24 @@ pelo conjuntos cilíndricos será chamada de $\sigma$-álgebra
 produto de $\mathbb{R}^{\mathbb{N}}$ e será denotada por 
 $\mathscr{B}\big(\mathbb{R}^{\mathbb{N}}\big)$.
 
+As famílias de medidas de probabilidade que aparecem 
+no Teorema de Kolmogorov são tais que para cada $n\geq 1$
+temos uma medida de Borel em $\mathbb{R}^n$ satisfazendo 
+a seguinte condição de consistência 
+\[
+\mathbb{P}_{n+1}(E\times\mathbb{R}) = \mathbb{P}_n(E),
+\ \forall \ E\in\mathscr{B}(\mathbb{R}^n).
+\]
+Nossa tarefa é mostrar que podemos 
+construir uma medida $\mathbb{P}$ definida sobre 
+$\mathscr{B}(\mathbb{R}^{\mathbb{N}})$ tal que 
+para qualquer Boreliano $E\subset\mathbb{R}^n$ 
+temos 
+\[
+\mathbb{P}(E\times\mathbb{R}\times\mathbb{R}\times\ldots)
+=
+\mathbb{P}_n(E).
+\] 
 
 \subsubsection{Interseção de Cilindros Encaixantes 
 em $\mathbb{R}^{\mathbb{N}}$.}
