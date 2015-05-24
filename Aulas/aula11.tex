@@ -520,3 +520,30 @@ a seguinte igualdade
 \mathbb{P}_n(E).
 \]
 \end{teorema}
+
+
+
+
+\begin{proof}
+Seja $\mathcal{F}_n$ 
+a coleção de todos os conjuntos cilíndricos da 
+forma $E\times\mathbb{R}\times\mathbb{R}\times\ldots$
+com $E\in\mathscr{B}(\mathbb{R}^n)$
+e considere a função de conjuntos 
+$\mathbb{P}':\cup_{n\geq 1}\mathcal{F}_n\to [0,1]$
+tal que para cada $E\in\mathscr{B}(\mathbb{R}^n)$ 
+\[
+\mathbb{P}'(E\times\mathbb{R}\times\mathbb{R}\times\ldots)
+=
+\mathbb{P}_n(E).
+\] 
+A hipótese de consistência da família $\{\mathbb{P}_n\}_{n\in\mathbb{N}}$
+garante que $\mathbb{P}'$ está bem definida. 
+A ideia da prova é primeiro mostrar que $\mathbb{P}'$ é uma medida na álgebra 
+$\cup_{n\geq 1}\mathcal{F}_n$. Em seguida, aplicar o 
+Teorema de Extensão de Carathéodory para estender $\mathbb{P}'$
+a toda $\sigma$-álgebra produto, de forma que coincida com 
+$\mathbb{P}'$ nos conjuntos cilíndricos.
+
+
+\end{proof}
