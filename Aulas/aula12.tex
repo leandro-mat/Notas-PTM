@@ -104,3 +104,37 @@ uma carga. Então existem conjuntos $P$ e $N$ tais que
 $\Omega = P\cup N,\  P\cap N=\emptyset$, além do mais 
 $P$ e $N$ são conjuntos positivo e negativo, respectivamente.
 \end{teorema}
+
+
+\begin{proof}
+Note que a coleção $\mathscr{P}$ de todos os conjuntos positivos, 
+com respeito a $\lambda$ é certamente não vazia pois,
+o conjunto $\emptyset$ está nesta coleção. Desta forma 
+podemos definir 
+\[
+\alpha = \sup \{ \lambda(A): A\in\mathscr{P}   \}.
+\]
+Por definição de supremo, podemos garantir a existência de uma
+sequência $\{A_n\}_{n\in\mathbb{N}}$ em $\mathscr{P}$ tal que 
+$\alpha = \lim_{n\to\infty} \lambda(A_n)$.
+Seja $P=\cup_{n\geq 1}A_n$. Já que a união de conjuntos 
+positivos é positiva podemos assumir que $A_n\subseteq A_{n+1}$.
+Observe que $P$ é um conjunto positivo, com respeito a $\lambda$
+pois, para todo $E\in\F$ temos 
+\[
+\lambda(P\cap E)
+=
+\lambda\left( \bigcup_{n=1}^{\infty} A_n \ \cap E \right)
+=
+\lambda\left( \bigcup_{n=1}^{\infty} (A_n \ \cap E) \right)
+=
+\lim_{n\to\infty} \lambda(A_n \ \cap E)
+\geq 
+0.
+\]
+Já que estamos assumindo que $\{A_n\}_{n\in\mathbb{N}}$ é 
+crescente segue que 
+\[
+\alpha = \lim_{n\to\infty} \lambda(A_n)= \lambda(P)<+\infty.
+\]
+\end{proof}
