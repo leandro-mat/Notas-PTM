@@ -680,3 +680,44 @@ cartesianos não-enumeráveis. Este é um resultado fundamental e muito
 importante na teoria de Processos Estocásticos. Nesta seção 
 vamos dar a prova deste teorema para o caso $\mathbb{R}^T$,
 onde $T$ é um conjunto de índices arbitrário. 
+
+
+Seja $T$ um conjunto não-vazio de índices, possivelmente não-enumerável.
+Para facilitar a compreensão do argumento em toda esta seção vamos
+reservar as letras $I$ e $J$ para denotar 
+{\bf subconjuntos finitos}  de $T$.
+
+O conjunto $\mathbb{R}^T$ é formalmente o espaço de funções 
+$\{f:T\to\mathbb{R}: f\ \text{é uma função}\}$, 
+mas é mais comum denotar seus elementos por $\{x_t\}_{t\in T}$,
+onde para cada $t\in T$ temos $x_t\in\mathbb{R}$.
+Da forma análoga a que fizemos nas seções anteriores,
+para cada $t\in T$, 
+definimos a projeções $\pi_t:\mathbb{R}^{T}\to\mathbb{R}$
+por $\pi_t(\{x_s\}_{s\in T})=x_t$. O conjuntos cilíndricos 
+de $\mathbb{R}^T$ são os conjuntos da forma 
+\[
+\pi^{-1}_{t_1}(E_1)
+\cap 
+\pi^{-1}_{t_2}(E_2)
+\cap \ldots
+\cap
+\pi^{-1}_{t_n}(E_n),
+\]
+onde $t_1,\ldots, t_n\in T$ e $E_1,\ldots,E_n\in\mathscr{B}(\mathbb{R})$.
+O cilindro definido acima é o subconjunto de $\mathbb{R}^T$ 
+formado pelos pontos $\{x_t\}_{t\in T}$ tais que 
+as coordenadas $x_{t_1},\ldots,x_{t_n}$ pertencem aos
+conjuntos $E_1,\ldots,E_n$, respectivamente.
+
+
+Se $I,J\subset T$ são dois subconjuntos finitos tais que 
+$I\subset J$ definimos a projeção natural
+$\pi^{J}_{I}:\mathbb{R}^J\to\mathbb{R}^I$ como 
+sendo a aplicação $\{x_t\}_{t\in J}\mapsto \{x_t\}_{t\in I}$.  
+As projeções $\pi^{T}_{I}:\mathbb{R}^T\to\mathbb{R}^I$
+são definidas de forma análoga e por questão de facilidade
+vamos denotá-las simplesmente por $\pi_I$.
+Desta forma qualquer conjunto cilíndrico pode ser escrito 
+como $\pi^{-1}_I(E)$, para algum $I\subset T$ (finito) e
+$E\in \mathscr{B}(\mathbb{R}^{I})$.
