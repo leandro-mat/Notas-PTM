@@ -744,6 +744,37 @@ E\in\mathscr{B}\big(\mathbb{R}^I\big)
 \] 
 
 
+Antes de apresentarmos o principal teorema desta seção,
+vamos provar um lema que será utilizado no final da 
+demonstração do teorema.
+
+\begin{lema}\label{lema-aux2-TEK}
+Seja $\Omega$ um conjunto e $\mathscr{C}$ uma coleção 
+não-vazia de subconjuntos de $\Omega$ e $\sigma(\mathscr{C})$
+a $\sigma$-álgebra gerada por $\mathscr{C}$.
+Então para cada $E\in \sigma(\mathscr{C})$, existe uma 
+subcoleção enumerável $\mathscr{Q}:=\mathscr{Q}(E)$ contida em $\mathscr{C}$ 
+tal que $E\in \sigma(\mathscr{Q})$.
+Em particular, se $\{\pi_{i}\}_{i\in T}$ é uma família não vazia 
+de funções definidas em $\Omega$, então para cada 
+$E\in \sigma(\pi_{i}: i\in T)$, existe um conjunto enumerável 
+$Q:=Q(E)\subset T$ tal que $E\in \sigma(\pi_{i}: i\in Q)$.
+\end{lema}
+
+\begin{proof}
+Seja $\mathscr{P}$ a coleção de todos os subconjuntos $E\in \Omega$
+tal que $E\in \sigma(\mathscr{Q})$ para alguma subcoleção 
+enumerável $\mathscr{Q}$ contida em $\mathscr{C}$.
+É imediato verificar que $\mathscr{P}$ é uma 
+$\sigma$-álgebra. Obviamente $\mathscr{P}$ contém 
+cada elemento de $\mathscr{C}$. Portanto 
+$\sigma(\mathscr{C})\subset \mathscr{P}$ e assim 
+todo elemento em $\sigma(\mathscr{C})$ satisfaz a 
+condição desejada. 
+
+O argumento para a versão de funções deste resultado é essencialmente
+o mesmo.
+\end{proof}
 
 
 \begin{teorema}[Teorema da Existência de Kolmogorov]
@@ -926,5 +957,34 @@ Para provar este fato vamos tomar uma sequência arbitrária
 de conjuntos cilíndricos $\{\mathcal{C}_n\}_{n\in\mathbb{N}}$
 decrescente, i.e.,
 $\ldots \subseteq \mathcal{C}_3\subseteq \mathcal{C}_2\subseteq \mathcal{C}_1$
-tal que $\lim_{n\to\infty} \mathbb{P}'(\mathcal{C}_n)=\alpha>0.$
+tal que $\lim_{n\to\infty} \mathbb{P}'(\mathcal{C}_n)=\alpha>0$
+e mostrar que $\cap_{n\geq 1} \mathcal{C}_n \neq \emptyset$.
+
+
+Pelo Lema \ref{lema-aux2-TEK} sabemos que dado um conjunto mensurável 
+arbitrário $\mathcal{C}\in \mathscr{B}(\mathbb{R}^{T})$ 
+existe um subconjunto enumerável $Q\subset T$ 
+tal que 
+\[
+\mathcal{C}\in 
+\sigma\left(
+\pi^{-1}_{i}(E):
+\ i\in Q \ 
+\text{e}\ 
+E\in\mathscr{B}\big(\mathbb{R}\big)
+\right).
+\]
+Portanto cada conjunto $\mathcal{C}_n$ pertence uma 
+$\sigma$-álgebra gerada por uma coleção enumerável 
+de projeções $\pi_k$ com $k\in Q_n$. 
+A enumerabilidade de $Q_n$ implica que $\cup_{n\geq 1} Q_n$
+é também um subconjunto enumerável de $T$. 
+A menos de uma bijeção podemos supor que 
+esta união é o conjunto dos números naturais.
+Desta forma temos essencialmente a situação que tínhamos
+na prova do Teorema de Existência de Kolmogorov no 
+caso enumerável. Usando então argumento semelhante 
+ao do caso enumerável podemos concluir que 
+$\cap_{n\geq 1} \mathcal{C}_n \neq \emptyset$ e 
+isto encerra a prova.
 \end{proof}
