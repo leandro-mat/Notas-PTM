@@ -769,3 +769,68 @@ tal que para todo subconjunto finito $I\subset T$ temos
 \ \forall E\in\mathscr{B}(\mathbb{R}^{I}).
 \]
 \end{teorema}
+
+
+\begin{proof}
+Grande parte das ideias envolvidas na prova deste teorema 
+para o caso não-enumerável já foram apresentadas no caso
+enumerável. A novidade neste caso é a prova de que a 
+medida na álgebra dos cilindros é contínua no vazio.
+Entretanto, devido a importância deste resultado vamos apresentar
+a prova em todos os detalhes.
+
+Para facilitar a notação, 
+para cada subconjunto finito $I\subset T$ definimos 
+$\mathcal{F}_{I}$ como sendo a $\sigma$-álgebra
+dada pela coleção 
+$\{\pi^{-1}_{I}(E): E\in\mathscr{B}(\mathbb{R}^{I}) \}$.
+É simples verificar que $\mathcal{F}_{I}$ é de fato uma 
+$\sigma$-álgebra. Esta é na verdade a menor $\sigma$-álgebra
+para o qual $\pi_{I}:\mathbb{R}^{T}\to \mathbb{R}^I$ é 
+mensurável. Para auxiliar vamos listar algumas propriedades
+relacionadas as projeções $\pi^{J}_{I}$ ($I\subseteq J$)  e $\pi_{I}$
+\begin{enumerate}
+
+\item Cada elemento de $\mathcal{F}_I$ é dado de maneira única 
+por $\pi^{-1}_{I}(E)$, para algum $E\in\mathscr{B}(\mathbb{R}^{I})$.
+De fato, se $\pi^{-1}_{I}(E) = \pi^{-1}_{I}(F)$, então $E=F$. Este
+fato é consequência direta da sobrejetividade de 
+$\pi_{I}:\mathbb{R}^{T}\to\mathbb{R}^{I}$.
+
+
+\item Se $I\subset J$ então $\pi^{J}_{I}\circ \pi_{J} = \pi_{I}$.
+
+\end{enumerate}
+
+A coleção de todos os conjuntos cilíndricos de
+$\mathbb{R}^{T}$ é dada por $\cup_{I:|I|<+\infty} \mathcal{F}_{I}$.
+Afirmamos que esta coleção forma uma álgebra de subconjuntos de 
+$\mathbb{R}^{T}$. De fato, o conjunto vazio está nesta coleção, 
+pois $\emptyset\in \mathcal{F}_{I}$ qualquer que seja $I\subset T$
+não vazio. Se $\mathcal{C}\in \mathcal{F}_{I}$ então 
+$\mathcal{C}^c\in\mathcal{F}_{I}$ e logo pertence a coleção dos conjuntos
+cilíndricos. Se $\mathcal{C}_1$ e $\mathcal{C}_2$ são dois conjuntos cilíndricos 
+arbitrários então existem conjuntos finitos $I,J\subset T$ 
+tais que $\mathcal{C}_1\in \mathcal{F}_{I}$ e 
+$\mathcal{C}_2\in \mathcal{F}_{J}$. 
+Já que $I\cup J$ também é um conjunto finito
+temos que $\mathcal{C}_1,\mathcal{C}_2\in \mathcal{F}_{I\cup J}$.
+De fato, pela propriedade 1, citada acima,
+temos que $\mathcal{C}_1 = \pi^{-1}_{I}(E)$ para algum 
+$E\in \mathscr{B}(\mathbb{R}^I)$. Pela propriedade 2 temos que 
+$\pi_{I}^{I\cup J}\circ \pi_{I\cup J} = \pi_{I}$,
+logo 
+\[
+\mathcal{C}_1
+=
+\pi_{I}^{-1}(E)
+=
+\pi^{-1}_{I\cup J}\Big( (\pi_{I}^{I\cup J})^{-1}(E) \Big)
+\in 
+\mathcal{F}_{I\cup J}.
+\]
+De maneira análoga provamos que $\mathcal{C}_2\in \mathcal{F}_{I\cup J}$.
+Desta forma temos que 
+$\mathcal{C}_1\cup \mathcal{C}_2 \in \mathcal{F}_{I\cup J}$ 
+e portanto é também um conjunto cilíndrico.
+\end{proof}
