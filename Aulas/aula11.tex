@@ -765,7 +765,7 @@ Então existe uma única medida de probabilidade
 $\mathbb{P}$ definida em $\mathscr{B}(\mathbb{R}^T)$ 
 tal que para todo subconjunto finito $I\subset T$ temos
 \[
-\mathbb{P}\big(\pi{-1}_{I}(E) ) = \mathbb{P}_{I}(E),
+\mathbb{P}\big(\pi^{-1}_{I}(E) ) = \mathbb{P}_{I}(E),
 \ \forall E\in\mathscr{B}(\mathbb{R}^{I}).
 \]
 \end{teorema}
@@ -894,4 +894,37 @@ $\mathcal{C}=\pi_{I}^{-1}(E)$ para algum $E\in \mathscr{B}(\mathbb{R}^I)$.
 
 
 Vamos verificar que $\mathbb{P}'$ é finitamente aditiva.
+Sejam $\mathcal{C}_1$ e $\mathcal{C}_2$ dois cilindros 
+disjuntos. Sejam $I_1,I_2\subset T$ finitos 
+tais que $\mathcal{C}_1\in \mathcal{F}_{I_1}$ e 
+$\mathcal{C}_2\in \mathcal{F}_{I_2}$. Como vimos 
+acima, podemos considerar que $\mathcal{C}_1,\mathcal{C}_2\in \mathcal{F}_{I}$,
+onde $I=I_1\cup I_2$. 
+Como $\mathcal{C}_1$ e $\mathcal{C}_2$ são disjuntos, 
+existem conjuntos disjuntos $E_1$ e $E_2$ em 
+$\mathscr{B}(\mathbb{R}^I)$ 
+tais que $\mathcal{C}_1 = \pi_{I}^{-1}(E_1)$ e 
+$\mathcal{C}_2 = \pi_{I}^{-1}(E_2)$.
+Pela definição de $\mathbb{P}'$ temos que 
+\[
+\mathbb{P}'(\mathcal{C}_1\cup \mathcal{C}_2)
+=
+\mathbb{P}_I'(\mathcal{C}_1\cup \mathcal{C}_2)
+=
+\mathbb{P}_I(E_1\cup E_2)
+=
+\mathbb{P}_I(E_1)+ \mathbb{P}_I(E_2)
+=
+\mathbb{P}'(\mathcal{C}_1) + \mathbb{P}'(\mathcal{C}_2).
+\] 
+Pelo Teorema da Extensão de Carathéodory, 
+para encerrar a prova, basta mostrar que
+$\mathbb{P}'$ é $\sigma$-aditiva na álgebra dos conjuntos
+cilíndricos. Isto como já vimos duas vezes é equivalente 
+a continuidade de $\mathbb{P}'$ no vazio. 
+Para provar este fato vamos tomar uma sequência arbitrária
+de conjuntos cilíndricos $\{\mathcal{C}_n\}_{n\in\mathbb{N}}$
+decrescente, i.e.,
+$\ldots \subseteq \mathcal{C}_3\subseteq \mathcal{C}_2\subseteq \mathcal{C}_1$
+tal que $\lim_{n\to\infty} \mathbb{P}'(\mathcal{C}_n)=\alpha>0.$
 \end{proof}
