@@ -189,4 +189,37 @@ temos que
 \]
 Portanto a série numérica que aparece acima é convergente.
 Desta forma podemos garantir que $n_k\to \infty$, quando $k\to\infty$.
+
+Agora com auxílio do conjunto $F$ vamos mostrar que o 
+conjunto $E-F$ é um conjunto positivo e assim obter uma contradição.
+Primeiro vamos argumentar que qualquer subconjunto 
+$G\subset E-F$ tem carga nula ou positiva. 
+De fato, suponha que $\lambda(G)<0$. 
+Pelo fato de $n_k\to\infty$, quando $k\to\infty$ 
+podemos encontrar $k\in\mathbb{N}$ tal que 
+$\lambda(G)<-1/(n_k-1)$. Como $G\in E-F$ temos
+uma contradição com a definição de $n_k$
+pois, este deveria ser o menor inteiro tal que 
+$E-(E_1\cup\ldots\cup E_{k-1})$
+contém um subconjunto com carga menor ou igual 
+a $-1/n_k$. Portanto todo subconjunto mensurável 
+de $G\subset E-F$ tem carga não-negativa.
+Assim temos que $E-F$ é um conjunto positivo,
+com respeito a $\lambda$. 
+Já que $\lambda(F)\leq 0$ e $\lambda(E)>0$ temos  
+$\lambda(E-F)=\lambda(E)-\lambda(F)>0$.
+Daí obtemos a contradição desejada pois 
+$E-F$ é um conjunto positivo, com respeito a $\lambda$,
+com carga estritamente positiva e disjunto de $P$. De fato,
+$E-F\cup P$ é um conjunto positivo, com respeito a $\lambda$,
+satisfazendo $\lambda(E-F\cup P)= \lambda(E-F)+\lambda(P)>\alpha$
+e que contraria a definição de $\alpha$. 
+
+Da análise acima segue que $N=\Omega-P$ é um 
+conjunto negativo, com respeito a $\lambda$ e 
+portanto temos a decomposição desejada.
+
+
+
+ 
 \end{proof}
