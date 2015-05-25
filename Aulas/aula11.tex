@@ -830,7 +830,68 @@ logo
 \mathcal{F}_{I\cup J}.
 \]
 De maneira análoga provamos que $\mathcal{C}_2\in \mathcal{F}_{I\cup J}$.
-Desta forma temos que 
-$\mathcal{C}_1\cup \mathcal{C}_2 \in \mathcal{F}_{I\cup J}$ 
-e portanto é também um conjunto cilíndrico.
+Já que $\mathcal{F}_{I\cup J}$ é uma $\sigma$-álgebra 
+temos que $\mathcal{C}_1\cup \mathcal{C}_2 \in \mathcal{F}_{I\cup J}$ 
+e portanto $\mathcal{C}_1\cup \mathcal{C}_2$ é também um conjunto cilíndrico.
+
+
+Uma vez que cada conjunto cilíndrico $\mathcal{C}\in \mathcal{F}_{I}$
+pode ser escrito de maneira única como $\mathcal{C} = \pi_{I}^{-1}(E)$
+para um único $E\in\mathscr{B}(\mathbb{R}^I)$, temos bem definida 
+a seguinte função de conjuntos $\mathbb{P}'_{I}:\mathcal{F}_{I}\to [0,1]$ 
+dada por 
+\[
+\mathbb{P}'_{I}(\mathcal{C})
+:= 
+\mathbb{P}'_{I}(\pi_{I}^{-1}(E)) 
+:= 
+\mathbb{P}_{I}(E).
+\]
+Raciocinando como feito acima podemos mostrar que
+se $I\subseteq J$ então $\mathcal{F}_{I}\subseteq \mathcal{F}_{J}$ e
+usando as condições de consistência que é válida a seguinte igualdade 
+\[
+\mathbb{P}'_{J}\big|_{\mathcal{F}_{I}} = \mathbb{P}'_{I}.
+\]
+Para provar a igualdade acima, considere $\mathcal{C}\in\mathcal{F}_{I}$
+arbitrário. Como sabemos existe um único conjunto 
+$E\in \mathscr{B}(\mathbb{R}^I)$ tal que $\mathcal{C} = \pi_{I}^{-1}(E)$.
+Usando a definição de $\mathbb{P}'_{I}$, propriedade 2, e as condições 
+de consistência temos 
+\begin{align*}
+\mathbb{P}'_{J}(\mathcal{C})
+:=
+\mathbb{P}'_{J}(\pi_{I}^{-1}(E))
+=
+\mathbb{P}'_{J}(  (\pi_{I}^{J}\circ \pi_{J})  ^{-1}(E))
+&=
+\mathbb{P}'_{J}( \pi^{-1}_{J}\circ (\pi_{I}^{J})^{-1}(E))
+\\
+&=
+\mathbb{P}_{J}( (\pi_{I}^{J})^{-1}(E))
+\\
+&=
+\mathbb{P}_{I}(E)
+\\
+&=
+\mathbb{P}'_{I}( \pi^{-1}_{I}(E))
+\\*
+&:=
+\mathbb{P}'_{I}(\mathcal{C}).
+\end{align*}
+
+
+
+A última igualdade nos mostra que está bem definida a função 
+de conjuntos 
+\[ 
+\mathbb{P}': \!\!\!\!
+\bigcup_{I:|I|<+\infty}\!\!\!\! \mathcal{F}_{I}\to [0,1]
+\]
+dada por $\mathbb{P}'(\mathcal{C}) = \mathbb{P}'_{I}(\mathcal{C})$,
+onde $I$ é um subconjunto finito qualquer de $T$ tal que 
+$\mathcal{C}=\pi_{I}^{-1}(E)$ para algum $E\in \mathscr{B}(\mathbb{R}^I)$.
+
+
+Vamos verificar que $\mathbb{P}'$ é finitamente aditiva.
 \end{proof}
