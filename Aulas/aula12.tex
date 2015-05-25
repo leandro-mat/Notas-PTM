@@ -29,3 +29,68 @@ onde $f\in L^1(\Omega,\F,\mu)$. A prova de que
 a função de conjuntos $\lambda$, definida acima, é uma 
 carga foi dada no Lema \ref{lema-int-f-dmu-define-uma-carga}.
 
+\begin{exercicio}
+Seja $(\Omega,\F)$ um espaço mensurável e $\lambda:\F\to\R$ 
+uma carga. Mostre que: 
+\begin{enumerate}
+	\item 
+	se $\{E_n\}_{n\in\mathbb{N}}$ é uma sequência crescente
+	($E_{n}\subseteq E_{n+1} \ \forall n\in\mathbb{N}$) de 
+	elementos de $\F$ então 
+		\[
+		\lim_{n\to\infty} \lambda\left( \bigcup_{k=1}^{n} E_k \right)
+		=
+		\lambda\left( \bigcup_{k=1}^{\infty} E_k \right).
+		\]
+	
+	\item 
+	se $\{E_n\}_{n\in\mathbb{N}}$ é uma sequência decrescente
+	($E_{n+1}\subseteq E_{n} \ \forall n\in\mathbb{N}$) de 
+	elementos de $\F$ então 
+	\[
+	\lim_{n\to\infty} \lambda\left( \bigcap_{k=1}^{n} E_k \right)
+	=
+	\lambda\left( \bigcap_{k=1}^{\infty} E_k \right).
+	\]	 
+\end{enumerate}
+\end{exercicio}
+
+
+
+\begin{definicao}
+	Sejam $(\Omega,\F)$ um espaço mensurável e $\lambda:\F\to\mathbb{R}$
+	uma carga. Um conjunto $P\in \F$ é chamado de {\bf conjunto positivo},
+	com respeito a carga $\lambda$, se $\lambda(P\cap E)\geq 0$ para todo 
+	$E\in \F$. Analogamente, dizemos que 
+	um conjunto $N\in \F$ é um {\bf conjunto negativo},
+	com respeito a carga $\lambda$, se $\lambda(N\cap E)\leq 0$ para todo 
+	$E\in \F$.
+	Um conjunto $N\in \F$ é dito {\bf conjunto nulo}, com respeito a $\lambda$, 
+	se $\lambda(N\cap E) = 0$ para todo 
+	$E\in \F$.	
+\end{definicao}
+
+
+Observe que dizer que um conjunto $P\in \F$ é positivo,
+com respeito a $\lambda$, é  equivalente a dizer que 
+todos seus subconjuntos $\F$-mensuráveis têm carga
+não negativa. Afirmação análoga pode ser feita para 
+conjuntos negativos e nulos.
+
+\begin{exercicio}
+	Sejam $(\Omega,\F)$ um espaço mensurável, $\lambda:\F\to\mathbb{R}$
+	uma carga e $P$ um conjunto positivo, com respeito a $\lambda$. 
+	Mostre que se $P'\subset P$ e $P'\in \F$ então $P'$ é um 
+	conjunto positivo, com respeito a $\lambda$.
+\end{exercicio}
+
+
+
+\begin{exercicio}
+	Sejam $(\Omega,\F)$ um espaço mensurável, $\lambda:\F\to\mathbb{R}$
+	uma carga, $P_1$ e $P_2$ conjuntos positivos, 
+	com respeito a $\lambda$. 
+	Mostre que se $P_1\cup P_2$  é um 
+	conjunto positivo, com respeito a $\lambda$.
+\end{exercicio}
+
