@@ -740,5 +740,32 @@ coleção de todos os cilindros finito dimensional, isto é,
 \ I\subset T, |I|<+\infty \ 
 \text{e}\ 
 E\in\mathscr{B}\big(\mathbb{R}^I\big)
-\right)
+\right).
 \] 
+
+
+
+
+\begin{teorema}[Teorema da Existência de Kolmogorov]
+\label{teo-exist-kolmogorov-nao-enumeravel}
+Seja $T$ um conjunto arbitrário de índices. 
+Suponha que para todo subconjunto finito $I\subset T$
+temos uma medida de probabilidade $\mathbb{P}_{I}$
+definida sobre $\mathscr{B}(\mathbb{R}^I)$.
+Suponha que a condição de consistência de Kolmogorov 
+seja satisfeita, isto é, para todo $I,J\subset T$ 
+tais que $I\subseteq J$, temos
+\[
+\mathbb{P}_{J}\big( (\pi^{J}_{I})^{-1}(E) \big)
+=
+\mathbb{P}_{I}(E),
+\ \forall E\in\mathscr{B}(\mathbb{R}^{I}).
+\]
+Então existe uma única medida de probabilidade 
+$\mathbb{P}$ definida em $\mathscr{B}(\mathbb{R}^T)$ 
+tal que para todo subconjunto finito $I\subset T$ temos
+\[
+\mathbb{P}\big(\pi{-1}_{I}(E) ) = \mathbb{P}_{I}(E),
+\ \forall E\in\mathscr{B}(\mathbb{R}^{I}).
+\]
+\end{teorema}
