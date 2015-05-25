@@ -137,4 +137,56 @@ crescente segue que
 \[
 \alpha = \lim_{n\to\infty} \lambda(A_n)= \lambda(P)<+\infty.
 \]
+
+Já que $P$ é positivo, com respeito a $\lambda$, a 
+prova do teorema está concluída se mostramos que 
+$N=\Omega-P$ é um conjunto negativo, com respeito a 
+$\lambda$. A prova deste fato será feita por contradição.
+
+Suponha que $N$ não seja um conjunto negativo, com respeito 
+a $\lambda$. Então podemos afirmar que existe um subconjunto 
+mensurável $E\subset N$ tal que $\lambda(E)>0$. 
+O conjunto $E$ não pode ser um conjunto positivo.
+Caso contrário teríamos que $P\cup E$ é um conjunto 
+positivo com $P$ e $E$ disjuntos e
+$\lambda(P\cup E)=\lambda(P)+\lambda(E)>\alpha$
+que é um contradição com a definição de $\alpha$.
+Deste fato podemos concluir que $E$ possui pelo 
+menos um subconjunto de carga negativa. 
+Sejam $n_1\in \mathbb{N}$ o menor inteiro positivo para o qual 
+existe $E_1\in \F$, com $E_1\subset E$ 
+satisfazendo $\lambda(E_1)\leq -1/n_1<0$.
+Usando a aditividade da carga $\lambda$ segue que 
+$\lambda(E-E_1)=\lambda(E)-\lambda(E_1)>\lambda(E)>0$.
+Observe que $E-E_1$ não pode ser um conjunto positivo,
+com respeito a $\lambda$, já que ele é disjunto 
+de $P$ e que a desigualdade acima implica em 
+$\lambda(P\cup (E-E_1))= \lambda(P)+\lambda(E-E_1) >\alpha$,
+o que é um absurdo. 
+Desta forma, concluímos que $E-E_1$ possui algum subconjunto de 
+carga negativa. Seja $n_2\in\mathbb{N}$ o menor inteiro para o
+qual existe $E_2\subset E-E_1$ com $E_2\in \F$ e 
+$\lambda(E_2)\leq -1/n_2$. Analogamente, podemos 
+argumentar que $E-(E_1\cup E_2)$ não pode ser um conjunto 
+positivo e portanto podemos construir 
+$n_3\in\mathbb{N}$ com $n_3$ sendo o menor 
+natural para o qual existe um conjunto 
+$E_3\subset E-(E_1\cup E_2)$ com $E_3\in \F$ e 
+$\lambda(E_3)<-1/n_3$. Procedendo uma indução 
+formal podemos obter uma sequência de conjuntos 
+$\F$-mensuráveis disjuntos $\{E_n\}_{n\in\mathbb{N}}$
+tal que $\lambda(E_k)\leq -1/n_k$.
+Seja $F=\cup_{n\geq 1} E_n$. Como os conjuntos $E_n$'s são disjuntos
+temos que 
+\[
+\lambda(F)
+=
+\sum_{k=1}^{\infty}\lambda(E_k)
+\leq 
+\sum_{k=1}^{\infty} -\frac{1}{n_k}
+\leq 
+0.
+\]
+Portanto a série numérica que aparece acima é convergente.
+Desta forma podemos garantir que $n_k\to \infty$, quando $k\to\infty$.
 \end{proof}
