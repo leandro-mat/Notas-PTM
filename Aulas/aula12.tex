@@ -259,3 +259,57 @@ portanto temos a decomposição desejada.
 	\lambda(E \cap N_1) = \lambda(E \cap N_2)
 	\]
 \end{lema}
+
+\begin{proof}
+Já que $E\cap (P_1-P_2)$ está contido em $P_1$ e $N_2$
+temos que $\lambda(E\cap(P_1-P_2) )=0$, ou seja,
+$\lambda(E\cap P_1\cap P^c_2)=0$.
+Analogamente 
+temos $\lambda(E\cap P^c_1\cap P_2) = 0$.
+Usando a aditividade finita da carga $\lambda$ 
+e as decomposições 
+$E\cap P_1 = (E\cap P_1\cap P_2) \cup (E\cap P_1\cap P^c_2) $ 
+e 
+$E\cap P_2 = (E\cap P_2\cap P_1) \cup (E\cap P_2\cap P^c_1) $ 
+obtemos as seguintes igualdades:
+$
+\lambda(E\cap P_1)=\lambda(E\cap P_1\cap P_2)
+$ 
+e
+$
+\lambda(E\cap P_2)=\lambda(E\cap P_1\cap P_2).
+$
+De onde segue que $\lambda(E\cap P_1)= \lambda(E\cap P_2)$.
+A igualdade $\lambda(E \cap N_1) = \lambda(E \cap N_2)$
+é provada de maneira totalmente análoga.
+\end{proof}
+
+
+
+
+
+
+
+\begin{definicao}
+Sejam $(\Omega,\F)$ um espaço mensurável, $\lambda:\F\to\mathbb{R}$
+uma carga e $\{P,N\}$ uma decomposição de Hahn de $\Omega$, 
+com respeito a $\lambda$. Definimos respectivamente as
+variações positiva, negativa e total da carga $\lambda$ 
+como sendo as medidas positivas (finitas) dadas por 
+\[
+\lambda^+(E)
+=
+\lambda(E\cap P),
+\quad
+\lambda^-(E)
+=
+\lambda(E\cap N)
+\quad\text{e}\quad
+|\lambda|(E) = \lambda^+(E)+\lambda^-(E).
+\]
+\end{definicao}
+
+Observe que o lema anterior garante que as variações 
+positiva, negativa e total de uma carga são 
+medidas que estão bem definidas independentemente 
+da escolha particular da decomposição de Hahn de $\Omega$.
