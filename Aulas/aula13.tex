@@ -7,189 +7,368 @@ Nesta seção usando o Teorema de Radon-Nikodým vamos mostrar
 como são construídas as probabilidade e esperança 
 condicional. 
 Em várias partes desta seção vamos considerar 
-um espaço de medida $(\Omega,\mathcal{F},\mu)$, uma sub-$\sigma$-álgebra 
-$\mathcal{B}$ de $\mathcal{F}$ e usaremos a notação $\nu=\mu|_{\mathcal{B}}$, 
-para denotar a restrição da medida $\mu$ a sub-$\sigma$-álgebra $\mathcal{B}$. Vamos denotar por
-$L^1(\Omega,\mathcal{F},\mu)$ o conjunto de todas as funções $\mathcal{F}$-mensuráveis $f:\Omega\to\overline{\mathbb{R}}$ 
-tais que $\int_{\Omega} |f|\, d\mu <+\infty$. Obs: Nos textos de teoria da Medida e Análise funcional
-$L^1(\Omega,\mathcal{F},\mu)$ é uma notação consagrada para denotar um espaço de classes de equivalência obtido 
-pela identificação de duas funções que diferem em um subconjunto de $\Omega$ de medida zero. Voltaremos a discutir isto mais a frente
-no texto. E neste ponto para evitar confusão e fixar a notação vamos pensar em $L^1(\Omega,\mathcal{F},\mu)$ apenas como um espaço de funções.
+um espaço de medida $(\Omega,\mathcal{F},\mu)$, 
+uma sub-$\sigma$-álgebra $\mathcal{B}$ de $\mathcal{F}$ 
+e usaremos a notação $\nu=\mu|_{\mathcal{B}}$, 
+para denotar a restrição da medida $\mu$ 
+a sub-$\sigma$-álgebra $\mathcal{B}$. 
+Vamos denotar por $L^1(\Omega,\mathcal{F},\mu)$ o conjunto 
+de todas as funções $\mathcal{F}$-mensuráveis 
+$f:\Omega\to\overline{\mathbb{R}}$ 
+tais que $\int_{\Omega} |f|\, d\mu <+\infty$. 
+
+\begin{observacao}
+Nos textos de teoria da Medida e Análise funcional
+$L^1(\Omega,\mathcal{F},\mu)$ é uma notação consagrada para 
+denotar um espaço de classes de equivalência obtido 
+pela identificação de duas funções que diferem em um 
+subconjunto de $\Omega$ de medida zero. 
+Voltaremos a discutir isto mais a frente no texto. 
+Neste ponto para evitar confusão e fixar a notação 
+vamos pensar em $L^1(\Omega,\mathcal{F},\mu)$ 
+apenas como um espaço de funções.
+\end{observacao}
+
+
 \begin{teorema}\label{teo:esperanca-condicional-definicao} 
-Sejam $(\Omega,\mathcal{F},\mu)$ um espaço de medida finita, $\mathcal{B}$ uma sub-$\sigma$-álgebra de $\mathcal{F}$ 
-e $\nu=\mu|_{\mathcal{B}}$. Para cada $f\in L^1(\Omega,\mathcal{F},\mu)$ existe uma função $g$ mensurável segundo a 
-$\sigma$-álgebra $\mathcal{B}$ com $g\in L^1(\Omega,\mathcal{B},\nu)$ tal que 
-$$
-\int_{E} f\, d\mu =\int_{E} g\, d\nu \qquad \text{para todo} \ E\in\mathcal{B}.
-$$
-Além do mais se $g'\in L^1(\Omega,\mathcal{B},\nu)$ é uma outra função satisfazendo a igualdade acima, 
+Sejam $(\Omega,\mathcal{F},\mu)$ um espaço de medida finita, 
+$\mathcal{B}$ uma sub-$\sigma$-álgebra de $\mathcal{F}$ 
+e $\nu=\mu|_{\mathcal{B}}$. 
+Para cada $f\in L^1(\Omega,\mathcal{F},\mu)$ 
+existe uma função $g$ mensurável segundo a 
+$\sigma$-álgebra $\mathcal{B}$ 
+com $g\in L^1(\Omega,\mathcal{B},\nu)$ tal que 
+\[
+\int_{E} f\, d\mu 
+=
+\int_{E} g\, d\nu \qquad \text{para todo} \ E\in\mathcal{B}.
+\]
+Além do mais se $g'\in L^1(\Omega,\mathcal{B},\nu)$ 
+é uma outra função satisfazendo a igualdade acima, 
 então $g=g'$ $\nu$-q.t.p. 
 \end{teorema}
-\noindent{\bf Observação.} 
-A função $g$ cuja a existência é garantida no Teorema \eqref{teo:esperanca-condicional-definicao} é nosso ponto de partida para apresentar a definição da esperança condicional.
-A esperança condicional será um dos conceitos fundamentais deste texto e vital para o estudo de medidas de Gibbs do ponto de vista probabilístico
-e da teoria de especificações. Seguimos a partir de agora apresentando em todos os detalhes a construção da esperança condicional e 
-suas propriedades importantes para a teoria das medidas de Gibbs.
-\\[0.2cm]
-{\bf Prova do Teorema \eqref{teo:esperanca-condicional-definicao}} 
-Vamos considerar inicialmente que $f\geq 0$. Seja $\eta:\mathcal{B}\to[0,+\infty)$ a medida definida por 
+
+\begin{observacao}
+A função $g$ cuja a existência é garantida 
+no Teorema \eqref{teo:esperanca-condicional-definicao} 
+é nosso ponto de partida para apresentar a definição 
+da esperança condicional.
+A esperança condicional será um dos conceitos 
+fundamentais deste texto.
+\end{observacao}
+
+
+
+\begin{proof}
+Vamos considerar inicialmente que $f\geq 0$. 
+Seja $\eta:\mathcal{B}\to[0,+\infty)$ a medida definida por 
 \begin{equation}\label{teo:esperanca-cond-aux1}
 \eta(E)=\int_{E} f\, d\mu.
 \end{equation}
-Note que se $\nu(E)=0$ então obviamente $\mu(E)=0$, mas se $\mu(E)=0$ então a integral acima é igual a zero logo
-$\eta(E)=0$, e assim temos que $\eta\ll\nu$. Daí segue do Teorema de Radon-Nikodym que existe uma função 
+Note que se $\nu(E)=0$ então obviamente 
+$\mu(E)=0$, mas se $\mu(E)=0$ então a integral 
+acima é igual a zero logo
+$\eta(E)=0$, e assim temos que $\eta\ll\nu$. 
+Daí segue do Teorema de Radon-Nikodym que existe uma função 
 $\mathcal{B}$-mensurável $g:\Omega\to\mathbb{R}$ tal que 
 \begin{equation}
 \label{teo:esperanca-cond-aux2}
 \eta(E)=\int_{E} g\, d\nu
 \end{equation}
-Usando a hipótese $f\in L^1(\Omega,\mathcal{F},\mu)$ e tomando $E=\Omega$ nas igualdades \eqref{teo:esperanca-cond-aux1} e \eqref{teo:esperanca-cond-aux2} 
-concluímos que $g\in L^1(\Omega,\mathcal{B},\nu)$. O Teorema de Radon-Nikodým garante que $g$ é unicamente determinada $\nu$-q.t.p. 
+Usando a hipótese $f\in L^1(\Omega,\mathcal{F},\mu)$ 
+e tomando $E=\Omega$ nas igualdades 
+\eqref{teo:esperanca-cond-aux1} e \eqref{teo:esperanca-cond-aux2} 
+concluímos que $g\in L^1(\Omega,\mathcal{B},\nu)$. 
+O Teorema de Radon-Nikodým garante que $g$ é 
+unicamente determinada $\nu$-q.t.p. 
 e portanto o teorema fica provado no caso em que $f\geq 0$.
-No caso em que $f$ toma valores reais basta repetir argumento apresentado acima para $f^{+}$ e $f^{-}$.
-\bigskip 
+No caso em que $f$ toma valores reais basta 
+repetir argumento apresentado acima para $f^{+}$ e $f^{-}$.
+\end{proof}
+
+
+
+
 \begin{definicao} 
 Sejam $(\Omega,\mathcal{F},\mu)$ um espaço de {\bf probabilidade}, 
-$f\in L^1(\Omega,\mathcal{F},\mu)$, $\mathcal{B}$ uma sub-$\sigma$-álgebra de $\mathcal{F}$ e $\nu=\mu|_{\mathcal{B}}$. 
-Dizemos que uma função $\mathcal{B}$-mensurável $g:\Omega\to\mathbb{R}$ é uma esperança condicional
+$f\in L^1(\Omega,\mathcal{F},\mu)$, $\mathcal{B}$ 
+uma sub-$\sigma$-álgebra de $\mathcal{F}$ e $\nu=\mu|_{\mathcal{B}}$. 
+Dizemos que uma função $\mathcal{B}$-mensurável 
+$g:\Omega\to\mathbb{R}$ é uma esperança condicional
 de $f$ dada a $\sigma$-álgebra $\mathcal{B}$, se 
-$$
-\int_{E} f\, d\mu =\int_{E} g\, d\nu \qquad \text{para todo} \ E\in\mathcal{B}.
-$$
+\[
+\int_{E} f\, d\mu 
+=
+\int_{E} g\, d\nu \qquad \text{para todo} 
+\ E\in\mathcal{B}.
+\]
 \end{definicao}
-Como vimos acima o Teorema \eqref{teo:esperanca-condicional-definicao} garante a existência de uma esperança condicional para toda 
-$f\in L^1(\Omega,\mathcal{F},\mu)$ e para toda sub-$\sigma$-álgebra $\mathcal{B}$ de $\mathcal{F}$. Cada uma das funções $g$ satisfazendo 
-a condição acima é chamada de uma versão da esperança condicional de $f$ com respeito a $\mathcal{B}$. 
-O Teorema \eqref{teo:esperanca-condicional-definicao} também nos garante que quaisquer duas versões da esperança condicional 
-são funções que diferem apenas em um conjunto de medida $\nu$ nula. Já que do ponto de vista de integração 
-a escolha de uma versão arbitrária da esperança condicional não afeta nenhum cálculo é comum tomarmos uma versão qualquer
-e denotá-la por $\mathbb{E}[f|\mathcal{B}]$. Ressaltamos que $\mathbb{E}[f|\mathcal{B}]$ é uma função ($\mathbb{E}[f|\mathcal{B}]:\Omega\to\mathbb{R}$) cujo domínio é o conjunto $\Omega$ 
-e toma valores em $\mathbb{R}$. Na sequência apresentamos algumas de suas principais propriedades.
+
+Como vimos acima o 
+Teorema \eqref{teo:esperanca-condicional-definicao} 
+garante a existência de uma esperança condicional para toda 
+$f\in L^1(\Omega,\mathcal{F},\mu)$ e para toda 
+sub-$\sigma$-álgebra $\mathcal{B}$ de $\mathcal{F}$. 
+Cada uma das funções $g$ satisfazendo 
+a condição acima é chamada de uma versão da esperança 
+condicional de $f$ com respeito a $\mathcal{B}$. 
+O Teorema \eqref{teo:esperanca-condicional-definicao} 
+também nos garante que quaisquer duas 
+versões da esperança condicional 
+são funções que diferem apenas em um conjunto de medida $\nu$ nula. 
+Já que do ponto de vista de integração 
+a escolha de uma versão arbitrária da esperança condicional 
+não afeta nenhum cálculo é comum tomarmos uma versão qualquer
+e denotá-la por $\mathbb{E}[f|\mathcal{B}]$. 
+Ressaltamos que $\mathbb{E}[f|\mathcal{B}]$ 
+é uma função ($\mathbb{E}[f|\mathcal{B}]:\Omega\to\mathbb{R}$) 
+cujo domínio é o conjunto $\Omega$ 
+e toma valores em $\mathbb{R}$. 
+Na sequência apresentamos algumas de suas principais propriedades.
+
+
+
 \begin{proposicao}
 	[Linearidade da Esperança Condicional]
 	\label{teo:linearidade-esperanca-condicional}
-Sejam $(\Omega,\mathcal{F},\mu)$ um espaço de medida finita, $\mathcal{B}$ uma sub-$\sigma$-álgebra de $\mathcal{F}$ e $\nu=\mu|_{\mathcal{B}}$. 
-Para todas $f,g\in L^1(\Omega,\mathcal{F},\mu)$ e $\alpha\in\mathbb{R}$ temos que 
-$$
-\mathbb{E}[f+\alpha g|\mathcal{B}]=\mathbb{E}[f|\mathcal{B}]+\alpha\mathbb{E}[g|\mathcal{B}] \ \ \ \nu-\text{q.t.p.}
-$$
+Sejam $(\Omega,\mathcal{F},\mu)$ um espaço de medida finita, 
+$\mathcal{B}$ uma sub-$\sigma$-álgebra 
+de $\mathcal{F}$ e $\nu=\mu|_{\mathcal{B}}$. 
+Para todas $f,g\in L^1(\Omega,\mathcal{F},\mu)$ 
+e $\alpha\in\mathbb{R}$ temos que 
+\[
+\mathbb{E}[f+\alpha g|\mathcal{B}]
+=
+\mathbb{E}[f|\mathcal{B}]
++
+\alpha\mathbb{E}[g|\mathcal{B}] \ \ \ \nu-\text{q.t.p.}
+\]
 \end{proposicao}
-\textbf{Prova}. 
 
+\begin{proof}
 Pela definição de esperança condicional temos 
 \begin{equation}\label{eq:aux1-lin-esp-cond}
-\int_{E} (f+\alpha g)\, d\mu=
-\int_{E} \mathbb{E}[f+\alpha g|\mathcal{B}]\, d\nu \qquad \text{para todo} \ E\in\mathcal{B}.
+\int_{E} (f+\alpha g)\, d\mu
+=
+\int_{E} \mathbb{E}[f+\alpha g|\mathcal{B}]\, d\nu 
+\qquad \text{para todo} \ E\in\mathcal{B}.
 \end{equation}
-Usando a linearidade da Integral de Lebesgue e a definição de esperança condicional de $f$ e $g$ dado a $\sigma$-álgebra
-$\mathcal{B}$ temos
+Usando a linearidade da Integral de Lebesgue e a 
+definição de esperança condicional de 
+$f$ e $g$ dado a $\sigma$-álgebra
+$\mathcal{B}$, temos
+para todo $E\in\mathcal{B}$ que 
 \begin{equation}
 \label{eq:aux2-lin-esp-cond}
-\int_{E} (f+\alpha g)\, d\mu=\int_{E} f\, d\mu+\alpha\int_{E} g\, d\mu=
-\int_{E} \mathbb{E}[f|\mathcal{B}]\, d\nu +
-\alpha\int_{E} \mathbb{E}[g|\mathcal{B}]\, d\nu
-\qquad \text{para todo} \ E\in\mathcal{B}.
+\int_{E} (f+\alpha g)\, d\mu
+=
+\int_{E} f\, d\mu+\alpha\int_{E} g\, d\mu
+=
+\int_{E} \mathbb{E}[f|\mathcal{B}]\, d\nu 
++
+\alpha\int_{E} \mathbb{E}[g|\mathcal{B}]\, d\nu.
 \end{equation}
-Já que o lado esquerdo em \eqref{eq:aux1-lin-esp-cond} e \eqref{eq:aux2-lin-esp-cond} é o mesmo temos  
-$$
+Já que o lado esquerdo em \eqref{eq:aux1-lin-esp-cond} 
+e \eqref{eq:aux2-lin-esp-cond} são os mesmos temos  
+\[
 \int_{E} \mathbb{E}[f+\alpha g|\mathcal{B}]\, d\nu
 =
-\int_{E} \mathbb{E}[f|\mathcal{B}]\, d\nu +
+\int_{E} \mathbb{E}[f|\mathcal{B}]\, d\nu 
++
 \alpha\int_{E} \mathbb{E}[g|\mathcal{B}]\, d\nu
 \qquad \text{para todo} \ E\in\mathcal{B}.
-$$
-Usando novamente a linearidade da integral e que $E$ é arbitrário em $\mathcal{B}$ concluímos que
-$\mathbb{E}[f+\alpha g|\mathcal{B}]=\mathbb{E}[f|\mathcal{B}]+\alpha\mathbb{E}[g|\mathcal{B}] \ \ \ \nu-\text{q.t.p.}$.
-\bigskip
+\]
+Usando novamente a linearidade da integral e que 
+$E$ é arbitrário em $\mathcal{B}$ concluímos que
+$
+\mathbb{E}[f+\alpha g|\mathcal{B}]
+=
+\mathbb{E}[f|\mathcal{B}]
++
+\alpha\mathbb{E}[g|\mathcal{B}] \ \ \ \nu-\text{q.t.p.}$.
+\end{proof}
+
+A prova da próxima proposição é completamente análoga, 
+mas repetiremos todos os detalhes 
+para que o leitor menos experiente vá se 
+familiarizando com o conceito da esperança 
+condicional e suas propriedades.
 
 
-A prova da próxima proposição é completamente análoga, mas repetiremos todos os detalhes 
-para que o leitor menos experiente vá se familiarizando com o conceito da esperança condicional e suas propriedades.
-\begin{proposicao}
-	[$\mathcal{B}$-homogenidade da Esperança Condicional]
-	\label{teo:propriedades-esperanca-condicional}
-Sejam $(\Omega,\mathcal{F},\mu)$ um espaço de medida finita, $\mathcal{B}$ uma sub-$\sigma$-álgebra de $\mathcal{F}$ e $\nu=\mu|_{\mathcal{B}}$. 
-Se $f\in L^1(\Omega,\mathcal{F},\mu)$ e $g$ é uma função $\mathcal{B}$-mensurável então 
-$$
-\mathbb{E}[f g|\mathcal{B}]=g\mathbb{E}[f|\mathcal{B}] \ \ \ \nu-\text{q.t.p.}
-$$
+\begin{proposicao}[$\mathcal{B}$-homogenidade da Esperança Condicional]
+\label{teo:propriedades-esperanca-condicional}
+Sejam $(\Omega,\mathcal{F},\mu)$ um espaço 
+de medida finita, $\mathcal{B}$ uma sub-$\sigma$-álgebra 
+de $\mathcal{F}$ e $\nu=\mu|_{\mathcal{B}}$. 
+Se $f\in L^1(\Omega,\mathcal{F},\mu)$ e $g$ 
+é uma função $\mathcal{B}$-mensurável então 
+\[
+\mathbb{E}[f g|\mathcal{B}]
+=
+g\mathbb{E}[f|\mathcal{B}] \ \ \ \nu-\text{q.t.p.}
+\]
 \end{proposicao}
-\textbf{Prova}. 
 
-Suponha que inicialmente que $g=\chi_{F}$ para algum $F\in\mathcal{B}$. Da definição de esperança condicional temos  
+
+
+\begin{proof}
+
+Suponha que inicialmente que $g=\chi_{F}$ 
+para algum $F\in\mathcal{B}$. 
+Da definição de esperança condicional temos  
 \begin{equation}\label{eq:aux1-esp-cond}
-\int_{E} f\chi_{F}\ d\mu=\int_{E}\mathbb{E}[f\chi_{F}|\mathcal{B}]\, d\nu	
+\int_{E} f\chi_{F}\ d\mu
+=
+\int_{E}\mathbb{E}[f\chi_{F}|\mathcal{B}]\, d\nu
 \end{equation}
-para todo $E\in\mathcal{B}$. Como estamos supondo que $F\in\mathcal{B}$, temos que $E\cap F\in\mathcal{B}$ 
-logo, aplicando novamente a definição da esperança condicional obtemos  
+para todo $E\in\mathcal{B}$. 
+Como estamos supondo que $F\in\mathcal{B}$, 
+temos que $E\cap F\in\mathcal{B}$ 
+logo, aplicando novamente a definição da 
+esperança condicional obtemos  
+%
+%
 \begin{equation}
 \label{eq:aux2-esp-cond}
-\int_{E} f\chi_{F}\ d\mu=\int_{E\cap F} f\ d\mu=\int_{E\cap F}\mathbb{E}[f|\mathcal{B}]\, d\nu
-=\int_{E}\chi_{F}\mathbb{E}[f|\mathcal{B}]\, d\nu.
+\int_{E} f\chi_{F}\ d\mu=\int_{E\cap F} f\ d\mu
+=
+\int_{E\cap F}\mathbb{E}[f|\mathcal{B}]\, d\nu
+=
+\int_{E}\chi_{F}\mathbb{E}[f|\mathcal{B}]\, d\nu.
 \end{equation}
-De \eqref{eq:aux1-esp-cond} e \eqref{eq:aux2-esp-cond} segue que 
-$$
-\int_{E}\mathbb{E}[f\chi_{F}|\mathcal{B}]\, d\nu=\int_{E}\chi_{F}\mathbb{E}[f|\mathcal{B}]\, d\nu,
+De \eqref{eq:aux1-esp-cond} e \eqref{eq:aux2-esp-cond} 
+segue que 
+\[
+\int_{E}\mathbb{E}[f\chi_{F}|\mathcal{B}]\, d\nu
+=
+\int_{E}\chi_{F}\mathbb{E}[f|\mathcal{B}]\, d\nu,
 \qquad \text{para todo}\ E\in\mathcal{B}.
-$$
-Logo $\mathbb{E}[f\chi_{F}|\mathcal{B}]=\chi_{F}\mathbb{E}[f|\mathcal{B}]$ $\nu$-q.t.p. e isto prova o teorema 
+\]
+Logo 
+$\
+mathbb{E}[f\chi_{F}|\mathcal{B}]
+=\chi_{F}\mathbb{E}[f|\mathcal{B}]
+\ \nu$-q.t.p. e isto prova o teorema 
 para o caso $g=\chi_{F}$. 
 
-Vamos mostrar agora o teorema no caso em que $g$ é uma função simples $\mathcal{B}$-mensurável. Suponha que sua representação padrão seja 
-$g = \sum_{j=1}^n a_j \chi_{E_j}$, onde $a_j\in\mathbb{R}$ e $E_j\in \mathcal{B}$ para todo $j=1,\ldots,n$.
-Pela linearidade da esperança condicional e pela propriedade que acabamos de demostrar acima, uma indução mostra que as seguintes igualdades 
+Vamos mostrar agora o teorema no caso em que $g$ 
+é uma função simples $\mathcal{B}$-mensurável. 
+Suponha que sua representação padrão seja 
+$g = \sum_{j=1}^n a_j \chi_{E_j}$, 
+onde $a_j\in\mathbb{R}$ e $E_j\in \mathcal{B}$ 
+para todo $j=1,\ldots,n$.
+Pela linearidade da esperança condicional e pela 
+propriedade que acabamos de demostrar acima, 
+uma indução mostra que as seguintes igualdades 
 são verdadeiras
-$$
-\mathbb{E}[gf|\mathcal{B}]=\mathbb{E}\left[\left(\sum_{j=1}^n a_j \chi_{E_j}\right)f\ \Big|\mathcal{B}\right]
-=\sum_{j=1}^n a_j \mathbb{E}[\chi_{E_j}f|\mathcal{B}]
-=\sum_{j=1}^n a_j\chi_{E_j} \mathbb{E}[f|\mathcal{B}]
-=g\mathbb{E}[f|\mathcal{B}].
-$$
-Resta agora estabelecer este fato para funções $g\in L^1(\Omega,\mathcal{B},\nu)$. Primeiro vamos mostrar que 
-é suficiente provar a proposição para $f$ e $g$ não negativas. De fato, assuma que o teorema seja válido para 
-$f^+,f^-\in L^1(\Omega,\mathcal{F},\mu)$ e $g^+,g^-\in L^1(\Omega,\mathcal{B},\nu)$. Já que $f=f^+-f^-$ e $g=g^+-g^-$
+\[
+\mathbb{E}[gf|\mathcal{B}]
+=
+\mathbb{E}\left[\left(\sum_{j=1}^n a_j \chi_{E_j}\right)
+f\ \Big|\mathcal{B}\right]
+=
+\sum_{j=1}^n a_j \mathbb{E}[\chi_{E_j}f|\mathcal{B}]
+=
+\sum_{j=1}^n a_j\chi_{E_j} \mathbb{E}[f|\mathcal{B}]
+=
+g\mathbb{E}[f|\mathcal{B}].
+\]
+Resta agora estabelecer este fato para funções 
+$g\in L^1(\Omega,\mathcal{B},\nu)$. 
+Primeiro vamos mostrar que 
+é suficiente provar a proposição para $f$ e $g$ não negativas. 
+De fato, assuma que o teorema seja válido para 
+$f^+,f^-\in L^1(\Omega,\mathcal{F},\mu)$ e 
+$g^+,g^-\in L^1(\Omega,\mathcal{B},\nu)$. 
+Já que $f=f^+-f^-$ e $g=g^+-g^-$
 temos que 
-\begin{eqnarray*}
-	\mathbb{E}[gf|\mathcal{B}]&=&\mathbb{E}[g^+f^+-g^-f^+-g^+f^-+g^-f^-|\mathcal{B}]\\[0.2cm]
-	&=& \mathbb{E}[g^+f^+|\mathcal{B}]- \mathbb{E}[g^-f^+|\mathcal{B}] -\mathbb{E}[g^+f^-|\mathcal{B}]+\mathbb{E}[g^-f^-|\mathcal{B}]\\[0.2cm]
-	&=& g^+\mathbb{E}[f^+|\mathcal{B}]-g^-\mathbb{E}[f^+|\mathcal{B}]-g^+\mathbb{E}[f^-|\mathcal{B}]+g^-\mathbb{E}[f^-|\mathcal{B}]\\[0.2cm]
-	&=&(g^+-g^-)\mathbb{E}[f^+|\mathcal{B}]-(g^+-g^-)\mathbb{E}[f^-|\mathcal{B}]\\[0.2cm]
-	&=&g\mathbb{E}[f^+|\mathcal{B}]-g\mathbb{E}[f^-|\mathcal{B}]\\[0.2cm]
-	&=&g(\mathbb{E}[f^+|\mathcal{B}]-\mathbb{E}[f^-|\mathcal{B}])\\[0.2cm]
-	&=&g\mathbb{E}[f|\mathcal{B}].
-\end{eqnarray*}
-Portanto só resta mostrar que a proposição é verdadeira para $f\in L^1(\Omega,\mathcal{F},\mu)$ e $g\in L^1(\Omega,\mathcal{B},\nu)$ ambas não negativas. 
-Pelo Teorema \ref{teo:aproximacao-monotona-por-func-simples} existe uma sequência $g_n:\Omega\to\mathbb{R}$ monótona crescente de funções simples $\mathcal{B}$-mensuráveis 
-tal que $g_n\uparrow g$. Já que $f\geq 0$ podemos afirmar que $g_nf\uparrow gf$. Pela definição de esperança condicional 
+\begin{align*}
+	\mathbb{E}[gf|\mathcal{B}]
+	&=
+	\mathbb{E}[g^+f^+-g^-f^+-g^+f^-+g^-f^-|\mathcal{B}]
+	\\[0.2cm]
+	&= 
+	\mathbb{E}[g^+f^+|\mathcal{B}]- \mathbb{E}[g^-f^+|\mathcal{B}] 
+		-\mathbb{E}[g^+f^-|\mathcal{B}]+\mathbb{E}[g^-f^-|\mathcal{B}]
+	\\[0.2cm]
+	&= 
+	g^+\mathbb{E}[f^+|\mathcal{B}]-g^-\mathbb{E}[f^+|\mathcal{B}]
+	-g^+\mathbb{E}[f^-|\mathcal{B}]+g^-\mathbb{E}[f^-|\mathcal{B}]
+	\\[0.2cm]
+	&=
+	(g^+-g^-)\mathbb{E}[f^+|\mathcal{B}]
+	-(g^+-g^-)\mathbb{E}[f^-|\mathcal{B}]
+	\\[0.2cm]
+	&=
+	g\mathbb{E}[f^+|\mathcal{B}]-g\mathbb{E}[f^-|\mathcal{B}]
+	\\[0.2cm]
+	&=
+	g(\mathbb{E}[f^+|\mathcal{B}]-\mathbb{E}[f^-|\mathcal{B}])
+	\\[0.2cm]
+	&=
+	g\mathbb{E}[f|\mathcal{B}].
+\end{align*}
+Portanto só resta mostrar que a proposição é verdadeira 
+para $f\in L^1(\Omega,\mathcal{F},\mu)$ 
+e $g\in L^1(\Omega,\mathcal{B},\nu)$ ambas não negativas. 
+Pelo Teorema \ref{teo:aproximacao-monotona-por-func-simples} 
+existe uma sequência $g_n:\Omega\to\mathbb{R}$ 
+monótona crescente de funções simples $\mathcal{B}$-mensuráveis 
+tal que $g_n\uparrow g$. Já que $f\geq 0$ 
+podemos afirmar que $g_nf\uparrow gf$. 
+Pela definição de esperança condicional 
+%
+%
 \begin{equation}\label{eq:aux3-esp-cond}
-\int_{E}g_nf\, d\mu = \int_{E} \mathbb{E}[g_nf|\mathcal{B}]\, d\nu,\qquad\text{para todo}\ E\in\mathcal{B}.
+\int_{E}g_nf\, d\mu 
+= 
+\int_{E} \mathbb{E}[g_nf|\mathcal{B}]\, d\nu,
+\qquad\text{para todo}\ E\in\mathcal{B}.
 \end{equation}
-Já sabemos que para toda função $\mathcal{B}$-mensurável $g_n$ simples que a seguinte igualdade é verdadeira 
-$\mathbb{E}[g_nf|\mathcal{B}]=g_n\mathbb{E}[f|\mathcal{B}]$. Como $f\geq 0$ é imediato verificar que $\mathbb{E}[f|\mathcal{B}]\geq 0$, assim 
-$g_n\mathbb{E}[f|\mathcal{B}]\uparrow g\mathbb{E}[f|\mathcal{B}]$ o que nos permite aplicar o teorema da convergência monótona em 
+Já sabemos que para toda função $\mathcal{B}$-mensurável 
+$g_n$ simples que a seguinte igualdade é verdadeira 
+$\mathbb{E}[g_nf|\mathcal{B}]=g_n\mathbb{E}[f|\mathcal{B}]$. 
+Como $f\geq 0$ é imediato verificar que 
+$\mathbb{E}[f|\mathcal{B}]\geq 0$, assim 
+$g_n\mathbb{E}[f|\mathcal{B}]\uparrow g\mathbb{E}[f|\mathcal{B}]$ 
+o que nos permite aplicar o teorema da convergência monótona em 
 ambos os lados de \eqref{eq:aux3-esp-cond} e concluir que 
-$$
+para todo $E\in\mathcal{B}$.
+\[
 \int_{E}gf\, d\mu
 =
-\lim_{n\to\infty}\int_{E}g_nf\, d\mu = 
-\lim_{n\to\infty}\int_{E} g_n\mathbb{E}[f|\mathcal{B}]\, d\nu=
-\int_{E} g\mathbb{E}[f|\mathcal{B}]\, d\nu
-,\qquad\text{para todo}\ E\in\mathcal{B}.
-$$
-Observando que a integral mais a esquerda da igualdade acima é, por definição de esperança condicional, igual a $\int_{E} \mathbb{E}[gf|\mathcal{B}]\, d\nu$ e
-que esta igualdade é válida para todo $E\in\mathcal{B}$ concluímos que $\mathbb{E}[gf|\mathcal{B}]=g\mathbb{E}[f|\mathcal{B}]$ $\nu$-q.t.p. 
+\lim_{n\to\infty}\int_{E}g_nf\, d\mu 
+= 
+\lim_{n\to\infty}\int_{E} g_n\mathbb{E}[f|\mathcal{B}]\, d\nu
+=
+\int_{E} g\mathbb{E}[f|\mathcal{B}]\, d\nu.
+\]
+Observando que a integral mais a esquerda da igualdade acima é, 
+por definição de esperança condicional, igual a 
+$\int_{E} \mathbb{E}[gf|\mathcal{B}]\, d\nu$ e
+que esta igualdade é válida para todo $E\in\mathcal{B}$ 
+concluímos que 
+$
+\mathbb{E}[gf|\mathcal{B}]
+=
+g\mathbb{E}[f|\mathcal{B}] \ \nu$-q.t.p. 
 e assim está completa a prova da proposição.
+\end{proof}
 
-\bigskip
+
+
 
 \begin{proposicao}
-	[Monotonicidade da Esperança Condicional] 
-	Seja $(\Omega,\mathcal{F},\mu)$ um espaço de probabilidade. Se $f,g\in L^1(\Omega,\mathcal{F},\mu)$ são tais que $f\leq g$ e 
-	$\mathcal{B}$ é uma sub-$\sigma$-álgebra qualquer de $\mathcal{F}$ então 
-	$\mathbb{E}[f|\mathcal{B}]\leq \mathbb{E}[g|\mathcal{B}]$ $\nu$-q.t.p., onde $\nu=\mu|_{\mathcal{B}}$
+[Monotonicidade da Esperança Condicional] 
+Seja $(\Omega,\mathcal{F},\mu)$ um espaço de probabilidade. 
+Se $f,g\in L^1(\Omega,\mathcal{F},\mu)$ são tais que $f\leq g$ e 
+$\mathcal{B}$ é uma sub-$\sigma$-álgebra qualquer 
+de $\mathcal{F}$ então 
+$\mathbb{E}[f|\mathcal{B}]\leq \mathbb{E}[g|\mathcal{B}]$ 
+$\nu$-q.t.p., onde $\nu=\mu|_{\mathcal{B}}$
 \end{proposicao}
-\textbf{Prova}.
 
+\begin{proof}
 Pela definição da esperança condicional temos 
 $$
 \int_{E} \mathbb{E}[f|\mathcal{B}]\, d\nu= \int_{E} f\, d\mu 
@@ -198,89 +377,170 @@ $$
 \qquad \text{para todo}\ E\in\mathcal{B}.
 $$
 De onde segue o resultado.
-
-\bigskip
+\end{proof}
 
 \begin{teorema}[Teorema da Convergência Monótona para Esperança Condicional]
-	\label{teo:convergencia-monotona-esp-cond}
-	Seja $(\Omega,\mathcal{F},\mu)$ um espaço de probabilidade, $\mathcal{B}$ uma sub-$\sigma$-álgebra de $\mathcal{F}$ e $\nu=\mu|_{\mathcal{B}}$. 
-	Se $f_n:\Omega\to[0,\infty]$ é uma sequência de funções
-	$\mathcal{B}$-mensuráveis tal que $f_n\uparrow f$ $\mu$-q.t.p. então $\mathbb{E}[f_n|\mathcal{F}]\uparrow \mathbb{E}[f|\mathcal{F}]$ $\nu$-q.t.p..
+\label{teo:convergencia-monotona-esp-cond}
+Seja $(\Omega,\mathcal{F},\mu)$ um espaço de probabilidade, 
+$\mathcal{B}$ uma sub-$\sigma$-álgebra 
+de $\mathcal{F}$ e $\nu=\mu|_{\mathcal{B}}$. 
+Se $f_n:\Omega\to[0,\infty]$ é uma sequência de funções
+$\mathcal{B}$-mensuráveis tal que 
+$f_n\uparrow f$ $\mu$-q.t.p. então 
+$\mathbb{E}[f_n|\mathcal{F}]\uparrow \mathbb{E}[f|\mathcal{F}]$ 
+$\nu$-q.t.p..
 \end{teorema}
-\textbf{Prova.}
+
+
+\begin{proof}
 Por linearidade e monotonicidade da esperança condicional temos 
-$$
-0\leq \int_{E} \mathbb{E}[f|\mathcal{B}]\, d\nu - \int_{E} \mathbb{E}[f_n|\mathcal{B}]\, d\nu
+\[
+0\leq \int_{E} \mathbb{E}[f|\mathcal{B}]\, d\nu 
+- 
+\int_{E} \mathbb{E}[f_n|\mathcal{B}]\, d\nu
 =\int_{E} f\, d\mu - \int_{E} f_n\, d\mu.
 \qquad \text{para todo}\ E\in\mathcal{B}.
-$$
-Como $\int_{E} \mathbb{E}[f_n|\mathcal{B}]\, d\nu$ é uma sequência de números reais não decrescente e limitada ela possui limite. 
-Assim podemos tomar o limite quando $n$ vai a infinito em ambos os lados da desigualdade acima e concluir usando o Teorema da Convergência Monótona, 
+\]
+Como $\int_{E} \mathbb{E}[f_n|\mathcal{B}]\, d\nu$ 
+é uma sequência de números reais não decrescente e 
+limitada ela possui limite. 
+Assim podemos tomar o limite quando $n$ vai a infinito 
+em ambos os lados da desigualdade acima e concluir 
+usando o Teorema da Convergência Monótona, 
 no lado direito,  que
-$$
-0\leq \int_{E} \mathbb{E}[f|\mathcal{B}]\, d\nu - \lim_{n\to\infty}\int_{E} \mathbb{E}[f_n|\mathcal{B}]\, d\nu
+\[
+0
+\leq 
+\int_{E} \mathbb{E}[f|\mathcal{B}]\, d\nu 
+- 
+\lim_{n\to\infty}\int_{E} \mathbb{E}[f_n|\mathcal{B}]\, d\nu
 =0
 \qquad \text{para todo}\ E\in\mathcal{B}.
-$$
-Já que $\mathbb{E}[f_n|\mathcal{B}]$ é uma sequência monótona de funções, existe o limite $\lim_{n\to\infty}\mathbb{E}[f_n|\mathcal{B}](\omega)$ $\nu$-q.t.p.
-Logo podemos aplicar novamente o Teorema da Convergência Monótona
+\]
+Já que $\mathbb{E}[f_n|\mathcal{B}]$ é uma sequência
+monótona de funções, existe o limite 
+$\lim_{n\to\infty}\mathbb{E}[f_n|\mathcal{B}](\omega)$ 
+$\nu$-q.t.p.
+Logo podemos aplicar novamente o 
+Teorema da Convergência Monótona
 na desigualdade acima e concluir que 
-$$
-\int_{E} \mathbb{E}[f|\mathcal{B}]\, d\nu = \int_{E} \lim_{n\to\infty}\mathbb{E}[f_n|\mathcal{B}]\, d\nu
+\[
+\int_{E} \mathbb{E}[f|\mathcal{B}]\, d\nu 
+= 
+\int_{E} \lim_{n\to\infty}\mathbb{E}[f_n|\mathcal{B}]\, d\nu
 \qquad \text{para todo}\ E\in\mathcal{B}.
-$$
-Desta forma acabamos de mostrar que $\mathbb{E}[f_n|\mathcal{B}]\uparrow \mathbb{E}[f|\mathcal{B}]$ $\nu$-q.t.p.
-\bigskip
-\begin{exercicio} Prove a chamada propriedade de contração para a esperança condicional. 
-	Seja $(\Omega,\mathcal{F},\mu)$ um espaço de probabilidade, $\mathcal{B}$ uma sub-$\sigma$-álgebra de $\mathcal{F}$, $\nu=\mu|_{\mathcal{B}}$ e 
-	$f\in L^1(\Omega,\mathcal{F},\mu)$. Mostre que
-	$$
-	\int_{\Omega} \big|\mathbb{E}[f|\mathcal{B}]\big|\, d\nu \leq \int_{\Omega} |f|\, d\mu.
-	$$
+\]
+Desta forma acabamos de mostrar que 
+$\mathbb{E}[f_n|\mathcal{B}]\uparrow \mathbb{E}[f|\mathcal{B}]$ 
+$\nu$-q.t.p.
+\end{proof}
+
+
+
+\begin{exercicio} 
+Prove a chamada propriedade de contração 
+para a esperança condicional. 
+Seja $(\Omega,\mathcal{F},\mu)$ um espaço 
+de probabilidade, $\mathcal{B}$ uma 
+sub-$\sigma$-álgebra de $\mathcal{F}$, 
+$\nu=\mu|_{\mathcal{B}}$ e 
+$f\in L^1(\Omega,\mathcal{F},\mu)$. 
+Mostre que
+\[
+\int_{\Omega} \big|\mathbb{E}[f|\mathcal{B}]\big|\, d\nu 
+\leq 
+\int_{\Omega} |f|\, d\mu.
+\]
 \end{exercicio}
+
+
+
 \begin{teorema}[Convergência Dominada para Esperança Condicional] 
-	Seja $(\Omega,\mathcal{F},\mu)$ um espaço de medida $\mathcal{B}$ sub-$\sigma$-álgebra de $\mathcal{F}$ e $\nu=\mu|_{\mathcal{B}}$. 
-	Suponha que $f_n:\Omega\to [0,+\infty)$ seja uma sequência de funções 
-	em $L^1(\Omega,\mathcal{F},\mu)$ que converge $\mu$-q.t.p. para $f:\Omega\to\mathbb{R}$.
-	Se existe uma função integrável $g:\Omega\to\mathbb{R}$ tal que $|f_n|\leq g$ para todo $n\in\mathbb{N}$, então 
-	$$
-	\lim_{n\to\infty} \mathbb{E}[f_n|\mathcal{B}]=\mathbb{E}[f|\mathcal{B}] \ \ 
-	\nu-\text{q.t.p.}
-	$$
+Seja $(\Omega,\mathcal{F},\mu)$ um espaço de 
+medida $\mathcal{B}$ sub-$\sigma$-álgebra 
+de $\mathcal{F}$ e $\nu=\mu|_{\mathcal{B}}$. 
+Suponha que $f_n:\Omega\to [0,+\infty)$ 
+seja uma sequência de funções 
+em $L^1(\Omega,\mathcal{F},\mu)$ que converge 
+$\mu$-q.t.p. para $f:\Omega\to\mathbb{R}$.
+Se existe uma função integrável 
+$g:\Omega\to\mathbb{R}$ tal que $|f_n|\leq g$ 
+para todo $n\in\mathbb{N}$, então 
+\[
+\lim_{n\to\infty} \mathbb{E}[f_n|\mathcal{B}]
+=
+\mathbb{E}[f|\mathcal{B}] \ \ 
+\nu-\text{q.t.p.}
+\]
 \end{teorema}
-\textbf{Prova.} Seja $h_n:\Omega\to\mathbb[0,+\infty)$ uma sequência de funções dada por 
-$$
-h_n(\omega)=\displaystyle\sup_{\{j\in\mathbb{N}:n\leq j\}}|f(\omega)-f_j(\omega)|.
-$$
-Observe que para todo $n\in\mathbb{N}$ temos $h_{n+1}(\omega)\leq h_{n}(\omega)$ e $h_n(\omega)\leq |f(\omega)|+|g(\omega)|$. Desta duas 
-propriedades podemos concluir que $(|f|+|g|-h_n)\uparrow (|f|+|g|)$ $\mu$-q.t.p.. 
-Pelo Teorema \ref{teo:convergencia-monotona-esp-cond} (convergência monótona) segue que
-$$
-\mathbb{E}[(|f|+|g|-h_n)|\mathcal{B}]\uparrow \mathbb{E}[(|f|+|g|)|\mathcal{B}]\ \  \nu-\text{q.t.p.}
-$$
-Usando a linearidade e monotonicidade da esperança condicional segue da observação acima que $\mathbb{E}[h_n|\mathcal{B}]\downarrow 0$.
+
+
+\begin{proof}
+Seja $h_n:\Omega\to\mathbb[0,+\infty)$ 
+uma sequência de funções dada por 
+\[
+h_n(\omega)
+=
+\displaystyle\sup_{\{j\in\mathbb{N}:n\leq j\}}
+|f(\omega)-f_j(\omega)|.
+\]
+Observe que para todo $n\in\mathbb{N}$ temos 
+$h_{n+1}(\omega)\leq h_{n}(\omega)$ e 
+$h_n(\omega)\leq |f(\omega)|+|g(\omega)|$. 
+Desta duas propriedades podemos concluir que 
+$(|f|+|g|-h_n)\uparrow (|f|+|g|)$ $\mu$-q.t.p.. 
+Pelo Teorema \ref{teo:convergencia-monotona-esp-cond} 
+(convergência monótona) segue que
+\[
+\mathbb{E}[(|f|+|g|-h_n)|\mathcal{B}]
+\uparrow
+ \mathbb{E}[(|f|+|g|)|\mathcal{B}]
+ \ \  \nu-\text{q.t.p.}
+\]
+Usando a linearidade e monotonicidade da esperança 
+condicional segue da observação acima que 
+$\mathbb{E}[h_n|\mathcal{B}]\downarrow 0$.
 Usando novamente a monotonicidade obtemos 
-$$
+\[
 \big|\mathbb{E}[f|\mathcal{B}]-\mathbb{E}[f_n|\mathcal{B}]  \big|
 \leq
 \mathbb{E}[|f-f_n||\mathcal{B}]
-\leq \mathbb{E}[h_n|\mathcal{B}]\downarrow 0 \ \ \nu-\text{q.t.p.}.
-$$
-\bigskip
+\leq 
+\mathbb{E}[h_n|\mathcal{B}]\downarrow 0 
+\ \ \nu-\text{q.t.p.}.
+\]
+\end{proof}
+
+
+
 \begin{proposicao}
-Sejam $(\Omega,\mathcal{F},\mu)$ um espaço de medida $f:\Omega\to\mathbb{R}$ uma 
-função $\mathcal{F}$-mensurável, $\mathscr{A}\subset\mathcal{B}\subset\mathcal{F}$ $\sigma$-álgebras,
+Sejam $(\Omega,\mathcal{F},\mu)$ um espaço 
+de medida $f:\Omega\to\mathbb{R}$ uma 
+função $\mathcal{F}$-mensurável, 
+$\mathscr{A}\subset\mathcal{B}\subset\mathcal{F}$ 
+$\sigma$-álgebras,
 $\nu=\mu|_{\mathcal{B}}$ e $\eta=\mu|_{\mathscr{A}}$.
-Então $\mathbb{E}[\mathbb{E}[f|\mathcal{B}]|\mathscr{A}]=\mathbb{E}[f|\mathscr{A}]$ $\eta$-q.t.p..
+Então 
+$
+\mathbb{E}[\mathbb{E}[f|\mathcal{B}]|\mathscr{A}]
+=
+\mathbb{E}[f|\mathscr{A}]$ 
+$\eta$-q.t.p..
 \end{proposicao}
-\textbf{Prova.} Por definição da esperança condicional temos 
-$$
-\int_{F} \mathbb{E}[\mathbb{E}[f|\mathcal{B}]|\mathscr{A}]\, d\eta
+
+
+\begin{proof}
+Por definição da esperança condicional temos 
+\[
+\int_{F} 
+\mathbb{E}[\mathbb{E}[f|\mathcal{B}]|\mathscr{A}]
+\, d\eta
 =
 \int_{F} \mathbb{E}[f|\mathcal{B}]\, d\nu,
 \qquad\text{para todo}\ F\in\mathscr{A}.
-$$
-Como $F$ também é um conjunto $\mathcal{B}$-mensurável segue novamente da definição de esperança condicional que 
+\]
+Como $F$ também é um conjunto $\mathcal{B}$-mensurável 
+segue novamente da definição de esperança condicional que 
 $$
 \int_{F} \mathbb{E}[f|\mathcal{B}]\, d\nu
 =
@@ -289,11 +549,15 @@ $$
 $$
 Das duas igualdades acima, temos que 
 $$
-\int_{F} f\, d\mu =
-\int_{F} \mathbb{E}[\mathbb{E}[f|\mathcal{B}]|\mathscr{A}]\, d\eta,
+\int_{F} f\, d\mu 
+=
+\int_{F} \mathbb{E}[\mathbb{E}[f|\mathcal{B}]|\mathscr{A}]
+\, d\eta,
 \qquad\text{para todo}\ F\in\mathscr{A}.
 $$
-Da unicidade $\eta$-q.t.p. garantida pelo Teorema \ref{teo:esperanca-condicional-definicao} segue que 
-o lado direito da igualdade acima é igual a $\mathbb{E}[f|\mathscr{A}]$ $\eta$-q.t.p., 
+Da unicidade $\eta$-q.t.p. garantida pelo 
+Teorema \ref{teo:esperanca-condicional-definicao} segue que 
+o lado direito da igualdade acima é igual a 
+$\mathbb{E}[f|\mathscr{A}]$ $\eta$-q.t.p., 
 o que prova a proposição.
-\bigskip
+\end{proof}
