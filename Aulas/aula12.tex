@@ -681,4 +681,63 @@ que significa que
 \int_E f\, d\mu,
 \ \ \forall\ E\in\F.
 \]
+Suponha que $g$ é também uma função $\F$-mensurável
+satistazendo a igualdade acima para todo $E\in \F$.
+Pela linearidade da integral temos para qualquer 
+$E\in \F$ que 
+\[
+\int_E (f-g)\, d\mu = 0.
+\]
+Tomando $E=\{\omega\in\Omega: f(\omega)\geq g(\omega)\}$,
+podemos concluir que $f=g \ \mu$-q.t.p. em $E$.
+Raciocinando de forma análoga, para a diferença $g-f$ 
+também obtemos que $f=g \ \mu$-q.t.p. em $E^c$ e 
+assim finalmente concluímos que $f=g \ \mu$-q.t.p.
+
+Vamos supor que $\lambda$ e $\mu$ são 
+$\sigma$-finitas. Seja $\{A_n\}_{n\in\mathbb{N}}$
+uma sequência crescente de conjuntos $\F$-mensuráveis com
+$\lambda(A_n),\mu(A_n)<+\infty$ e 
+$\cup_{n\geq 1}A_n =\Omega$.
+Aplicando o teorema para o caso $\sigma$-finito
+podemos construir uma sequência de funções 
+$\{h_n\}_{n\in\mathbb{N}}$ não negativas e 
+$\F$-mensuráveis que se anulam 
+para $\omega\in A^c_n$ e para todo 
+conjunto $\F$-mensurável $E\subset A_n$
+satisfazem a seguinte igualdade
+\[
+\lambda(E) = \int_E h_n\, d\mu.
+\]
+Observe que se $m\leq n$ então $A_m\subset A_n$
+e segue que 
+\[
+\int_E h_m\, d\mu
+=
+\int_E h_n\, d\mu
+\]
+para todo mensurável $E\subset A_m$.
+Da unicidade de $h_m$ segue que 
+$h_m=h_n\ \mu$-q.t.p. em $A_m$, 
+sempre que $m\leq n$.
+Defina $f_n=\max\{h_m: 1\leq m\leq n\}$.
+Por definição $f_n\leq f_{n+1}$ e portanto 
+podemos definir uma função $f:\Omega\to\overline{\mathbb{R}}$ 
+que é $\F$-mensurável 
+por $f(\omega) =\lim_{n\to\infty} f_n(\omega)$
+para todo $\omega\in\Omega$. Observe que
+para todo $E\in\F$ temos 
+\[
+\lambda(E\cap A_n) = \int_{E} f_n\, d\mu
+\]
+Usando a continuidade da medida $\lambda$
+e o Teorema da Convergência Monótona 
+podemos tomar o limite, quando $n\to\infty$,
+em ambos os lados da igualdade acima obtendo
+\[
+\lambda(E) = \int_{E} f\, d\mu,
+\ \ \forall \ E\in\F.
+\]
+A $\mu$ unicidade de $f$ pode ser provada da mesma
+forma que fizemos no caso de medida finita.
 \end{proof}
