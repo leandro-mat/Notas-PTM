@@ -409,6 +409,35 @@ Então para todo $E\in\F$ temos que
 \quad \text{e}\quad
 |\lambda|(E)
 =
-\int_{E} |f|\, d\mu,
+\int_{E} |f|\, d\mu.
 \]
 \end{teorema}
+
+
+\begin{proof}
+Sejam $P_f=\{\omega\in \Omega: f(\omega)\geq 0\}$
+e $N_{f}=\{\omega\in\Omega: f(\omega)<0\}$.
+Claramente $P_{f}$ e $N_f$ são conjuntos
+$\F$-mensuráveis e formam uma partição de $\Omega$,
+ou seja, $\Omega = P_f\cup N_f$ e $P_{f}\cap N_{f}=\emptyset$.
+Já que para todo $E\in\F$ temos $\lambda(P_{f}\cap E)\geq 0$
+e $\lambda(N_{f}\cap E)\leq 0$ podemos afimar que 
+$\{P_{f},N_{f}\}$ é uma decomposição de Hahn de $\Omega$, 
+com respeito a $\lambda$. 
+Pela definição de variação positiva para todo $E\in\F$ temos 
+\[
+\lambda^+(E) 
+=
+\lambda(P_f\cap E)
+=
+\int_{P_{f}\cap E } f\, d\mu
+=
+\int_{E } 1_{P_{f} }f\, d\mu
+=
+\int_{E } f^+\, d\mu.
+\]
+Analogamente verificamos que 
+$\lambda^-(E) =\int_{E } f^-\, d\mu$.
+Da linearidade da integral segue que
+$|\lambda|(E) =\int_{E } |f|\, d\mu$.
+\end{proof}
