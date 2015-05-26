@@ -441,3 +441,244 @@ $\lambda^-(E) =\int_{E } f^-\, d\mu$.
 Da linearidade da integral segue que
 $|\lambda|(E) =\int_{E } |f|\, d\mu$.
 \end{proof}
+
+
+
+\begin{definicao}\label{def-med-abs-cont.}
+Sejam $(\Omega,\F)$ um espaço mensurável, $\lambda$ e $\mu$
+duas medidas definidas sobre este espaço. 
+Dizemos que $\lambda$ é {\bf absolutamente contínua} 
+com respeito a $\mu$, se para todo $E\in \F$
+tal que $\mu(E)=0$ temos que $\lambda(E)=0$.
+Neste caso escrevemos $\lambda \ll \mu$.
+Se $\lambda$ e $\mu$ são cargas sobre $(\Omega,\F)$,
+dizemos que $\lambda$ é absolutamente contínua 
+com respeito a $\mu$ se $|\lambda|\ll |\mu|$.
+\end{definicao}
+
+
+
+
+
+
+
+\begin{teorema}[Teorema de Radon-Nikodým]
+\label{teo-radom-nikodym}
+Seja $(\Omega,\F)$ um espaço mensurável. Suponha que 
+$\lambda$ e $\mu$ sejam medidas $\sigma$-finitas sobre $\Omega$ 
+tais que $\lambda\ll \mu$. Então existe uma função 
+$\F$-mensurável não-negativa $f:\Omega\to\overline{\mathbb{R}}$
+tal que para todo $E\in\F$ temos
+\[
+\lambda(E) 
+= 
+\int_{E} f\, d\mu.
+\]
+A função $f$ é {\bf única} no sentido que qualquer 
+outra função $g$ que é $\F$-mensurável 
+e satisfaz a igualdade acima 
+para todo $E\in F$ é tal que $f=g \ \mu$-q.t.p. 
+A função $f$ é chamada de derivada de Radon-Nikodým 
+de $\lambda$ com respeito a $\mu$ e é muitas vezes 
+denotada por $\displaystyle\left[ \frac{d\lambda}{d\mu}\right]$.
+\end{teorema}
+
+
+\begin{proof}
+Primeiro vamos provar o teorema para o caso em que ambas
+medidas são finitas. O caso $\sigma$ finito é provado 
+em seguida usando procedimento padrão de aproximação.
+
+Considere a seguinte coleção de funções 
+\[
+\mathscr{C}
+=
+\left\{
+h:\Omega\to\overline{\mathbb{R}}
+: h\ \text{é}\ \F-\text{mensurável e}\ 
+\int_{E}h\, d\mu \leq \lambda(E), \ \forall\ E\in\F 
+\right\}
+\]
+É fácil verificar que a coleção $\mathscr{C}$ é não-vazia
+pois a função nula pertence a esta coleção.
+Seja 
+\[
+M= \sup_{h\in\mathscr{C}} \int_{\Omega} h\, d\mu.
+\]
+Pela definição de supremo sabemos que deve existir 
+alguma sequência $\{h_n\}_{n\in\mathbb{N}}$ de 
+funções em $\mathscr{C}$ tal que 
+\[
+\lim_{n\to\infty} \int_{\Omega}h_n\, d\mu 
+=
+M.
+\]
+Para qualquer par de funções em $f,g\in \mathscr{C}$ e 
+$E\in \F$ observe que temos 
+\begin{align*}
+\int_{E} \max\{f,g\}\, d\mu
+&=
+\int_{\{f\leq g\}\cap E} 
+\!\!\!\!\max\{f,g\}\, d\mu
++
+\int_{\{f>g\}\cap E} 
+\!\!\!\!\max\{f,g\}\, d\mu
+\\[0.3cm]
+&=
+\int_{\{f\leq g\}\cap E} 
+\!\!\!\! g \, d\mu
++
+\int_{\{f>g\}\cap E} 
+\!\!\!\! f\, d\mu
+\\[0.3cm]
+&\leq
+\lambda(\{f\leq g\}\cap E) 
++
+\lambda(\{f> g\}\cap E)
+\\[0.3cm]
+&\leq
+\lambda(E) 
+\end{align*}
+e logo $\max\{f,g\}\in \mathscr{C}$, 
+para todo par de funções $f,g\in\mathscr{C}$. 
+
+Para cada $n\in\mathbb{N}$ defina 
+a função $f_n = \max\{h_k:1\leq k\leq n\}$.
+Já que $\{h_n\}_{n\in\mathbb{N}}$ é uma sequência de 
+funções em $\mathscr{C}$ segue
+da propriedade estabelecida logo acima que
+a sequência $\{f_n\}_{n\in\mathbb{N}}$ é formada  
+por elementos de $\mathscr{C}$ e além do mais 
+é uma sequência monótona.
+Pela definição de $M$ e $\{f_n\}_{n\in\mathbb{N}}$
+temos as seguintes desigualdades 
+\[
+\int_{\Omega} h_n\, d\mu
+\leq
+\int_{\Omega} f_n\, d\mu
+\leq 
+M.
+\]
+Já que o limite, quando $n\to\infty$, 
+das integrais do lado esquerdo é igual a $M$
+segue do Teorema do confronto que
+\[
+\lim_{n\to\infty}
+\int_{\Omega} f_n\, d\mu
+=
+M.
+\]
+
+Como temos $f_n\leq f_{n+1}$ podemos definir uma função
+$\F$-mensurável  $f:\Omega\to\overline{\mathbb{R}}$ tal que
+para cada $\omega\in\Omega$ temos
+$f(\omega) =\lim_{n\to\infty} f_n(\omega)$.
+Usando o Teorema da Convergência Monótona podemos afirmar que 
+para qualquer $E\in\F$ que 
+\[
+\int_{E} f\, d\mu
+=
+\lim_{n\to\infty}
+\int_{E} f_n\, d\mu
+\leq
+\lambda(E).
+\]
+Desta desigualdade segue que $f\in\mathscr{C}$ e 
+também que esta função maximiza a integral em $\Omega$
+com respeito a $\mu$, isto é 
+\[
+\int_{\Omega} f\, d\mu 
+=
+\lim_{n\to\infty}
+\int_{\Omega} f_n\, d\mu
+=
+M.
+\]
+Das observações feitas acima segue que a função de
+conjuntos $\gamma:\F\to\mathbb{R}$ dada por 
+\[
+\gamma(E) 
+=
+\lambda(E) - \int_{E} f\, d\mu 
+\]
+é uma medida finita sobre $(\Omega,\F)$.
+Nos resta apenas provar que $\gamma \equiv 0$
+para garantir a existência da função $f$ afirmada
+no enunciado do teorema.
+Para fazer isto vamos supor 
+por contradição que $\gamma(\Omega)>0$.
+Sob esta hipótese e lembrando que $\mu(\Omega)<+\infty$, 
+podemos garantir que existe $\varepsilon>0$ 
+tal que $\gamma(\Omega)-\varepsilon \mu(\Omega)>0$.
+Seja $\{P,N\}$ uma decomposição de Hanh da carga 
+$\gamma-\varepsilon\mu$. Pela definição do conjunto 
+$P$ segue que $\gamma(P\cap E)-\varepsilon\mu(P\cap E)\geq 0$
+para todo $E\in \F$ e portanto obtemos a seguintes 
+desigualdades
+\begin{align*}
+\lambda(E) 
+= 
+\gamma(E)+\int_{E} f\, d\mu
+&\geq 
+\gamma(P\cap E)+\int_{E} f\, d\mu
+\\
+&\geq
+\varepsilon \mu(P\cap E)+\int_{E} f\, d\mu
+\\
+&=
+\int_{E} (f+\varepsilon 1_{P})\, d\mu.
+\end{align*}
+Como $f+\varepsilon 1_{P}$ é uma função $\F$-mensurável
+e o conjunto $E$ é qualquer em $\F$, 
+a desigualdade acima implica imediatamente que
+a função $(f+\varepsilon 1_{P})\in \mathscr{C}$.
+Como $\mu$ é uma medida temos duas possibilidade
+ou $\mu(P)>0$ ou $\mu(P)=0$. Vamos mostrar que 
+não é possível ter $\mu(P)>0$. 
+De fato, assumir que $\mu(P)>0$ implica que 
+%
+\begin{align*}
+\int_{\Omega}  
+(f+\varepsilon 1_{P})\, d\mu
+=
+\int_{\Omega} f\, d\mu
++
+\varepsilon\mu(P)
+>
+\int_{\Omega} f\, d\mu
+=
+M
+\end{align*}
+o que é um absurdo. Assim só resta $\mu(P)=0$.
+Neste caso como $\lambda\ll \mu$ temos que 
+$\lambda(P)=0$. Logo 
+\[
+\gamma(P) 
+= 
+\lambda(P)-\int_{P} f\, d\mu
+\leq 
+\lambda(P)
+=
+0.
+\]
+Usando a igualdade acima, $\mu(P)=0$ e que $\Omega = P\cup N$ 
+temos que 
+\[
+\gamma(\Omega)-\varepsilon\mu(\Omega)
+=
+(\gamma(P)-\varepsilon\mu(P))
++
+(\gamma(N)-\varepsilon\mu(N))
+\leq 
+0
+\]
+contradizendo que $\gamma(\Omega)-\varepsilon\mu(\Omega)>0$.
+Portanto podemos concluir que $\gamma\equiv 0$ o 
+que significa que 
+\[
+\lambda(E)
+=
+\int_E f\, d\mu,
+\ \ \forall\ E\in\F.
+\]
+\end{proof}
