@@ -248,7 +248,7 @@ portanto temos a decomposição desejada.
 
 \section{O Teorema da Decomposição de Jordan}
 
-\begin{lema}
+\begin{lema}\label{lema-dec-jordan-aux1}
 	Sejam $(\Omega,\F)$ um espaço mensurável e $\lambda:\F\to\mathbb{R}$
 	uma carga. Suponha que $\{P_1,N_1\}$ e $\{P_2,N_2\}$ sejam
 	decomposições de Hahn de $\Omega$, ambas com respeito a mesma
@@ -303,7 +303,7 @@ como sendo as medidas positivas (finitas) dadas por
 \quad
 \lambda^-(E)
 =
-\lambda(E\cap N)
+-\lambda(E\cap N)
 \quad\text{e}\quad
 |\lambda|(E) = \lambda^+(E)+\lambda^-(E).
 \]
@@ -313,3 +313,102 @@ Observe que o lema anterior garante que as variações
 positiva, negativa e total de uma carga são 
 medidas que estão bem definidas independentemente 
 da escolha particular da decomposição de Hahn de $\Omega$.
+
+
+\begin{teorema}[Teorema da Decomposição de Jordan]
+\label{teo-dec-Jordan}
+Sejam $(\Omega,\F)$ um espaço mensurável, $\lambda:\F\to\mathbb{R}$
+uma carga. Então $\lambda$ é a diferença de duas medidas finitas
+sobre $\Omega$. Mais precisamente, $\lambda = \lambda^+-\lambda^-$.
+Além do mais, se $\lambda = \mu-\nu$, onde $\mu$ e $\nu$
+são medidas finitas então temos para todo $E\in\F$ que 
+\[
+\lambda^+(E)\leq \mu(E)
+\quad\text{e}\quad
+\lambda^-(E)\leq \nu (E).
+\]
+\end{teorema}
+
+
+
+\begin{proof}
+A prova que $\lambda$ é a diferença de duas medidas 
+é essencialmente feita no Lema \ref{lema-dec-jordan-aux1}.
+Para verificar isto, basta considerar uma decomposição de 
+Hahn de $Omega$, com respeito a $\lambda$ e usar a 
+aditividade finita de $\lambda$ para verificar que 
+para todo $E\in\F$ temos 
+$\lambda(E) = \lambda(E\cap P)+\lambda(E\cap N)$
+usando as definições de $\lambda^+$ e $\lambda^-$
+concluímos imediatamente que $\lambda(E) = \lambda^+(E)-\lambda^-(E)$.
+
+Vamos supor que $\lambda = \mu-\nu$, onde $\mu$ e $\nu$ são medidas.
+Usando a definição de $\lambda^+$ e a não-negatividade de $\nu$ 
+temos
+\[ 
+\lambda^+(E)
+=
+\lambda(E\cap P)
+=
+\mu(E\cap P)-\nu(E\cap P)
+\leq
+\mu(E\cap P)
+\leq 
+\mu(E).
+\]
+Analogamente, pela definição de 
+$\lambda^-$ e a não-negatividade de $\mu$
+segue que 
+\[ 
+\lambda^-(E)
+=
+-\lambda(E\cap N)
+=
+\nu(E\cap N)-\mu(E\cap N)
+\leq
+\nu(E\cap N)
+\leq 
+\nu(E).
+\] 
+ 
+\end{proof}
+
+
+
+
+
+
+Como mencionamos acima um exemplo muito importante 
+de carga são aquelas que são dadas por integrais
+de uma função integrável com respeito a alguma medida.
+Vamos mostrar no teorema abaixo que para tais cargas
+temos uma maneira explicita de determinar as variações
+positivas, negativa e total.
+
+
+\begin{teorema}
+Sejam $(\Omega,\F,\mu)$ um espaço de medida e 
+$f\in L^1(\Omega,\F,\mu)$. Se $\lambda:\F\to\mathbb{R}$
+é a carga definida por 
+\[
+\lambda(E)
+=
+\int_{E} f\, d\mu,
+\ \ \forall \ E\in\F.
+\]
+Então para todo $E\in\F$ temos que  
+\[
+\lambda^+(E)
+=
+\int_{E} f^+\, d\mu,
+\quad
+%
+\lambda^{-}(E)
+=
+\int_{E} f^{-}\, d\mu,
+\quad \text{e}\quad
+|\lambda|(E)
+=
+\int_{E} |f|\, d\mu,
+\]
+\end{teorema}
