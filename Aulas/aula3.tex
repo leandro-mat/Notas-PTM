@@ -675,18 +675,20 @@ mostre que $\lambda\big|_{\mathscr{B}(\mathbb{R})}$
 \begin{exemplo}[O Conjunto de Vitali]
 
     Na Aula 2, comentamos a importância de restringir-nos a $\sigma$-álgebras 
-    extritamente contidas em $\mathcal{P}(\Omega)$ no estudo de medida.
-    Neste momento, podemos construir um conjunto que não pertence a $\sigma$-álgebra
-    $\mathcal{M}$, e portanto, não pertence a $\mathcal{B}(\mathbb{R})$. Tal conjunto,
-    chamado conjunto de Vitali,de fato apresenta propriedades indesejadas no nosso 
-    estudo.
-    
-    Para contruir este conjunto, considere a relação de equivalência $\sim$ definida da
-    seguinte maneira: dizemos que $x \sim y$. se $x-y \in \mathbb{Q}$. Pelo Axioma da 
+    estritamente contidas em $\mathcal{P}(\Omega)$ no estudo de medida.
+    Neste momento, podemos construir um conjunto, chamado Conjunto de Vitali, 
+    o qual, se incluído em nosso estudo, implicaria na não $\sigma$-aditividade 
+    da medida de Lebesgue. O Conjunto de Vitali, de fato, não
+    pertence a $\sigma$-álgebra $\mathcal{M}$, e portanto, não pertence a 
+    $\mathcal{B}(\mathbb{R})$.   
+     
+    Para construir $V$, precisamos definir a seguinte relação de equivalência, 
+    dizemos que $x \sim y$ se $x-y \in \mathbb{Q}$. 
+    Pelo Axioma da 
     Escolha, podemos escolher um único representante em cada uma das classes de 
-    equivalência dadas por $\sim$, o conjunto desses representantes será denotado por 
-    $V$, denominado um Conjunto de Vitali, note que de fato $V$ não é único, pois 
-    poderiamos umas esta contrução para escolher outros representantes.
+    equivalência dadas por $\sim$, o conjunto desses representantes será \textbf{um}
+    Conjunto de Vitali $V$, note que de fato $V$ não é único, pois 
+    poderiamos escolher outros representantes para compor $V$.
     
     Agora, seja $\{r_i\}_{i \in \mathbb{N}}$ uma enumeração para 
     $[-1,1]\cap\mathbb{Q}$, seja
@@ -708,18 +710,18 @@ mostre que $\lambda\big|_{\mathscr{B}(\mathbb{R})}$
     apenas um representante de cada classe de equivalência, temos que $z=y$ e portanto
     $r_i = r_j$, e assim $i=j$.
     
-    Assim, suponha que $V \in \mathcal{M}$, temos que $V\oplus r_i \in \mathcal{M}$, 
+    Assim, suponha que $V \in \mathcal{M}$, temos que $(V\oplus r_i) \in \mathcal{M}$, 
     para todo o $i \in \mathbb{N}$, e como $\mathcal{M}$  é $\sigma$-álgebra, temos
-    que $S \in \mathcal{M}$. Agora, como $\mu^*$ é uma medida exterior, temos 
+    que $S \in \mathcal{M}$. Agora, como $\mathrm{Leb}^*$ é uma medida exterior, temos 
     que 
     \[
-        1=\mu([0,1]) \le \mu^*(S) \le \mu([-1,2])=3,
+        1=\mathrm{Leb}([0,1]) \le \mathrm{Leb}^*(S) \le \mathrm{Leb}([-1,2])=3,
     \]
     mas pela definição de $S$, pela $\sigma$-aditividade de $\mu^*$ e a invarância
     de $\mu^*$ por translações, temos que $\mu^*(S) = \sum_{i=1}^{\infty} \mu^*(V)$ 
     
     \[
-         1 \le \sum_{i=1}^{\infty} \mu^*(V) \le3,
+         1 \le \sum_{i=1}^{\infty} \mathrm{Leb}^*(V) \le3,
     \]
     mas note que $\mu^*(V)>0$, então $\mu^*(S) =+\infty > 3$, se $\mu^*(V) = 0$, então
     $\mu^*(S)=0 <1$, em ambos os casos temos uma contradição, logo 
