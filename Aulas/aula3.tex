@@ -670,3 +670,58 @@ mostre que $\lambda\big|_{\mathscr{B}(\mathbb{R})}$
 é invariante por translações. 
 
 \end{exercicio}
+
+
+\begin{exemplo}[O Conjunto de Vitali]
+
+    Na Aula 2, comentamos a importância de restringir-nos a $\sigma$-álgebras 
+    extritamente contidas em $\mathcal{P}(\Omega)$ no estudo de medida.
+    Neste momento, podemos construir um conjunto que não pertence a $\sigma$-álgebra
+    $\mathcal{M}$, e portanto, não pertence a $\mathcal{B}(\mathbb{R})$. Tal conjunto,
+    chamado conjunto de Vitali,de fato apresenta propriedades indesejadas no nosso 
+    estudo.
+    
+    Para contruir este conjunto, considere a relação de equivalência $\sim$ definida da
+    seguinte maneira: dizemos que $x \sim y$. se $x-y \in \mathbb{Q}$. Pelo Axioma da 
+    Escolha, podemos escolher um único representante em cada uma das classes de 
+    equivalência dadas por $\sim$, o conjunto desses representantes será denotado por 
+    $V$, denominado um Conjunto de Vitali, note que de fato $V$ não é único, pois 
+    poderiamos umas esta contrução para escolher outros representantes.
+    
+    Agora, seja $\{r_i\}_{i \in \mathbb{N}}$ uma enumeração para 
+    $[-1,1]\cap\mathbb{Q}$, seja
+    
+    \[
+        S = \bigcup_{i=1}^{\infty} (V \oplus r_i)
+    \]
+    
+    Vamos mostrar que $[0,1] \subset S \subset [-1,2]$, note que por construção 
+    $V \subset [0,1]$, logo, para $r_i\in [-1,1]\cap \mathbb{Q}$ temos que
+    $x + r_i \in [-1,2]$ e portanto $S \subset [-1,2]$. 
+    Reciprocamente, seja $x \in [0,1]$, existe $y \in V$ tal que 
+    $x-y = r \in \mathbb{Q}$, como $x,y \in [0,1]$, então $r \in [-1,1]$, 
+    logo $x \in S$.
+    
+    Agora, vamos mostrar que $(V \oplus r_i )\cap (V \oplus r_j )= \emptyset$ 
+    para $i\neq j$. Suponha que $x \in (V \oplus r_i )\cap (V \oplus r_j)$, então
+    $x = y + r_i = z + r_j$ com $x,y \in V$, logo $z-y \in \mathbb{Q}$, e como pegamos
+    apenas um representante de cada classe de equivalência, temos que $z=y$ e portanto
+    $r_i = r_j$, e assim $i=j$.
+    
+    Assim, suponha que $V \in \mathcal{M}$, temos que $V\oplus r_i \in \mathcal{M}$, 
+    para todo o $i \in \mathbb{N}$, e como $\mathcal{M}$  é $\sigma$-álgebra, temos
+    que $S \in \mathcal{M}$. Agora, como $\mu^*$ é uma medida exterior, temos 
+    que 
+    \[
+        1=\mu([0,1]) \le \mu^*(S) \le \mu([-1,2])=3,
+    \]
+    mas pela definição de $S$, pela $\sigma$-aditividade de $\mu^*$ e a invarância
+    de $\mu^*$ por translações, temos que $\mu^*(S) = \sum_{i=1}^{\infty} \mu^*(V)$ 
+    
+    \[
+         1 \le \sum_{i=1}^{\infty} \mu^*(V) \le3,
+    \]
+    mas note que $\mu^*(V)>0$, então $\mu^*(S) =+\infty > 3$, se $\mu^*(V) = 0$, então
+    $\mu^*(S)=0 <1$, em ambos os casos temos uma contradição, logo 
+    $V \not \in \mathcal{M}$.
+\end{exemplo}
