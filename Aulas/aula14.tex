@@ -46,6 +46,75 @@ e $\lambda = \lambda_1+\lambda_2$. Além do mais esta
 decomposição é única.
 \end{teorema}
 
+\begin{proof}
+Defina a medida $\nu:\F\to [0,+\infty]$ por
+$\nu = \lambda+\mu$. Claramente $\nu$ define uma
+medida $\sigma$-finita. 
+Já que ambas $\lambda$ e $\mu$ são absolutamente contínuas
+com respeito $\nu$ segue do Teorema de Radon-Nikodým 
+que existem funções $f,g:\Omega\to [0,+\infty]$ mensuráveis
+segundo $\F$ tais que para todo $E\in\F$ temos 
+\[
+\lambda(E)= \int_{E} f\, d\nu,
+\quad\text{e}\quad
+\mu(E)= \int_{E} g\, d\nu.
+\] 
+Considere os conjuntos $A=\{\omega\in\Omega: g(\omega)=0 \}$
+e $B=\{\omega\in\Omega: g(\omega)>0\}$. Claramente temos 
+$A\cap B =\emptyset$ e como $g$ é uma função 
+não-negativa segue que $\Omega = A\cup B$. Com auxílio destes
+dois conjuntos vamos agora construir a decomposição 
+desejada. Defina para cada $E\in \F$ as seguintes medidas
+\[
+\lambda_1(E) = \lambda(E\cap A)
+\quad\text{e}\quad
+\lambda_2(E)= \lambda(E\cap B).
+\]
+Já que $\mu(A)=\int_A g\, d\nu = 0$
+e $\lambda_1(B) = \lambda(B\cap A) =0 $ temos que 
+$\mu \perp \lambda_1$.
 
+Vamos provar agora que $\lambda_2\ll \mu$. 
+Seja $E\in \F$ tal que $\mu(E)=0$. Então temos
+$0= \mu(E)=\int_{E} g\, d\nu$. Desta igualdade 
+concluímos que $g=0\ \nu$-q.t.p. em $E$. 
+Como $E\cap B\subseteq E$ temos imediatamente 
+que $\nu(E\cap B)=0$. Usando agora que $\lambda\ll \nu$
+temos que $\lambda_2(E)=\lambda(E\cap B) = 0$  
+e assim provamos que $\lambda_2\ll \mu$.
+Claramente $\lambda =\lambda_1+\lambda_2$ e assim 
+a existência da decomposição está estabelecida. 
+Vamos chamar tal decomposição de decomposição 
+de Lebesgue de $\lambda$ com respeito a $\mu$.
 
+Resta mostrar a unicidade. 
+Na prova da unicidade vamos usar o seguinte 
+exercício 
+\begin{exercicio}
+Mostre que se $\mu$ e $\gamma$ são medidas 
+sobre $(\Omega,\F)$ tais que  
+$\gamma\ll \mu$ e $\gamma\perp \mu$, então 
+$\gamma= 0$.
+\end{exercicio}
+%
+A prova da unicidade será divida em 
+dois casos. O primeiro caso consideramos que $\lambda$
+é uma medida finita em $(\Omega,\F)$ e o segundo
+caso consideramos que $\lambda$ é apenas $\sigma$-finita. 
+
+Suponha que   
+$\lambda = \rho+\sigma$ 
+também seja uma decomposição de Lebesgue de $\lambda$ 
+com respeito a $\mu$. Considere o conjunto $A$
+definido acima. Já que $\mu(A)=0$ e $\sigma \ll \mu$
+temos que $\sigma(A)=0$. Pela definição de $\lambda_1$
+temos para todo $E\in\F$ que
+$\lambda_1(E) = \lambda(E\cap A) = \rho(E\cap A)+\sigma(E\cap A)
+\leq \rho(E)$. Como $\lambda_1+\lambda_2 = \rho+\sigma$
+temos da desigualdade anterior que $\sigma(E)\leq \lambda_2(E)$ 
+para todo $E\in\F$. Desta forma $\rho-\lambda_1$ e 
+$\lambda_2-\sigma$ são medidas ambas absolutamente
+contínuas e singulares com respeito a $\mu$ e 
+portanto ambas devem ser medidas identicamente nulas.
+\end{proof}
 
