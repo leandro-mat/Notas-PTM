@@ -791,7 +791,7 @@ mutuamente disjunta e defina
 	\[
 		f_n = \sum_{j=1}^n 1_{E_j}\cdot f.
 	\]
-Pelo Corolário \ref{cor-lin-int-funcao-simples-positiva}
+Pelo Corolário \ref{cor-linearidade-int-funcao-mens-positiva}
 item b) temos que 
 	\[
 		\int_{\Omega} f_n\, d\mu 
@@ -1215,7 +1215,7 @@ tem integral é finita.
 
 
 
-\begin{teorema}
+\begin{teorema} \label{teo-Leb-sss-AbsLeb}
 Uma função mensurável $f:\Omega\to\R$ 
 pertence a $L(\Omega,\F,\mu)$ se, e somente se,
 $|f|\in L(\Omega,\,F,\mu)$.  Além do mais é válida
@@ -1481,3 +1481,85 @@ integral de $f$ obtemos finalmente que
 	\int_{\Omega} f\, d\mu.
 	\]
 \end{proof}
+
+\begin{exemplo}[Integral de Riemman vs Integral de Lebesgue]
+    Como mencionado no início da seção, o objetivo central de definir integral de 
+    Lebesgue é extender o conjunto de funções que são integráveis, ou mesmo os espaços
+    nos quais podemos integrar. Vamos estudar neste exemplo as relacões entre funções 
+    $f: \mathbb{R} \to \mathbb{R}$ integráveis a Riemman e a Lebesgue. Ao longo desse
+    exemplo, tome o espaço de medida $(\mathbb{R},\mathcal{B}(\mathbb{R}), \lambda)$
+    onde $\lambda$ denota a medida de Lebesgue em $\mathbb{R}$.
+    
+    Primeiramente, note que 
+    $L(\mathbb{R}):=L(\mathbb{R},\mathcal{B}(\mathbb{R}), \lambda)$ 
+    não está contido em 
+    $\mathcal{L}^\prime :=\{f:\mathbb{R}\to\mathbb{R}: f \text{ é integrável a 
+    Riemman}\}$. Para provar isso, um exemplo simples é $f=1_\mathbb{Q}$ que 
+    claramente pertence a $L^1(\mathbb{R})$, pois é uma função indicadora de 
+    um conjunto mensurável, além disso.
+    \[    
+        \int 1_\mathbb{Q} d\lambda = \lambda(\mathbb{Q})=0.
+    \]
+    
+    Para $f:\mathbb{R}\to\mathbb{R}$, denotando 
+    $\mathcal{D}(f)=\{x: f \text{ é descontínua em } x\}$, sabemos que 
+    $f \in \mathcal{L}^\prime$ se, e somente se, $\lambda(\mathcal{D}(f)) = 0$, 
+    mas $\lambda(\mathcal{D}(1_\mathbb{Q}))=\infty$, logo 
+    $f \not \in \mathcal{L}^\prime$.
+    
+    Vamos mostrar agora que toda $f$ definida um intervalo fechado $[a,b]$ pertecente 
+    a $\mathcal{L}^\prime$ também pertence a $L^1(\mathbb{R})$ e 
+    $\int_a^b f(x) dx < + \infty$. Primeiramente, suponha 
+    $f$ não negativa. Note que para toda a partição $P$ de $[a,b]$ temos as seguintes
+    do fato de que toda função escada é uma função simples
+    \[
+        \sup_{\phi \text{ simples}, \phi \le f} \int \phi d\lambda \ge
+        \sup_{P \text{ partição de } [a,b]} L(f,P).
+    \]
+    Além disso, se $\phi \le f$, então $ \int \phi d\lambda \le U(f,P)$ para toda a 
+    partição $P$. E portanto   
+    \begin{align*}
+        \sup_{P \text{ partição de } [a,b]} L(f,P)  \le &
+        \sup_{\phi \text{ simple
+        s}, \phi \le f} \int \phi d\lambda 
+        & \le \inf_{P \text{ partição de } [a,b]} U(f,P)\\
+        & & =\sup_{P \text{ partição de } [a,b]} L(f,P).
+    \end{align*}
+    E portanto 
+    \[
+        \int f d\lambda = \int_a^b f(x)dx < +\infty.
+    \]
+    
+    Quando $f$ também assume valores negativos, basta separar $f = f^+ - f^-$ e fazer
+    o processo para cada uma das partes, note que se $f \in \mathcal{L}^\prime$, então
+    $f^+,f^- \in \mathcal{L}^\prime $ pois $\mathcal{D}(f^+),\mathcal{D}(f^-)
+    \subset \mathcal{D}(f)$. 
+    
+    Agora, para o caso geral, tal continência não é verdade, isto é, existem funções
+    integráveis a Riemman que não são integráveis a Lesbegue. Pelo teorema 
+    \ref{teo-Leb-sss-AbsLeb}, temos que 
+    $f \in L^1(\mathbb{R}) \iff |f| \in L^1(\mathbb{R})$,
+    vamos então considera a seguinte função $f:\mathbb{R} \to \mathbb{R}$ dada por
+    $f(x)= \frac{\sin x}{x}$ para $x \neq 0$ e $f(0)=1$, notes que $f$ é contínua. 
+    Temos que por integração por partes
+    \[
+        \int_{-\infty}^\infty f(x)dx = \pi,
+    \]
+    mas note que para cada $N \in \mathbb{N}$
+    \begin{align*}
+        \int_{\pi}^{(N+1)\pi}\left|\frac{\sin x}x\right|dx&
+        =\sum_{k=1}^N\int_{k\pi}^{(k+1)\pi}
+        \left|\frac{\sin x}x\right|dx \\
+        &=\sum_{k=1}^N\int_0^{\pi}\frac{|\sin(t+k\pi)|}{t+k\pi}dt\\\
+        &=\sum_{k=1}^N\int_0^{\pi}\frac{\sin t}{t+k\pi}dt\\\
+        &\geq \sum_{k=1}^N\frac 1{(k+1)\pi}\int_0^{\pi}\sin tdt\\\
+        &=\frac 2{\pi}\sum_{k=1}^N\frac 1{k+1}, 
+    \end{align*} 
+    E portanto,
+    \[
+        \int |f| d\lambda \ge \lim_{N  \to \infty} \int_{[\pi,(N+1)\pi]}f(x) d\lambda 
+        = \lim_{N  \to \infty} \int_{\pi}^{(N+1)\pi}f(x) dx  = \infty 
+    \]
+    concluindo que $f \not \in L^1(\mathbb{R})$.
+\end{exemplo}
+
