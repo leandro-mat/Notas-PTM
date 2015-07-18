@@ -18,3 +18,6 @@ Assim arquivo notas.tex deverá compilar agora em sistemas com versões mais
 antigas do texlive e do miktex. Para que você obtenha o indíce remissívo 
 no final do texto deve <b>descomentar</b> a linha referente ao comando printindex que se encontra
 nos notas.tex e rodar o makeindex manualmente. 
+
+
+Testando pull request
